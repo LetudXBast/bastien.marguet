@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Site – Accueil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="container">
+    <a href="#hero" class="logo">Mon Nom</a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html#hero">Accueil</a></li>
+        <li><a href="index.html#about">À propos</a></li>
+        <li class="dropdown">
+          <a href="resources.html">Ressources <span class="arrow">▼</span></a>
+          <ul class="submenu">
+            <li><a href="resources.html#cv">CV</a></li>
+            <li><a href="resources.html#enseignements">Enseignements</a></li>
+            <li><a href="resources.html#formations">Formations</a></li>
+            <li><a href="resources.html#recherches">Recherches</a></li>
+            <li><a href="resources.html#publications">Publications</a></li>
+            <li><a href="resources.html#interventions">Interventions</a></li>
+            <li><a href="resources.html#vulgarisation">Vulgarisation</a></li>
+            <li><a href="resources.html#medias">Médias</a></li>
+          </ul>
+        </li>        
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <section id="hero" class="container">
+    <!-- Contenu par-dessus, si tu veux conserver ton titre et ton accroche -->
+    <div class="hero-content">
+      <h1>Bienvenue</h1>
+      <p>Partage de mes enseignements, recherches et interventions.</p>
+    </div>
+     <!-- Image Hero placée en HTML -->
+     <img 
+     src="img/hero-bg.jpg" 
+     alt="Bannière de bienvenue" 
+     style="width: 100%; height: auto; display: block; margin-bottom: 1rem; border-radius: 12px;"
+   >
+  </section>
+  
+
+  <section id="about" class="container">
+    <h2>À propos de moi</h2>
+    <p>Brève biographie…</p>
+       <!-- Image portrait placée en HTML -->
+       <img 
+       src="img/portrait.jpg" 
+       alt="Bannière de bienvenue" 
+       style="width: 100%; height: auto; display: block; margin-bottom: 1rem; border-radius: 12px;"
+     >
+  </section>
+  
+
+  <section id="resources-preview" class="container">
+    <h2>Mes ressources</h2>
+    <div class="grid">
+      <a href="resources.html#cv" class="card">
+        <h3>CV</h3>
+        <p>Mon parcours et compétences clés.</p>
+      </a>
+      <a href="resources.html#enseignements" class="card">
+        <h3>Enseignements</h3>
+        <p>Mes cours et supports pédagogiques.</p>
+      </a>
+      <a href="resources.html#formations" class="card">
+        <h3>Formations</h3>
+        <p>Diplômes et certifications.</p>
+      </a>
+      <a href="resources.html#recherches" class="card">
+        <h3>Recherches</h3>
+        <p>Projets et études.</p>
+      </a>
+      <a href="resources.html#publications" class="card">
+        <h3>Publications</h3>
+        <p>Articles et ouvrages.</p>
+      </a>
+      <a href="resources.html#interventions" class="card">
+        <h3>Interventions</h3>
+        <p>Conférences & séminaires.</p>
+      </a>
+      <a href="resources.html#vulgarisation" class="card">
+        <h3>Vulgarisation</h3>
+        <p>Articles grand public & vidéos pédagogiques.</p>
+      </a>
+      <a href="resources.html#medias" class="card">
+        <h3>Médias</h3>
+        <p>Photos, infographies et enregistrements.</p>
+      </a>
+    </div>
+  </section>
+  
+  
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <form action="https://formsubmit.co/bast.marguet@gmail.com" method="POST">
+      <!-- champ honeypot anti‑spam (facultatif) -->
+      <input type="hidden" name="_honey" value="">
+      <!-- tu peux forcer une redirection après envoi -->
+      <input type="hidden" name="_next" value="https://ton-site.github.io/merci.html">
+      <!-- désactive le captcha si tu veux -->
+      <input type="hidden" name="_captcha" value="false">
+      <label>Nom
+        <input type="text" name="name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+      <label>Message
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+    
+  </section>
+
+  <footer class="container">
+    <p>&copy; 2025 Mon Nom</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
