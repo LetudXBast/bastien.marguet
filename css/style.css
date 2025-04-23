@@ -105,14 +105,14 @@
     color: var(--color-accent);
   }
   
-  /* Hero */
-  .hero {
+  /* intro */
+  .intro {
     position: relative;
     min-height: 80vh;
-    background: url('img/hero-bg.jpg') center/cover no-repeat;
+    background: url('img/intro.jpg') center/cover no-repeat;
   }  
   
-  .hero::before {
+  .intro::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -120,7 +120,7 @@
     opacity: 0.7;
   }
   
-  .hero-content {
+  .intro-content {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
@@ -462,7 +462,7 @@ section.container {
     #about {
       flex-direction: column;
     }
-    .hero {
+    .intro {
       min-height: 60vh;
     }
     .cv-header {
