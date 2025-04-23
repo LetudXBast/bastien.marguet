@@ -515,30 +515,41 @@ section.container {
   margin-top: var(--space-lg);
 }
 
-/* Miniature cliquable */
+/* Style thumbnail (identique aux podcasts) */
 .media-thumb {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
-  display: block;
-  text-decoration: none;
-  color: var(--color-text);
   background: var(--color-bg-alt);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: var(--space-lg);
 }
 .media-thumb img {
   display: block;
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
 }
-.media-thumb:hover img {
-  transform: scale(1.05);
+.media-thumb .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  pointer-events: none;
+  opacity: 0.8;
 }
 .media-thumb:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+.media-thumb figcaption {
+  margin-top: var(--space-sm);
+  text-align: center;
+  color: var(--color-text);
+  font-size: 0.95rem;
 }
 
 /* Overlay play icon */
@@ -562,6 +573,42 @@ section.container {
   color: var(--color-text);
   text-align: center;
 }
+
+
+/* Conteneur pour iframe en 16:9 responsive */
+.video-container {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Iframe plein conteneur */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Légende sous la vidéo */
+.video-container figcaption {
+  margin-top: var(--space-sm);
+  text-align: center;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+/* Effet hover */
+.video-container:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
 
 /* Ajustement mobile */
 @media (max-width: 600px) {
