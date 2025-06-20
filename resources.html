@@ -387,53 +387,78 @@
     <!-- Vulgarisation -->
     <section id="vulgarisation" class="container">
       <h2>Vulgarisation</h2>
-      <div style="padding: 1rem;"></div>
-        <h3>Vous trouverez ici mon contenu pédagogique</h3>
-        <p>(En cours de construction)</p>
-        <p>Je vous propose deux exemples de vidéos que je crée pour mes enseignements :</p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-  <div class="video-container has-video">
-    <video controls>
-      <source src="video/TaylorExpSeries.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la lecture de vidéos.
-    </video>
-    <figcaption>Développement limité de la fonction exponentielle</figcaption>
-  </div>
-  <div class="video-container has-video">
-    <video controls>
-      <source src="video/DerivativeScene.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la lecture de vidéos.
-    </video>
-    <figcaption>Notion de dérivée</figcaption>
-  </div>
-</div>
-      </div>
 
-       <section id="simulateur">
-    <h2>Simulations numériques</h2>
-    <p>Voici des simulations numériques déployées sur <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">https://streamlit.io/</a> :</p>
-    <p>Je vous propose deux exemples de simulateurs interactifs que je déploie pour mes enseignements en automatisme-régulation :</p>
-    <div class="publication-item video-container has-video" style="max-width: 600px; margin: 2rem auto;">
-      <p style="text-align: center;">Accédez aux simulateurs :</p>
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-      <a 
-        href="https://pid-demo-letudx.streamlit.app/" 
-        target="_blank" 
-        class="btn btn-secondary" 
-        rel="noopener noreferrer"
-      >
-        Simulateur P
-      </a> 
-      <a 
-        href="https://pid-demo-bmarguet.streamlit.app/" 
-        target="_blank" 
-        class="btn btn-secondary" 
-        rel="noopener noreferrer"
-      >
-        Simulateur PID
-      </a>
-      </div>
-    </div>
+      <!-- Sous-section 1 : Vidéos pédagogiques -->
+      <section id="vulgarisation-videos">
+        <h3>Vidéos pédagogiques</h3>
+        <p>Voici deux exemples de vidéos créées pour mes enseignements :</p>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+          <div class="video-container has-video">
+            <video controls>
+              <source src="video/TaylorExpSeries.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <figcaption>Développement limité de la fonction exponentielle</figcaption>
+          </div>
+          <div class="video-container has-video">
+            <video controls>
+              <source src="video/DerivativeScene.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <figcaption>Notion de dérivée</figcaption>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sous-section 2 : Jeu pédagogique -->
+      <section id="vulgarisation-jeu" style="margin-top:2rem;">
+        <h3>Jeu pédagogique interactif</h3>
+        <p>
+          Découvrez un jeu pédagogique pour deviner une fonction cachée à partir de ses valeurs :
+        </p>
+        <div class="publication-item video-container has-video" style="max-width: 600px; margin: 2rem auto;">
+          <p style="text-align: center;">Accédez au jeu :</p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;"></div>
+        <a 
+          href="https://fonction-cachee-bmarguet.streamlit.app/" 
+          target="_blank" 
+          class="btn btn-secondary" 
+          rel="noopener noreferrer"
+        >
+          Jouer au jeu « Fonction cachée »
+        </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sous-section 3 : Simulateurs numériques -->
+      <section id="vulgarisation-simulateurs" style="margin-top:2rem;">
+        <h3>Simulateurs numériques</h3>
+        <p>
+          Simulations interactives déployées sur <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit</a> pour l'enseignement de l'automatisme-régulation :
+        </p>
+        <div class="publication-item video-container has-video" style="max-width: 600px; margin: 2rem auto;">
+          <p style="text-align: center;">Accédez aux simulateurs :</p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a 
+          href="https://pid-demo-letudx.streamlit.app/" 
+          target="_blank" 
+          class="btn btn-secondary" 
+          rel="noopener noreferrer"
+        >
+          Simulateur P
+        </a> 
+        <a 
+          href="https://pid-demo-bmarguet.streamlit.app/" 
+          target="_blank" 
+          class="btn btn-secondary" 
+          rel="noopener noreferrer"
+        >
+          Simulateur PID
+        </a>
+          </div>
+        </div>
+      </section>
     </section>
 
 <!-- Médias -->
