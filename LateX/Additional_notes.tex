@@ -1,0 +1,211 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usetheme{Madrid}
+
+\DeclareUnicodeCharacter{202F}{\,} % espace fine = espace fine LaTeX
+
+\title{Mettre à jour un projet avec Git et GitHub}
+\author{Bastien Marguet}
+\date{\today}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{Pourquoi utiliser Git et GitHub ?}
+		\begin{itemize}
+			\item Git permet de suivre l’évolution de ton projet fichier par fichier.
+			\item GitHub héberge ton dépôt en ligne pour le partager ou le publier (ex: site GitHub Pages).
+			\item La combinaison rend le déploiement de modifications rapide, sécurisé et collaboratif.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{1. Se placer dans le bon dossier}
+		\textbf{Commande :}
+		\begin{block}{}
+			\texttt{cd /chemin/vers/ton/dossier}
+		\end{block}
+		\begin{itemize}
+			\item Ouvre ton terminal (ou Git Bash).
+			\item Navigue jusqu’au dossier local où se trouvent tes fichiers du projet.
+			\item Vérifie que tu vois bien tes fichiers en tapant \texttt{ls} ou \texttt{dir}.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{2. Vérifier les modifications}
+		\textbf{Commande :}
+		\begin{block}{}
+			\texttt{git status}
+		\end{block}
+		\begin{itemize}
+			\item Affiche quels fichiers sont modifiés, ajoutés ou supprimés.
+			\item Vérifie avant de préparer ton commit.
+			\item Important pour éviter d’oublier un fichier important.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{3. Préparer les fichiers à envoyer}
+		\textbf{Commande :}
+		\begin{block}{}
+			\texttt{git add .}
+		\end{block}
+		\begin{itemize}
+			\item \texttt{git add .} ajoute \textbf{tous} les fichiers modifiés au prochain commit.
+			\item Tu peux être plus précis : \texttt{git add index.html style.css}.
+			\item Bonne pratique : vérifier après avec \texttt{git status}.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{4. Créer un commit explicite}
+		\textbf{Commande :}
+		\begin{block}{}
+			\texttt{git commit -m "Ton message clair"}
+		\end{block}
+		\begin{itemize}
+			\item Décris ce que tu as fait : « Mise à jour responsive », « Ajout du menu burger ».
+			\item Évite les messages trop vagues comme « update ».
+			\item Chaque commit est une sauvegarde cliquable.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{5. Envoyer en ligne (push)}
+		\textbf{Commande :}
+		\begin{block}{}
+			\texttt{git push origin main}
+		\end{block}
+		\begin{itemize}
+			\item \texttt{push} = envoyer les modifications vers GitHub.
+			\item \texttt{origin} = le nom du dépôt distant.
+			\item \texttt{main} = ta branche principale (parfois \texttt{master}).
+			\item Après le push : ton site ou ton projet est mis à jour en ligne.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{Conseils pour s’adapter à chaque cas}
+		\begin{itemize}
+			\item Toujours vérifier le nom de ta branche : \texttt{main} ou \texttt{master}.
+			\item Vérifie l’URL du dépôt distant : \texttt{git remote -v}.
+			\item Si plusieurs personnes travaillent dessus, utilise \texttt{git pull} pour récupérer avant de pousser.
+			\item Pour les sites GitHub Pages : vérifier sur \texttt{https://username.github.io/repo}.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------------------------------
+	\begin{frame}{Résumé : cycle basique}
+		\begin{enumerate}
+			\item Aller dans le bon dossier.
+			\item Vérifier les changements.
+			\item Ajouter les fichiers.
+			\item Faire un commit avec un message clair.
+			\item Pousser sur GitHub.
+		\end{enumerate}
+		\vspace{1em}
+		\textbf{Ton projet est à jour et versionné !}
+	\end{frame}
+
+
+% -------------------------------
+\begin{frame}{`git status` : que fait-il vraiment ?}
+	\begin{itemize}
+		\item \textbf{`git status`} regarde uniquement l’état local du projet.
+		\item Il compare tes fichiers réels avec l’historique Git (\texttt{.git/}).
+		\item Pas de connexion Internet : tout se passe sur ton disque.
+		\item Utile pour savoir :
+		\begin{itemize}
+			\item Ce qui est modifié.
+			\item Ce qui est prêt à être sauvegardé (staged).
+			\item Ce qui reste à ajouter.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+% -------------------------------
+\begin{frame}{Où Git enregistre l’historique ?}
+	\begin{itemize}
+		\item Chaque projet Git contient un dossier caché \texttt{.git/}.
+		\item Ce dossier stocke :
+		\begin{itemize}
+			\item L’historique de tous les commits.
+			\item L’adresse du dépôt distant (GitHub, GitLab…).
+			\item Les branches locales et distantes.
+		\end{itemize}
+		\item \textbf{`git status`} lit seulement ce qu’il y a ici.
+	\end{itemize}
+\end{frame}
+
+% -------------------------------
+\begin{frame}{`git remote` : le lien vers GitHub}
+	\begin{itemize}
+		\item Un \textbf{`remote`} est une adresse vers un dépôt en ligne.
+		\item Par convention, le dépôt principal s’appelle \texttt{origin}.
+		\item Quand tu clones :
+		\begin{block}{Exemple}
+			\texttt{git clone https://github.com/user/mon-projet.git}
+		\end{block}
+		\item Git enregistre automatiquement :
+		\begin{block}{}
+			\texttt{origin = https://github.com/user/mon-projet.git}
+		\end{block}
+	\end{itemize}
+\end{frame}
+
+% -------------------------------
+\begin{frame}{Vérifier ton `remote`}
+	\textbf{Commande :}
+	\begin{block}{}
+		\texttt{git remote -v}
+	\end{block}
+	
+	\begin{itemize}
+		\item Montre les URLs configurées pour \texttt{fetch} (récupérer) et \texttt{push} (envoyer).
+		\item Exemple de sortie :
+		\begin{block}{}
+			\texttt{origin  https://github.com/user/mon-projet.git (fetch)}\\
+			\texttt{origin  https://github.com/user/mon-projet.git (push)}
+		\end{block}
+		\item Vérifie toujours ton `remote` avant un `push`.
+	\end{itemize}
+\end{frame}
+
+% -------------------------------
+\begin{frame}{Modifier ou ajouter un `remote`}
+	\begin{itemize}
+		\item Pour changer l’URL :
+		\begin{block}{}
+			\texttt{git remote set-url origin https://github.com/...}
+		\end{block}
+		\item Pour ajouter un `remote` si besoin :
+		\begin{block}{}
+			\texttt{git remote add origin https://github.com/...}
+		\end{block}
+		\item Pour supprimer :
+		\begin{block}{}
+			\texttt{git remote remove origin}
+		\end{block}
+	\end{itemize}
+\end{frame}
+
+% -------------------------------
+\begin{frame}{Résumé : `status` vs `remote`}
+	\begin{itemize}
+		\item \textbf{`git status`} = vérifie l’état local.
+		\item \textbf{`remote`} = configure où envoyer et récupérer.
+		\item \texttt{git push origin main} :
+		\begin{itemize}
+			\item Utilise le `remote` nommé \texttt{origin}.
+			\item Pousse sur la branche \texttt{main} sur GitHub.
+		\end{itemize}
+		\item Toujours vérifier \texttt{remote -v} avant de pousser.
+	\end{itemize}
+\end{frame}
+\end{document}
