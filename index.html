@@ -2,8 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Site – Accueil</title>
+  <meta name="description" content="Site personnel de Bastien Marguet, docteur en physique statistique, enseignant et vulgarisateur scientifique. Retrouvez ses enseignements, recherches, publications et ressources pédagogiques.">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Bastien Marguet – Enseignements, Recherches, Vulgarisation</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,7 +40,7 @@
     <div style="flex: 0 0 40%; max-width: 40%;">
       <img 
         src="img/intro.jpeg" 
-        alt="Bannière de bienvenue" 
+        alt="Photo d’accueil du site de Bastien Marguet"
         style="width: 100%; height: auto; display: block; border-radius: 12px;"
       >
     </div>
@@ -135,13 +137,13 @@
       <!-- désactive le captcha si tu veux -->
       <input type="hidden" name="_captcha" value="false">
       <label>Nom
-        <input type="text" name="name" required>
+        <input type="text" name="name" placeholder="Votre nom" required>
       </label>
       <label>Email
-        <input type="email" name="email" required>
+        <input type="email" name="email" placeholder="Votre email" required>
       </label>
       <label>Message
-        <textarea name="message" rows="4" required></textarea>
+        <textarea name="message" rows="4" placeholder="Votre message..." required></textarea>
       </label>
       <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
