@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.2)  1 JUL 2025 12:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.2)  3 JUL 2025 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1224,6 +1224,20 @@ Overfull \hbox (4.83513pt too wide) has occurred while \output is active
 [15
 
 ]
+Overfull \hbox (4.83513pt too wide) in paragraph at lines 224--224
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (4.83513pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
+
+]
 \tf@nav=\write6
 \openout6 = `Additional_notes.nav'.
 
@@ -1242,10 +1256,10 @@ Package rerunfilecheck Info: File `Additional_notes.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22037 strings out of 473522
- 434885 string characters out of 5709770
+ 22041 strings out of 473522
+ 434920 string characters out of 5709770
  794961 words of memory out of 5000000
- 44794 multiletter control sequences out of 15000+600000
+ 44796 multiletter control sequences out of 15000+600000
  566223 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,420b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1259,9 +1273,9 @@ pk> <C:\Users\bastien.marguet\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
 dpi600\ecss0600.pk> <C:\Users\bastien.marguet\AppData\Local\MiKTeX\fonts/pk/ljf
 our/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\bastien.marguet\AppData\Local\MiK
 TeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk>
-Output written on Additional_notes.pdf (15 pages, 210862 bytes).
+Output written on Additional_notes.pdf (16 pages, 219791 bytes).
 PDF statistics:
- 860 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
+ 897 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
  487 words of extra memory for PDF output out of 10000 (max. 10000000)
 
