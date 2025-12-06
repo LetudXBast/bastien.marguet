@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,34 +9,37 @@
   <link rel="canonical" href="https://letudxbast.github.io/bastien.marguet/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bastien Marguet – Ressources pédagogiques et publications" />
-  <meta property="og:description" content="Découvrez mes enseignements, recherches, interventions et ressources pédagogiques." />
+  <meta property="og:title" content="Bastien Marguet – Sciences, IA, pédagogie et communication" />
+  <meta property="og:description" content="Enseignements, ressources, interventions, vulgarisation scientifique et intégration raisonnée de l’IA en pédagogie." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://letudxbast.github.io/bastien.marguet/" />
   <meta property="og:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bastien Marguet – PRAG et vulgarisateur scientifique" />
-  <meta name="twitter:description" content="Découvrez mes enseignements, recherches, interventions et ressources pédagogiques." />
+  <meta name="twitter:title" content="Bastien Marguet – PRAG, docteur & communicant scientifique" />
+  <meta name="twitter:description" content="Ressources pédagogiques, IA éducative, vulgarisation scientifique et interventions." />
   <meta name="twitter:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg" />
 
+  <meta name="description" content="Site de Bastien Marguet : enseignements, IA et cognition, ressources pédagogiques, interventions, vulgarisation scientifique et accompagnement des doctorants.">
+
   <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-  <title>Bastien Marguet – Enseignements, Recherches, Vulgarisation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Bastien Marguet – Sciences, IA, pédagogie et communication</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <header class="container">
-    <a href="#intro" class="logo">
-      <img src="img/logo.svg" alt="Logo Bastien Marguet" style="height: 90px; vertical-align: middle;">
-    </a></a>
+    <a href="#intro" class="logo" aria-label="Aller à l'accueil">
+      <img src="img/logo.svg" alt="Logo Bastien Marguet" class="logo-img">
+    </a>
     <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
     <nav>
       <ul>
         <li><a href="#intro">Accueil</a></li>
-        <li><a href="#about">À propos</a></li>
+        <li><a href="#about">À propos</a></li>
         <li class="dropdown">
           <a href="resources.html">Ressources <span class="arrow">▼</span></a>
           <ul class="submenu">
@@ -46,119 +52,103 @@
             <li><a href="resources.html#vulgarisation">Vulgarisation</a></li>
             <li><a href="resources.html#medias">Médias</a></li>
           </ul>
-        </li>        
+        </li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    
   </header>
 
-  <section id="intro" class="container" style="display: flex; align-items: center; gap: 2rem; flex-wrap: nowrap;">
-    <div style="flex: 0 0 40%; max-width: 40%;">
-      <img 
-        src="img/intro.jpeg" 
-        alt="Photo d’accueil du site de Bastien Marguet"
-        style="width: 100%; height: auto; display: block; border-radius: 12px;"
-      >
-    </div>
-    <div class="intro-content" style="flex: 1 1 60%; max-width: 60%;">
-      <h1>Bienvenue sur le site de<br>Bastien Marguet</h1>
-      <p>
-        <span style="font-weight:bold; color:#1565c0;">Docteur </span>en physique statistique, 
-        <span style="font-weight:bold; color:#1565c0;">agrégé </span>de Physique-Chimie, et 
-        <span style="font-weight:bold; color:#1565c0;">PRAG</span> à l'IUT Lyon 1, je partage ici mes supports pédagogiques, publications scientifiques et activités de vulgarisation. <br>
-      Explorez mes ressources et n'hésitez pas à me contacter.
-      </p>
-      <!-- <p>Ce site est encore en construction. Je partage mes enseignements, mes recherches et interventions.</p> -->
-    </div>
-  </section>
+  <!-- INTRO -->
+    <section id="intro" class="container hero">
+      <div class="hero-media">
+        <img
+          src="img/intro.jpeg"
+          alt="Photo d’accueil du site de Bastien Marguet"
+          class="hero-img"
+        >
+      </div>
 
+      <div class="hero-content">
+        <p class="hero-kicker">Sciences • IA • pédagogie • communication</p>
+
+        <h1>Bienvenue</h1>
+
+        <p class="hero-lead">
+          Docteur en <strong>physique statistique</strong>,
+          <strong>agrégé</strong> de Physique-Chimie et
+          <strong>PRAG</strong> à l’IUT Lyon 1, je travaille à l’interface entre sciences,
+          pédagogie, <strong>IA générative</strong> et communication scientifique.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="resources.html">Voir les ressources</a>
+          <a class="btn btn-secondary" href="#contact">Me contacter</a>
+        </div>
+
+        <p class="hero-note">
+          Vous trouverez ici mes enseignements, ressources pédagogiques, travaux de vulgarisation,
+          interventions et projets liés à l'intégration raisonnée de l’IA en éducation.
+        </p>
+      </div>
+    </section>
+
+  <!-- À PROPOS -->
   <section id="about" class="container">
     <div class="intro-content">
-      <h2>À propos de moi</h2>
-      <p>
-        Passionné par l’éducation et la communication scientifique.<br>
-        Voici mes différentes activités professionnelles :
-      </p>
+      <h2>À propos</h2>
+      <p>Mon travail s’organise autour de quatre axes complémentaires :</p>
     </div>
+
     <ul>
       <li>
         <span class="highlight">Enseignement :</span>
-        mathématiques appliquées, physique, communication, anglais scientifique.
+        mathématiques appliquées, physique générale, communication scientifique et introduction à l’IA pour les étudiants.
       </li>
       <li>
-        <span class="highlight">Recherche :</span>
-        croissance cristalline (physique), outils d'IA pour l'enseignement (pédagogie).
+        <span class="highlight">Ambassadeur du doctorat AURA :</span>
+        accompagnement des doctorants, interventions auprès des CED et lien avec les entreprises
+        pour valoriser les compétences doctorales.
       </li>
       <li>
-        <span class="highlight">Vulgarisation :</span>
-        concepts mathématiques et physiques.
+        <span class="highlight">IA et cognition :</span>
+        étude des effets de l’IA générative sur les processus cognitifs et conception
+        d’usages qui renforcent l’analyse sans créer de dépendance intellectuelle.
       </li>
       <li>
-        <span class="highlight">Évènementiel :</span>
-        <a
-          href="https://pintofscience.fr/events/lyon"
-          target="_blank" rel="noopener noreferrer"
-        >
-          Pint of Science
-        </a>, direction de camps de vacances pour adolescents.
+        <span class="highlight">Vulgarisation scientifique :</span>
+        concepts mathématiques et physiques, conférences, accompagnement à la prise de parole, ateliers et participation à
+        <a href="https://pintofscience.fr/events/lyon" target="_blank" rel="noopener noreferrer">Pint of Science</a>.
       </li>
     </ul>
-    <p>
-      N’hésitez pas à <a href="index.html#contact">me contacter</a> pour en discuter !
-    </p>
-  </section>
-   
-  
 
+    <p>Pour toute question ou collaboration, <a href="#contact">contactez-moi</a>.</p>
+  </section>
+
+  <!-- RESSOURCES -->
   <section id="resources-preview" class="container">
-    <h2>Mes ressources</h2>
+    <h2>Ressources</h2>
+    <p>Accédez directement à mes supports, documents et projets.</p>
+
     <div class="grid">
-      <a href="resources.html#cv" class="card">
-        <h3>CV</h3>
-        <p>Mon parcours et compétences clés.</p>
-      </a>
-      <a href="resources.html#enseignements" class="card">
-        <h3>Enseignements</h3>
-        <p>Mes cours et supports pédagogiques.</p>
-      </a>
-      <a href="resources.html#responsabilites" class="card">
-        <h3>Responsabilités administratives</h3>
-        <p>Coordination de formations et projets pédagogiques.</p>
-      </a>
-      <a href="resources.html#recherches" class="card">
-        <h3>Recherches</h3>
-        <p>Projets et études.</p>
-      </a>
-      <a href="resources.html#publications" class="card">
-        <h3>Publications</h3>
-        <p>Articles et ouvrages.</p>
-      </a>
-      <a href="resources.html#interventions" class="card">
-        <h3>Interventions</h3>
-        <p>Conférences & séminaires.</p>
-      </a>
-      <a href="resources.html#vulgarisation" class="card">
-        <h3>Vulgarisation</h3>
-        <p>Articles grand public & vidéos pédagogiques.</p>
-      </a>
-      <a href="resources.html#medias" class="card">
-        <h3>Médias</h3>
-        <p> Interventions médiatiques, photos et enregistrements.</p>
-      </a>
+      <a href="resources.html#cv" class="card"><h3>CV</h3><p>Parcours et compétences.</p></a>
+      <a href="resources.html#enseignements" class="card"><h3>Enseignements</h3><p>Supports et cours.</p></a>
+      <a href="resources.html#responsabilites" class="card"><h3>Responsabilités</h3><p>Coordination et projets pédagogiques.</p></a>
+      <a href="resources.html#recherches" class="card"><h3>Recherches</h3><p>Physique statistique et IA en éducation.</p></a>
+      <a href="resources.html#publications" class="card"><h3>Publications</h3><p>Articles et communications.</p></a>
+      <a href="resources.html#interventions" class="card"><h3>Interventions</h3><p>Conférences & séminaires.</p></a>
+      <a href="resources.html#vulgarisation" class="card"><h3>Vulgarisation</h3><p>Articles & vidéos.</p></a>
+      <a href="resources.html#medias" class="card"><h3>Médias</h3><p>Interventions et archives.</p></a>
     </div>
   </section>
-  
-  
+
+  <!-- CONTACT -->
   <section id="contact" class="container">
     <h2>Contact</h2>
     <form action="https://formsubmit.co/bast.marguet@gmail.com" method="POST">
-      <!-- champ honeypot anti‑spam (facultatif) -->
       <input type="hidden" name="_honey" value="">
-      <!-- tu peux forcer une redirection après envoi -->
       <input type="hidden" name="_next" value="https://letudxbast.github.io/bastien.marguet/merci.html">
-      <!-- désactive le captcha si tu veux -->
       <input type="hidden" name="_captcha" value="false">
+
       <label>Nom
         <input type="text" name="name" placeholder="Votre nom" required>
       </label>
@@ -170,12 +160,12 @@
       </label>
       <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
-    
   </section>
 
-  <footer class="container" style="border-top: 1px solid #1565c0; padding-top: 0; padding-bottom: 0; font-size: 0.9em;">
-    <p style="margin: 0;">&copy; 2025 Bastien Marguet</p>
-    <div class="social-links" style="margin: 0;">
+  <!-- FOOTER -->
+  <footer class="container site-footer">
+    <p>&copy; 2025 Bastien Marguet — <a href="#about">À propos</a></p>
+    <div class="social-links">
       <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a> |
       <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
