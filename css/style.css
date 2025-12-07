@@ -1078,3 +1078,102 @@ h2{
   justify-content: space-between;
   position: relative;
 }
+/* ===== Médias : cartes homogènes ===== */
+
+/* ===== Médias : 3 + 2 centré (sur desktop), puis 2, puis 1 ===== */
+
+.media-grid{
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Mobile */
+@media (max-width: 620px){
+  .media-grid{ grid-template-columns: 1fr; }
+}
+
+/* Tablette */
+@media (min-width: 621px) and (max-width: 999px){
+  .media-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Desktop : grille en 6 colonnes, chaque carte span 2 => 3 par ligne */
+@media (min-width: 1000px){
+  .media-grid{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .media-grid > .media-card{
+    grid-column: span 2;
+  }
+
+  /* Cas EXACTEMENT 5 cartes : on centre les 2 dernières */
+  .media-grid:has(> .media-card:nth-child(5):last-child) > .media-card:nth-child(4){
+    grid-column: 2 / span 2; /* laisse 1 colonne vide à gauche */
+  }
+  .media-grid:has(> .media-card:nth-child(5):last-child) > .media-card:nth-child(5){
+    grid-column: 4 / span 2; /* laisse 1 colonne vide à droite */
+  }
+}
+
+
+.media-card{
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.media-card:hover{
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.media-frame{
+  position: relative;
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.media-frame--16x9{ aspect-ratio: 16 / 9; }
+.media-frame--player{ height: 220px; } /* même hauteur pour les 2 podcasts */
+
+.media-frame iframe,
+.media-frame img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.media-frame img{ object-fit: cover; }
+
+.media-link{ display: block; }
+
+.media-play{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+  font-size: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.media-card figcaption{
+  padding: .85rem 1rem 1rem;
+  color: rgba(255,255,255,0.86);
+  font-weight: 600;
+  line-height: 1.35;
+}
