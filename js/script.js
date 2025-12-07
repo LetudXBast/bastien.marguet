@@ -68,19 +68,3 @@
     });
   
   })();
-  
-
-// const toggle = document.querySelector('.menu-toggle');
-// const nav = document.querySelector('nav ul');
-
-// toggle.addEventListener('click', () => {
-//   nav.classList.toggle('open');
-// });
-
-// const dropdown = document.querySelector('.dropdown');
-
-// dropdown.addEventListener('click', (e) => {
-//   e.preventDefault(); // Évite de suivre le lien tout de suite
-//   const submenu = dropdown.querySelector('.submenu');
-//   submenu.classList.toggle('open');
-// });

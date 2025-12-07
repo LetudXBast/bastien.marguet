@@ -1206,3 +1206,81 @@ h2{
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; }
 }
+
+
+@media (max-width: 768px){
+
+  /* bouton visible, nav desktop cachée */
+  .menu-toggle{ display: inline-flex; }
+
+  .site-header{ position: sticky; top: 0; }
+  .header-inner{ height: 64px; }
+
+  /* Le panel menu : fixé à l’écran, sous la topbar */
+  .site-header nav ul{
+    display: none;                  /* s'ouvre via .open */
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 64px;                      /* = hauteur header-inner */
+    max-height: calc(100vh - 64px);
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 1rem;
+    margin: 0;
+
+    background: rgba(13,15,18,0.98);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .site-header nav ul.open{ display: flex; }
+
+  .site-header nav ul{
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  /* Liens : jamais de dépassement horizontal */
+  .site-header nav a{
+    display: block;
+    padding: 0.75rem 0.85rem;
+    border-radius: 14px;
+
+    white-space: normal;           /* wrap */
+    overflow-wrap: anywhere;       /* casse si besoin */
+    word-break: normal;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .site-header nav a:hover{
+    border-color: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* Dropdown : sur mobile on ignore le hover */
+  .dropdown:hover .submenu{ display: none; }
+
+  /* Sous-menu : on l'affiche en bloc (si tu veux toujours le voir) */
+  .submenu{
+    position: static !important;
+    display: block;                /* simple et robuste */
+    margin-top: 0.35rem;
+    padding-left: 0.35rem;
+
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .submenu a{
+    padding: 0.65rem 0.85rem;
+    background: rgba(255,255,255,0.02);
+  }
+
+  /* Option : rend la flèche inutile sur mobile */
+  .arrow{ display: none; }
+}
