@@ -2,14 +2,24 @@
 
 (function() {
     'use strict';
-  
-    /** Toggle du menu mobile */
+    /** Toggle du menu de navigation (mobile) */
     function initMenuToggle() {
       const btn = document.querySelector('.menu-toggle');
-      const navList = document.querySelector('nav ul');
+      const navList = document.querySelector('.site-header nav ul');
       if (!btn || !navList) return;
+
+      const mq = window.matchMedia('(max-width: 768px)');
+      const closeMenu = () => navList.classList.remove('open');
+
       btn.addEventListener('click', () => {
         navList.classList.toggle('open');
+      });
+
+      // Ferme le menu après clic sur un item (mobile)
+      navList.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+        if (mq.matches) closeMenu();
       });
     }
   
