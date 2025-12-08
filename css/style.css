@@ -95,7 +95,6 @@ header {
   top: 0;
   width: 100%;
 
-  /* glassmorphism */
   background: rgba(74, 144, 226, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -111,7 +110,6 @@ header {
   padding: 0 var(--space-md);
   z-index: 1000;
 
-  /* look “card” */
   border-radius: var(--radius);
   margin: var(--space-md);
 }
@@ -1189,6 +1187,101 @@ h2{
   }
 }
 
+/* ===== Section IA ===== */
+.ia-section{
+  margin-top: 3rem;
+}
+
+.ia-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.ia-card{
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ia-card h3{
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.ia-list{
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+.ia-note{
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.ia-cta{
+  margin-top: auto;
+  align-self: flex-start;
+}
+/* Liste numérotée alignée avec la version puces */
+.ia-list-numbered {
+  list-style: decimal inside;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.ia-list-numbered li {
+  margin-bottom: 0.35rem;
+  line-height: 1.45;
+}
+
+/* Phrase conclusion sous la liste */
+.ia-conclusion {
+  margin: 0.5rem 0 0.9rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* Phrase mise en avant en blanc plus vif */
+.ia-arrow-strong {
+  color: #fff;                      /* blanc éclatant */
+  font-weight: 500;
+  line-height: 1.55;
+  margin-top: 0.2rem;
+}
+
+.ia-link {
+  color: var(--text); /* même couleur que le texte */
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.18); /* souligné ultra léger */
+  text-underline-offset: 3px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.ia-link:hover {
+  color: #fff;
+  text-decoration-color: rgba(255,255,255,0.65); /* plus visible au hover */
+}
+.modern-research .research-item {
+  margin-bottom: 1.2rem;
+  display: grid;
+  grid-template-columns: 230px auto;
+  gap: 0.8rem;
+}
+
+.modern-research .highlight {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+
+
+
 /* Très petits écrans : boutons full-width + titres un peu réduits */
 @media (max-width: 480px){
   h1{ font-size: 2rem; }
@@ -1283,4 +1376,9 @@ h2{
 
   /* Option : rend la flèche inutile sur mobile */
   .arrow{ display: none; }
+
+  .ia-grid{
+    grid-template-columns: 1fr;
+  }
 }
+
