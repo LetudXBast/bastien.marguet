@@ -1279,6 +1279,20 @@ h2{
   opacity: 0.8;
 }
 
+/* --- Version mobile : on empile --- */
+@media (max-width: 600px) {
+  .modern-research .research-item {
+    grid-template-columns: 1fr;  /* une seule colonne */
+    gap: 0.3rem;                  /* espace réduit */
+  }
+
+  .modern-research .highlight {
+    display: block;               /* date au-dessus */
+    margin-bottom: 0.2rem;
+  }
+}
+
+
 
 
 
