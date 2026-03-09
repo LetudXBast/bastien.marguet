@@ -6,17 +6,165 @@
   <title>Merci pour votre message</title>
   <meta name="description" content="Merci pour votre prise de contact avec Bastien Marguet.">
   <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- CSS global -->
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260309-1">
+  <style>
+    body.thankyou-premium {
+      --bg: #f3f6f6;
+      --ink: #1b2f35;
+      --line: #d2e3e5;
+      --brand: #0d6e7f;
+      --brand-strong: #0b5663;
+      --brand-pale: #e6f4f5;
+      background:
+        radial-gradient(900px 450px at -10% -10%, #e3f1f2 0, transparent 70%),
+        radial-gradient(900px 450px at 110% 0%, #dbf0f1 0, transparent 68%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    .thankyou-premium .container {
+      width: min(980px, 92%);
+    }
+
+    .thankyou-premium .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      margin-top: 0.8rem;
+      background: rgba(243, 246, 246, 0.82);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(20, 51, 57, 0.1);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(7, 24, 28, 0.08);
+    }
+
+    .thankyou-premium .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1rem;
+      gap: 1rem;
+    }
+
+    .thankyou-premium .logo-img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .thankyou-premium .site-header nav > ul {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(20, 51, 57, 0.12);
+      border-radius: 999px;
+      padding: 0.35rem 0.5rem;
+      gap: 0.2rem;
+      box-shadow: 0 8px 22px rgba(8, 22, 40, 0.08);
+    }
+
+    .thankyou-premium .site-header nav > ul > li > a {
+      color: var(--ink);
+      font-weight: 600;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .thankyou-premium .site-header nav > ul > li > a:hover {
+      background: #e7f5f4;
+      color: #0d5b67;
+      text-decoration: none;
+    }
+
+    .thankyou-premium .thanks-wrap {
+      display: grid;
+      place-items: center;
+      padding: 2rem 0 1.3rem;
+    }
+
+    .thankyou-premium .thanks-card {
+      width: min(760px, 100%);
+      background: linear-gradient(150deg, #ffffff 0%, #f7fcfc 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 18px 38px rgba(11, 29, 35, 0.1);
+      padding: clamp(1.3rem, 3vw, 2.2rem);
+      text-align: center;
+    }
+
+    .thankyou-premium h2 {
+      font-family: "Fraunces", serif;
+      color: var(--brand);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    .thankyou-premium .thanks-card p {
+      color: #3a565c;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      line-height: 1.75;
+      max-width: 56ch;
+      margin: 0 auto 1.25rem;
+    }
+
+    .thankyou-premium .btn {
+      border-radius: 12px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .thankyou-premium .btn-secondary {
+      background: linear-gradient(135deg, var(--brand) 0%, #1c8aa0 100%);
+      border: 0;
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(15, 94, 109, 0.25);
+    }
+
+    .thankyou-premium .btn-secondary:hover {
+      background: linear-gradient(135deg, var(--brand-strong) 0%, #16798d 100%);
+      text-decoration: none;
+    }
+
+    .thankyou-premium .site-footer {
+      margin: 0 auto 0.8rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid #cfe4e6;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      text-align: center;
+    }
+
+    .thankyou-premium .site-footer p {
+      margin: 0 0 0.2rem;
+      color: #3f595f;
+    }
+
+    .thankyou-premium .social-links a {
+      color: #0f6b72;
+      font-weight: 600;
+    }
+
+    @media (max-width: 800px) {
+      .thankyou-premium .site-header nav > ul {
+        border-radius: 14px;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="thankyou-premium">
   <!-- Header + Navigation -->
-  <header class="container">
+  <header class="site-header container">
+    <div class="header-inner">
     <a href="#intro" class="logo">
-      <img src="img/logo.svg" alt="Logo Bastien Marguet" style="height: 90px; vertical-align: middle;">
-    </a></a>
+      <img src="img/logo.svg" alt="Logo Bastien Marguet" class="logo-img">
+    </a>
     <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
     <nav>
       <ul>
@@ -26,19 +174,22 @@
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
+    </div>
   </header>
 
   <!-- Section Merci -->
-  <section class="container">
-    <h2>Merci !</h2>
-    <p>Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.</p>
-    <a href="index.html" class="btn btn-secondary">Retour à l'accueil</a>
+  <section class="container thanks-wrap">
+    <div class="thanks-card">
+      <h2>Merci !</h2>
+      <p>Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.</p>
+      <a href="index.html" class="btn btn-secondary">Retour à l'accueil</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="container" style="border-top: 1px solid #1565c0; padding-top: 0; padding-bottom: 0; font-size: 0.9em;">
-    <p style="margin: 0;">&copy; 2025 Bastien Marguet</p>
-    <div class="social-links" style="margin: 0;">
+  <footer class="container site-footer">
+    <p>&copy; 2025 Bastien Marguet</p>
+    <div class="social-links">
       <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a> |
       <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
