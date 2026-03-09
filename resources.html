@@ -396,20 +396,42 @@
       border-radius: 12px;
       font-weight: 700;
       letter-spacing: 0.01em;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: transform 0.18s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
     }
 
     .resources-premium .btn-primary,
     .resources-premium .btn-secondary {
       background: linear-gradient(135deg, var(--brand) 0%, #1c8aa0 100%);
-      border: 0;
+      border: 1px solid transparent;
       color: #fff;
       box-shadow: 0 10px 18px rgba(15, 94, 109, 0.22);
     }
 
     .resources-premium .btn-primary:hover,
-    .resources-premium .btn-secondary:hover {
+    .resources-premium .btn-secondary:hover,
+    .resources-premium .btn-primary:focus-visible,
+    .resources-premium .btn-secondary:focus-visible {
       background: linear-gradient(135deg, var(--brand-strong) 0%, #16798d 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(11, 77, 90, 0.28);
+      outline: none;
       color: #fff;
+      text-decoration: none;
+    }
+
+    .resources-premium .btn-primary:active,
+    .resources-premium .btn-secondary:active {
+      transform: translateY(0);
+      box-shadow: 0 7px 14px rgba(11, 77, 90, 0.2);
+    }
+
+    .resources-premium a.btn,
+    .resources-premium a.btn:visited,
+    .resources-premium a.btn:hover,
+    .resources-premium a.btn:active {
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -428,6 +450,11 @@
 
     .resources-premium .media-card figcaption {
       color: #2d4a50;
+    }
+
+    .resources-premium #medias .media-frame--player {
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
 
     .resources-premium #recherches .modern-research {
@@ -609,6 +636,7 @@
       <a class="teaching-chip" href="#enseignements-but1">BUT1</a>
       <a class="teaching-chip" href="#enseignements-but2">BUT2</a>
       <a class="teaching-chip" href="#enseignements-but3">BUT3</a>
+      <a class="teaching-chip" href="#enseignements-lp-cesp">LP CESP</a>
     </div>
 
     <div id="enseignements-but1" class="teaching-group">
@@ -743,14 +771,83 @@
     <div id="enseignements-but2" class="teaching-group">
       <h3 class="teaching-group-title">BUT2</h3>
       <div class="courses">
-        <article class="publication-item">
-          <h3>Outils mathématiques : niveau 3 (BUT2 GCGP – Parcours CPIT et CPOP)</h3>
-          <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
+        <article class="publication-item publication-item--module" id="ue-but2-maths3">
+          <div class="module-head">
+            <h3>Outils mathématiques : niveau 3 (BUT2 GCGP – Parcours CPIT et CPOP)</h3>
+            <a href="pdfs/Cours/Test_Poly_Maths-S3.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+            <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
+          </div>
+
+          <details class="module-evals-toggle">
+            <summary>Annales et sujets</summary>
+            <div class="module-evals-content">
+              <h4>Évaluations par année</h4>
+
+              <details class="eval-year" open>
+              <summary>2025-2026</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
+                  </div>
+                </div>
+                <div class="eval-type">
+                  <h5>Exam blanc</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
+                    <a href="pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
+                  </div>
+                </div>
+              </div>
+              </details>
+            </div>
+          </details>
         </article>
 
-        <article class="publication-item">
-          <h3>Statistiques (BUT2 GCGP – Parcours CPIT)</h3>
-          <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
+        <article class="publication-item publication-item--module" id="ue-but2-statistiques">
+          <div class="module-head">
+            <h3>Statistiques (BUT2 GCGP – Parcours CPIT)</h3>
+            <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
+          </div>
+
+          <details class="module-evals-toggle">
+            <summary>Annales et sujets</summary>
+            <div class="module-evals-content">
+              <h4>Évaluations par année</h4>
+
+              <details class="eval-year" open>
+              <summary>2025-2026</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
+                  </div>
+                </div>
+                <div class="eval-type">
+                  <h5>Exam blanc</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/Statistiques/Examen blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
+                    <a href="pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
+                  </div>
+                </div>
+              </div>
+              </details>
+
+              <details class="eval-year">
+              <summary>2024-2025</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
+                  </div>
+                </div>
+              </div>
+              </details>
+            </div>
+          </details>
         </article>
 
         <article class="publication-item">
@@ -788,7 +885,10 @@
         <article class="publication-item">
           <h3>Anglais technique et professionnel (BUT3 GCGP – Parcours CPIT et CPOP)</h3>
           <p>Certification TOEIC, soutenance de stage, synthèse d’article, présentation scientifique, vulgarisation. 8 × 2 h</p>
-          <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Voir la présentation</a>
+          <div class="btn-group">
+            <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Soutenance de stage</a>
+            <a href="presentations/presenter-article-scientifique.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Présenter un article scientifique</a>
+          </div>
         </article>
 
         <article class="publication-item">
@@ -798,6 +898,23 @@
             <a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FdS</a>
             <a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Éloquence</a>
           </div>
+        </article>
+      </div>
+    </div>
+
+    <div id="enseignements-lp-cesp" class="teaching-group">
+      <h3 class="teaching-group-title">LP CESP</h3>
+      <div class="courses">
+        <article class="publication-item">
+          <h3>Automatisme, Systèmes asservis</h3>
+        </article>
+
+        <article class="publication-item">
+          <h3>Régulation</h3>
+        </article>
+
+        <article class="publication-item">
+          <h3>Caractéristiques des capteurs</h3>
         </article>
       </div>
     </div>
@@ -1071,10 +1188,10 @@
     </figure>
 
     <!-- RCF -->
-    <!-- <figure class="media-card">
-      <div class="media-frame media-frame--player media-frame--podcast-link">
+    <figure class="media-card">
+      <div class="media-frame media-frame--player media-frame--podcast-link media-frame--podcast-bg" style="background-image: url('img/Dis, pourquoi.png');">
         <a
-          href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon/embed?episodeId=234736"
+          href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
           class="btn btn-secondary"
           target="_blank"
           rel="noopener noreferrer"
@@ -1082,17 +1199,6 @@
         >
           Écouter le podcast
         </a>
-      </div>
-      <figcaption>Podcast « Dis, pourquoi ? » – RCF Lyon</figcaption>
-    </figure> -->
-    <figure class="media-card">
-      <div class="media-frame media-frame--player">
-        <iframe
-          src="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon/embed?episodeId=234736"
-          title="Podcast « Dis, pourquoi ? » – RCF Lyon"
-          loading="lazy"
-          allow="autoplay; encrypted-media"
-        ></iframe>
       </div>
       <figcaption>Podcast « Dis, pourquoi ? » – RCF Lyon</figcaption>
     </figure>

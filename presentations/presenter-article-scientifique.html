@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Paper Presentation - Guiding Questions</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+
+  <style>
+    :root {
+      --main-bg: #09131f;
+      --main-text: #dce9f6;
+      --heading: #f2f8ff;
+      --accent: #1ec5bc;
+      --accent-2: #3eb6ff;
+      --soft-border: rgba(164, 205, 232, 0.3);
+      --box-bg: rgba(10, 28, 45, 0.78);
+      --muted: #99b1c7;
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 700px at 12% -15%, rgba(31, 208, 201, 0.2), transparent 62%),
+        radial-gradient(1200px 800px at 100% 0%, rgba(47, 123, 255, 0.18), transparent 60%),
+        var(--main-bg);
+    }
+
+    .reveal {
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--main-text);
+      font-size: 31px;
+    }
+
+    .reveal .slides { text-align: left; }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--heading);
+      margin-bottom: 0.4em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .reveal h2 {
+      font-size: 1.35em;
+      font-weight: 800;
+      border-left: 8px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 28px;
+      color: #163746;
+      text-shadow: none;
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    .reveal .subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .reveal .slide-box {
+      background: var(--box-bg);
+      border: 1.5px solid var(--soft-border);
+      border-radius: 18px;
+      padding: 28px 34px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal ol { margin: 0; padding-left: 1.2em; }
+
+    .reveal li {
+      margin: 0.8em 0;
+      line-height: 1.35;
+      color: var(--main-text);
+    }
+
+    .reveal li::marker {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .reveal p {
+      color: var(--main-text);
+    }
+
+    .reveal strong {
+      color: #ffffff;
+      font-weight: 750;
+    }
+
+    .reveal em { color: var(--accent); font-style: italic; }
+
+    .reveal .small-note {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.72em;
+      line-height: 1.35;
+    }
+
+    .reveal .footer-tag {
+      position: absolute;
+      bottom: 18px;
+      right: 28px;
+      font-size: 0.5em;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(160, 198, 230, 0.25);
+      border-radius: 999px;
+      padding: 0.24rem 0.55rem;
+      background: rgba(7, 22, 35, 0.45);
+    }
+
+    .reveal .fragment {
+      opacity: 0.2;
+      filter: saturate(0.7);
+    }
+
+    .reveal .fragment.visible {
+      opacity: 1;
+      filter: none;
+    }
+
+    .reveal .title-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .reveal .title-card {
+      max-width: 950px;
+      margin: 0 auto;
+      background: linear-gradient(150deg, rgba(7, 23, 37, 0.8) 0%, rgba(16, 40, 62, 0.85) 100%);
+      border: 1.5px solid rgba(168, 216, 250, 0.35);
+      border-radius: 24px;
+      padding: 48px 56px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .reveal .title-card .mini-line {
+      width: 110px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      margin: 22px auto 0 auto;
+    }
+
+    .reveal .slide-number {
+      right: 18px !important;
+      bottom: 14px !important;
+      font-size: 0.5em !important;
+      color: #d9ecff !important;
+      background: rgba(8, 28, 44, 0.58) !important;
+      border: 1px solid rgba(132, 190, 226, 0.36) !important;
+      border-radius: 999px !important;
+      padding: 0.22rem 0.55rem !important;
+      backdrop-filter: blur(6px);
+    }
+
+    .reveal .progress {
+      color: var(--accent);
+      height: 10px;
+      background: rgba(11, 33, 51, 0.35);
+    }
+
+    .reveal .progress span {
+      background: linear-gradient(90deg, #2e8ea4 0%, #2d6ea4 100%);
+      box-shadow: 0 0 10px rgba(45, 110, 164, 0.35);
+    }
+
+    .reveal .controls {
+      color: #b3d6f5;
+    }
+
+    .reveal .fragment.fade-up {
+      transform: translateY(12px);
+    }
+
+    .reveal .fragment.fade-up.visible {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-transition="fade">
+        <div class="title-slide">
+          <div class="title-card">
+            <h1>Scientific Paper Presentation - Guiding Questions</h1>
+            <div class="subtitle">7 slides - 3 key questions per slide</div>
+            <div class="mini-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. Bibliographic context</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment">What is the paper title, journal, and publication year?</li>
+            <li class="fragment">Who are the authors and their institutions?</li>
+            <li class="fragment">What is the main topic in one sentence?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Reference</div>
+      </section>
+
+      <section>
+        <h2>2. Scientific problem</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment">What question does the paper try to answer?</li>
+            <li class="fragment">Why is this question important for the field?</li>
+            <li class="fragment">What gap in previous studies is identified?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Problem</div>
+      </section>
+
+      <section>
+        <h2>3. Methodology</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment">What method is used (experimental, numerical, theoretical)?</li>
+            <li class="fragment">What are the key variables and parameters?</li>
+            <li class="fragment">What are the main assumptions or limitations of this method?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Method</div>
+      </section>
+
+      <section data-transition="fade">
+        <h2>4. Main results</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment fade-up" data-fragment-index="1">What are the two or three most important results?</li>
+            <li class="fragment fade-up" data-fragment-index="2">Which figure or table best supports these results?</li>
+            <li class="fragment fade-up" data-fragment-index="3">How can you explain one key result in simple words?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Results</div>
+      </section>
+
+      <section>
+        <h2>5. Discussion</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment">How do the authors interpret their results?</li>
+            <li class="fragment">What are the strengths and weak points of the study?</li>
+            <li class="fragment">How does this paper compare with previous work?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Analysis</div>
+      </section>
+
+      <section>
+        <h2>6. Impact and applications</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment">What could be practical applications of this work?</li>
+            <li class="fragment">Who can use these results (industry, labs, education)?</li>
+            <li class="fragment">What is one potential extension of this research?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Applications</div>
+      </section>
+
+      <section data-transition="zoom-in fade-out">
+        <h2>7. Personal synthesis</h2>
+        <div class="slide-box">
+          <ol>
+            <li class="fragment fade-up" data-fragment-index="1">What did you learn from this paper?</li>
+            <li class="fragment fade-up" data-fragment-index="2">What is the paper's main take-home message?</li>
+            <li class="fragment fade-up" data-fragment-index="3">What question would you ask the authors?</li>
+          </ol>
+        </div>
+        <div class="footer-tag">Conclusion</div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: "c/t",
+      center: true,
+      transition: "convex",
+      transitionSpeed: "default",
+      backgroundTransition: "fade"
+    });
+  </script>
+</body>
+</html>

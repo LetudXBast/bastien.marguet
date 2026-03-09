@@ -208,24 +208,65 @@
       border-radius: 12px;
       font-weight: 700;
       letter-spacing: 0.01em;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: transform 0.18s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
     }
 
-    .index-premium .btn-primary {
+    .index-premium .btn-primary,
+    .index-premium .btn-secondary {
       background: linear-gradient(135deg, var(--brand) 0%, #1c8aa0 100%);
-      border: 0;
+      border: 1px solid transparent;
       color: #ffffff;
-      box-shadow: 0 10px 18px rgba(15, 94, 109, 0.28);
+      box-shadow: 0 10px 18px rgba(15, 94, 109, 0.24);
     }
 
-    .index-premium .btn-primary:hover {
+    .index-premium .btn-primary:hover,
+    .index-premium .btn-primary:focus-visible,
+    .index-premium .btn-secondary:hover,
+    .index-premium .btn-secondary:focus-visible {
       background: linear-gradient(135deg, var(--brand-strong) 0%, #16798d 100%);
       transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(11, 77, 90, 0.28);
+      outline: none;
     }
 
-    .index-premium .btn-secondary {
-      background: #f5fbfa;
-      border: 1px solid #b9d9dd;
+    .index-premium .btn-primary:active,
+    .index-premium .btn-secondary:active {
+      transform: translateY(0);
+      box-shadow: 0 7px 14px rgba(11, 77, 90, 0.2);
+    }
+
+    .index-premium a.btn,
+    .index-premium a.btn:visited,
+    .index-premium a.btn:hover,
+    .index-premium a.btn:active {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .index-premium .hero-actions .btn-secondary {
+      background: #ffffff;
       color: #21474c;
+      border: 1px solid #b9d9dd;
+      box-shadow: 0 8px 16px rgba(14, 58, 66, 0.12);
+    }
+
+    .index-premium .hero-actions .btn-secondary:hover,
+    .index-premium .hero-actions .btn-secondary:focus-visible {
+      background: #f1fbfa;
+      color: #1e4950;
+      border-color: #9cc9cf;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(14, 58, 66, 0.18);
+    }
+
+    .index-premium .hero-actions a.btn-secondary,
+    .index-premium .hero-actions a.btn-secondary:visited,
+    .index-premium .hero-actions a.btn-secondary:hover,
+    .index-premium .hero-actions a.btn-secondary:active {
+      color: #21474c;
+      text-decoration: none;
     }
 
     .index-premium .section-head p,
