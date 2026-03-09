@@ -152,6 +152,208 @@
       text-decoration: none;
     }
 
+    .resources-premium .teaching-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0.2rem 0 1rem;
+    }
+
+    .resources-premium .teaching-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #bfdde0;
+      background: #ecf7f7;
+      color: #125a63;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .resources-premium .teaching-chip:hover {
+      background: #dff1ef;
+      color: #0d5c65;
+      text-decoration: none;
+    }
+
+    .resources-premium .teaching-group {
+      margin-top: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid #d4e7e8;
+      border-radius: 14px;
+      background: #fbfdfd;
+    }
+
+    .resources-premium .teaching-group-title {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.06rem, 1.4vw, 1.24rem);
+      color: #0f616b;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .resources-premium .teaching-group-title::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #46a7b3;
+      box-shadow: 0 0 0 4px rgba(70, 167, 179, 0.16);
+      flex: 0 0 auto;
+    }
+
+    .resources-premium .teaching-group .courses {
+      margin: 0;
+    }
+
+    .resources-premium .publication-item--module {
+      display: block;
+      padding: 0.95rem 1rem;
+    }
+
+    .resources-premium .module-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 0.35rem 0.6rem;
+      align-items: center;
+    }
+
+    .resources-premium .module-head h3 {
+      grid-column: 1;
+      grid-row: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .resources-premium .module-head p {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      margin-bottom: 0.45rem;
+    }
+
+    .resources-premium .module-poly-link {
+      grid-column: 2;
+      grid-row: 1;
+      white-space: nowrap;
+    }
+
+    .resources-premium .module-evals h4 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      color: #16545c;
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+    }
+
+    .resources-premium .module-evals-toggle {
+      margin-top: 0.25rem;
+      border: 1px solid #cfe3e5;
+      border-radius: 10px;
+      background: #fbfefe;
+      padding: 0.3rem 0.55rem;
+    }
+
+    .resources-premium .module-evals-toggle > summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+      color: #0f616b;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .resources-premium .module-evals-toggle > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .resources-premium .module-evals-toggle > summary::before {
+      content: "▸";
+      font-size: 0.9rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      color: #2f727a;
+      transition: transform 0.18s ease;
+    }
+
+    .resources-premium .module-evals-toggle[open] > summary::before {
+      transform: rotate(90deg) translateY(0);
+    }
+
+    .resources-premium .module-evals-content {
+      margin-top: 0.55rem;
+    }
+
+    .resources-premium .eval-year {
+      border: 1px solid #d4e7e8;
+      border-radius: 10px;
+      background: #fcfefe;
+      padding: 0.35rem 0.55rem;
+      margin-top: 0.45rem;
+    }
+
+    .resources-premium .eval-year summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+      color: #0f616b;
+    }
+
+    .resources-premium .eval-year summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .resources-premium .eval-grid {
+      margin-top: 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+
+    .resources-premium .eval-type h5 {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+      color: #3f595f;
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .resources-premium .eval-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .resources-premium .eval-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid #bfdde0;
+      background: #eef8f8;
+      color: #125a63;
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .resources-premium .eval-link:hover {
+      background: #dff1ef;
+      color: #0d5c65;
+      text-decoration: none;
+    }
+
+    .resources-premium .eval-link--placeholder {
+      border-style: dashed;
+      opacity: 0.85;
+      cursor: default;
+    }
+
     .resources-premium section.container:not(.page-hero) {
       margin-top: 1.35rem;
       padding: clamp(1.05rem, 1.9vw, 1.55rem);
@@ -292,6 +494,10 @@
         min-width: 220px;
       }
 
+      .resources-premium .teaching-group {
+        padding: 0.75rem;
+      }
+
       .resources-premium #recherches .research-item {
         grid-template-columns: 1fr;
         gap: 0.6rem;
@@ -399,66 +605,201 @@
       <p>Exemples de cours et supports.</p>
     </div>
 
-    <div class="courses">
-      <article class="publication-item">
-        <h3>Outils mathématiques : niveau 1 (BUT1 GCGP)</h3>
-        <p>Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d’erreur, trigonométrie. 14 × 2 h</p>
-        <a href="pdfs/Cours/PolyMathsBUT-S1.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-      </article>
+    <div class="teaching-nav" aria-label="Niveaux de formation">
+      <a class="teaching-chip" href="#enseignements-but1">BUT1</a>
+      <a class="teaching-chip" href="#enseignements-but2">BUT2</a>
+      <a class="teaching-chip" href="#enseignements-but3">BUT3</a>
+    </div>
 
-      <article class="publication-item">
-        <h3>Outils mathématiques : niveau 2 (BUT1 GCGP)</h3>
-        <p>Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h</p>
-        <a href="pdfs/Cours/PolyMathsBUT-S2.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-      </article>
+    <div id="enseignements-but1" class="teaching-group">
+      <h3 class="teaching-group-title">BUT1</h3>
+      <div class="courses">
+        <article class="publication-item publication-item--module" id="ue-but1-maths1">
+          <div class="module-head">
+            <h3>Outils mathématiques : niveau 1 (BUT1 GCGP)</h3>
+            <a href="pdfs/Cours/PolyMathsBUT-S1.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+            <p>Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d’erreur, trigonométrie. 14 × 2 h</p>
+          </div>
 
-      <article class="publication-item">
-        <h3>Outils mathématiques : niveau 3 (BUT2 GCGP – Parcours CPIT et CPOP)</h3>
-        <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
-      </article>
+          <details class="module-evals-toggle">
+            <summary>Annales et sujets</summary>
+            <div class="module-evals-content">
+              <h4>Évaluations par année</h4>
 
-      <article class="publication-item">
-        <h3>Statistiques (BUT2 GCGP – Parcours CPIT)</h3>
-        <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
-      </article>
+              <details class="eval-year" open>
+              <summary>2025-2026</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Interros (30 min)</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
+                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
+                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
+                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
+                  </div>
+                </div>
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
+                  </div>
+                </div>
+              </div>
+              </details>
 
-      <article class="publication-item">
-        <h3>Mathématiques pour les systèmes complexes (BUT2 GCGP – Parcours CPOP)</h3>
-        <p>Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h</p>
-        <a href="pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-      </article>
+              <details class="eval-year">
+              <summary>2024-2025</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Interros (30 min)</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
+                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
+                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
+                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
+                  </div>
+                </div>
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
+                  </div>
+                </div>
+              </div>
+              </details>
+            </div>
+          </details>
+        </article>
 
-      <article class="publication-item">
-        <h3>Plans d’expériences (BUT2 GCGP – Parcours CPIT)</h3>
-        <p>Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h</p>
-        <a href="pdfs/Cours/Cours_plan_d_expériences.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-      </article>
+        <article class="publication-item publication-item--module" id="ue-but1-maths2">
+          <div class="module-head">
+            <h3>Outils mathématiques : niveau 2 (BUT1 GCGP)</h3>
+            <a href="pdfs/Cours/PolyMathsBUT-S2.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+            <p>Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h</p>
+          </div>
 
-      <article class="publication-item">
-        <h3>Anglais technique et professionnel (BUT3 GCGP – Parcours CPIT et CPOP)</h3>
-        <p>Certification TOEIC, soutenance de stage, synthèse d’article, présentation scientifique, vulgarisation. 8 × 2 h</p>
-        <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Voir la présentation</a>
-      </article>
+          <details class="module-evals-toggle">
+            <summary>Annales et sujets</summary>
+            <div class="module-evals-content">
+              <h4>Évaluations par année</h4>
 
-      <article class="publication-item">
-        <h3>TP Outils Informatiques et Scientifiques (BUT1 GCGP)</h3>
-        <p>Utilisation d’Excel. 5 × 4 h</p>
-        <a href="pdfs/Cours/OIS_Examen_2024.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-      </article>
+              <details class="eval-year" open>
+              <summary>2025-2026</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Interros (30 min)</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
+                    <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
+                  </div>
+                </div>
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <span class="eval-link eval-link--placeholder">Sujet final</span>
+                  </div>
+                </div>
+              </div>
+              </details>
 
-      <article class="publication-item">
-        <h3>Projet Professionnel et Personnel (BUT3 GCGP – Parcours CPIT)</h3>
-        <p>Ateliers Fête de la science, préparation au concours d’éloquence. 10 × 2 h</p>
-        <div class="btn-group">
-          <a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fete-de-la-science-doua-2024" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FdS</a>
-          <a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Éloquence</a>
-        </div>
-      </article>
+              <details class="eval-year">
+              <summary>2024-2025</summary>
+              <div class="eval-grid">
+                <div class="eval-type">
+                  <h5>Interros (30 min)</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
+                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
+                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 7</a>
+                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 8</a>
+                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 9</a>
+                  </div>
+                </div>
+                <div class="eval-type">
+                  <h5>Examen final</h5>
+                  <div class="eval-links">
+                    <a href="pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
+                  </div>
+                </div>
+              </div>
+              </details>
+            </div>
+          </details>
+        </article>
 
-      <article class="publication-item">
-        <h3>Interventions sur d’autres TP (BUT1 GCGP)</h3>
-        <p>Transferts thermiques, électricité, mécanique des fluides. 5 × 4 h / groupe</p>
-      </article>
+        <article class="publication-item">
+          <h3>TP Outils Informatiques et Scientifiques (BUT1 GCGP)</h3>
+          <p>Utilisation d’Excel. 5 × 4 h</p>
+          <a href="pdfs/Cours/OIS_Examen_2024.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+        </article>
+
+        <article class="publication-item">
+          <h3>Interventions sur d’autres TP (BUT1 GCGP)</h3>
+          <p>Transferts thermiques, électricité, mécanique des fluides. 5 × 4 h / groupe</p>
+        </article>
+      </div>
+    </div>
+
+    <div id="enseignements-but2" class="teaching-group">
+      <h3 class="teaching-group-title">BUT2</h3>
+      <div class="courses">
+        <article class="publication-item">
+          <h3>Outils mathématiques : niveau 3 (BUT2 GCGP – Parcours CPIT et CPOP)</h3>
+          <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
+        </article>
+
+        <article class="publication-item">
+          <h3>Statistiques (BUT2 GCGP – Parcours CPIT)</h3>
+          <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
+        </article>
+
+        <article class="publication-item">
+          <h3>Mathématiques pour les systèmes complexes (BUT2 GCGP – Parcours CPOP)</h3>
+          <p>Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h</p>
+          <a href="pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+        </article>
+
+        <article class="publication-item publication-item--module" id="ue-but2-plans-experiences">
+          <div class="module-head">
+            <h3>Plans d’expériences (BUT2 GCGP – Parcours CPIT)</h3>
+            <a href="pdfs/Cours/Cours_plan_d_expériences.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+            <p>Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h</p>
+          </div>
+
+          <details class="module-evals-toggle">
+            <summary>Annales et sujets</summary>
+            <div class="module-evals-content">
+              <h4>DS final par année</h4>
+
+              <div class="eval-links">
+                <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2026</a>
+                <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2025</a>
+                <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2024</a>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <div id="enseignements-but3" class="teaching-group">
+      <h3 class="teaching-group-title">BUT3</h3>
+      <div class="courses">
+        <article class="publication-item">
+          <h3>Anglais technique et professionnel (BUT3 GCGP – Parcours CPIT et CPOP)</h3>
+          <p>Certification TOEIC, soutenance de stage, synthèse d’article, présentation scientifique, vulgarisation. 8 × 2 h</p>
+          <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Voir la présentation</a>
+        </article>
+
+        <article class="publication-item">
+          <h3>Projet Professionnel et Personnel (BUT3 GCGP – Parcours CPIT)</h3>
+          <p>Ateliers Fête de la science, préparation au concours d’éloquence. 10 × 2 h</p>
+          <div class="btn-group">
+            <a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FdS</a>
+            <a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Éloquence</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
