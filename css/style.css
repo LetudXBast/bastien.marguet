@@ -11,8 +11,8 @@
   --color-text:       #C7C9CA;
   --color-text-sec:   #7F8387;
 
-  --color-accent:     #4A90E2;
-  --color-accent-hov: #357ABD;
+  --color-accent:     #0D6E7F;
+  --color-accent-hov: #0B5663;
 
   --color-border:     #2C3E50;
 
@@ -95,7 +95,7 @@ header {
   top: 0;
   width: 100%;
 
-  background: rgba(74, 144, 226, 0.2);
+  background: rgba(13, 110, 127, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -769,13 +769,13 @@ footer a:hover { text-decoration: underline; }
 
   /* Aiguillage : on garde ton accent, mais on l’emploie mieux */
   --accent: var(--color-accent);
-  --accent-2: #6D42F0; /* léger violet, juste pour le gradient des titres */
+  --accent-2: #1C8AA0; /* variante vert-bleu pour le gradient des titres */
 }
 
 /* --- Base + fond plus “éditorial” --- */
 body{
   background:
-    radial-gradient(1200px 700px at 20% -10%, rgba(74,144,226,0.25), transparent 60%),
+    radial-gradient(1200px 700px at 20% -10%, rgba(13,110,127,0.25), transparent 60%),
     radial-gradient(900px 600px at 110% 10%, rgba(109,66,240,0.18), transparent 55%),
     var(--bg);
   color: var(--text);
@@ -873,10 +873,10 @@ h2{
 }
 
 .btn-primary{
-  background: rgba(74,144,226,0.92);
+  background: rgba(13,110,127,0.92);
   color: rgba(255,255,255,0.92);
 }
-.btn-primary:hover{ background: rgba(74,144,226,1); }
+.btn-primary:hover{ background: rgba(13,110,127,1); }
 
 .btn-secondary{
   background: rgba(255,255,255,0.03);
