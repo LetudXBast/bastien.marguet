@@ -454,6 +454,33 @@
       background: #fbfdfd;
     }
 
+    .resources-premium .intervention-head {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .resources-premium .intervention-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.14rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #bfdde0;
+      background: #eef8f8;
+      color: #125a63;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .resources-premium .intervention-link:hover {
+      background: #dff1ef;
+      color: #0d5c65;
+      text-decoration: none;
+    }
+
     .resources-premium .video-container.has-video {
       border: 1px solid #d6e8ea;
       box-shadow: 0 8px 20px rgba(13, 37, 45, 0.08);
@@ -1071,8 +1098,11 @@
         — IUT Lyon 1, 16–17/10/2025
       </li>
       <li>
-        <strong>Atelier « IA, cognition et apprentissage »</strong>
-        — IUT Lyon 1, 04/11/2025
+        <span class="intervention-head">
+          <strong>Atelier « IA, cognition et apprentissage »</strong>
+          <span>— IUT Lyon 1, 04/11/2025</span>
+          <a href="presentations/your-brain-on-chatgpt.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
+        </span>
       </li>
     </ul>
   </section>

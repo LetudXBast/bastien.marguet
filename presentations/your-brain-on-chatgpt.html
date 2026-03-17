@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Brain on ChatGPT</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+
+  <style>
+    :root {
+      --main-bg: #09131f;
+      --main-text: #dce9f6;
+      --heading: #f2f8ff;
+      --accent: #1ec5bc;
+      --accent-2: #3eb6ff;
+      --soft-border: rgba(164, 205, 232, 0.3);
+      --box-bg: rgba(10, 28, 45, 0.78);
+      --muted: #99b1c7;
+      --down: #ff8d8d;
+      --up: #a6f0a4;
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 700px at 12% -15%, rgba(31, 208, 201, 0.2), transparent 62%),
+        radial-gradient(1200px 800px at 100% 0%, rgba(47, 123, 255, 0.18), transparent 60%),
+        var(--main-bg);
+    }
+
+    .reveal {
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--main-text);
+      font-size: 29px;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--heading);
+      margin-bottom: 0.4em;
+    }
+
+    .reveal h1 {
+      font-size: 1.95em;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .reveal h2 {
+      font-size: 1.2em;
+      font-weight: 800;
+      border-left: 8px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 20px;
+      color: #163746;
+    }
+
+    .reveal p,
+    .reveal li {
+      color: var(--main-text);
+    }
+
+    .reveal ul,
+    .reveal ol {
+      margin: 0;
+      padding-left: 1.15em;
+    }
+
+    .reveal li {
+      margin: 0.54em 0;
+      line-height: 1.24;
+    }
+
+    .reveal li::marker {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .reveal a {
+      color: #8edfff;
+    }
+
+    .reveal strong {
+      color: #ffffff;
+      font-weight: 750;
+    }
+
+    .reveal em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .reveal .subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .reveal .small-note {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.72em;
+      line-height: 1.35;
+    }
+
+    .reveal .title-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .reveal .title-card {
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(150deg, rgba(7, 23, 37, 0.8) 0%, rgba(16, 40, 62, 0.85) 100%);
+      border: 1.5px solid rgba(168, 216, 250, 0.35);
+      border-radius: 24px;
+      padding: 44px 52px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .reveal .title-card .mini-line {
+      width: 110px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      margin: 22px auto 0 auto;
+    }
+
+    .reveal .title-card .meta {
+      margin-top: 1.1rem;
+      font-size: 0.86em;
+      color: #eef7ff;
+    }
+
+    .reveal .slide-box {
+      background: var(--box-bg);
+      border: 1.5px solid var(--soft-border);
+      border-radius: 18px;
+      padding: 24px 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .reveal .quote-box {
+      border-left: 6px solid var(--accent-2);
+    }
+
+    .reveal .tight-box {
+      padding: 18px 22px;
+    }
+
+    .reveal .small-text {
+      font-size: 0.82em;
+    }
+
+    .reveal .dense-text {
+      font-size: 0.78em;
+    }
+
+    .reveal .center-text {
+      text-align: center;
+    }
+
+    .reveal .callout {
+      font-size: 1em;
+      line-height: 1.42;
+    }
+
+    .reveal .metric-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .reveal .metric-list li {
+      padding-left: 0;
+    }
+
+    .reveal .arrow-down {
+      color: var(--down);
+      font-weight: 800;
+      margin-right: 0.35rem;
+    }
+
+    .reveal .arrow-up {
+      color: var(--up);
+      font-weight: 800;
+      margin-right: 0.35rem;
+    }
+
+    .reveal .status-badge {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.72em;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      vertical-align: middle;
+    }
+
+    .reveal .status-low {
+      background: rgba(255, 107, 107, 0.18);
+      border: 1px solid rgba(255, 120, 120, 0.42);
+      color: #ffb3b3;
+    }
+
+    .reveal .status-mid {
+      background: rgba(255, 195, 90, 0.18);
+      border: 1px solid rgba(255, 195, 90, 0.42);
+      color: #ffd88d;
+    }
+
+    .reveal .bloom-wrap {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) 1.1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .reveal .bloom-pyramid {
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .reveal .bloom-level {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      border-radius: 14px;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      padding: 0.45rem 0.8rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .reveal .bloom-1 { width: 100%; background: #0c7c93; }
+    .reveal .bloom-2 { width: 88%; background: #108da2; }
+    .reveal .bloom-3 { width: 76%; background: #1d9aa5; }
+    .reveal .bloom-4 { width: 64%; background: #44a98f; }
+    .reveal .bloom-5 { width: 52%; background: #75b66f; }
+    .reveal .bloom-6 { width: 40%; background: #b79a4b; }
+
+    .reveal .protocol-slide .stack {
+      gap: 12px;
+    }
+
+    .reveal .protocol-slide .slide-box {
+      padding: 16px 20px;
+    }
+
+    .reveal .protocol-slide .protocol-text {
+      font-size: 0.72em;
+    }
+
+    .reveal .protocol-slide .protocol-text li {
+      margin: 0.34em 0;
+      line-height: 1.16;
+    }
+
+    .reveal .footer-tag {
+      position: absolute;
+      bottom: 18px;
+      right: 28px;
+      font-size: 0.5em;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(160, 198, 230, 0.25);
+      border-radius: 999px;
+      padding: 0.24rem 0.55rem;
+      background: rgba(7, 22, 35, 0.45);
+    }
+
+    .reveal .fragment {
+      opacity: 0.2;
+      filter: saturate(0.7);
+    }
+
+    .reveal .fragment.visible {
+      opacity: 1;
+      filter: none;
+    }
+
+    .reveal .slide-number {
+      right: 18px !important;
+      bottom: 14px !important;
+      font-size: 0.5em !important;
+      color: #d9ecff !important;
+      background: rgba(8, 28, 44, 0.58) !important;
+      border: 1px solid rgba(132, 190, 226, 0.36) !important;
+      border-radius: 999px !important;
+      padding: 0.22rem 0.55rem !important;
+      backdrop-filter: blur(6px);
+    }
+
+    .reveal .progress {
+      color: var(--accent);
+      height: 10px;
+      background: rgba(11, 33, 51, 0.35);
+    }
+
+    .reveal .progress span {
+      background: linear-gradient(90deg, #2e8ea4 0%, #2d6ea4 100%);
+      box-shadow: 0 0 10px rgba(45, 110, 164, 0.35);
+    }
+
+    .reveal .controls {
+      color: #b3d6f5;
+    }
+
+    @media (max-width: 980px) {
+      .reveal .bloom-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-transition="fade">
+        <div class="title-slide">
+          <div class="title-card">
+            <h1>Your Brain on ChatGPT</h1>
+            <div class="subtitle">Comprendre les effets cognitifs de l’usage d’un LLM</div>
+            <div class="meta">Kosmyna <em>et al.</em>, MIT Media Lab (2025)</div>
+            <div class="small-note">
+              Étude préliminaire non publiée dans une revue à comité de lecture.<br>
+              Prépublication sur arXiv — non revue par les pairs.<br>
+              <a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener noreferrer">Accéder à l’étude</a>
+            </div>
+            <div class="mini-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Fondamentaux de sciences cognitives</h2>
+        <div class="stack">
+          <div class="slide-box">
+            <ul>
+              <li class="fragment"><strong>Attention</strong> — Ressource mentale <em>limitée</em> qui nous permet de focaliser nos efforts sur une tâche. Sans attention, pas d’apprentissage solide.</li>
+              <li class="fragment"><strong>Mémoire</strong> — Façon dont on stocke et retrouve les informations. Si on ne fait pas l’effort de réactiver nous-mêmes ce qu’on a appris, la mémoire ne se consolide pas.</li>
+              <li class="fragment"><strong>Dette cognitive</strong> — Coût caché de la facilité. Plus on laisse une IA penser à notre place, plus on accumule une sorte de « passif mental ».</li>
+            </ul>
+          </div>
+          <div class="slide-box quote-box">
+            <p class="callout"><strong>Synthèse :</strong> l’attention est la ressource à protéger, la mémoire se construit par l’effort, et la dette cognitive s’accumule quand on délègue trop à l’IA.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Concepts</div>
+      </section>
+
+      <section class="protocol-slide">
+        <h2>Le protocole expérimental</h2>
+        <div class="stack">
+          <div class="slide-box protocol-text">
+            <p><strong>54 participants</strong> — 3 groupes sur 4 sessions :</p>
+            <ul>
+              <li class="fragment"><strong>LLM</strong> : utilisation exclusive de ChatGPT.</li>
+              <li class="fragment"><strong>Recherche web</strong> : Google sans IA.</li>
+              <li class="fragment"><strong>Cerveau seul</strong> : aucun outil.</li>
+            </ul>
+          </div>
+          <div class="slide-box protocol-text">
+            <p><strong>Déroulement</strong> : rédiger des <strong>essais argumentatifs</strong> en 30 minutes.</p>
+            <ol>
+              <li class="fragment">Sessions 1 à 3 : chaque groupe garde le même mode de travail.</li>
+              <li class="fragment">Session 4 : inversion des conditions.</li>
+            </ol>
+            <ul>
+              <li class="fragment"><strong>LLM → Cerveau</strong> : les anciens du groupe LLM écrivent sans outil.</li>
+              <li class="fragment"><strong>Cerveau → LLM</strong> : les anciens du groupe Cerveau seul utilisent ChatGPT.</li>
+              <li class="fragment">Le groupe <strong>Recherche web</strong> ne participe pas à cette session.</li>
+            </ul>
+          </div>
+          <div class="slide-box quote-box">
+            <p class="callout">Objectif : observer les effets du passage avec / sans IA sur les performances cognitives et linguistiques.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Protocole</div>
+      </section>
+
+      <section>
+        <h2>Résultats principaux</h2>
+        <div class="slide-box small-text">
+          <ul class="metric-list">
+            <li class="fragment"><span class="arrow-down">↓</span><strong>Connectivité neuronale</strong> avec l’aide de l’IA.</li>
+            <li class="fragment"><span class="arrow-down">↓</span><strong>Mémoire de ce qu’on a écrit</strong> : 83 % incapables de citer leur propre texte.</li>
+            <li class="fragment"><span class="arrow-down">↓</span><strong>Sentiment d’appropriation</strong> du contenu.</li>
+            <li class="fragment"><span class="arrow-up">↑</span><strong>Homogénéité linguistique</strong> : phrases types ChatGPT.</li>
+            <li class="fragment"><span class="arrow-up">↑</span><strong>Effet de dépendance</strong> : après usage prolongé, baisse durable de l’engagement cognitif.</li>
+            <li class="fragment"><span class="arrow-down">↓</span><strong>Qualité du texte après usage de l’IA</strong> : les ex-utilisateurs écrivent moins bien en autonomie ; inversement, ceux formés sans IA produisent de meilleurs textes <em>avec</em> l’IA.</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Résultats</div>
+      </section>
+
+      <section>
+        <h2>Conclusion : 3 prises de conscience</h2>
+        <div class="stack">
+          <div class="slide-box quote-box center-text">
+            <p class="callout"><em>L’enjeu n’est pas de refuser l’IA, mais de rester maître de l’effort cognitif.</em></p>
+          </div>
+          <div class="slide-box center-text">
+            <p><strong>1. Je ne retiens que ce que je reconstruis.</strong></p>
+            <p><strong>2. Ce que je délègue, je désactive.</strong></p>
+            <p><strong>3. Mon attention est ma ressource rare.</strong></p>
+          </div>
+          <div class="slide-box quote-box center-text">
+            <p class="callout"><em>L’IA doit amplifier votre pensée, pas la remplacer.</em></p>
+          </div>
+        </div>
+        <div class="footer-tag">Conclusion</div>
+      </section>
+
+      <section>
+        <h2>Une grille pour penser la profondeur de l’apprentissage</h2>
+        <div class="slide-box">
+          <div class="bloom-wrap">
+            <div class="bloom-pyramid">
+              <div class="bloom-level bloom-6">Créer</div>
+              <div class="bloom-level bloom-5">Évaluer</div>
+              <div class="bloom-level bloom-4">Analyser</div>
+              <div class="bloom-level bloom-3">Appliquer</div>
+              <div class="bloom-level bloom-2">Comprendre</div>
+              <div class="bloom-level bloom-1">Mémoriser</div>
+            </div>
+            <div>
+              <ul>
+                <li class="fragment">6 niveaux cognitifs : <strong>Mémoriser → Comprendre → Appliquer → Analyser → Évaluer → Créer</strong>.</li>
+                <li class="fragment">Un outil pour <strong>concevoir, observer et évaluer</strong> les apprentissages.</li>
+                <li class="fragment">Monter dans la pyramide = <strong>mobiliser activement le savoir</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Bloom</div>
+      </section>
+
+      <section>
+        <h2>Atteint-on seulement le 1er niveau de Bloom ?</h2>
+        <div class="stack">
+          <div class="slide-box quote-box">
+            <p class="callout center-text">L’usage passif de l’IA n’atteint souvent <strong>même pas le premier étage de Bloom</strong> : il donne une <strong>illusion de savoir</strong> sans apprentissage durable.</p>
+          </div>
+          <div class="slide-box dense-text">
+            <ul>
+              <li class="fragment"><strong>Mémoriser</strong><span class="status-badge status-low">Non atteint</span> : lire la réponse d’une IA ne suffit pas à encoder l’information. Sans récupération active, la trace disparaît rapidement.</li>
+              <li class="fragment"><strong>Comprendre</strong><span class="status-badge status-mid">Partiellement atteint</span> : cohérence perçue mais sans liens avec les connaissances préalables. La compréhension reste superficielle.</li>
+              <li class="fragment"><strong>Appliquer</strong><span class="status-badge status-low">Non atteint</span> : sans véritable appropriation, il devient impossible de transférer ou d’utiliser le savoir dans un nouveau contexte.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tag">Lecture</div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: "c/t",
+      center: true,
+      transition: "slide",
+      backgroundTransition: "fade"
+    });
+  </script>
+</body>
+</html>
