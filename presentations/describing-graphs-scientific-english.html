@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Describing Graphs in Scientific English</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+
+  <style>
+    :root {
+      --main-bg: #09131f;
+      --main-text: #dce9f6;
+      --heading: #f2f8ff;
+      --accent: #1ec5bc;
+      --accent-2: #3eb6ff;
+      --soft-border: rgba(164, 205, 232, 0.3);
+      --box-bg: rgba(10, 28, 45, 0.78);
+      --muted: #99b1c7;
+      --grid: rgba(157, 206, 235, 0.18);
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 700px at 12% -15%, rgba(31, 208, 201, 0.2), transparent 62%),
+        radial-gradient(1200px 800px at 100% 0%, rgba(47, 123, 255, 0.18), transparent 60%),
+        var(--main-bg);
+    }
+
+    .reveal {
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--main-text);
+      font-size: 31px;
+    }
+
+    .reveal .slides { text-align: left; }
+
+    .reveal h1,
+    .reveal h2 {
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--heading);
+      margin-bottom: 0.4em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .reveal h2 {
+      font-size: 1.28em;
+      font-weight: 800;
+      border-left: 8px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 24px;
+      color: #163746;
+    }
+
+    .reveal p,
+    .reveal li {
+      color: var(--main-text);
+    }
+
+    .reveal ul {
+      margin: 0;
+      padding-left: 1.15em;
+    }
+
+    .reveal li {
+      margin: 0.65em 0;
+      line-height: 1.3;
+    }
+
+    .reveal li::marker {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .reveal strong {
+      color: #ffffff;
+      font-weight: 750;
+    }
+
+    .reveal .subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .reveal .title-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .reveal .title-card {
+      max-width: 950px;
+      margin: 0 auto;
+      background: linear-gradient(150deg, rgba(7, 23, 37, 0.8) 0%, rgba(16, 40, 62, 0.85) 100%);
+      border: 1.5px solid rgba(168, 216, 250, 0.35);
+      border-radius: 24px;
+      padding: 48px 56px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .reveal .title-card .mini-line {
+      width: 110px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      margin: 22px auto 0 auto;
+    }
+
+    .reveal .slide-box {
+      background: var(--box-bg);
+      border: 1.5px solid var(--soft-border);
+      border-radius: 18px;
+      padding: 28px 34px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .tight-box {
+      padding: 22px 24px 18px;
+    }
+
+    .reveal .footer-tag {
+      position: absolute;
+      bottom: 18px;
+      right: 28px;
+      font-size: 0.5em;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(160, 198, 230, 0.25);
+      border-radius: 999px;
+      padding: 0.24rem 0.55rem;
+      background: rgba(7, 22, 35, 0.45);
+    }
+
+    .reveal .fragment {
+      opacity: 0.2;
+      filter: saturate(0.7);
+    }
+
+    .reveal .fragment.visible {
+      opacity: 1;
+      filter: none;
+    }
+
+    .reveal .slide-number {
+      right: 18px !important;
+      bottom: 14px !important;
+      font-size: 0.5em !important;
+      color: #d9ecff !important;
+      background: rgba(8, 28, 44, 0.58) !important;
+      border: 1px solid rgba(132, 190, 226, 0.36) !important;
+      border-radius: 999px !important;
+      padding: 0.22rem 0.55rem !important;
+      backdrop-filter: blur(6px);
+    }
+
+    .reveal .progress {
+      color: var(--accent);
+      height: 10px;
+      background: rgba(11, 33, 51, 0.35);
+    }
+
+    .reveal .progress span {
+      background: linear-gradient(90deg, #2e8ea4 0%, #2d6ea4 100%);
+      box-shadow: 0 0 10px rgba(45, 110, 164, 0.35);
+    }
+
+    .reveal .controls {
+      color: #b3d6f5;
+    }
+
+    .chart-card {
+      background: rgba(7, 20, 32, 0.55);
+      border: 1px solid rgba(164, 205, 232, 0.18);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .chart-card svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gridline {
+      stroke: var(--grid);
+      stroke-width: 1;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .axis {
+      stroke: rgba(222, 240, 255, 0.85);
+      stroke-width: 2.2;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .axis-arrow {
+      fill: rgba(222, 240, 255, 0.85);
+    }
+
+    .axis-label,
+    .tick,
+    .legend-text,
+    .chart-title {
+      fill: #dce9f6;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .tick { font-size: 18px; }
+    .axis-label { font-size: 22px; font-weight: 600; }
+    .chart-title { font-size: 24px; font-weight: 700; }
+    .legend-text { font-size: 19px; }
+
+    .series-a {
+      fill: none;
+      stroke: #20d2c3;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .series-b {
+      fill: none;
+      stroke: #59a8ff;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 10 8;
+    }
+
+    .marker-a { fill: #20d2c3; }
+    .marker-b { fill: #59a8ff; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-transition="fade">
+        <div class="title-slide">
+          <div class="title-card">
+            <h1>Describing Graphs in Scientific English</h1>
+            <div class="subtitle">Scientific Communication in English</div>
+            <div class="mini-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Goal and rule</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment"><strong>Goal:</strong> describe what you see on a graph.</li>
+            <li class="fragment"><strong>Rule:</strong> description &#8800; interpretation.</li>
+            <li class="fragment">If you say <strong>because / therefore / so</strong>, you are interpreting.</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Basics</div>
+      </section>
+
+      <section>
+        <h2>1. Type of graph</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">This graph shows ...</li>
+            <li class="fragment">This figure represents ...</li>
+            <li class="fragment">It is a line graph / bar chart / scatter plot.</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 1</div>
+      </section>
+
+      <section>
+        <h2>2. Axes</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">On the x-axis, we have ...</li>
+            <li class="fragment">On the y-axis, we have ...</li>
+            <li class="fragment">The x-axis represents ...</li>
+            <li class="fragment">The y-axis corresponds to ...</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 2</div>
+      </section>
+
+      <section>
+        <h2>3. Trend</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment"><strong>Increase:</strong> increase, go up, rise, grow</li>
+            <li class="fragment"><strong>Decrease:</strong> decrease, go down, drop, fall</li>
+            <li class="fragment"><strong>Stable:</strong> remain constant, stay stable, does not change</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 3</div>
+      </section>
+
+      <section>
+        <h2>4. Shape of the curve</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">linear / non-linear</li>
+            <li class="fragment">exponential</li>
+            <li class="fragment">plateau</li>
+            <li class="fragment">peak</li>
+            <li class="fragment">minimum / maximum</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 4</div>
+      </section>
+
+      <section>
+        <h2>5. Compare values</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">higher than / lower than</li>
+            <li class="fragment">similar to</li>
+            <li class="fragment">different from</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 5</div>
+      </section>
+
+      <section>
+        <h2>6. Overall trend and location</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">Overall, the trend is increasing / decreasing / stable.</li>
+            <li class="fragment">at low / high values of ...</li>
+            <li class="fragment">around ...</li>
+            <li class="fragment">between ... and ...</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 6</div>
+      </section>
+
+      <section>
+        <h2>7. Safe sentences (description only)</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">We observe that ...</li>
+            <li class="fragment">The graph shows that ...</li>
+            <li class="fragment">When X increases, Y decreases.</li>
+            <li class="fragment">The curve reaches a maximum at ...</li>
+            <li class="fragment">Overall, the trend is stable.</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 7</div>
+      </section>
+
+      <section>
+        <h2>8. Avoid interpretation</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment">Avoid: <strong>because, therefore, so, this means</strong></li>
+            <li class="fragment">Avoid: <strong>good / bad / efficient / better</strong></li>
+            <li class="fragment">First describe, then interpret, then judge.</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Step 8</div>
+      </section>
+
+      <section>
+        <h2>Heat transfer efficiency vs. Temperature</h2>
+        <div class="slide-box tight-box">
+          <div class="chart-card">
+            <svg viewBox="0 0 1000 560" role="img" aria-label="Line graph showing heat transfer efficiency as a function of temperature">
+              <defs>
+                <marker id="axis-arrow-1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="axis-arrow" />
+                </marker>
+              </defs>
+              <text x="500" y="36" text-anchor="middle" class="chart-title">Heat transfer efficiency vs. Temperature</text>
+              <line x1="110" y1="470" x2="920" y2="470" class="axis" marker-end="url(#axis-arrow-1)" />
+              <line x1="110" y1="470" x2="110" y2="85" class="axis" marker-end="url(#axis-arrow-1)" />
+              <line x1="110" y1="393" x2="920" y2="393" class="gridline" />
+              <line x1="110" y1="316" x2="920" y2="316" class="gridline" />
+              <line x1="110" y1="239" x2="920" y2="239" class="gridline" />
+              <line x1="110" y1="162" x2="920" y2="162" class="gridline" />
+              <polyline class="series-a" points="110,393 191,372 272,351 353,324 434,247 515,162 596,91 677,91 758,98 839,113 920,136" />
+              <g class="marker-a">
+                <circle cx="110" cy="393" r="5" /><circle cx="191" cy="372" r="5" /><circle cx="272" cy="351" r="5" />
+                <circle cx="353" cy="324" r="5" /><circle cx="434" cy="247" r="5" /><circle cx="515" cy="162" r="5" />
+                <circle cx="596" cy="91" r="5" /><circle cx="677" cy="91" r="5" /><circle cx="758" cy="98" r="5" />
+                <circle cx="839" cy="113" r="5" /><circle cx="920" cy="136" r="5" />
+              </g>
+              <text x="515" y="540" text-anchor="middle" class="axis-label">Temperature (°C)</text>
+              <text x="32" y="285" text-anchor="middle" transform="rotate(-90 32 285)" class="axis-label">Heat transfer efficiency (%)</text>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-tag">Example 1</div>
+      </section>
+
+      <section>
+        <h2>Pressure vs. Flow rate</h2>
+        <div class="slide-box tight-box">
+          <div class="chart-card">
+            <svg viewBox="0 0 1000 560" role="img" aria-label="Line graph showing pressure as a function of flow rate">
+              <defs>
+                <marker id="axis-arrow-2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="axis-arrow" />
+                </marker>
+              </defs>
+              <text x="500" y="36" text-anchor="middle" class="chart-title">Pressure vs. Flow rate</text>
+              <line x1="110" y1="470" x2="920" y2="470" class="axis" marker-end="url(#axis-arrow-2)" />
+              <line x1="110" y1="470" x2="110" y2="85" class="axis" marker-end="url(#axis-arrow-2)" />
+              <line x1="110" y1="406" x2="920" y2="406" class="gridline" />
+              <line x1="110" y1="342" x2="920" y2="342" class="gridline" />
+              <line x1="110" y1="278" x2="920" y2="278" class="gridline" />
+              <line x1="110" y1="214" x2="920" y2="214" class="gridline" />
+              <line x1="110" y1="150" x2="920" y2="150" class="gridline" />
+              <polyline class="series-a" points="110,390 178,412 245,432 313,438 380,425 448,406 515,380 583,336 650,278 718,207 785,133 853,101 920,91" />
+              <g class="marker-a">
+                <circle cx="110" cy="390" r="5" /><circle cx="178" cy="412" r="5" /><circle cx="245" cy="432" r="5" />
+                <circle cx="313" cy="438" r="5" /><circle cx="380" cy="425" r="5" /><circle cx="448" cy="406" r="5" />
+                <circle cx="515" cy="380" r="5" /><circle cx="583" cy="336" r="5" /><circle cx="650" cy="278" r="5" />
+                <circle cx="718" cy="207" r="5" /><circle cx="785" cy="133" r="5" /><circle cx="853" cy="101" r="5" />
+                <circle cx="920" cy="91" r="5" />
+              </g>
+              <text x="515" y="540" text-anchor="middle" class="axis-label">Flow rate (m³/h)</text>
+              <text x="32" y="285" text-anchor="middle" transform="rotate(-90 32 285)" class="axis-label">Pressure (kPa)</text>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-tag">Example 2</div>
+      </section>
+
+      <section>
+        <h2>Conversion vs. Residence time</h2>
+        <div class="slide-box tight-box">
+          <div class="chart-card">
+            <svg viewBox="0 0 1000 560" role="img" aria-label="Two-line graph showing conversion as a function of residence time">
+              <defs>
+                <marker id="axis-arrow-3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="axis-arrow" />
+                </marker>
+              </defs>
+              <text x="500" y="36" text-anchor="middle" class="chart-title">Conversion vs. Residence time</text>
+              <line x1="110" y1="470" x2="920" y2="470" class="axis" marker-end="url(#axis-arrow-3)" />
+              <line x1="110" y1="470" x2="110" y2="85" class="axis" marker-end="url(#axis-arrow-3)" />
+              <line x1="110" y1="393" x2="920" y2="393" class="gridline" />
+              <line x1="110" y1="316" x2="920" y2="316" class="gridline" />
+              <line x1="110" y1="239" x2="920" y2="239" class="gridline" />
+              <line x1="110" y1="162" x2="920" y2="162" class="gridline" />
+              <line x1="110" y1="85" x2="920" y2="85" class="gridline" />
+              <polyline class="series-a" points="110,470 178,401 245,336 313,278 380,232 448,193 515,162 583,139 650,124 718,116 785,120 853,124 920,124" />
+              <polyline class="series-b" points="110,470 178,424 245,374 313,324 380,278 448,239 515,208 583,185 650,170 718,162 785,162 853,162 920,162" />
+              <g class="marker-a">
+                <circle cx="110" cy="470" r="5" /><circle cx="178" cy="401" r="5" /><circle cx="245" cy="336" r="5" />
+                <circle cx="313" cy="278" r="5" /><circle cx="380" cy="232" r="5" /><circle cx="448" cy="193" r="5" />
+                <circle cx="515" cy="162" r="5" /><circle cx="583" cy="139" r="5" /><circle cx="650" cy="124" r="5" />
+                <circle cx="718" cy="116" r="5" /><circle cx="785" cy="120" r="5" /><circle cx="853" cy="124" r="5" />
+                <circle cx="920" cy="124" r="5" />
+              </g>
+              <g class="marker-b">
+                <circle cx="110" cy="470" r="5" /><circle cx="178" cy="424" r="5" /><circle cx="245" cy="374" r="5" />
+                <circle cx="313" cy="324" r="5" /><circle cx="380" cy="278" r="5" /><circle cx="448" cy="239" r="5" />
+                <circle cx="515" cy="208" r="5" /><circle cx="583" cy="185" r="5" /><circle cx="650" cy="170" r="5" />
+                <circle cx="718" cy="162" r="5" /><circle cx="785" cy="162" r="5" /><circle cx="853" cy="162" r="5" />
+                <circle cx="920" cy="162" r="5" />
+              </g>
+              <text x="515" y="540" text-anchor="middle" class="axis-label">Residence time (s)</text>
+              <text x="32" y="285" text-anchor="middle" transform="rotate(-90 32 285)" class="axis-label">Conversion (%)</text>
+              <line x1="340" y1="438" x2="400" y2="438" class="series-a" />
+              <circle cx="370" cy="438" r="5" class="marker-a" />
+              <text x="415" y="444" class="legend-text">Catalyst A</text>
+              <line x1="560" y1="438" x2="620" y2="438" class="series-b" />
+              <circle cx="590" cy="438" r="5" class="marker-b" />
+              <text x="635" y="444" class="legend-text">Catalyst B</text>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-tag">Example 3</div>
+      </section>
+
+      <section>
+        <h2>Control response vs. Time</h2>
+        <div class="slide-box tight-box">
+          <div class="chart-card">
+            <svg viewBox="0 0 1000 560" role="img" aria-label="Line graph showing a damped oscillation over time">
+              <defs>
+                <marker id="axis-arrow-4" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="axis-arrow" />
+                </marker>
+              </defs>
+              <text x="500" y="36" text-anchor="middle" class="chart-title">Control response vs. Time</text>
+              <line x1="110" y1="470" x2="920" y2="470" class="axis" marker-end="url(#axis-arrow-4)" />
+              <line x1="110" y1="470" x2="110" y2="85" class="axis" marker-end="url(#axis-arrow-4)" />
+              <line x1="110" y1="406" x2="920" y2="406" class="gridline" />
+              <line x1="110" y1="342" x2="920" y2="342" class="gridline" />
+              <line x1="110" y1="278" x2="920" y2="278" class="gridline" />
+              <line x1="110" y1="214" x2="920" y2="214" class="gridline" />
+              <line x1="110" y1="150" x2="920" y2="150" class="gridline" />
+              <polyline class="series-a" points="110,278 164,134 218,374 272,198 326,326 380,240 434,294 488,262 542,281 596,275 650,278 704,278 758,278 812,278 866,278 920,278" />
+              <g class="marker-a">
+                <circle cx="110" cy="278" r="5" /><circle cx="164" cy="134" r="5" /><circle cx="218" cy="374" r="5" />
+                <circle cx="272" cy="198" r="5" /><circle cx="326" cy="326" r="5" /><circle cx="380" cy="240" r="5" />
+                <circle cx="434" cy="294" r="5" /><circle cx="488" cy="262" r="5" /><circle cx="542" cy="281" r="5" />
+                <circle cx="596" cy="275" r="5" /><circle cx="650" cy="278" r="5" /><circle cx="704" cy="278" r="5" />
+                <circle cx="758" cy="278" r="5" /><circle cx="812" cy="278" r="5" /><circle cx="866" cy="278" r="5" />
+                <circle cx="920" cy="278" r="5" />
+              </g>
+              <text x="515" y="540" text-anchor="middle" class="axis-label">Time (s)</text>
+              <text x="32" y="285" text-anchor="middle" transform="rotate(-90 32 285)" class="axis-label">Output (a.u.)</text>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-tag">Example 4</div>
+      </section>
+
+      <section>
+        <h2>Yield vs. Temperature (mixed shapes)</h2>
+        <div class="slide-box tight-box">
+          <div class="chart-card">
+            <svg viewBox="0 0 1000 560" role="img" aria-label="Line graph showing a peak, a decrease, a plateau, and a final increase">
+              <defs>
+                <marker id="axis-arrow-5" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="axis-arrow" />
+                </marker>
+              </defs>
+              <text x="500" y="36" text-anchor="middle" class="chart-title">Yield vs. Temperature (mixed shapes)</text>
+              <line x1="110" y1="470" x2="920" y2="470" class="axis" marker-end="url(#axis-arrow-5)" />
+              <line x1="110" y1="470" x2="110" y2="85" class="axis" marker-end="url(#axis-arrow-5)" />
+              <line x1="110" y1="425" x2="920" y2="425" class="gridline" />
+              <line x1="110" y1="335" x2="920" y2="335" class="gridline" />
+              <line x1="110" y1="245" x2="920" y2="245" class="gridline" />
+              <line x1="110" y1="155" x2="920" y2="155" class="gridline" />
+              <polyline class="series-a" points="110,402 178,343 245,280 313,222 380,177 448,146 515,132 583,200 650,267 718,290 785,290 819,290 853,264 920,236" />
+              <g class="marker-a">
+                <circle cx="110" cy="402" r="5" /><circle cx="178" cy="343" r="5" /><circle cx="245" cy="280" r="5" />
+                <circle cx="313" cy="222" r="5" /><circle cx="380" cy="177" r="5" /><circle cx="448" cy="146" r="5" />
+                <circle cx="515" cy="132" r="5" /><circle cx="583" cy="200" r="5" /><circle cx="650" cy="267" r="5" />
+                <circle cx="718" cy="290" r="5" /><circle cx="785" cy="290" r="5" /><circle cx="819" cy="290" r="5" />
+                <circle cx="853" cy="264" r="5" /><circle cx="920" cy="236" r="5" />
+              </g>
+              <text x="515" y="540" text-anchor="middle" class="axis-label">Temperature (°C)</text>
+              <text x="32" y="285" text-anchor="middle" transform="rotate(-90 32 285)" class="axis-label">Yield (%)</text>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-tag">Example 5</div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: "c/t",
+      center: true,
+      transition: "slide",
+      backgroundTransition: "fade"
+    });
+  </script>
+</body>
+</html>
