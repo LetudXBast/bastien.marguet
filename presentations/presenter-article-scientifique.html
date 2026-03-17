@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scientific Paper Presentation - Guiding Questions</title>
+  <title>Final Assessment - Scientific Article Presentation</title>
 
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
@@ -82,6 +82,11 @@
 
     .reveal ol { margin: 0; padding-left: 1.2em; }
 
+    .reveal ul {
+      margin: 0;
+      padding-left: 1.1em;
+    }
+
     .reveal li {
       margin: 0.8em 0;
       line-height: 1.35;
@@ -110,6 +115,53 @@
       color: var(--muted);
       font-size: 0.72em;
       line-height: 1.35;
+    }
+
+    .reveal .stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .reveal .compact li {
+      margin: 0.55em 0;
+    }
+
+    .reveal .tight-box {
+      padding: 22px 28px;
+    }
+
+    .reveal .tight-list li {
+      margin: 0.38em 0;
+      line-height: 1.2;
+    }
+
+    .reveal .small-text {
+      font-size: 0.85em;
+    }
+
+    .reveal .quote-box {
+      border-left: 6px solid var(--accent-2);
+    }
+
+    .reveal table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.76em;
+      color: var(--main-text);
+    }
+
+    .reveal th,
+    .reveal td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(164, 205, 232, 0.2);
+      vertical-align: top;
+    }
+
+    .reveal th:last-child,
+    .reveal td:last-child {
+      text-align: center;
+      width: 110px;
     }
 
     .reveal .footer-tag {
@@ -205,95 +257,245 @@
       <section data-transition="fade">
         <div class="title-slide">
           <div class="title-card">
-            <h1>Scientific Paper Presentation - Guiding Questions</h1>
-            <div class="subtitle">7 slides - 3 key questions per slide</div>
+            <h1>Final Assessment - Scientific Article Presentation</h1>
+            <div class="subtitle">Scientific Communication in English - 5 minutes</div>
             <div class="mini-line"></div>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>1. Bibliographic context</h2>
+        <h2>Objectif</h2>
         <div class="slide-box">
-          <ol>
-            <li class="fragment">What is the paper title, journal, and publication year?</li>
-            <li class="fragment">Who are the authors and their institutions?</li>
-            <li class="fragment">What is the main topic in one sentence?</li>
-          </ol>
+          <ul>
+            <li class="fragment">Pr&#233;senter un article scientifique <strong>clairement</strong> et <strong>efficacement</strong> &#224; l&#8217;oral.</li>
+            <li class="fragment">Montrer que vous comprenez : <strong>contexte</strong> &#8594; <strong>m&#233;thode</strong> &#8594; <strong>r&#233;sultat</strong> &#8594; <strong>interpr&#233;tation</strong> &#8594; <strong>limites</strong>.</li>
+            <li class="fragment">L&#8217;anglais est un <strong>outil</strong> : priorit&#233; &#224; la <strong>structure</strong> et &#224; la <strong>clart&#233;</strong>.</li>
+          </ul>
         </div>
-        <div class="footer-tag">Reference</div>
+        <div class="footer-tag">Purpose</div>
       </section>
 
       <section>
-        <h2>2. Scientific problem</h2>
+        <h2>Contraintes</h2>
         <div class="slide-box">
-          <ol>
-            <li class="fragment">What question does the paper try to answer?</li>
-            <li class="fragment">Why is this question important for the field?</li>
-            <li class="fragment">What gap in previous studies is identified?</li>
-          </ol>
+          <ul>
+            <li class="fragment">Dur&#233;e : <strong>5 minutes</strong> (strict).</li>
+            <li class="fragment">Slides : <strong>6 maximum</strong>.</li>
+            <li class="fragment">R&#232;gle : <strong>1 slide = 1 question principale</strong>.</li>
+            <li class="fragment">Format conseill&#233; : <strong>3 phrases compl&#232;tes et utiles par slide</strong>.</li>
+            <li class="fragment">Public cible : <strong>scientifiques non sp&#233;cialistes</strong>.</li>
+          </ul>
         </div>
-        <div class="footer-tag">Problem</div>
+        <div class="footer-tag">Constraints</div>
       </section>
 
       <section>
-        <h2>3. Methodology</h2>
-        <div class="slide-box">
-          <ol>
-            <li class="fragment">What method is used (experimental, numerical, theoretical)?</li>
-            <li class="fragment">What are the key variables and parameters?</li>
-            <li class="fragment">What are the main assumptions or limitations of this method?</li>
+        <h2>R&#232;gle centrale : une grande question par slide</h2>
+        <div class="stack">
+          <div class="slide-box">
+            <ul class="compact">
+              <li class="fragment">Chaque slide doit r&#233;pondre &#224; <strong>une seule question claire</strong>.</li>
+              <li class="fragment">Elle peut &#234;tre <strong>d&#233;compos&#233;e en 3 sous-questions claires</strong>.</li>
+              <li class="fragment">Astuce : &#233;crire la question en petit en haut de chaque slide.</li>
+            </ul>
+          </div>
+          <div class="slide-box quote-box">
+            <p><strong>Phrase &#224; retenir :</strong> Each slide answers one question.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Core Rule</div>
+      </section>
+
+      <section>
+        <h2>Presentation structure (6 slides)</h2>
+        <div class="slide-box tight-box small-text">
+          <ol class="tight-list">
+            <li class="fragment"><strong>What should the audience understand before this article?</strong> <span class="small-note">general topic, specific focus</span></li>
+            <li class="fragment"><strong>Why does this article matter?</strong> <span class="small-note">motivation, objective</span></li>
+            <li class="fragment"><strong>How is it studied?</strong> <span class="small-note">overview of the setup</span></li>
+            <li class="fragment"><strong>What is the key result?</strong> <span class="small-note">one main figure</span></li>
+            <li class="fragment"><strong>How do the authors interpret it?</strong> <span class="small-note">mechanism, conclusion</span></li>
+            <li class="fragment"><strong>What are the limits / next steps?</strong> <span class="small-note">one limitation, perspective</span></li>
           </ol>
+        </div>
+        <div class="footer-tag">6-Slide Plan</div>
+      </section>
+
+      <section>
+        <h2>Slides 1-2 : Context and motivation</h2>
+        <div class="stack">
+          <div class="slide-box tight-box small-text">
+            <p><strong>Slide 1 - What should the audience understand before this article?</strong></p>
+            <ul class="tight-list">
+              <li class="fragment">What is the general topic?</li>
+              <li class="fragment">In which research field does it belong?</li>
+              <li class="fragment">What is the specific focus of this article?</li>
+            </ul>
+          </div>
+          <div class="slide-box tight-box small-text">
+            <p><strong>Slide 2 - Why does this article matter?</strong></p>
+            <ul class="tight-list">
+              <li class="fragment">Why is this question important?</li>
+              <li class="fragment">What problem does the article address?</li>
+              <li class="fragment">What is the main objective of the study?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tag">Context</div>
+      </section>
+
+      <section>
+        <h2>Slides 3-4 : Method and results</h2>
+        <div class="stack">
+          <div class="slide-box tight-box small-text">
+            <p><strong>Slide 3 - How is it studied?</strong></p>
+            <ul class="tight-list">
+              <li class="fragment">What system, process, or phenomenon is studied?</li>
+              <li class="fragment">What is the main method or approach?</li>
+              <li class="fragment">What is the basic experimental or modeling setup?</li>
+            </ul>
+          </div>
+          <div class="slide-box tight-box small-text">
+            <p><strong>Slide 4 - What is the key result?</strong></p>
+            <ul class="tight-list">
+              <li class="fragment">Show the main graph.</li>
+              <li class="fragment">Use the figure-description method presented in class.</li>
+              <li class="fragment">On this slide only, you may use more than three sentences if needed.</li>
+            </ul>
+          </div>
         </div>
         <div class="footer-tag">Method</div>
       </section>
 
-      <section data-transition="fade">
-        <h2>4. Main results</h2>
+      <section>
+        <h2>Slides 5-6 : Interpretation and limits</h2>
+        <div class="stack">
+          <div class="slide-box tight-box small-text">
+            <p><strong>Slide 5 - How do the authors interpret it?</strong></p>
+            <ul class="tight-list">
+              <li class="fragment">How do the authors explain the result?</li>
+              <li class="fragment">What mechanism or explanation is proposed?</li>
+              <li class="fragment">What conclusion do the authors draw?</li>
+            </ul>
+          </div>
+          <div class="slide-box tight-box small-text">
+            <p><strong>Slide 6 - Limits and next steps</strong></p>
+            <ul class="tight-list">
+              <li class="fragment">What is one clear limitation of the study?</li>
+              <li class="fragment">What is missing or uncertain?</li>
+              <li class="fragment">What could be studied next?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tag">Discussion</div>
+      </section>
+
+      <!-- <section>
+        <h2>Figures : r&#232;gle simple</h2>
+        <div class="slide-box">
+          <ul>
+            <li class="fragment"><strong>1 figure centrale</strong> suffit (souvent la meilleure).</li>
+            <li class="fragment">D&#233;crire avant d&#8217;expliquer :</li>
+            <li class="fragment"><em>This graph shows ...</em></li>
+            <li class="fragment"><em>The x-axis represents ...</em></li>
+            <li class="fragment"><em>Overall, the trend is ...</em></li>
+            <li class="fragment">&#201;viter les figures illisibles (police trop petite, trop de courbes).</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Figures</div>
+      </section> -->
+
+      <section>
+        <h2>Crit&#232;res d&#8217;&#233;valuation</h2>
         <div class="slide-box">
           <ol>
-            <li class="fragment fade-up" data-fragment-index="1">What are the two or three most important results?</li>
-            <li class="fragment fade-up" data-fragment-index="2">Which figure or table best supports these results?</li>
-            <li class="fragment fade-up" data-fragment-index="3">How can you explain one key result in simple words?</li>
+            <li class="fragment"><strong>Structure &amp; clart&#233;</strong> : on suit sans effort.</li>
+            <li class="fragment"><strong>Pertinence</strong> : pas de bruit, pas de d&#233;tail inutile.</li>
+            <li class="fragment"><strong>Efficacit&#233; orale</strong> : 5 minutes, phrases nettes.</li>
+            <li class="fragment"><strong>Compr&#233;hension scientifique</strong> : contexte + r&#233;sultats + interpr&#233;tation + limites.</li>
           </ol>
         </div>
-        <div class="footer-tag">Results</div>
+        <div class="footer-tag">Assessment</div>
       </section>
 
       <section>
-        <h2>5. Discussion</h2>
+        <h2>Erreurs classiques &#224; &#233;viter</h2>
         <div class="slide-box">
-          <ol>
-            <li class="fragment">How do the authors interpret their results?</li>
-            <li class="fragment">What are the strengths and weak points of the study?</li>
-            <li class="fragment">How does this paper compare with previous work?</li>
-          </ol>
+          <ul>
+            <li class="fragment"><strong>Lire ses notes</strong>.</li>
+            <li class="fragment">Lire les slides mot &#224; mot.</li>
+            <li class="fragment">R&#233;sumer tout l&#8217;article (trop long, trop flou).</li>
+            <li class="fragment">Trop de d&#233;tails de protocole (perte du fil).</li>
+            <li class="fragment">Trop de figures / figures illisibles.</li>
+            <li class="fragment">M&#233;langer <strong>vos opinions</strong> et <strong>l&#8217;interpr&#233;tation des auteurs</strong>.</li>
+          </ul>
         </div>
-        <div class="footer-tag">Analysis</div>
+        <div class="footer-tag">Pitfalls</div>
       </section>
+
+      <!-- <section>
+        <h2>Checklist avant de rendre</h2>
+        <div class="stack">
+          <div class="slide-box">
+            <ul class="compact">
+              <li class="fragment">Pouvez-vous dire la <strong>question</strong> de chaque slide en 5 secondes ?</li>
+              <li class="fragment">Avez-vous <strong>une figure</strong> claire et expliqu&#233;e ?</li>
+              <li class="fragment">La conclusion r&#233;pond-elle au <strong>probl&#232;me initial</strong> ?</li>
+              <li class="fragment">Tenez-vous en <strong>5 minutes</strong> &#224; l&#8217;entra&#238;nement ?</li>
+            </ul>
+          </div>
+          <div class="slide-box">
+            <p><strong>Derniers conseils :</strong></p>
+            <ul class="compact">
+              <li class="fragment">Apprenez par <strong>questions</strong>, pas par texte.</li>
+              <li class="fragment">Objectif : &#234;tre compris <strong>au premier passage</strong>.</li>
+              <li class="fragment">Simple et clair &#8594; plus scientifique.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tag">Checklist</div>
+      </section> -->
 
       <section>
-        <h2>6. Impact and applications</h2>
+        <h2>Bar&#232;me (sur 20)</h2>
         <div class="slide-box">
-          <ol>
-            <li class="fragment">What could be practical applications of this work?</li>
-            <li class="fragment">Who can use these results (industry, labs, education)?</li>
-            <li class="fragment">What is one potential extension of this research?</li>
-          </ol>
+          <table>
+            <thead>
+              <tr>
+                <th>Crit&#232;re</th>
+                <th>Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1) Respect des contraintes</strong> (5 minutes, &#8804; 6 slides, 1 slide = 1 question, 1 figure lisible)</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td><strong>2) Structure &amp; clart&#233;</strong> (fil conducteur, transitions, slides non surcharg&#233;es, public non sp&#233;cialiste)</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td><strong>3) Compr&#233;hension scientifique</strong> (contexte, m&#233;thode, r&#233;sultat, interpr&#233;tation, limites)</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td><strong>4) Efficacit&#233; orale</strong> (pas de lecture, d&#233;bit, articulation, gestion du temps)</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td><strong>5) Qualit&#233; d&#8217;anglais</strong> (grammaire, vocabulaire, prononciation)</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>20</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="footer-tag">Applications</div>
-      </section>
-
-      <section data-transition="zoom-in fade-out">
-        <h2>7. Personal synthesis</h2>
-        <div class="slide-box">
-          <ol>
-            <li class="fragment fade-up" data-fragment-index="1">What did you learn from this paper?</li>
-            <li class="fragment fade-up" data-fragment-index="2">What is the paper's main take-home message?</li>
-            <li class="fragment fade-up" data-fragment-index="3">What question would you ask the authors?</li>
-          </ol>
-        </div>
-        <div class="footer-tag">Conclusion</div>
+        <div class="footer-tag">Rubric</div>
       </section>
     </div>
   </div>
