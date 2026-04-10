@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Communication Workshop</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+
+  <style>
+    :root {
+      --bg: #07111b;
+      --bg-soft: #0d2031;
+      --panel: linear-gradient(160deg, rgba(8, 22, 35, 0.86) 0%, rgba(13, 34, 52, 0.94) 100%);
+      --panel-strong: linear-gradient(160deg, rgba(7, 19, 30, 0.95) 0%, rgba(11, 30, 46, 0.98) 100%);
+      --text: #dce8f4;
+      --heading: #f4fbff;
+      --muted: #9db4c8;
+      --accent: #2fd1c2;
+      --accent-2: #6ab8ff;
+      --accent-soft: rgba(47, 209, 194, 0.16);
+      --accent-soft-2: rgba(106, 184, 255, 0.14);
+      --border: rgba(173, 214, 240, 0.22);
+      --border-strong: rgba(196, 230, 252, 0.34);
+      --shadow-md: 0 20px 46px rgba(0, 0, 0, 0.34);
+      --shadow-lg: 0 28px 60px rgba(0, 0, 0, 0.44);
+    }
+
+    body {
+      background:
+        radial-gradient(1100px 700px at 12% -10%, rgba(47, 209, 194, 0.2), transparent 60%),
+        radial-gradient(1100px 760px at 100% 0%, rgba(106, 184, 255, 0.18), transparent 62%),
+        radial-gradient(900px 620px at 50% 100%, rgba(18, 66, 101, 0.18), transparent 72%),
+        var(--bg);
+    }
+
+    .reveal {
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      font-size: 29px;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal section {
+      box-sizing: border-box;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--heading);
+      margin-bottom: 0.4em;
+      text-wrap: balance;
+    }
+
+    .reveal h1 {
+      font-size: 2.05em;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .reveal h2 {
+      font-size: 1.22em;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .reveal h3 {
+      font-size: 0.9em;
+      font-weight: 760;
+      margin-bottom: 0.4em;
+    }
+
+    .reveal p,
+    .reveal li {
+      color: var(--text);
+      line-height: 1.38;
+    }
+
+    .reveal p {
+      margin: 0;
+    }
+
+    .reveal strong {
+      color: #ffffff;
+      font-weight: 780;
+    }
+
+    .reveal em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .reveal ul,
+    .reveal ol {
+      margin: 0;
+      padding-left: 1.1em;
+    }
+
+    .reveal li {
+      margin: 0.56em 0;
+    }
+
+    .reveal li::marker {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .reveal .fragment {
+      opacity: 0.18;
+      filter: saturate(0.7);
+    }
+
+    .reveal .fragment.visible {
+      opacity: 1;
+      filter: none;
+    }
+
+    .reveal .fragment.fade-up {
+      transform: translateY(12px);
+    }
+
+    .reveal .fragment.fade-up.visible {
+      transform: translateY(0);
+    }
+
+    .reveal .slide-number {
+      right: 18px !important;
+      bottom: 14px !important;
+      font-size: 0.5em !important;
+      color: #d9ecff !important;
+      background: rgba(8, 26, 40, 0.7) !important;
+      border: 1px solid rgba(132, 190, 226, 0.32) !important;
+      border-radius: 999px !important;
+      padding: 0.22rem 0.55rem !important;
+      backdrop-filter: blur(6px);
+    }
+
+    .reveal .progress {
+      color: var(--accent);
+      height: 10px;
+      background: rgba(11, 33, 51, 0.34);
+    }
+
+    .reveal .progress span {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+      box-shadow: 0 0 12px rgba(106, 184, 255, 0.32);
+    }
+
+    .reveal .controls {
+      color: #b7daf7;
+    }
+
+    .title-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .title-card {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 52px 62px;
+      border-radius: 32px;
+      background: var(--panel-strong);
+      border: 1.5px solid rgba(186, 225, 248, 0.3);
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 18px;
+      padding: 0.34rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(186, 225, 248, 0.18);
+      background: rgba(10, 26, 40, 0.62);
+      color: var(--muted);
+      font-size: 0.48em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .title-card .subtitle {
+      max-width: 760px;
+      margin: 0.55rem auto 0;
+      color: var(--muted);
+      font-size: 0.86em;
+      line-height: 1.42;
+    }
+
+    .title-card .meta {
+      margin-top: 1rem;
+      color: #edf7ff;
+      font-size: 0.7em;
+      letter-spacing: 0.03em;
+    }
+
+    .mini-line {
+      width: 120px;
+      height: 5px;
+      margin: 24px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 20px rgba(106, 184, 255, 0.3);
+    }
+
+    .slide-shell {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 22px;
+    }
+
+    .slide-head {
+      display: grid;
+      gap: 10px;
+    }
+
+    .slide-head .eyebrow {
+      margin-bottom: 0;
+      width: fit-content;
+    }
+
+    .slide-head h2 {
+      margin-bottom: 0;
+    }
+
+    .slide-subtitle {
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .panel,
+    .card,
+    .quote-panel,
+    .statement,
+    .number-card {
+      background: var(--panel);
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(10px);
+    }
+
+    .panel,
+    .card,
+    .number-card {
+      padding: 24px 28px;
+    }
+
+    .quote-panel {
+      padding: 26px 30px;
+      border-left: 6px solid var(--accent-2);
+    }
+
+    .quote-panel p {
+      font-size: 1.16em;
+      line-height: 1.42;
+    }
+
+    .statement-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .statement {
+      padding: 20px 24px;
+      font-size: 1.02em;
+      text-align: center;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .grid-three {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .card-kicker {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.56em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .card p + p,
+    .panel p + p {
+      margin-top: 0.7em;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.38rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid rgba(183, 221, 245, 0.14);
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent-soft-2));
+      color: #f1f8ff;
+      font-size: 0.56em;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .roadmap-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .roadmap-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(106, 184, 255, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .time-tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 14px;
+      padding: 0.28rem 0.58rem;
+      border-radius: 999px;
+      border: 1px solid rgba(173, 214, 240, 0.16);
+      background: rgba(10, 26, 40, 0.52);
+      color: var(--muted);
+      font-size: 0.52em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .number-card {
+      position: relative;
+      padding-top: 68px;
+    }
+
+    .number-badge {
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #061018;
+      font-size: 0.62em;
+      font-weight: 800;
+      box-shadow: 0 10px 22px rgba(47, 209, 194, 0.22);
+    }
+
+    .process-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(11, 28, 43, 0.58);
+      border: 1px solid rgba(173, 214, 240, 0.12);
+    }
+
+    .step-index {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(47, 209, 194, 0.14);
+      color: #dffbff;
+      font-size: 0.58em;
+      font-weight: 800;
+    }
+
+    .rule-banner {
+      padding: 18px 22px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border-strong);
+      background: linear-gradient(160deg, rgba(8, 26, 40, 0.92) 0%, rgba(16, 40, 62, 0.96) 100%);
+      box-shadow: var(--shadow-md);
+    }
+
+    .rule-banner strong {
+      color: #ffffff;
+    }
+
+    .big-quote {
+      text-align: center;
+      font-size: 1.2em;
+      line-height: 1.38;
+    }
+
+    .big-quote strong {
+      color: #ffffff;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .summary-card {
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: var(--panel);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .summary-card p {
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    .footer-tag {
+      position: absolute;
+      right: 28px;
+      bottom: 18px;
+      font-size: 0.5em;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(173, 214, 240, 0.16);
+      border-radius: 999px;
+      padding: 0.24rem 0.55rem;
+      background: rgba(9, 24, 38, 0.64);
+    }
+
+    @media (max-width: 1100px) {
+      .grid-two,
+      .grid-three,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .title-card {
+        padding: 42px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-transition="fade">
+        <div class="title-slide">
+          <div class="title-card">
+            <div class="eyebrow">Workshop - Scientific Communication</div>
+            <h1>Make Ideas Understandable</h1>
+            <p class="subtitle">A 1h30 interactive session on clarity, structure, attention and explanation.</p>
+            <p class="meta">Bastien Marguet</p>
+            <div class="mini-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Introduction</div>
+            <h2>Why this matters</h2>
+          </div>
+          <div class="quote-panel">
+            <p>Have you ever explained something... and realized the other person did not understand?</p>
+          </div>
+          <div class="pill-row">
+            <span class="pill">studies</span>
+            <span class="pill">debates</span>
+            <span class="pill">future work</span>
+            <span class="pill">everyday explanations</span>
+          </div>
+        </div>
+        <div class="footer-tag">Intro - 10 min</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Interaction</div>
+            <h2>Start from one real situation</h2>
+            <p class="slide-subtitle">Use a real moment, not a hypothetical one.</p>
+          </div>
+          <div class="grid-two">
+            <div class="card fragment fade-up">
+              <div class="card-kicker">Question 1</div>
+              <h3>When did you realize it?</h3>
+              <p>What happened on the other person's side? What sign told you the message was not landing?</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="card-kicker">Question 2</div>
+              <h3>What did you do next?</h3>
+              <p>Did you repeat, simplify, change examples, or keep talking without changing anything?</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Open reflection</div>
+      </section>
+
+      <section class="center">
+        <div class="slide-shell">
+          <div class="statement-stack">
+            <div class="statement fragment fade-up">Having the words is not enough.</div>
+            <div class="statement fragment fade-up">Understanding is not automatic.</div>
+            <div class="statement fragment fade-up"><strong>Today, we work on making ideas understandable.</strong></div>
+          </div>
+        </div>
+        <div class="footer-tag">Core message</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Roadmap</div>
+            <h2>Today's path</h2>
+          </div>
+          <div class="grid-two">
+            <div class="card roadmap-card fragment fade-up">
+              <div class="card-kicker">Exercise 1</div>
+              <h3>Make me care</h3>
+              <p>Structure a simple message and create immediate attention.</p>
+              <div class="time-tag">20 min</div>
+            </div>
+            <div class="card roadmap-card fragment fade-up">
+              <div class="card-kicker">Exercise 2</div>
+              <h3>3 sentences only</h3>
+              <p>Simplify without losing meaning.</p>
+              <div class="time-tag">20 min</div>
+            </div>
+            <div class="card roadmap-card fragment fade-up">
+              <div class="card-kicker">Exercise 3</div>
+              <h3>Add a metaphor</h3>
+              <p>Create a mental image without creating confusion.</p>
+              <div class="time-tag">20 min</div>
+            </div>
+            <div class="card roadmap-card fragment fade-up">
+              <div class="card-kicker">Exercise 4</div>
+              <h3>Under pressure</h3>
+              <p>Reconstruct understanding fast and clearly.</p>
+              <div class="time-tag">20 min</div>
+            </div>
+          </div>
+          <div class="panel">
+            <p><strong>We finish with:</strong> body and voice, then a short conclusion.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Workshop map</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Exercise 1</div>
+            <h2>Make me care</h2>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Objective</div>
+              <h3>Structure a simple idea and capture attention.</h3>
+              <p><strong>You have 60 seconds.</strong></p>
+              <p>Introduce yourself - but do not list facts. <strong>Make me interested.</strong></p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">You must include</div>
+              <ul>
+                <li>Who you are</li>
+                <li>What you study or work on</li>
+                <li>Why it matters - why should I care?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 1 - 20 min</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Process</div>
+              <div class="process-list">
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">1</div>
+                  <div>Round 1 - pairs, 1 minute each</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">2</div>
+                  <div>Feedback - 2 minutes</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">3</div>
+                  <div>Round 2 - improve</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">4</div>
+                  <div>Feedback, then Round 3 - final version</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Feedback guide</div>
+              <ul>
+                <li>Was it clear?</li>
+                <li>Did I understand what you do?</li>
+                <li>Did I understand why it matters?</li>
+                <li>At what moment did I lose attention?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 1</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Debrief</div>
+            <h2>What usually changes everything</h2>
+          </div>
+          <div class="grid-three">
+            <div class="card fragment fade-up">
+              <h3>Structure beats overload</h3>
+              <p>A clear path matters more than a long list of facts.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>The "why" creates attention</h3>
+              <p>Relevance gives the listener a reason to stay with you.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>Too much information = lost attention</h3>
+              <p>More content does not mean more understanding.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Debrief</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Core Tool</div>
+            <h2>Every explanation needs 3 things</h2>
+          </div>
+          <div class="grid-three">
+            <div class="number-card fragment fade-up">
+              <div class="number-badge">1</div>
+              <h3>What is it?</h3>
+              <p>Name the object clearly.</p>
+            </div>
+            <div class="number-card fragment fade-up">
+              <div class="number-badge">2</div>
+              <h3>How does it work?</h3>
+              <p>Give the listener a simple mechanism.</p>
+            </div>
+            <div class="number-card fragment fade-up">
+              <div class="number-badge">3</div>
+              <h3>Why does it matter?</h3>
+              <p>Show the stake, not just the definition.</p>
+            </div>
+          </div>
+          <div class="rule-banner">
+            <p><strong>Link:</strong> too many ideas = no understanding.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Core tool - 10 min</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Exercise 2</div>
+            <h2>3 sentences only</h2>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Objective</div>
+              <h3>Simplify without losing meaning.</h3>
+              <p>Explain a concept in <strong>3 sentences maximum</strong>.</p>
+              <div class="pill-row" style="margin-top: 16px;">
+                <span class="pill">translation</span>
+                <span class="pill">interpretation</span>
+                <span class="pill">meaning</span>
+                <span class="pill">ambiguity</span>
+                <span class="pill">irony</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Constraints</div>
+              <ul>
+                <li>3 sentences max</li>
+                <li>No jargon</li>
+                <li>Understandable by a non-expert</li>
+                <li>Clear beginning, clear end</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 2 - 20 min</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Process</div>
+              <div class="process-list">
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">1</div>
+                  <div>Round 1 - pairs</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">2</div>
+                  <div>Feedback</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">3</div>
+                  <div>Round 2 - improve</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">4</div>
+                  <div>Harder version: explain it to a 12-year-old</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Debrief</div>
+              <p>What was difficult?</p>
+              <ul>
+                <li>Cut</li>
+                <li>Choose</li>
+                <li>Prioritize</li>
+              </ul>
+              <div class="quote-panel" style="margin-top: 18px;">
+                <p><strong>Clarity = selection.</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 2</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Exercise 3</div>
+            <h2>Add a metaphor</h2>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Objective</div>
+              <h3>Create a mental representation.</h3>
+              <p>Take your explanation. Add <strong>one metaphor</strong> to make it more understandable.</p>
+            </div>
+            <div class="rule-banner">
+              <p><strong>Important rule:</strong> a metaphor must help - not confuse.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 3 - 20 min</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Pair challenge</div>
+              <ul>
+                <li>What is good?</li>
+                <li>What is misleading?</li>
+                <li>Round 2 - improve</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Debrief</div>
+              <ul>
+                <li>Metaphor = bridge</li>
+                <li>It creates a mental image</li>
+                <li>But false simplification is a real danger</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 3</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Exercise 4</div>
+            <h2>Under pressure</h2>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Objective</div>
+              <h3>Get closer to real interpreting work.</h3>
+              <p>I will give you a short explanation.</p>
+              <p>You have <strong>1 minute</strong> to understand it.</p>
+              <p>Then you explain it clearly in <strong>30-45 seconds</strong>.</p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Process</div>
+              <div class="process-list">
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">1</div>
+                  <div>Input from me</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">2</div>
+                  <div>Fast preparation</div>
+                </div>
+                <div class="process-step fragment fade-up">
+                  <div class="step-index">3</div>
+                  <div>Oral restitution</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise 4 - 20 min</div>
+      </section>
+
+      <section class="center">
+        <div class="slide-shell">
+          <div class="grid-two">
+            <div class="card">
+              <div class="card-kicker">Feedback</div>
+              <ul>
+                <li>Did we understand?</li>
+                <li>What was missing?</li>
+                <li>Too much?</li>
+                <li>Too abstract?</li>
+              </ul>
+            </div>
+            <div class="quote-panel">
+              <p class="big-quote"><strong>Understanding must be reconstructed - fast.</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Key message</div>
+      </section>
+
+      <section>
+        <div class="slide-shell">
+          <div class="slide-head">
+            <div class="eyebrow">Body and Voice</div>
+            <h2>Minimal, but useful</h2>
+          </div>
+          <div class="grid-three">
+            <div class="card fragment fade-up">
+              <h3>Slow down</h3>
+              <p>Give your listener time to build the idea.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>Use pauses</h3>
+              <p>Silence gives structure to your message.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>Look at people</h3>
+              <p>Check whether understanding is actually happening.</p>
+            </div>
+          </div>
+          <div class="rule-banner">
+            <p><strong>This supports clarity - it does not replace it.</strong></p>
+          </div>
+        </div>
+        <div class="footer-tag">Body and voice - 5 to 10 min</div>
+      </section>
+
+      <section class="center">
+        <div class="slide-shell">
+          <div class="slide-head" style="justify-items: center;">
+            <div class="eyebrow">Conclusion</div>
+            <h2>Final ideas</h2>
+          </div>
+          <div class="summary-grid">
+            <div class="summary-card fragment fade-up">
+              <p><strong>Clarity is a choice.</strong></p>
+            </div>
+            <div class="summary-card fragment fade-up">
+              <p><strong>Understanding is constructed.</strong></p>
+            </div>
+            <div class="summary-card fragment fade-up">
+              <p><strong>If people do not understand, the message failed.</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tag">Conclusion - 5 min</div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: "c/t",
+      center: true,
+      transition: "slide",
+      backgroundTransition: "fade"
+    });
+  </script>
+</body>
+</html>
