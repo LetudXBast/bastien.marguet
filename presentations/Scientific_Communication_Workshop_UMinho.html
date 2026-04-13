@@ -16,7 +16,6 @@
       --soft-border: #d1d5db;
       --box-bg: rgba(255, 255, 255, 0.94);
       --muted: #6b7280;
-      --font-main: "Aptos", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     }
 
     body {
@@ -24,9 +23,10 @@
     }
 
     .reveal {
-      font-family: var(--font-main);
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: var(--main-text);
       font-size: 30px;
+      position: relative;
     }
 
     .reveal .slides {
@@ -35,7 +35,6 @@
 
     .reveal h1,
     .reveal h2 {
-      font-family: var(--font-main);
       text-transform: none;
       letter-spacing: -0.02em;
       color: #111827;
@@ -46,12 +45,13 @@
       font-size: 1.9em;
       font-weight: 800;
       text-align: center;
-      line-height: 1.12;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.15;
     }
 
     .reveal h2 {
-      font-size: 1.3em;
-      font-weight: 780;
+      font-size: 1.35em;
+      font-weight: 750;
       border-left: 8px solid var(--accent);
       padding-left: 18px;
       margin-bottom: 28px;
@@ -59,7 +59,6 @@
 
     .reveal p,
     .reveal li {
-      font-family: var(--font-main);
       line-height: 1.38;
       color: var(--main-text);
     }
@@ -80,7 +79,6 @@
     }
 
     .reveal .subtitle {
-      font-family: var(--font-main);
       text-align: center;
       color: var(--muted);
       font-size: 0.9em;
@@ -93,6 +91,44 @@
       border-radius: 18px;
       padding: 28px 34px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .reveal .split-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .reveal .embed-card {
+      background: #fbfbfc;
+      border: 1.5px solid var(--soft-border);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .reveal .embed-title {
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      font-size: 0.62em;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .reveal .facebook-embed {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      line-height: 0;
+    }
+
+    .reveal .facebook-embed iframe {
+      display: block;
+      width: 100%;
+      height: 520px;
+      border: 0;
+      background: white;
     }
 
     .reveal .title-slide {
@@ -113,6 +149,24 @@
       text-align: center;
     }
 
+    .reveal .title-card.with-event {
+      max-width: 1080px;
+      padding: 42px 44px;
+    }
+
+    .reveal .title-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 28px;
+      align-items: start;
+      text-align: left;
+    }
+
+    .reveal .title-copy {
+      text-align: center;
+      align-self: center;
+    }
+
     .reveal .title-card .mini-line {
       width: 110px;
       height: 5px;
@@ -122,7 +176,6 @@
     }
 
     .reveal .title-eyebrow {
-      font-family: var(--font-main);
       display: inline-block;
       margin-bottom: 20px;
       color: var(--accent);
@@ -133,7 +186,6 @@
     }
 
     .reveal .title-meta {
-      font-family: var(--font-main);
       margin-top: 18px;
       color: var(--muted);
       font-size: 0.72em;
@@ -146,7 +198,6 @@
     }
 
     .reveal .small-note {
-      font-family: var(--font-main);
       display: block;
       margin-top: 12px;
       color: var(--muted);
@@ -175,7 +226,6 @@
     }
 
     .reveal .footer-tag {
-      font-family: var(--font-main);
       position: absolute;
       bottom: 18px;
       right: 28px;
@@ -189,6 +239,33 @@
       font-size: 0.5em !important;
       color: var(--muted) !important;
     }
+
+    .reveal .deck-signature {
+      position: absolute;
+      left: 28px;
+      bottom: 18px;
+      z-index: 30;
+      font-size: 0.46em;
+      color: rgba(107, 114, 128, 0.78);
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width: 1100px) {
+      .reveal .split-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .reveal .title-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .reveal .facebook-embed iframe {
+        height: 440px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -196,15 +273,34 @@
     <div class="slides">
       <section>
         <div class="title-slide">
-          <div class="title-card">
-            <div class="title-eyebrow">Workshop</div>
-            <h1>Scientific Communication: Principles and Practice</h1>
-            <div class="title-meta">
-              <div><strong>Universidade do Minho, Braga</strong></div>
-              <div>Auditório da ELACH</div>
-              <div>10/04/2026</div>
+          <div class="title-card with-event">
+            <div class="title-layout">
+              <div class="title-copy">
+                <div class="title-eyebrow">Workshop</div>
+                <h1>Scientific Communication: Principles and Practice</h1>
+                <div class="title-meta">
+                  <div><strong>Universidade do Minho, Braga</strong></div>
+                  <div>Auditório da ELACH</div>
+                  <div>10/04/2026</div>
+                </div>
+                <div class="mini-line"></div>
+              </div>
+              <div class="embed-card">
+                <p class="embed-title">Event post</p>
+                <div class="facebook-embed">
+                  <iframe
+                    src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FELACH.UMinho%2Fposts%2Fpfbid02HrJfjtiZi1K97DhobaTz3dqPkuhZvEWY5m51aMAaFRByGveTick321XjB3PVAXefl&show_text=true&width=340"
+                    width="340"
+                    height="520"
+                    style="border:none;overflow:hidden"
+                    scrolling="no"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                  </iframe>
+                </div>
+              </div>
             </div>
-            <div class="mini-line"></div>
           </div>
         </div>
       </section>
@@ -407,7 +503,7 @@
           </ul>
           <span class="small-note">
             Video reference:
-            <a href="https://www.youtube.com/watch?v=8S0FDjFBj8o" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            <a href="https://www.youtube.com/watch?v=8S0FDjFBj8o" target="_blank" rel="noopener noreferrer">How to sound smart in your TEDx Talk | Will Stephen | TEDxNewYork</a>
           </span>
         </div>
         <div class="footer-tag">Final part</div>
@@ -429,6 +525,7 @@
         <div class="footer-tag">Exercise 3</div>
       </section>
     </div>
+    <div class="deck-signature" aria-hidden="true">Bastien Marguet</div>
   </div>
 
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
