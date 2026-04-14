@@ -3,1298 +3,828 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="uIl1gm6lEvPuF1crlqyiuN7xsGx7xSDzLGbgRj04NrQ" />
+  <meta name="google-site-verification" content="uIl1gm6lEvPuF1crlqyiuN7xsGx7xSDzLGbgRj04NrQ">
+  <meta
+    name="description"
+    content="Ressources pédagogiques, publications, cours, supports et interventions de Bastien Marguet.">
 
-  <link rel="canonical" href="https://letudxbast.github.io/bastien.marguet/resources.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Bastien Marguet – Ressources" />
-  <meta property="og:description" content="Supports pédagogiques, cours, publications, vulgarisation et médias." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://letudxbast.github.io/bastien.marguet/resources.html" />
-  <meta property="og:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bastien Marguet – Ressources" />
-  <meta name="twitter:description" content="Supports pédagogiques, cours, publications, vulgarisation et médias." />
-  <meta name="twitter:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg" />
-
-  <title>Bastien Marguet – Ressources</title>
-  <meta name="description" content="Ressources pédagogiques, publications, cours, supports et interventions de Bastien Marguet.">
+  <link rel="canonical" href="https://letudxbast.github.io/bastien.marguet/resources.html">
   <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
 
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260309-1">
-  <style>
-    body.resources-premium {
-      --bg: #f3f6f6;
-      --ink: #1b2f35;
-      --muted: #4d6468;
-      --line: #d2e3e5;
-      --surface: #ffffff;
-      --brand: #0d6e7f;
-      --brand-strong: #0b5663;
-      --brand-pale: #e6f4f5;
-      background:
-        radial-gradient(1000px 520px at -8% -10%, #e4f2f3 0, transparent 70%),
-        radial-gradient(900px 460px at 108% 2%, #d9f1f2 0, transparent 68%),
-        var(--bg);
-      color: var(--ink);
-      font-family: "Manrope", sans-serif;
-    }
-
-    .resources-premium h1,
-    .resources-premium h2,
-    .resources-premium h3 {
-      font-family: "Fraunces", serif;
-      letter-spacing: -0.01em;
-      color: #10262a;
-      background: none;
-      -webkit-background-clip: initial;
-      -webkit-text-fill-color: currentColor;
-    }
-
-    .resources-premium h2 { color: var(--brand); }
-
-    .resources-premium .container {
-      width: min(1180px, 92%);
-    }
-
-    .resources-premium .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(243, 246, 246, 0.82);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(20, 51, 57, 0.1);
-    }
-
-    .resources-premium .site-header nav {
-      overflow: visible;
-    }
-
-    .resources-premium .site-header nav > ul {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(20, 51, 57, 0.12);
-      border-radius: 999px;
-      padding: 0.35rem 0.6rem;
-      gap: 0.22rem;
-      box-shadow: 0 8px 22px rgba(8, 22, 40, 0.08);
-      overflow: visible;
-    }
-
-    .resources-premium .site-header nav > ul > li > a {
-      border-radius: 999px;
-      padding: 0.5rem 0.8rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .resources-premium .site-header nav > ul > li > a:hover {
-      background: #e7f5f4;
-      color: #0d5b67;
-      text-decoration: none;
-    }
-
-    .resources-premium .site-header .submenu {
-      background: #ffffff;
-      border: 1px solid #d1e5e8;
-      border-radius: 14px;
-      padding: 0.3rem;
-      min-width: 260px;
-      max-height: min(70vh, 420px);
-      overflow-y: auto;
-      box-shadow: 0 14px 30px rgba(11, 28, 47, 0.16);
-    }
-
-    .resources-premium .site-header .submenu a {
-      color: #17444a;
-      font-weight: 600;
-      border-radius: 10px;
-      padding: 0.48rem 0.7rem;
-    }
-
-    .resources-premium .site-header .submenu a:hover {
-      background: #e6f5f3;
-      color: #0f6b72;
-      text-decoration: none;
-    }
-
-    .resources-premium .page-hero {
-      margin-top: 1.4rem;
-      padding: clamp(1.1rem, 2vw, 1.8rem);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: linear-gradient(140deg, #ffffff 0%, #f6fbfb 100%);
-      box-shadow: 0 18px 38px rgba(11, 29, 35, 0.09);
-    }
-
-    .resources-premium .page-hero-lead,
-    .resources-premium .section-head p,
-    .resources-premium p,
-    .resources-premium li {
-      color: #3d595f;
-    }
-
-    .resources-premium .toc-chips .chip {
-      background: #edf7f6;
-      border: 1px solid #c6e1e3;
-      color: #155a63;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .resources-premium .toc-chips .chip:hover {
-      background: #dff1ef;
-      color: #0d5c65;
-      text-decoration: none;
-    }
-
-    .resources-premium .teaching-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin: 0.2rem 0 1rem;
-    }
-
-    .resources-premium .teaching-chip {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.38rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid #bfdde0;
-      background: #ecf7f7;
-      color: #125a63;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .resources-premium .teaching-chip:hover {
-      background: #dff1ef;
-      color: #0d5c65;
-      text-decoration: none;
-    }
-
-    .resources-premium .teaching-group {
-      margin-top: 0.9rem;
-      padding: 0.9rem;
-      border: 1px solid #d4e7e8;
-      border-radius: 14px;
-      background: #fbfdfd;
-    }
-
-    .resources-premium .teaching-group-title {
-      margin: 0 0 0.6rem;
-      font-size: clamp(1.06rem, 1.4vw, 1.24rem);
-      color: #0f616b;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .resources-premium .teaching-group-title::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #46a7b3;
-      box-shadow: 0 0 0 4px rgba(70, 167, 179, 0.16);
-      flex: 0 0 auto;
-    }
-
-    .resources-premium .teaching-group .courses {
-      margin: 0;
-    }
-
-    .resources-premium .publication-item--module {
-      display: block;
-      padding: 0.95rem 1rem;
-    }
-
-    .resources-premium .module-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-rows: auto auto;
-      gap: 0.35rem 0.6rem;
-      align-items: center;
-    }
-
-    .resources-premium .module-head h3 {
-      grid-column: 1;
-      grid-row: 1;
-      margin-bottom: 0.35rem;
-    }
-
-    .resources-premium .module-head p {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      margin-bottom: 0.45rem;
-    }
-
-    .resources-premium .module-poly-link {
-      grid-column: 2;
-      grid-row: 1;
-      white-space: nowrap;
-    }
-
-    .resources-premium .module-evals h4 {
-      margin: 0 0 0.45rem;
-      font-size: 1rem;
-      color: #16545c;
-      font-family: "Manrope", sans-serif;
-      font-weight: 700;
-    }
-
-    .resources-premium .module-evals-toggle {
-      margin-top: 0.25rem;
-      border: 1px solid #cfe3e5;
-      border-radius: 10px;
-      background: #fbfefe;
-      padding: 0.3rem 0.55rem;
-    }
-
-    .resources-premium .module-evals-toggle > summary {
-      cursor: pointer;
-      list-style: none;
-      font-weight: 700;
-      color: #0f616b;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .resources-premium .module-evals-toggle > summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .resources-premium .module-evals-toggle > summary::before {
-      content: "▸";
-      font-size: 0.9rem;
-      line-height: 1;
-      transform: translateY(-1px);
-      color: #2f727a;
-      transition: transform 0.18s ease;
-    }
-
-    .resources-premium .module-evals-toggle[open] > summary::before {
-      transform: rotate(90deg) translateY(0);
-    }
-
-    .resources-premium .module-evals-content {
-      margin-top: 0.55rem;
-    }
-
-    .resources-premium .eval-year {
-      border: 1px solid #d4e7e8;
-      border-radius: 10px;
-      background: #fcfefe;
-      padding: 0.35rem 0.55rem;
-      margin-top: 0.45rem;
-    }
-
-    .resources-premium .eval-year summary {
-      cursor: pointer;
-      list-style: none;
-      font-weight: 700;
-      color: #0f616b;
-    }
-
-    .resources-premium .eval-year summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .resources-premium .eval-grid {
-      margin-top: 0.5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.65rem;
-    }
-
-    .resources-premium .eval-type h5 {
-      margin: 0 0 0.35rem;
-      font-size: 0.9rem;
-      color: #3f595f;
-      font-family: "Manrope", sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-
-    .resources-premium .eval-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .resources-premium .eval-link {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.28rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid #bfdde0;
-      background: #eef8f8;
-      color: #125a63;
-      font-size: 0.86rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .resources-premium .eval-link:hover {
-      background: #dff1ef;
-      color: #0d5c65;
-      text-decoration: none;
-    }
-
-    .resources-premium .eval-link--placeholder {
-      border-style: dashed;
-      opacity: 0.85;
-      cursor: default;
-    }
-
-    .resources-premium section.container:not(.page-hero) {
-      margin-top: 1.35rem;
-      padding: clamp(1.05rem, 1.9vw, 1.55rem);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 12px 24px rgba(13, 26, 41, 0.06);
-    }
-
-    .resources-premium a {
-      color: #0f6b72;
-    }
-
-    .resources-premium a:hover {
-      color: #0c565d;
-    }
-
-    .resources-premium .highlight,
-    .resources-premium .link-accent {
-      color: var(--brand);
-    }
-
-    .resources-premium .cv-item,
-    .resources-premium .publication-item,
-    .resources-premium .research-item,
-    .resources-premium .media-card {
-      border: 1px solid #d5e8e9;
-      border-radius: 14px;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fcfc 100%);
-      box-shadow: 0 8px 18px rgba(11, 26, 44, 0.06);
-    }
-
-    .resources-premium .publication-item h3,
-    .resources-premium .cv-item strong,
-    .resources-premium .research-item strong {
-      color: #1a4046;
-    }
-
-    .resources-premium .btn {
-      border-radius: 12px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      appearance: none;
-      -webkit-appearance: none;
-      transition: transform 0.18s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
-    }
-
-    .resources-premium .btn-primary,
-    .resources-premium .btn-secondary {
-      background: linear-gradient(135deg, var(--brand) 0%, #1c8aa0 100%);
-      border: 1px solid transparent;
-      color: #fff;
-      box-shadow: 0 10px 18px rgba(15, 94, 109, 0.22);
-    }
-
-    .resources-premium .btn-primary:hover,
-    .resources-premium .btn-secondary:hover,
-    .resources-premium .btn-primary:focus-visible,
-    .resources-premium .btn-secondary:focus-visible {
-      background: linear-gradient(135deg, var(--brand-strong) 0%, #16798d 100%);
-      transform: translateY(-1px);
-      box-shadow: 0 14px 24px rgba(11, 77, 90, 0.28);
-      outline: none;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .resources-premium .btn-primary:active,
-    .resources-premium .btn-secondary:active {
-      transform: translateY(0);
-      box-shadow: 0 7px 14px rgba(11, 77, 90, 0.2);
-    }
-
-    .resources-premium .btn-group.btn-group--english {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.55rem;
-    }
-
-    .resources-premium .btn-group.btn-group--english .btn {
-      width: fit-content;
-    }
-
-    .resources-premium a.btn,
-    .resources-premium a.btn:visited,
-    .resources-premium a.btn:hover,
-    .resources-premium a.btn:active {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .resources-premium .section-sub {
-      margin-top: 1.2rem;
-      padding: 1rem;
-      border: 1px solid #d8eaea;
-      border-radius: 14px;
-      background: #fbfdfd;
-    }
-
-    .resources-premium .intervention-head {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      flex-wrap: wrap;
-    }
-
-    .resources-premium .intervention-link {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.14rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid #bfdde0;
-      background: #eef8f8;
-      color: #125a63;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .resources-premium .intervention-link:hover {
-      background: #dff1ef;
-      color: #0d5c65;
-      text-decoration: none;
-    }
-
-    .resources-premium .intervention-link.is-secondary {
-      background: #f5f8f8;
-      border-color: #d7e5e7;
-      color: #5f7478;
-      font-weight: 600;
-    }
-
-    .resources-premium .intervention-link.is-secondary:hover {
-      background: #edf3f4;
-      color: #3f5b61;
-    }
-
-    .resources-premium .video-container.has-video {
-      border: 1px solid #d6e8ea;
-      box-shadow: 0 8px 20px rgba(13, 37, 45, 0.08);
-    }
-
-    .resources-premium .media-card figcaption {
-      color: #2d4a50;
-    }
-
-    .resources-premium #medias .media-frame--player {
-      height: auto;
-      aspect-ratio: 16 / 9;
-    }
-
-    .resources-premium #recherches .modern-research {
-      list-style: none;
-      margin: 0.9rem 0 0;
-      padding: 0;
-      display: grid;
-      gap: 0.85rem;
-    }
-
-    .resources-premium #recherches .research-item {
-      display: grid;
-      grid-template-columns: minmax(145px, 210px) 1fr;
-      align-items: start;
-      gap: 0.8rem;
-      padding: 0.7rem 0.85rem;
-      border: 1px solid #cfe2e4;
-      border-left: 3px solid #63aeb8;
-      border-radius: 12px;
-      background: #f9fcfc;
-      box-shadow: none;
-      margin: 0;
-    }
-
-    .resources-premium #recherches .highlight {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 0.28rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid #b9dce0;
-      background: #e9f6f6;
-      color: #0d6e7f;
-      font-weight: 700;
-      line-height: 1.1;
-      opacity: 1;
-    }
-
-    .resources-premium #recherches .research-item em {
-      color: #4d666b;
-      font-size: 1rem;
-    }
-
-    .resources-premium #recherches .research-item strong {
-      color: #1a4046;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .resources-premium .site-footer {
-      margin-top: 1.4rem;
-      border: 1px solid #cfe4e6;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    @media (max-width: 960px) {
-      .resources-premium .site-header nav > ul {
-        border-radius: 16px;
-        padding: 0.45rem;
-      }
-
-      .resources-premium .site-header .submenu {
-        min-width: 220px;
-      }
-
-      .resources-premium .teaching-group {
-        padding: 0.75rem;
-      }
-
-      .resources-premium #recherches .research-item {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-      }
-    }
-  </style>
+  <meta property="og:title" content="Bastien Marguet - Ressources">
+  <meta
+    property="og:description"
+    content="Supports pédagogiques, cours, publications, vulgarisation et médias.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://letudxbast.github.io/bastien.marguet/resources.html">
+  <meta property="og:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bastien Marguet - Ressources">
+  <meta
+    name="twitter:description"
+    content="Supports pédagogiques, cours, publications, vulgarisation et médias.">
+  <meta name="twitter:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg">
+
+  <title>Bastien Marguet - Ressources</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260413-1">
 </head>
-
-<body class="resources-premium">
+<body class="site-page page-resources">
   <header class="site-header">
-    <div class="container header-inner">
-      <!-- <a href="index.html#intro" class="logo" aria-label="Aller à l'accueil">
-        <img src="img/logo.svg" alt="Logo Bastien Marguet" class="logo-img">
-      </a> -->
-      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
-      <nav>
-        <ul>
+    <div class="site-width header-inner">
+      <a href="index.html#intro" class="brand" aria-label="Retour à l'accueil">
+        <span class="brand-mark" aria-hidden="true">BM</span>
+        <span class="brand-copy">
+          <strong>Bastien Marguet</strong>
+          <span>Sciences • pédagogie • IA</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav-list">
+        Menu
+      </button>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul id="site-nav-list">
           <li><a href="index.html#intro">Accueil</a></li>
           <li><a href="index.html#about">À propos</a></li>
           <li><a href="index.html#ia">IA</a></li>
-          <li class="dropdown">
-            <a href="resources.html">Ressources <span class="arrow">▼</span></a>
-            <ul class="submenu">
-              <li><a href="resources.html#cv">CV</a></li>
-              <li><a href="resources.html#enseignements">Enseignements</a></li>
-              <li><a href="resources.html#responsabilites">Responsabilités</a></li>
-              <li><a href="resources.html#recherches">Recherches</a></li>
-              <li><a href="resources.html#publications">Publications</a></li>
-              <li><a href="resources.html#interventions">Interventions</a></li>
-              <li><a href="resources.html#vulgarisation">Vulgarisation</a></li>
-              <li><a href="resources.html#medias">Médias</a></li>
-            </ul>
-          </li>
+          <li><a href="#top">Ressources</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <!-- PAGE HERO -->
-  <section class="container page-hero" id="top">
-    <div class="page-hero-inner">
-      <h1>Ressources</h1>
+
+  <main class="page-shell">
+    <section id="top" class="hero">
+      <p class="eyebrow">Bibliothèque personnelle</p>
+      <h1 class="hero-title">Ressources</h1>
       <p class="page-hero-lead">
-        Supports de cours, publications, contenus de vulgarisation et médias.
+        Cours, annales, publications, interventions, contenus de vulgarisation et archives média réunis dans une
+        structure plus claire, plus ample et pensée pour une consultation rapide.
       </p>
 
-      <div class="toc-chips" aria-label="Accès rapide aux sections">
-        <a class="chip" href="#cv">CV</a>
-        <a class="chip" href="#enseignements">Enseignements</a>
-        <a class="chip" href="#responsabilites">Responsabilités</a>
-        <a class="chip" href="#recherches">Recherches</a>
-        <a class="chip" href="#publications">Publications</a>
-        <a class="chip" href="#interventions">Interventions</a>
-        <a class="chip" href="#vulgarisation">Vulgarisation</a>
-        <a class="chip" href="#medias">Médias</a>
-      </div>
-    </div>
-  </section>
+      <aside class="hero-side-note" aria-label="Repère rapide">
+        <span class="hero-side-kicker">Repère rapide</span>
+        <p>Navigation directe: enseignements, publications, recherche, interventions, médias.</p>
+      </aside>
+    </section>
 
-  <!-- CV -->
-  <section id="cv" class="container">
-    <div class="section-head">
-      <h2>Mon CV</h2>
-      <p>Parcours académique.</p>
-    </div>
-
-    <ul class="cv-list">
-      <li class="cv-item">
-        <strong>2019 – 2022</strong> :
-        <em>Doctorat en physique statistique</em><br>
-        Intitulé : <em>Interfaces confinées hors-équilibre</em><br>
-        Institut Lumière Matière — Université Claude Bernard Lyon 1, Villeurbanne (69)
-      </li>
-
-      <li class="cv-item">
-        <strong>2018 – 2019</strong> :
-        <em>Master 2 recherche – Physique, concepts et applications</em><br>
-        École Normale Supérieure de Lyon, Lyon (69)
-      </li>
-
-      <li class="cv-item">
-        <strong>2016 – 2017</strong> :
-        <em>Master 2 enseignement – Agrégation de Physique-Chimie</em><br>
-        École Normale Supérieure de Paris-Saclay, Cachan (94)
-      </li>
-
-      <li class="cv-item">
-        <strong>2014 – 2016</strong> :
-        <em>Licence 3 & Master 1 – Parcours PHYTEM</em><br>
-        École Normale Supérieure de Paris-Saclay, Cachan (94)
-      </li>
-
-      <li class="cv-item">
-        <strong>2012 – 2014</strong> :
-        <em>CPGE – Physique, Sciences Industrielles (PSI)</em><br>
-        Lycée Condorcet, Belfort (90)
-      </li>
-    </ul>
-  </section>
-
-  <!-- Enseignements -->
-  <section id="enseignements" class="container">
-    <div class="section-head">
-      <h2>Enseignements</h2>
-      <p>Exemples de cours et supports.</p>
-    </div>
-
-    <div class="teaching-nav" aria-label="Niveaux de formation">
-      <a class="teaching-chip" href="#enseignements-but1">BUT1</a>
-      <a class="teaching-chip" href="#enseignements-but2">BUT2</a>
-      <a class="teaching-chip" href="#enseignements-but3">BUT3</a>
-      <a class="teaching-chip" href="#enseignements-lp-cesp">LP CESP</a>
-    </div>
-
-    <div id="enseignements-but1" class="teaching-group">
-      <h3 class="teaching-group-title">BUT1</h3>
-      <div class="courses">
-        <article class="publication-item publication-item--module" id="ue-but1-maths1">
-          <div class="module-head">
-            <h3>Outils mathématiques : niveau 1 (BUT1 GCGP)</h3>
-            <a href="pdfs/Cours/PolyMathsBUT-S1.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-            <p>Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d’erreur, trigonométrie. 14 × 2 h</p>
+    <div class="resource-layout">
+      <aside class="resource-sidebar" aria-label="Sommaire des ressources">
+        <div class="sidebar-card">
+          <p class="section-kicker">Sommaire</p>
+          <p>Navigation rapide entre les grandes sections du site.</p>
+          <div class="toc-chips">
+            <a class="chip" href="#enseignements">Enseignements</a>
+            <a class="chip" href="#interventions">Interventions</a>
+            <a class="chip" href="#publications">Publications</a>
+            <a class="chip" href="#recherches">Recherches</a>
+            <a class="chip" href="#vulgarisation">Vulgarisation</a>
+            <a class="chip" href="#cv">CV</a>
+            <a class="chip" href="#responsabilites">Responsabilités</a>
+            <a class="chip" href="#medias">Médias</a>
           </div>
-
-          <details class="module-evals-toggle">
-            <summary>Annales et sujets</summary>
-            <div class="module-evals-content">
-              <h4>Évaluations par année</h4>
-
-              <details class="eval-year" open>
-              <summary>2025-2026</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Interros (30 min)</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
-                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
-                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
-                    <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
-                  </div>
-                </div>
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
-                  </div>
-                </div>
-              </div>
-              </details>
-
-              <details class="eval-year">
-              <summary>2024-2025</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Interros (30 min)</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
-                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
-                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
-                    <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
-                  </div>
-                </div>
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
-                  </div>
-                </div>
-              </div>
-              </details>
-            </div>
-          </details>
-        </article>
-
-        <article class="publication-item publication-item--module" id="ue-but1-maths2">
-          <div class="module-head">
-            <h3>Outils mathématiques : niveau 2 (BUT1 GCGP)</h3>
-            <a href="pdfs/Cours/PolyMathsBUT-S2.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-            <p>Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h</p>
-          </div>
-
-          <details class="module-evals-toggle">
-            <summary>Annales et sujets</summary>
-            <div class="module-evals-content">
-              <h4>Évaluations par année</h4>
-
-              <details class="eval-year" open>
-              <summary>2025-2026</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Interros (30 min)</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
-                    <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
-                  </div>
-                </div>
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <span class="eval-link eval-link--placeholder">Sujet final</span>
-                  </div>
-                </div>
-              </div>
-              </details>
-
-              <details class="eval-year">
-              <summary>2024-2025</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Interros (30 min)</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
-                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
-                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 7</a>
-                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 8</a>
-                    <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 9</a>
-                  </div>
-                </div>
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
-                  </div>
-                </div>
-              </div>
-              </details>
-            </div>
-          </details>
-        </article>
-
-        <article class="publication-item">
-          <h3>TP Outils Informatiques et Scientifiques (BUT1 GCGP)</h3>
-          <p>Utilisation d’Excel. 5 × 4 h</p>
-          <a href="pdfs/Cours/OIS_Examen_2024.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-        </article>
-
-        <article class="publication-item">
-          <h3>Interventions sur d’autres TP (BUT1 GCGP)</h3>
-          <p>Transferts thermiques, électricité, mécanique des fluides. 5 × 4 h / groupe</p>
-        </article>
-      </div>
-    </div>
-
-    <div id="enseignements-but2" class="teaching-group">
-      <h3 class="teaching-group-title">BUT2</h3>
-      <div class="courses">
-        <article class="publication-item publication-item--module" id="ue-but2-maths3">
-          <div class="module-head">
-            <h3>Outils mathématiques : niveau 3 (BUT2 GCGP – Parcours CPIT et CPOP)</h3>
-            <a href="pdfs/Cours/Test_Poly_Maths-S3.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-            <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
-          </div>
-
-          <details class="module-evals-toggle">
-            <summary>Annales et sujets</summary>
-            <div class="module-evals-content">
-              <h4>Évaluations par année</h4>
-
-              <details class="eval-year" open>
-              <summary>2025-2026</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
-                  </div>
-                </div>
-                <div class="eval-type">
-                  <h5>Exam blanc</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
-                    <a href="pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
-                  </div>
-                </div>
-              </div>
-              </details>
-            </div>
-          </details>
-        </article>
-
-        <article class="publication-item publication-item--module" id="ue-but2-statistiques">
-          <div class="module-head">
-            <h3>Statistiques (BUT2 GCGP – Parcours CPIT)</h3>
-            <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
-          </div>
-
-          <details class="module-evals-toggle">
-            <summary>Annales et sujets</summary>
-            <div class="module-evals-content">
-              <h4>Évaluations par année</h4>
-
-              <details class="eval-year" open>
-              <summary>2025-2026</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
-                  </div>
-                </div>
-                <div class="eval-type">
-                  <h5>Exam blanc</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/Statistiques/Examen blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
-                    <a href="pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
-                  </div>
-                </div>
-              </div>
-              </details>
-
-              <details class="eval-year">
-              <summary>2024-2025</summary>
-              <div class="eval-grid">
-                <div class="eval-type">
-                  <h5>Examen final</h5>
-                  <div class="eval-links">
-                    <a href="pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
-                  </div>
-                </div>
-              </div>
-              </details>
-            </div>
-          </details>
-        </article>
-
-        <article class="publication-item">
-          <h3>Mathématiques pour les systèmes complexes (BUT2 GCGP – Parcours CPOP)</h3>
-          <p>Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h</p>
-          <a href="pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-        </article>
-
-        <article class="publication-item publication-item--module" id="ue-but2-plans-experiences">
-          <div class="module-head">
-            <h3>Plans d’expériences (BUT2 GCGP – Parcours CPIT)</h3>
-            <a href="pdfs/Cours/Cours_plan_d_expériences.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-            <p>Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h</p>
-          </div>
-
-          <details class="module-evals-toggle">
-            <summary>Annales et sujets</summary>
-            <div class="module-evals-content">
-              <h4>DS final par année</h4>
-
-              <div class="eval-links">
-                <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2026</a>
-                <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2025</a>
-                <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2024</a>
-              </div>
-            </div>
-          </details>
-        </article>
-      </div>
-    </div>
-
-    <div id="enseignements-but3" class="teaching-group">
-      <h3 class="teaching-group-title">BUT3</h3>
-      <div class="courses">
-        <article class="publication-item">
-          <h3>Anglais technique et professionnel (BUT3 GCGP – Parcours CPIT et CPOP)</h3>
-          <p>Certification TOEIC, soutenance de stage, synthèse d’article, présentation scientifique, vulgarisation. 8 × 2 h</p>
-          <div class="btn-group btn-group--english">
-            <a href="presentations/describing-graphs-scientific-english.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">D&#233;crire un graphique</a>
-            <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Soutenance de stage</a>
-            <a href="presentations/presenter-article-scientifique.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Présenter un article scientifique</a>
-          </div>
-        </article>
-
-        <article class="publication-item">
-          <h3>Projet Professionnel et Personnel (BUT3 GCGP – Parcours CPIT)</h3>
-          <p>Ateliers Fête de la science, préparation au concours d’éloquence. 10 × 2 h</p>
-          <div class="btn-group">
-            <a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FdS</a>
-            <a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Éloquence</a>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <div id="enseignements-lp-cesp" class="teaching-group">
-      <h3 class="teaching-group-title">LP CESP</h3>
-      <div class="courses">
-        <article class="publication-item">
-          <h3>Automatisme, Systèmes asservis</h3>
-        </article>
-
-        <article class="publication-item">
-          <h3>Régulation</h3>
-        </article>
-
-        <article class="publication-item">
-          <h3>Caractéristiques des capteurs</h3>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Responsabilités -->
-  <section id="responsabilites" class="container">
-    <div class="section-head">
-      <h2>Responsabilités</h2>
-      <p>Coordination, pilotage de formations et missions nationales.</p>
-    </div>
-
-    <ul class="list-clean">
-
-      <!-- Ambassadeur du doctorat -->
-      <li>
-        <strong>Ambassadeur du doctorat – Région AURA</strong><br>
-        <a class="link-accent" 
-          href="https://www.enseignementsup-recherche.gouv.fr/fr"
-          target="_blank" rel="noopener noreferrer">
-          Ministère de l’Enseignement Supérieur, de la Recherche et de l'Espace (MESRE)
-        </a><br>
-        2025 – présent
-      </li>
-
-      <!-- Responsable LP CESP -->
-      <li>
-        <strong>Responsable Licence Professionnelle CESP</strong>
-        (Chargé de projet Électro-Hydro-Mécanique pour systèmes de pompage)<br>
-        <a class="link-accent" href="http://iut.univ-lyon1.fr/lpcesp" target="_blank" rel="noopener noreferrer">IUT GCGP, Villeurbanne</a>
-        •
-        <a class="link-accent" href="https://vienne.educagri.fr/licence-pro-cesp/" target="_blank" rel="noopener noreferrer">Lycée Agrotech, Vienne</a>
-        •
-        <a class="link-accent" href="https://galilee.ent.auvergnerhonealpes.fr/formations-a-galilee/apres-le-bac/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp-/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp--650.htm"
-          target="_blank" rel="noopener noreferrer">
-          Lycée Galilée, Vienne
-        </a><br>
-        2023 – présent
-      </li>
-
-    </ul>
-  </section>
-
-
-  <section id="recherches" class="container">
-    <div class="section-head">
-      <h2>Recherches</h2>
-      <p>Travaux en physique statistique, systèmes hors-équilibre et dynamique d’interfaces.</p>
-    </div>
-
-    <ul class="research-list modern-research">
-
-      <li class="research-item">
-        <span class="highlight">2019 – 2022 (3 ans)</span>
-        <div>
-          <em>Doctorat – Institut Lumière Matière (ILM), Université Lyon 1</em><br>
-          <strong>Interfaces confinées hors équilibre :
-          modélisation, dynamique et phénomènes collectifs</strong>.
         </div>
-      </li>
+      </aside>
 
-      <li class="research-item">
-        <span class="highlight">2019 (4 mois)</span>
-        <div>
-          <em>Stage M2 – LPMMC & LiPhy, Université Grenoble Alpes</em><br>
-          <strong>Étude des (super)symétries dans la
-          dynamique d’interfaces stochastiques</strong>.
-        </div>
-      </li>
+      <div class="resource-sections">
+        <section id="cv" class="resource-section">
+          <div class="section-head">
+            <h2>Mon CV</h2>
+            <p>Parcours académique.</p>
+          </div>
 
-      <li class="research-item">
-        <span class="highlight">2017 – 2018 (10 mois)</span>
-        <div>
-          <em>Assistant de recherche – Institute for Molecular Science (IMS), Okazaki, Japon</em><br>
-          <strong>Transport électronique dans un cristal de Rydberg ultrafroid corrélé</strong>.
-        </div>
-      </li>
+          <ul class="cv-list">
+            <li class="cv-item">
+              <strong>2019 - 2022</strong> :
+              <em>Doctorat en physique statistique</em><br>
+              Intitulé : <em>Interfaces confinées hors-équilibre</em><br>
+              <a href="https://ilm.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Institut Lumière Matière</a> - <a href="https://www.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Université Claude Bernard Lyon 1</a>, Villeurbanne (69)
+            </li>
 
-      <li class="research-item">
-        <span class="highlight">2016 (4 mois)</span>
-        <div>
-          <em>Stage M1 – Cornell University, Ithaca (NY, USA)</em><br>
-          <strong>Dynamique d’imbibition dans des milieux nanoporeux</strong>.
-        </div>
-      </li>
+            <li class="cv-item">
+              <strong>2018 - 2019</strong> :
+              <em>Master 2 recherche - Physique, concepts et applications</em><br>
+              <a href="https://www.ens-lyon.fr" target="_blank" rel="noopener noreferrer">École Normale Supérieure de Lyon</a>, Lyon (69)
+            </li>
 
-    </ul>
-  </section>
+            <li class="cv-item">
+              <strong>2016 - 2017</strong> :
+              <em>Master 2 enseignement - Agrégation de Physique-Chimie</em><br>
+              <a href="https://www.ens-paris-saclay.fr" target="_blank" rel="noopener noreferrer">École Normale Supérieure de Paris-Saclay</a>, Cachan (94)
+            </li>
 
+            <li class="cv-item">
+              <strong>2014 - 2016</strong> :
+              <em>Licence 3 & Master 1 - Parcours PHYTEM</em><br>
+              <a href="https://www.ens-paris-saclay.fr" target="_blank" rel="noopener noreferrer">École Normale Supérieure de Paris-Saclay</a>, Cachan (94)
+            </li>
 
-  <!-- Publications -->
-  <section id="publications" class="container">
-    <div class="section-head">
-      <h2>Publications</h2>
-      <p>Articles, manuscrit, communications.</p>
-    </div>
+            <li class="cv-item">
+              <strong>2012 - 2014</strong> :
+              <em>CPGE - Physique, Sciences Industrielles (PSI)</em><br>
+              <a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_Condorcet_(Belfort)" target="_blank" rel="noopener noreferrer">Lycée Condorcet</a>, Belfort (90)
+            </li>
+          </ul>
+        </section>
 
-    <article class="publication-item">
-      <h3>Collisions et confinement des interfaces en croissance cristalline</h3>
-      <p>B. Marguet, <em>Manuscrit de thèse</em>, 2022</p>
-      <a href="pdfs/Thesis_Marguet_Bastien.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-    </article>
+        <section id="enseignements" class="resource-section">
+          <div class="section-head">
+            <h2>Enseignements</h2>
+            <p>Exemples de cours, polys, supports et sujets, structurés par niveau pour garder une consultation claire même lorsque le volume augmente.</p>
+          </div>
 
-    <article class="publication-item">
-      <h3>Interface collisions with diffusive mass transport</h3>
-      <p>B. Marguet, FDAA Reis, O. Pierre-Louis — <em>Physical Review E</em>, 2022</p>
-      <a href="pdfs/interface_collisions.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-    </article>
+          <div class="teaching-toolbar">
+            <div class="teaching-nav" aria-label="Niveaux de formation">
+              <a class="teaching-chip" href="#enseignements-but1">BUT1</a>
+              <a class="teaching-chip" href="#enseignements-but2">BUT2</a>
+              <a class="teaching-chip" href="#enseignements-but3">BUT3</a>
+              <a class="teaching-chip" href="#enseignements-lp-cesp">LP CESP</a>
+            </div>
 
-    <article class="publication-item">
-      <h3>Formation of smoother grain boundaries in 2D materials…</h3>
-      <p>FDAA Reis, B. Marguet, O. Pierre-Louis — <em>2D Materials</em>, 2022</p>
-      <a href="pdfs/grain_boundaries.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-    </article>
+            <div class="teaching-actions" aria-label="Actions sur les catégories d'enseignement">
+              <button type="button" class="teaching-action" data-teaching-expand>Tout déplier</button>
+              <button type="button" class="teaching-action" data-teaching-collapse>Tout replier</button>
+            </div>
+          </div>
 
-    <article class="publication-item">
-      <h3>Supersymmetries in nonequilibrium Langevin dynamics</h3>
-      <p>B. Marguet, E. Agoritsas, L. Canet, V. Lecomte — <em>Physical Review E</em>, 2021</p>
-      <a href="pdfs/supersymmetries.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-    </article>
+          <details id="enseignements-but1" class="teaching-group" data-teaching-group>
+            <summary class="teaching-group-summary">
+              <span class="teaching-group-heading">
+                <span class="teaching-group-title">BUT1</span>
+                <span class="teaching-group-count" data-teaching-count></span>
+              </span>
+              <span class="teaching-group-note">Fondamentaux en mathématiques, outils scientifiques et premiers TP d'appui.</span>
+              <span class="teaching-group-caret" aria-hidden="true"></span>
+            </summary>
 
-    <article class="publication-item">
-      <h3>Imbibition triggered by capillary condensation in nanopores</h3>
-      <p>O. Vincent, B. Marguet, A.D. Stroock — <em>Langmuir</em>, 2017</p>
-      <a href="pdfs/imbibition.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-    </article>
-  </section>
+            <div class="teaching-group-panel">
+              <div class="courses">
+              <article class="publication-item publication-item--module" id="ue-but1-maths1">
+                <div class="module-head">
+                  <h3>Outils mathématiques : niveau 1 (BUT1 GCGP)</h3>
+                  <a href="pdfs/Cours/PolyMathsBUT-S1.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+                  <p>Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d'erreur, trigonométrie. 14 × 2 h</p>
+                </div>
 
-  <!-- Interventions -->
-  <section id="interventions" class="container">
-    <div class="section-head">
-      <h2>Interventions</h2>
-      <p>Ateliers, conférences, séminaires.</p>
-    </div>
-    <ul class="list-clean">
-      <li>
-        <strong>Atelier « Apprendre à prompter efficacement afin de créer des contenus pédagogiques pertinents »</strong>
-        — IUT Lyon 1, 13/05/2025
-      </li>
-      <li>
-        <strong>Atelier « Méthodologie de l’apprentissage : utiliser l’IA pour s’autoévaluer »</strong>
-        — IUT Lyon 1, 16–17/10/2025
-      </li>
-      <li>
-        <span class="intervention-head">
-          <strong>Atelier « IA, cognition et apprentissage »</strong>
-          <span>— IUT Lyon 1, 04/11/2025</span>
-          <a href="presentations/your-brain-on-chatgpt.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-        </span>
-      </li>
-      <li>
-        <span class="intervention-head">
-          <strong>Workshop « Scientific Communication: Principles and Practice »</strong>
-          <span>— Universidade do Minho, 11/04/2026</span>
-          <a href="presentations/Scientific_Communication_Workshop_UMinho.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-          <a href="https://www.instagram.com/p/DW7d-zciP72/" class="intervention-link is-secondary" target="_blank" rel="noopener noreferrer">annonce</a>
-        </span>
-      </li>
-      <li>
-        <span class="intervention-head">
-          <strong>Workshop « Professional Passport: CV, Interviews and Global Networking »</strong>
-          <span>— Universidade do Minho, 14/04/2026</span>
-          <a href="presentations/Professional_Passport_Workshop.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-        </span>
-      </li>
-    </ul>
-  </section>
+                <details class="module-evals-toggle">
+                  <summary>Annales et sujets</summary>
+                  <div class="module-evals-content">
+                    <h4>Évaluations par année</h4>
 
-  <!-- Vulgarisation -->
-  <section id="vulgarisation" class="container">
-    <div class="section-head">
-      <h2>Vulgarisation</h2>
-      <p>Vidéos, outils interactifs, simulateurs.</p>
-    </div>
+                    <details class="eval-year" open>
+                      <summary>2025-2026</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Interros (30 min)</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
+                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
+                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
+                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
+                          </div>
+                        </div>
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
 
-    <div id="vulgarisation-videos" class="section-sub">
-      <h3>Vidéos pédagogiques</h3>
-      <p>Deux exemples de vidéos créées pour mes enseignements :</p>
+                    <details class="eval-year">
+                      <summary>2024-2025</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Interros (30 min)</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
+                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
+                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
+                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
+                          </div>
+                        </div>
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                </details>
+              </article>
 
-      <div class="video-row">
-        <figure class="video-container has-video">
-          <video controls>
-            <source src="video/TaylorExpSeries.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos.
-          </video>
-          <figcaption>Développement limité de la fonction exponentielle</figcaption>
-        </figure>
+              <article class="publication-item publication-item--module" id="ue-but1-maths2">
+                <div class="module-head">
+                  <h3>Outils mathématiques : niveau 2 (BUT1 GCGP)</h3>
+                  <a href="pdfs/Cours/PolyMathsBUT-S2.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+                  <p>Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h</p>
+                </div>
 
-        <figure class="video-container has-video">
-          <video controls>
-            <source src="video/DerivativeScene.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos.
-          </video>
-          <figcaption>Notion de dérivée</figcaption>
-        </figure>
+                <details class="module-evals-toggle">
+                  <summary>Annales et sujets</summary>
+                  <div class="module-evals-content">
+                    <h4>Évaluations par année</h4>
+
+                    <details class="eval-year" open>
+                      <summary>2025-2026</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Interros (30 min)</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
+                            <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
+                          </div>
+                        </div>
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <span class="eval-link eval-link--placeholder">Sujet final</span>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+
+                    <details class="eval-year">
+                      <summary>2024-2025</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Interros (30 min)</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
+                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
+                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 7</a>
+                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 8</a>
+                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 9</a>
+                          </div>
+                        </div>
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                </details>
+              </article>
+
+              <article class="publication-item">
+                <h3>TP Outils Informatiques et Scientifiques (BUT1 GCGP)</h3>
+                <p>Utilisation d'Excel. 5 × 4 h</p>
+                <a href="pdfs/Cours/OIS_Examen_2024.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+              </article>
+
+              <article class="publication-item">
+                <h3>Interventions sur d'autres TP (BUT1 GCGP)</h3>
+                <p>Transferts thermiques, électricité, mécanique des fluides. 5 × 4 h / groupe</p>
+              </article>
+              </div>
+            </div>
+          </details>
+
+          <details id="enseignements-but2" class="teaching-group" data-teaching-group>
+            <summary class="teaching-group-summary">
+              <span class="teaching-group-heading">
+                <span class="teaching-group-title">BUT2</span>
+                <span class="teaching-group-count" data-teaching-count></span>
+              </span>
+              <span class="teaching-group-note">Approfondissements, statistiques et modélisation pour les parcours CPIT et CPOP.</span>
+              <span class="teaching-group-caret" aria-hidden="true"></span>
+            </summary>
+
+            <div class="teaching-group-panel">
+              <div class="courses">
+              <article class="publication-item publication-item--module" id="ue-but2-maths3">
+                <div class="module-head">
+                  <h3>Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP)</h3>
+                  <a href="pdfs/Cours/Test_Poly_Maths-S3.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+                  <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
+                </div>
+
+                <details class="module-evals-toggle">
+                  <summary>Annales et sujets</summary>
+                  <div class="module-evals-content">
+                    <h4>Évaluations par année</h4>
+
+                    <details class="eval-year" open>
+                      <summary>2025-2026</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
+                          </div>
+                        </div>
+                        <div class="eval-type">
+                          <h5>Exam blanc</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
+                            <a href="pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                </details>
+              </article>
+
+              <article class="publication-item publication-item--module" id="ue-but2-statistiques">
+                <div class="module-head">
+                  <h3>Statistiques (BUT2 GCGP - Parcours CPIT)</h3>
+                  <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
+                </div>
+
+                <details class="module-evals-toggle">
+                  <summary>Annales et sujets</summary>
+                  <div class="module-evals-content">
+                    <h4>Évaluations par année</h4>
+
+                    <details class="eval-year" open>
+                      <summary>2025-2026</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
+                          </div>
+                        </div>
+                        <div class="eval-type">
+                          <h5>Exam blanc</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/Statistiques/Examen blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
+                            <a href="pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+
+                    <details class="eval-year">
+                      <summary>2024-2025</summary>
+                      <div class="eval-grid">
+                        <div class="eval-type">
+                          <h5>Examen final</h5>
+                          <div class="eval-links">
+                            <a href="pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                </details>
+              </article>
+
+              <article class="publication-item">
+                <h3>Mathématiques pour les systèmes complexes (BUT2 GCGP - Parcours CPOP)</h3>
+                <p>Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h</p>
+                <a href="pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+              </article>
+
+              <article class="publication-item publication-item--module" id="ue-but2-plans-experiences">
+                <div class="module-head">
+                  <h3>Plans d'expériences (BUT2 GCGP - Parcours CPIT)</h3>
+                  <a href="pdfs/Cours/Cours_plan_d_expériences.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
+                  <p>Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h</p>
+                </div>
+
+                <details class="module-evals-toggle">
+                  <summary>Annales et sujets</summary>
+                  <div class="module-evals-content">
+                    <h4>DS final par année</h4>
+                    <div class="eval-links">
+                      <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2026</a>
+                      <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2025</a>
+                      <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2024</a>
+                    </div>
+                  </div>
+                </details>
+              </article>
+              </div>
+            </div>
+          </details>
+
+          <details id="enseignements-but3" class="teaching-group" data-teaching-group>
+            <summary class="teaching-group-summary">
+              <span class="teaching-group-heading">
+                <span class="teaching-group-title">BUT3</span>
+                <span class="teaching-group-count" data-teaching-count></span>
+              </span>
+              <span class="teaching-group-note">Communication scientifique, anglais professionnel et projection vers l'insertion.</span>
+              <span class="teaching-group-caret" aria-hidden="true"></span>
+            </summary>
+
+            <div class="teaching-group-panel">
+              <div class="courses">
+              <article class="publication-item">
+                <h3>Anglais technique et professionnel (BUT3 GCGP - Parcours CPIT et CPOP)</h3>
+                <p>Certification TOEIC, soutenance de stage, synthèse d'article, présentation scientifique, vulgarisation. 8 × 2 h</p>
+                <div class="btn-group btn-group--english">
+                  <a href="presentations/describing-graphs-scientific-english.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Décrire un graphique</a>
+                  <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Soutenance de stage</a>
+                  <a href="presentations/presenter-article-scientifique.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Présenter un article scientifique</a>
+                </div>
+              </article>
+
+              <article class="publication-item">
+                <h3>Projet Professionnel et Personnel (BUT3 GCGP - Parcours CPIT)</h3>
+                <p>Ateliers Fête de la science, préparation au concours d'éloquence. 10 × 2 h</p>
+                <div class="btn-group">
+                  <a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FdS</a>
+                  <a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Éloquence</a>
+                </div>
+              </article>
+              </div>
+            </div>
+          </details>
+
+          <details id="enseignements-lp-cesp" class="teaching-group" data-teaching-group>
+            <summary class="teaching-group-summary">
+              <span class="teaching-group-heading">
+                <span class="teaching-group-title">LP CESP</span>
+                <span class="teaching-group-count" data-teaching-count></span>
+              </span>
+              <span class="teaching-group-note">Blocs ciblés sur l'automatisme, la régulation et les capteurs.</span>
+              <span class="teaching-group-caret" aria-hidden="true"></span>
+            </summary>
+
+            <div class="teaching-group-panel">
+              <div class="courses">
+              <article class="publication-item">
+                <h3>Automatisme, systèmes asservis</h3>
+              </article>
+
+              <article class="publication-item">
+                <h3>Régulation</h3>
+              </article>
+
+              <article class="publication-item">
+                <h3>Caractéristiques des capteurs</h3>
+              </article>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <section id="responsabilites" class="resource-section">
+          <div class="section-head">
+            <h2>Responsabilités</h2>
+            <p>Coordination, pilotage de formations et missions nationales.</p>
+          </div>
+
+          <ul class="list-clean">
+            <li>
+              <strong><a class="link-accent" href="https://doctorat.gouv.fr/apr%C3%A8s-le-doctorat/portraits-t%C3%A9moignages/bastien-marguet/" target="_blank" rel="noopener noreferrer">Ambassadeur du doctorat - Région AURA</a></strong><br>
+              <a class="link-accent" href="https://www.enseignementsup-recherche.gouv.fr/fr" target="_blank" rel="noopener noreferrer">
+                Ministère de l'Enseignement Supérieur, de la Recherche et de l'Espace (MESRE)
+              </a><br>
+              2025 - présent
+            </li>
+
+            <li>
+              <strong>Responsable Licence Professionnelle CESP</strong>
+              (Chargé de projet Électro-Hydro-Mécanique pour systèmes de pompage)<br>
+              <a class="link-accent" href="http://iut.univ-lyon1.fr/lpcesp" target="_blank" rel="noopener noreferrer">IUT GCGP, Villeurbanne</a>
+              •
+              <a class="link-accent" href="https://vienne.educagri.fr/licence-pro-cesp/" target="_blank" rel="noopener noreferrer">Lycée Agrotech, Vienne</a>
+              •
+              <a
+                class="link-accent"
+                href="https://galilee.ent.auvergnerhonealpes.fr/formations-a-galilee/apres-le-bac/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp-/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp--650.htm"
+                target="_blank"
+                rel="noopener noreferrer">
+                Lycée Galilée, Vienne
+              </a><br>
+              2023 - présent
+            </li>
+          </ul>
+        </section>
+
+        <section id="recherches" class="resource-section">
+          <div class="section-head">
+            <h2>Recherches</h2>
+            <p>Travaux en physique statistique, systèmes hors-équilibre et dynamique d'interfaces.</p>
+          </div>
+
+          <ul class="research-list modern-research">
+            <li class="research-item">
+              <span class="highlight">2019 - 2022 (3 ans)</span>
+              <div>
+                <em>Doctorat - <a href="https://ilm.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Institut Lumière Matière (ILM)</a>, <a href="https://www.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Université Claude Bernard Lyon 1</a></em><br>
+                <strong>Interfaces confinées hors équilibre : modélisation, dynamique et phénomènes collectifs</strong>.<br>
+                Superviseur : <a class="link-accent" href="https://ilm-perso.univ-lyon1.fr/~opl/" target="_blank" rel="noopener noreferrer">Olivier Pierre-Louis</a>
+              </div>
+            </li>
+
+            <li class="research-item">
+              <span class="highlight">2019 (4 mois)</span>
+              <div>
+                <em>Stage M2 - <a href="https://lpmmc.cnrs.fr" target="_blank" rel="noopener noreferrer">LPMMC</a> &amp; <a href="https://liphy.univ-grenoble-alpes.fr" target="_blank" rel="noopener noreferrer">LiPhy</a>, <a href="https://www.univ-grenoble-alpes.fr" target="_blank" rel="noopener noreferrer">Université Grenoble Alpes</a></em><br>
+                <strong>Étude des (super)symétries dans la dynamique d'interfaces stochastiques</strong>.<br>
+                Superviseurs : <a class="link-accent" href="https://lpmmc.cnrs.fr/homepage-leonie-canet/" target="_blank" rel="noopener noreferrer">Léonie Canet</a>, <a class="link-accent" href="https://liphy-annuaire.univ-grenoble-alpes.fr/pages_personnelles/vivien_lecomte/" target="_blank" rel="noopener noreferrer">Vivien Lecomte</a>
+              </div>
+            </li>
+
+            <li class="research-item">
+              <span class="highlight">2017 - 2018 (10 mois)</span>
+              <div>
+                <em>Assistant de recherche - <a href="https://www.ims.ac.jp/en/" target="_blank" rel="noopener noreferrer">Institute for Molecular Science (IMS)</a> (<a href="https://ohmori.ims.ac.jp/en/" target="_blank" rel="noopener noreferrer">Ohmori Group</a>), Okazaki, Japon</em><br>
+                <strong>Transport électronique dans un cristal de Rydberg ultrafroid corrélé</strong>.
+              </div>
+            </li>
+
+            <li class="research-item">
+              <span class="highlight">2016 (4 mois)</span>
+              <div>
+                <em>Stage M1 - <a href="https://www.cornell.edu" target="_blank" rel="noopener noreferrer">Cornell University</a>, Ithaca (NY, USA) (<a href="https://stroockgroup.net/people" target="_blank" rel="noopener noreferrer">Stroock group</a>)</em><br>
+                <strong>Dynamique d'imbibition dans des milieux nanoporeux</strong>.
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="publications" class="resource-section">
+          <div class="section-head">
+            <h2>Publications</h2>
+            <p>Articles, manuscrit et communications.</p>
+          </div>
+
+          <article class="publication-item">
+            <h3>Collisions et confinement des interfaces en croissance cristalline</h3>
+            <p>B. Marguet, <em>Manuscrit de thèse</em>, 2022</p>
+            <a href="pdfs/Thesis_Marguet_Bastien.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+          </article>
+
+          <article class="publication-item">
+            <h3>Interface collisions with diffusive mass transport</h3>
+            <p>B. Marguet, FDAA Reis, O. Pierre-Louis - <em>Physical Review E</em>, 2022</p>
+            <a href="pdfs/interface_collisions.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+          </article>
+
+          <article class="publication-item">
+            <h3>Formation of smoother grain boundaries in 2D materials...</h3>
+            <p>FDAA Reis, B. Marguet, O. Pierre-Louis - <em>2D Materials</em>, 2022</p>
+            <a href="pdfs/grain_boundaries.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+          </article>
+
+          <article class="publication-item">
+            <h3>Supersymmetries in nonequilibrium Langevin dynamics</h3>
+            <p>B. Marguet, E. Agoritsas, L. Canet, V. Lecomte - <em>Physical Review E</em>, 2021</p>
+            <a href="pdfs/supersymmetries.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+          </article>
+
+          <article class="publication-item">
+            <h3>Imbibition triggered by capillary condensation in nanopores</h3>
+            <p>O. Vincent, B. Marguet, A.D. Stroock - <em>Langmuir</em>, 2017</p>
+            <a href="pdfs/imbibition.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
+          </article>
+        </section>
+
+        <section id="interventions" class="resource-section">
+          <div class="section-head">
+            <h2>Interventions</h2>
+            <p>Ateliers, conférences et séminaires.</p>
+          </div>
+
+          <ul class="list-clean">
+            <li>
+              <strong>Atelier « Apprendre à prompter efficacement afin de créer des contenus pédagogiques pertinents »</strong>
+              - <a href="https://iut.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">IUT Lyon 1</a>, 13/05/2025
+            </li>
+            <li>
+              <strong>Atelier « Méthodologie de l'apprentissage : utiliser l'IA pour s'autoévaluer »</strong>
+              - <a href="https://iut.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">IUT Lyon 1</a>, 16-17/10/2025
+            </li>
+            <li>
+              <span class="intervention-head">
+                <strong>Atelier « IA, cognition et apprentissage »</strong>
+                <span>- <a href="https://iut.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">IUT Lyon 1</a>, 04/11/2025</span>
+                <a href="presentations/your-brain-on-chatgpt.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
+              </span>
+            </li>
+            <li>
+              <span class="intervention-head">
+                <strong>Workshop « Scientific Communication: Principles and Practice »</strong>
+                <span>- <a href="https://www.uminho.pt/EN/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Universidade do Minho</a>, 11/04/2026</span>
+                <a href="presentations/Scientific_Communication_Workshop_UMinho.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
+                <a href="https://www.instagram.com/p/DW7d-zciP72/" class="intervention-link is-secondary" target="_blank" rel="noopener noreferrer">annonce</a>
+              </span>
+            </li>
+            <li>
+              <span class="intervention-head">
+                <strong>Workshop « Professional Passport: CV, Interviews and Global Networking »</strong>
+                <span>- <a href="https://www.uminho.pt/EN/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Universidade do Minho</a>, 14/04/2026</span>
+                <a href="presentations/Professional_Passport_Workshop.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section id="vulgarisation" class="resource-section">
+          <div class="section-head">
+            <h2>Vulgarisation</h2>
+            <p>Vidéos, outils interactifs et simulateurs.</p>
+          </div>
+
+          <div id="vulgarisation-videos" class="section-sub">
+            <h3>Vidéos pédagogiques</h3>
+            <p>Deux exemples de vidéos créées pour mes enseignements :</p>
+
+            <div class="video-row">
+              <figure class="video-container has-video">
+                <video controls>
+                  <source src="video/TaylorExpSeries.mp4" type="video/mp4">
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+                <figcaption>Développement limité de la fonction exponentielle</figcaption>
+              </figure>
+
+              <figure class="video-container has-video">
+                <video controls>
+                  <source src="video/DerivativeScene.mp4" type="video/mp4">
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+                <figcaption>Notion de dérivée</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div id="vulgarisation-jeu" class="section-sub">
+            <h3>Jeu pédagogique interactif</h3>
+            <p>Deviner une fonction cachée à partir de ses valeurs.</p>
+            <div class="center-row">
+              <a href="https://fonction-cachee-bmarguet.streamlit.app/" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
+                Jouer à « Fonction cachée »
+              </a>
+            </div>
+          </div>
+
+          <div id="vulgarisation-simulateurs" class="section-sub">
+            <h3>Simulateurs numériques</h3>
+            <p>
+              Simulations interactives déployées sur
+              <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit</a>
+              pour l'enseignement de l'automatisme-régulation.
+            </p>
+
+            <div class="center-row">
+              <a href="https://pid-demo-letudx.streamlit.app/" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
+                Simulateur P
+              </a>
+              <a href="https://pid-demo-bmarguet.streamlit.app/" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
+                Simulateur PID
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="medias" class="resource-section">
+          <div class="section-head">
+            <h2>Médias</h2>
+            <p>Vidéos, podcasts et interventions.</p>
+          </div>
+
+          <div class="media-grid">
+            <figure class="media-card">
+              <div class="media-frame media-frame--16x9">
+                <iframe
+                  src="https://myvideo.univ-lyon1.fr/permalink/v126d2cf7351fdzrv6zl/iframe/"
+                  title="Présentation ambassadeur du doctorat"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <figcaption>
+                <strong>Présentation ambassadeur du doctorat</strong>
+                <a class="link-accent" href="https://www.univ-lyon1.fr/actualites/bastien-marguet-ambassadeur-du-doctorat" target="_blank" rel="noopener noreferrer">(lire)</a>
+                <span>Université Lyon 1</span>
+              </figcaption>
+            </figure>
+
+            <figure class="media-card">
+              <div class="media-frame media-frame--16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/O1M7t2Dg2Mg?rel=0"
+                  title="Interview Université de Lyon"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <figcaption>
+                <strong>Interview Université de Lyon</strong>
+                <span>Portrait et parcours scientifique</span>
+              </figcaption>
+            </figure>
+
+            <figure class="media-card">
+              <a
+                class="media-card-link"
+                href="https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir la vidéo BFM Lyon (nouvel onglet)">
+                <div class="media-frame media-frame--16x9 media-frame--visual">
+                  <img src="img/Plateau_TV_BFMLyon.png" alt="Plateau TV - BFM Lyon" loading="lazy">
+                  <span class="media-badge">Télévision</span>
+                  <span class="media-source">BFM Lyon</span>
+                  <span class="media-play media-play--label" aria-hidden="true">Voir l'intervention</span>
+                </div>
+              </a>
+              <figcaption>
+                <a
+                  class="media-card-caption-link"
+                  href="https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <strong>Intervention plateau TV - BFM Lyon</strong>
+                  <span>Finale Ma thèse en 180 secondes</span>
+                </a>
+              </figcaption>
+            </figure>
+
+            <figure class="media-card">
+              <div class="media-frame media-frame--16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/qdO9y2ETTI4?rel=0"
+                  title="Concours Ma thèse en 180 secondes"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <figcaption>
+                <strong>Concours Ma thèse en 180 secondes</strong>
+                <span>Finale Lyon - Saint-Étienne 2022</span>
+              </figcaption>
+            </figure>
+
+            <figure class="media-card">
+              <a
+                class="media-card-link"
+                href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir le podcast Dis, pourquoi ? (nouvel onglet)">
+                <div class="media-frame media-frame--player media-frame--visual media-frame--podcast-bg">
+                  <img src="img/Dis, pourquoi.png" alt="Visuel du podcast Dis, pourquoi ?" loading="lazy">
+                  <span class="media-badge">Podcast</span>
+                  <span class="media-source">RCF Lyon</span>
+                  <span class="media-play media-play--label" aria-hidden="true">Écouter</span>
+                </div>
+              </a>
+              <figcaption>
+                <a
+                  class="media-card-caption-link"
+                  href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <strong>Podcast « Dis, pourquoi ? »</strong>
+                  <span>RCF Lyon</span>
+                </a>
+              </figcaption>
+            </figure>
+
+            <figure class="media-card">
+              <a
+                class="media-card-link"
+                href="https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir le podcast Sciences en récits (nouvel onglet)">
+                <div class="media-frame media-frame--player media-frame--visual media-frame--podcast-bg">
+                  <img src="img/Podcast_sciences-en-recit.jpg" alt="Visuel du podcast Sciences en récits" loading="lazy">
+                  <span class="media-badge">Podcast</span>
+                  <span class="media-source">Sciences en récits</span>
+                  <span class="media-play media-play--label" aria-hidden="true">Écouter</span>
+                </div>
+              </a>
+              <figcaption>
+                <a
+                  class="media-card-caption-link"
+                  href="https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <strong>Podcast « Sciences en récits »</strong>
+                  <span>Retour sur MT180</span>
+                </a>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
       </div>
     </div>
+  </main>
 
-    <div id="vulgarisation-jeu" class="section-sub">
-      <h3>Jeu pédagogique interactif</h3>
-      <p>Deviner une fonction cachée à partir de ses valeurs.</p>
-      <div class="center-row">
-        <a href="https://fonction-cachee-bmarguet.streamlit.app/"
-           target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
-          Jouer à « Fonction cachée »
-        </a>
-      </div>
-    </div>
-
-    <div id="vulgarisation-simulateurs" class="section-sub">
-      <h3>Simulateurs numériques</h3>
-      <p>
-        Simulations interactives déployées sur
-        <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit</a>
-        pour l’enseignement de l’automatisme-régulation.
-      </p>
-
-      <div class="center-row">
-        <a href="https://pid-demo-letudx.streamlit.app/"
-          target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
-          Simulateur P
-        </a>
-        <a href="https://pid-demo-bmarguet.streamlit.app/"
-          target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
-          Simulateur PID
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Médias -->
-  <section id="medias" class="container">
-    <div class="section-head">
-      <h2>Médias</h2>
-      <p>Vidéos, podcasts et interventions.</p>
-    </div>
-
-    <div class="media-grid">
-    <figure class="media-card">
-      <div class="media-frame media-frame--16x9">
-        <iframe
-          src="https://myvideo.univ-lyon1.fr/permalink/v126d2cf7351fdzrv6zl/iframe/"
-          title="Vidéo de présentation - Université Lyon 1"
-          loading="lazy"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <figcaption>Présentation ambassadeur du doctorat</figcaption>
-    </figure>
-
-    <!-- YouTube 1 -->
-    <figure class="media-card">
-      <div class="media-frame media-frame--16x9">
-        <iframe
-          src="https://www.youtube.com/embed/O1M7t2Dg2Mg"
-          title="Portrait Université de Lyon"
-          loading="lazy"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <figcaption>Interview Université de Lyon</figcaption>
-    </figure>
-
-    <!-- BFM (image cliquable mais même frame) -->
-    <figure class="media-card">
-      <a class="media-frame media-frame--16x9 media-link"
-        href="https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
-        target="_blank" rel="noopener noreferrer"
-        aria-label="Ouvrir la vidéo BFM Lyon (nouvel onglet)">
-        <img src="img/Plateau_TV_BFMLyon.png" alt="Plateau TV – BFM Lyon">
-        <span class="media-play" aria-hidden="true">▶</span>
-      </a>
-      <figcaption>Intervention plateau TV – BFM Lyon</figcaption>
-    </figure>
-
-    <figure class="media-card">
-      <div class="media-frame media-frame--16x9">
-        <iframe
-          src="https://www.youtube.com/embed/qdO9y2ETTI4"
-          title="MT180 - Finale Lyon-Saint-Etienne 2022"
-          loading="lazy"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <figcaption>Concours Ma thèse en 180 secondes</figcaption>
-    </figure>
-
-    <!-- RCF -->
-    <figure class="media-card">
-      <div class="media-frame media-frame--player media-frame--podcast-link media-frame--podcast-bg" style="background-image: url('img/Dis, pourquoi.png');">
-        <a
-          href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
-          class="btn btn-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ouvrir le podcast Dis, pourquoi ? (nouvel onglet)"
-        >
-          Écouter le podcast
-        </a>
-      </div>
-      <figcaption>Podcast « Dis, pourquoi ? » – RCF Lyon</figcaption>
-    </figure>
-
-    <!-- Sciences en récits -->
-    <figure class="media-card">
-      <div class="media-frame media-frame--player media-frame--podcast-link media-frame--podcast-bg" style="background-image: url('img/Podcast_sciences-en-recit.jpg');">
-        <a
-          href="https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
-          class="btn btn-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ouvrir le podcast Sciences en récits (nouvel onglet)"
-        >
-          Écouter le podcast
-        </a>
-      </div>
-      <figcaption>Podcast « Sciences en récits » – MT180</figcaption>
-    </figure>
-
-  </div>
-  </section>
-
-  <footer class="container site-footer">
-    <p>&copy; 2025 Bastien Marguet</p>
+  <footer class="site-footer">
+    <p>&copy; 2026 Bastien Marguet</p>
     <div class="social-links">
-      <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a> |
+      <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </footer>

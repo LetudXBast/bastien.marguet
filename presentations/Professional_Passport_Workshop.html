@@ -26,7 +26,6 @@
       font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: var(--main-text);
       font-size: 30px;
-      position: relative;
     }
 
     .reveal .slides {
@@ -59,7 +58,7 @@
 
     .reveal p,
     .reveal li {
-      line-height: 1.38;
+      line-height: 1.35;
       color: var(--main-text);
     }
 
@@ -69,20 +68,13 @@
     }
 
     .reveal li {
-      margin: 0.75em 0;
+      margin: 0.55em 0;
     }
 
     .reveal a {
       color: var(--accent);
       text-decoration-thickness: 2px;
       text-underline-offset: 0.12em;
-    }
-
-    .reveal .subtitle {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9em;
-      margin-top: 10px;
     }
 
     .reveal .slide-box {
@@ -136,14 +128,6 @@
       line-height: 1.45;
     }
 
-    .reveal .title-byline {
-      margin-top: 6px;
-      color: #374151;
-      font-size: 0.78em;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
     .reveal .title-meta strong {
       color: #111827;
       font-weight: 700;
@@ -165,12 +149,8 @@
       border-radius: 14px;
     }
 
-    .reveal .bottom-box p + p {
-      margin-top: 10px;
-    }
-
     .reveal .question-block + .question-block {
-      margin-top: 24px;
+      margin-top: 22px;
     }
 
     .reveal .question-block p {
@@ -192,17 +172,35 @@
       color: var(--muted) !important;
     }
 
-    .reveal .deck-signature {
-      position: absolute;
-      left: 28px;
-      bottom: 18px;
-      z-index: 30;
-      font-size: 0.46em;
-      color: rgba(107, 114, 128, 0.78);
-      letter-spacing: 0.02em;
-      font-weight: 500;
-      pointer-events: none;
-      user-select: none;
+    .reveal .sample-block {
+      margin-top: 18px;
+      padding: 16px 20px;
+      background: #f9fafb;
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      font-size: 0.9em;
+    }
+
+    .reveal .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .reveal .mini-title {
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .reveal .compact-right {
+      font-size: 0.76em;
+      line-height: 1.25;
+    }
+
+    .reveal .compact-right p {
+      line-height: 1.25;
+      margin: 0 0 0.55em 0;
     }
   </style>
 </head>
@@ -215,11 +213,11 @@
           <div class="title-card">
             <div class="title-eyebrow">Workshop</div>
             <h1>Professional Passport: CV, Interviews and Global Networking</h1>
-            <div class="title-byline">Bastien Marguet</div>
             <div class="title-meta">
               <div><strong>Universidade do Minho, Braga</strong></div>
               <div>Auditorium B2 (CP2)</div>
-              <div>14/04/2026 — 10:00</div>
+              <div>14/04/2026 - 10:00</div>
+              <div>Trainer: Bastien Marguet</div>
             </div>
             <div class="mini-line"></div>
           </div>
@@ -235,6 +233,7 @@
             <li>Respond with more confidence in interviews</li>
             <li>Present yourself professionally in international contexts</li>
           </ul>
+          <span class="small-note">Goal: improve clarity, relevance, and confidence in a short time.</span>
         </div>
         <div class="footer-tag">Workshop goals</div>
       </section>
@@ -243,13 +242,13 @@
         <h2>The 3 moments of professional communication</h2>
         <div class="slide-box">
           <ul>
-            <li><strong>On paper:</strong> your CV and motivation letter help you get selected</li>
+            <li><strong>On paper:</strong> your CV and letter help you get selected</li>
             <li><strong>In conversation:</strong> your interview answers show how you think and communicate</li>
             <li><strong>In networking:</strong> your pitch helps people remember you</li>
           </ul>
-          <span class="small-note">
-            The challenge is always the same: be clear, relevant, and easy to understand.
-          </span>
+          <div class="bottom-box">
+            <p><strong>Same challenge every time:</strong> can people understand your value quickly?</p>
+          </div>
         </div>
         <div class="footer-tag">Big picture</div>
       </section>
@@ -263,78 +262,369 @@
             <li>Concrete skills supported by examples or experience</li>
             <li>A profile that is understandable in an international context</li>
           </ul>
-          <span class="small-note">
-            A CV is not a biography. It is a selection tool.
-          </span>
+          <span class="small-note">A CV is not a biography. It is a selection tool.</span>
         </div>
         <div class="footer-tag">CV principles</div>
       </section>
 
+<section>
+  <section>
+    <h2>Exercise 1 - Diagnose a CV</h2>
+    <div class="slide-box">
+      <p><strong>Work in pairs - 7 minutes</strong></p>
+      <ul>
+        <li>Identify <strong>2 strengths</strong></li>
+        <li>Identify <strong>2 weaknesses</strong></li>
+        <li>Suggest <strong>1 concrete improvement</strong></li>
+      </ul>
+      <div class="bottom-box">
+        <p><strong>Focus on:</strong> clarity, relevance, readability, and proof of skills.</p>
+      </div>
+    </div>
+    <div class="footer-tag">Practice 1</div>
+  </section>
+
+  <section>
+    <h2>Exercise 1 - Sample CV extract</h2>
+    <div class="slide-box">
+      <div class="sample-block" style="margin-top:0;">
+        <div class="mini-title">Sample CV extract</div>
+        <p><strong>João Silva</strong> - Master’s student in Biotechnology</p>
+        <p><strong>Profile:</strong> Motivated and dynamic student looking for an interesting opportunity abroad. Good team spirit and serious attitude.</p>
+        <p><strong>Experience:</strong> Internship in laboratory; Group project in class; Volunteer in student event.</p>
+        <p><strong>Skills:</strong> Communication; English; Teamwork; Microsoft Office; Laboratory techniques.</p>
+        <p><strong>Languages:</strong> Portuguese: native; English: good.</p>
+      </div>
+    </div>
+    <div class="footer-tag">Practice 1</div>
+  </section>
+</section>
+
+<section>
+  <h2>Debrief - What makes this CV weak?</h2>
+  <div class="slide-box">
+    <ul>
+      <li>The profile sounds positive, but says almost nothing concrete</li>
+      <li>The experience is listed, but not described</li>
+      <li>The skills are named, but not demonstrated</li>
+      <li>The English level is too vague for an international context</li>
+    </ul>
+    <div class="bottom-box">
+      <p><strong>Main lesson:</strong> a strong profile can be hidden by weak presentation.</p>
+    </div>
+  </div>
+  <div class="footer-tag">Debrief 1</div>
+</section>
+
+<section>
+  <h2>Common mistakes in CVs and letters</h2>
+  <div class="slide-box">
+    <ul>
+      <li>Too much text and not enough readability</li>
+      <li>Generic adjectives without proof</li>
+      <li>Skills listed without context or evidence</li>
+      <li>A letter that repeats the CV instead of explaining the match</li>
+    </ul>
+    <div class="bottom-box">
+      <p><strong>Professional writing is not about sounding impressive.</strong> It is about sounding credible.</p>
+    </div>
+  </div>
+  <div class="footer-tag">Frequent issues</div>
+</section>
+
+<section>
+  <h2>A stronger version of the same CV</h2>
+  <div class="slide-box" style="font-size:0.73em; padding:18px 22px;">
+    <div class="sample-block" style="margin-top:0; padding:14px 16px;">
+      <div class="mini-title" style="margin-bottom:8px;">Improved CV extract</div>
+
+      <p style="margin:0 0 10px 0;"><strong>João Silva</strong> - Master’s student in Biotechnology</p>
+
+      <p style="margin:0 0 10px 0;"><strong>Profile:</strong> Master’s student in Biotechnology with laboratory experience, teamwork practice, and a strong interest in international research and applied science.</p>
+
+      <p style="margin:0 0 6px 0;"><strong>Experience:</strong></p>
+      <p style="margin:0 0 4px 0;"><strong>Laboratory internship</strong> : assisted with sample preparation, basic analysis, and data recording in a research environment.</p>
+      <p style="margin:0 0 4px 0;"><strong>Academic group project</strong> : worked with other students to prepare and present a biotechnology project.</p>
+      <p style="margin:0 0 10px 0;"><strong>Student event volunteer</strong> : helped organize activities and support communication during the event.</p>
+
+      <p style="margin:0 0 10px 0;"><strong>Skills:</strong> Laboratory methods, teamwork, academic presentations, Microsoft Office.</p>
+
+      <p style="margin:0;"><strong>Languages:</strong> Portuguese - native | English - B2</p>
+    </div>
+
+    <div class="bottom-box" style="margin-top:10px; padding:10px 14px;">
+      <p style="margin:0 0 4px 0;"><strong>What improved?</strong></p>
+      <p style="margin:0;">The CV is now more precise, more credible, and easier to understand in an international context.</p>
+    </div>
+  </div>
+  <div class="footer-tag">Improved version</div>
+</section>
+
       <section>
-        <h2>Common mistakes in CVs and letters</h2>
+        <h2>Exercise 2 - Rewrite weak sentences</h2>
         <div class="slide-box">
+          <p><strong>Work in pairs - 7 minutes</strong></p>
+          <p>Rewrite each sentence to make it more concrete, more credible, and more relevant.</p>
           <ul>
-            <li>Too much text and not enough readability</li>
-            <li>Generic adjectives without proof: motivated, dynamic, serious</li>
-            <li>Skills listed without context or evidence</li>
-            <li>A letter that repeats the CV instead of explaining the match</li>
+            <li>"I am very motivated and dynamic."</li>
+            <li>"I have good communication skills."</li>
+            <li>"I want this internship because it is interesting."</li>
           </ul>
           <div class="bottom-box">
-            <p><strong>Key idea:</strong> specificity is stronger than vague self-promotion.</p>
+            <p><strong>Your goal:</strong> add context, evidence, or relevance.</p>
           </div>
         </div>
-        <div class="footer-tag">Frequent issues</div>
+        <div class="footer-tag">Practice 2</div>
       </section>
 
       <section>
-        <h2>How to structure an interview answer</h2>
+        <h2>Debrief - What improved the sentences?</h2>
         <div class="slide-box">
-          <p>For most interview questions, use a simple 3-step structure:</p>
+          <div class="two-col">
+            <div>
+              <div class="mini-title">Weak</div>
+              <p>"I am very motivated and dynamic."</p>
+              <p>"I have good communication skills."</p>
+              <p>"I want this internship because it is interesting."</p>
+            </div>
+            <div class="compact-right">
+              <div class="mini-title">Stronger</div>
+              <p>"I am motivated by projects that combine laboratory work and real-world application, as shown by my internship and group project."</p>
+              <p>"I developed my communication skills through presentations, teamwork, and academic events."</p>
+              <p>"I am applying for this internship because it matches my interest in applied biotechnology and international experience."</p>
+            </div>
+          </div>
+          <span class="small-note">Better writing adds information, not decoration.</span>
+        </div>
+        <div class="footer-tag">Debrief 2</div>
+      </section>
+
+<section>
+  <section>
+  <h2>How to structure an interview answer</h2>
+  <div class="slide-box" style="padding:24px 30px;">
+    <p style="margin-top:0;">For most interview questions, use a simple 3-step structure:</p>
+    <ol style="margin:0; padding-left:1.2em;">
+      <li><strong>Answer clearly</strong></li>
+      <li><strong>Give one concrete example</strong></li>
+      <li><strong>Connect it to the job, the programme, or the context</strong></li>
+    </ol>
+    <div class="bottom-box" style="margin-top:14px; padding:14px 18px;">
+      <p><strong>Important:</strong> clear structure matters more than perfect language.</p>
+    </div>
+  </div>
+  <div class="footer-tag">Interview method</div>
+</section>
+
+  <section>
+    <h2>Example 1 - Why are you applying?</h2>
+    <div class="slide-box" style="font-size:0.74em; padding:22px 26px;">
+      <p style="margin-top:0; margin-bottom:10px;"><strong>Question:</strong> Why are you applying for this position?</p>
+
+      <div class="two-col" style="margin-top:10px; gap:16px;">
+        <div>
+          <div class="mini-title" style="margin-bottom:6px;">Weak answer</div>
+          <p style="line-height:1.18; margin:0;">I am applying for this position because it looks very interesting and I think it would be a great opportunity for me. I am very motivated and I want to learn a lot.</p>
+        </div>
+        <div>
+          <div class="mini-title" style="margin-bottom:6px;">Stronger answer</div>
+          <p style="line-height:1.18; margin:0;">I am applying for this position because it matches my interest in applied biotechnology. During my master’s project, I worked on laboratory methods that made me want to develop more practical experience. I think this internship would help me strengthen both my technical skills and my ability to work in an international environment.</p>
+        </div>
+      </div>
+
+      <div class="bottom-box" style="font-size:0.9em; margin-top:12px; padding:12px 16px;">
+        <p style="margin:0 0 4px 0;"><strong>Why is the second answer stronger?</strong></p>
+        <p style="margin:0;">It gives a clear reason, one concrete example, and a direct link with the context.</p>
+      </div>
+    </div>
+    <div class="footer-tag">Example</div>
+  </section>
+
+  <section>
+    <h2>Example 2 - What is one of your strengths?</h2>
+    <div class="slide-box" style="font-size:0.74em; padding:22px 26px;">
+      <p style="margin-top:0; margin-bottom:10px;"><strong>Question:</strong> What is one of your strengths?</p>
+
+      <div class="two-col" style="margin-top:10px; gap:16px;">
+        <div>
+          <div class="mini-title" style="margin-bottom:6px;">Weak answer</div>
+          <p style="line-height:1.18; margin:0;">One of my strengths is that I am very serious and hard-working. I always do my best and I am very motivated when I work on something important.</p>
+        </div>
+        <div>
+          <div class="mini-title" style="margin-bottom:6px;">Stronger answer</div>
+          <p style="line-height:1.18; margin:0;">One of my strengths is adaptability. During a group project, I had to take over a new task very quickly and coordinate with other students to keep the work moving. I think this is useful in an international environment, where flexibility and communication are important.</p>
+        </div>
+      </div>
+
+      <div class="bottom-box" style="font-size:0.9em; margin-top:12px; padding:12px 16px;">
+        <p style="margin:0 0 4px 0;"><strong>What changed?</strong></p>
+        <p style="margin:0;">The stronger answer names the strength clearly, proves it with an example, and shows why it matters here.</p>
+      </div>
+    </div>
+    <div class="footer-tag">Example</div>
+  </section>
+</section>
+
+
+
+
+      <section>
+        <h2>Exercise 3 - Build a strong answer</h2>
+        <div class="slide-box">
+          <p><strong>Work in pairs - 8 minutes</strong></p>
+          <p>Choose one question and prepare an answer under <strong>40 seconds</strong>.</p>
           <ul>
-            <li><strong>Answer clearly</strong></li>
-            <li><strong>Give one concrete example</strong></li>
-            <li><strong>Connect it to the job, the programme, or the context</strong></li>
+            <li>Tell me about yourself.</li>
+            <li>Why are you applying for this position?</li>
+            <li>What is one of your strengths?</li>
           </ul>
-          <span class="small-note">
-            Clear structure matters more than perfect language.
-          </span>
+          <div class="bottom-box">
+            <p><strong>Rule:</strong> 1 clear answer + 1 example + 1 link with the context</p>
+          </div>
         </div>
-        <div class="footer-tag">Interview method</div>
+        <div class="footer-tag">Practice 3</div>
       </section>
 
       <section>
-        <h2>Useful interview principles</h2>
+        <section>
+          <h2>Useful interview principles</h2>
+          <div class="slide-box">
+            <ul>
+              <li>Simple English is often stronger than complex English</li>
+              <li>One precise example is better than many abstract ideas</li>
+              <li>Confidence means clarity and control, not speed</li>
+              <li>If you lose a word, reformulate instead of stopping</li>
+            </ul>
+          </div>
+          <div class="footer-tag">Interview advice</div>
+        </section>
+
+        <section>
+          <h2>Useful interview principles - Example</h2>
+          <div class="slide-box">
+            <div class="sample-block" style="margin-top:0;">
+              <div class="mini-title">Example</div>
+              <p><strong>Question:</strong> What is one of your strengths?</p>
+              <p><strong>Answer:</strong> One of my strengths is adaptability. For example, during a group project, I had to take over a new task very quickly and coordinate with other students to keep the work moving. I think this is useful in an international environment, where flexibility and communication are important.</p>
+            </div>
+          </div>
+          <div class="footer-tag">Interview advice</div>
+        </section>
+      </section>
+<section>
+  <h2>Exercise 4 - Interview role play</h2>
+  <div class="slide-box">
+    <p><strong>Role play - 10 minutes</strong></p>
+    <ul>
+      <li>Student A = interviewer</li>
+    <span class="small-note">
+      Tell me about yourself. |
+      Why are you applying for this position? |
+      What is one of your strengths? |
+      Why do you want to work in an international environment?
+    </span>
+      <li>Student B = candidate</li>
+      <li>Ask one question, then switch roles</li>
+    </ul>
+    <div class="bottom-box">
+      <p><strong>Feedback after each answer:</strong></p>
+      <p>Was it clear? Was it concrete? Did it sound professional?</p>
+    </div>
+  </div>
+  <div class="footer-tag">Practice 4</div>
+</section>
+
+ <section>
+  <section>
+    <h2>How to build a 30-second pitch</h2>
+    <div class="slide-box">
+      <div class="question-block">
+        <p><strong>Who are you?</strong></p>
+        <span class="small-note">Name, current status, or field of study.</span>
+      </div>
+      <div class="question-block">
+        <p><strong>What are you interested in?</strong></p>
+        <span class="small-note">Your professional focus, topic, or direction.</span>
+      </div>
+      <div class="question-block">
+        <p><strong>What are you looking for?</strong></p>
+        <span class="small-note">An opportunity, a discussion, an internship, a field, or a contact.</span>
+      </div>
+    </div>
+    <div class="footer-tag">Networking pitch</div>
+  </section>
+
+  <section>
+    <h2>Example 1 - Student pitch</h2>
+    <div class="slide-box" style="font-size:0.84em;">
+      <p><strong>Example:</strong></p>
+      <div class="sample-block" style="margin-top:12px;">
+        <p style="line-height:1.28; margin:0;">Hello, my name is Ana. I am currently a master’s student in biotechnology. I am especially interested in sustainable applications of biological research and international collaboration. I am currently looking for an internship where I can develop both my technical and communication skills.</p>
+      </div>
+      <div class="bottom-box" style="margin-top:14px;">
+        <p><strong>Why does it work?</strong></p>
+        <p>It is clear, specific, and easy to remember.</p>
+      </div>
+    </div>
+    <div class="footer-tag">Example</div>
+  </section>
+
+  <section>
+    <h2>Example 2 - Research pitch</h2>
+    <div class="slide-box" style="font-size:0.84em;">
+      <p><strong>Example:</strong></p>
+      <div class="sample-block" style="margin-top:12px;">
+        <p style="line-height:1.28; margin:0;">Hello, my name is Pedro. I am a PhD student in materials science. My research focuses on how new materials can improve energy efficiency in industrial systems. I am interested in meeting people working on innovation, sustainability, or applied research in this area.</p>
+      </div>
+      <div class="bottom-box" style="margin-top:14px;">
+        <p><strong>Why does it work?</strong></p>
+        <p>It states the profile, the focus, and opens the door to conversation.</p>
+      </div>
+    </div>
+    <div class="footer-tag">Example</div>
+  </section>
+</section>
+
+<section>
+  <h2>Exercise 5 - Prepare your pitch</h2>
+  <div class="slide-box">
+    <p><strong>Individual work - 4 minutes</strong></p>
+    <ul>
+      <li>Write a short pitch in 3 parts</li>
+      <li>Keep it under 30 seconds</li>
+      <li>Use simple and clear language</li>
+      <li>End with an opening to conversation</li>
+    </ul>
+
+    <span class="small-note" style="margin-top:14px;">
+      <strong>Who are you?</strong> Name, current status, or field of study.
+    </span>
+    <span class="small-note">
+      <strong>What are you interested in?</strong> Your professional focus, topic, or direction.
+    </span>
+    <span class="small-note">
+      <strong>What are you looking for?</strong> An opportunity, a discussion, an internship, a field, or a contact.
+    </span>
+  </div>
+  <div class="footer-tag">Practice 5</div>
+</section>
+
+
+      <section>
+        <h2>Exercise 6 - Networking round</h2>
         <div class="slide-box">
+          <p><strong>Stand up and speak to 2 people - 8 minutes</strong></p>
           <ul>
-            <li>Simple English is often stronger than complex English</li>
-            <li>One precise example is better than many abstract ideas</li>
-            <li>Confidence means clarity and control, not speed</li>
-            <li>If you lose a word, reformulate instead of stopping</li>
+            <li>Say your pitch to one person</li>
+            <li>Listen to their pitch</li>
+            <li>Then change partner and repeat</li>
           </ul>
-          <span class="small-note">
-            The goal is not to sound perfect. The goal is to sound professional and understandable.
-          </span>
-        </div>
-        <div class="footer-tag">Interview advice</div>
-      </section>
-
-      <section>
-        <h2>How to build a 30-second pitch</h2>
-        <div class="slide-box">
-          <div class="question-block">
-            <p><strong>Who are you?</strong></p>
-            <span class="small-note">Name, current status, or field of study.</span>
-          </div>
-          <div class="question-block">
-            <p><strong>What are you interested in?</strong></p>
-            <span class="small-note">Your professional focus, topic, or direction.</span>
-          </div>
-          <div class="question-block">
-            <p><strong>What are you looking for?</strong></p>
-            <span class="small-note">An opportunity, a discussion, an internship, a field, or a contact.</span>
+          <div class="bottom-box">
+            <p><strong>After each pitch, answer these questions:</strong></p>
+            <p>What do you remember? What was clear? What could be improved?</p>
           </div>
         </div>
-        <div class="footer-tag">Networking pitch</div>
+        <div class="footer-tag">Practice 6</div>
       </section>
 
       <section>
@@ -355,7 +645,6 @@
       </section>
 
     </div>
-    <div class="deck-signature" aria-hidden="true">Bastien Marguet</div>
   </div>
 
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
