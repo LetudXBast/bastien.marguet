@@ -578,8 +578,27 @@ button {
 a.btn,
 a.btn:visited,
 a.btn:hover,
-a.btn:active {
+a.btn:active,
+a.btn:focus {
   text-decoration: none;
+}
+
+a.btn-primary,
+a.btn-primary:visited,
+a.btn-primary:hover,
+a.btn-primary:active,
+a.btn-primary:focus,
+a.btn-primary:focus-visible {
+  color: #fff;
+}
+
+a.btn-secondary,
+a.btn-secondary:visited,
+a.btn-secondary:hover,
+a.btn-secondary:active,
+a.btn-secondary:focus,
+a.btn-secondary:focus-visible {
+  color: var(--ink);
 }
 
 .section-shell,
@@ -940,6 +959,12 @@ form button {
 .chip:hover {
   border-color: var(--line-strong);
   background: rgba(255, 255, 255, 0.95);
+  color: var(--accent);
+}
+
+.chip.active {
+  border-color: rgba(34, 78, 86, 0.18);
+  background: rgba(34, 78, 86, 0.1);
   color: var(--accent);
 }
 

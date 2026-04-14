@@ -119,6 +119,25 @@
   function initScrollSpy() {
     const currentPath = normalizePathname(window.location.pathname);
     const header = document.querySelector(".site-header");
+    const getActiveId = (entries, marker) => {
+      let activeEntry = null;
+      let nextEntry = null;
+
+      entries.forEach((entry) => {
+        const top = entry.section.getBoundingClientRect().top;
+
+        if (top <= marker) {
+          if (!activeEntry || top > activeEntry.top) {
+            activeEntry = { id: entry.id, top };
+          }
+        } else if (!nextEntry || top < nextEntry.top) {
+          nextEntry = { id: entry.id, top };
+        }
+      });
+
+      return activeEntry?.id ?? nextEntry?.id ?? entries[0]?.id ?? "";
+    };
+
     const entries = Array.from(document.querySelectorAll(".site-nav a")).map((link) => {
       const explicitTarget = link.dataset.scrollspyTarget?.trim();
       if (explicitTarget) {
@@ -153,15 +172,64 @@
     const onScroll = () => {
       const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
       const marker = headerHeight + 24;
-      let activeId = scrollSpyEntries[0].id;
+      const activeId = getActiveId(scrollSpyEntries, marker);
+      setActive(activeId);
+    };
 
-      scrollSpyEntries.forEach(({ id, section }) => {
-        if (section.getBoundingClientRect().top <= marker) {
-          activeId = id;
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+  }
+
+  function initResourceTocSpy() {
+    const sidebar = document.querySelector(".resource-sidebar");
+    if (!sidebar) return;
+
+    const header = document.querySelector(".site-header");
+    const tocLinks = Array.from(sidebar.querySelectorAll('.chip[href^="#"]'));
+    const entries = tocLinks.map((link) => {
+      const rawHref = link.getAttribute("href");
+      if (!rawHref) return null;
+
+      const id = decodeURIComponent(rawHref.replace(/^#/, ""));
+      const section = document.getElementById(id);
+      return section ? { id, link, section } : null;
+    }).filter(Boolean);
+
+    if (!entries.length) return;
+
+    const setActive = (activeId) => {
+      entries.forEach(({ id, link }) => {
+        const isActive = id === activeId;
+        link.classList.toggle("active", isActive);
+
+        if (isActive) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const onScroll = () => {
+      const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
+      const marker = headerHeight + 24;
+      let activeEntry = null;
+      let nextEntry = null;
+
+      entries.forEach((entry) => {
+        const top = entry.section.getBoundingClientRect().top;
+
+        if (top <= marker) {
+          if (!activeEntry || top > activeEntry.top) {
+            activeEntry = { id: entry.id, top };
+          }
+        } else if (!nextEntry || top < nextEntry.top) {
+          nextEntry = { id: entry.id, top };
         }
       });
 
-      setActive(activeId);
+      setActive(activeEntry?.id ?? nextEntry?.id ?? entries[0].id);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -263,6 +331,7 @@
     initTeachingAccordions();
     initSmoothScroll();
     initScrollSpy();
+    initResourceTocSpy();
     initFormValidation();
   });
 })();
