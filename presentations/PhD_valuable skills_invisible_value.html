@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhD: Valuable Skills, Invisible Value</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+
+  <style>
+    :root {
+      --main-bg: #f7f8fa;
+      --main-text: #1f2937;
+      --accent: #1d4ed8;
+      --soft-border: #d1d5db;
+      --box-bg: rgba(255, 255, 255, 0.94);
+      --muted: #6b7280;
+    }
+
+    body {
+      background: var(--main-bg);
+    }
+
+    .reveal {
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--main-text);
+      font-size: 30px;
+      position: relative;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal h1,
+    .reveal h2 {
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 0.4em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      font-weight: 800;
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.15;
+    }
+
+    .reveal h2 {
+      font-size: 1.35em;
+      font-weight: 750;
+      border-left: 8px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 28px;
+    }
+
+    .reveal p,
+    .reveal li {
+      line-height: 1.38;
+      color: var(--main-text);
+    }
+
+    .reveal ul {
+      margin: 0;
+      padding-left: 1.2em;
+    }
+
+    .reveal li {
+      margin: 0.75em 0;
+    }
+
+    .reveal .title-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .reveal .title-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border: 1.5px solid var(--soft-border);
+      border-radius: 28px;
+      padding: 54px 60px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .reveal .title-eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 0.5em;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .reveal .title-meta {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .title-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .reveal .title-meta a:hover,
+    .reveal .title-meta a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .reveal .title-meta strong {
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .reveal .title-card .mini-line {
+      width: 110px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+      margin: 22px auto 0 auto;
+    }
+
+    .reveal .title-actions {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.62em;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      box-shadow: 0 12px 28px rgba(29, 78, 216, 0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .reveal .cta-link:hover,
+    .reveal .cta-link:focus-visible {
+      background: #1e40af;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(29, 78, 216, 0.24);
+    }
+
+    .reveal .slide-box {
+      background: var(--box-bg);
+      border: 1.5px solid var(--soft-border);
+      border-radius: 18px;
+      padding: 28px 34px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .reveal .small-note {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.72em;
+      line-height: 1.35;
+    }
+
+    .reveal .bottom-box {
+      margin-top: 18px;
+      padding: 18px 22px;
+      background: #f9fafb;
+      border: 1.5px solid var(--soft-border);
+      border-radius: 14px;
+    }
+
+    .reveal .bottom-box p + p {
+      margin-top: 10px;
+    }
+
+    .reveal .footer-tag {
+      position: absolute;
+      bottom: 18px;
+      right: 28px;
+      font-size: 0.5em;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .reveal .slide-number {
+      font-size: 0.5em !important;
+      color: var(--muted) !important;
+    }
+
+    .reveal .deck-signature {
+      position: absolute;
+      left: 28px;
+      bottom: 18px;
+      z-index: 30;
+      font-size: 0.46em;
+      color: rgba(107, 114, 128, 0.78);
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+
+    <div class="slides">
+      <section>
+        <div class="title-slide">
+          <div class="title-card">
+            <div class="title-eyebrow">Workshop</div>
+            <h1>PhD: Valuable Skills, Invisible Value</h1>
+            <div class="title-meta">
+              <div><strong>Cargèse</strong></div>
+              <div>22/04/2026</div>
+              <div><a href="https://intcha26.sciencesconf.org/" target="_blank" rel="noopener noreferrer">INTCHA 2026</a></div>
+            </div>
+            <div class="mini-line"></div>
+            <div class="title-actions">
+              <a href="../phd-survey/" class="cta-link" target="_blank" rel="noopener noreferrer">Take the survey</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What do you think you are worth?</h2>
+        <div class="slide-box">
+          <p><strong>Before anything:</strong></p>
+          <ul>
+            <li>How employable are you outside academia?</li>
+            <li>What are your main skills?</li>
+          </ul>
+          <span class="small-note">Based on your answers to the survey.</span>
+        </div>
+        <div class="footer-tag">Starting point</div>
+      </section>
+
+      <section>
+        <h2>You underestimate yourself</h2>
+        <div class="slide-box">
+          <ul>
+            <li>Non-PhDs describe PhDs positively</li>
+            <li>PhDs expect more negative perceptions</li>
+          </ul>
+          <div class="bottom-box">
+            <p><strong>Gap:</strong> you think you are perceived worse than you actually are.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Key result</div>
+      </section>
+
+      <section>
+        <h2>The problem is not competence</h2>
+        <div class="slide-box">
+          <ul>
+            <li><strong>Competence:</strong> clearly recognized</li>
+            <li><strong>Social perception:</strong> neutral or unclear</li>
+          </ul>
+          <div class="bottom-box">
+            <p><strong>Translation:</strong> you are seen as capable, but not always as adaptable.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Insight</div>
+      </section>
+
+      <section>
+        <h2>A small but real gap</h2>
+        <div class="slide-box">
+          <ul>
+            <li>PhDs are considered employable</li>
+            <li>But engineers are slightly preferred</li>
+          </ul>
+          <div class="bottom-box">
+            <p><strong>≈ -6 points in employability</strong></p>
+            <p>Not a rejection — a perception issue.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Data</div>
+      </section>
+
+      <section>
+        <h2>So what is the real issue?</h2>
+        <div class="slide-box">
+          <p>You are not lacking skills.</p>
+          <p>You are lacking <strong>translation</strong>.</p>
+          <div class="bottom-box">
+            <p><strong>Your value exists.</strong></p>
+            <p>But it is not clearly expressed.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Turning point</div>
+      </section>
+
+      <section>
+        <h2>Example</h2>
+        <div class="slide-box">
+          <p><strong>PhD language:</strong><br>“I worked on a complex research problem.”</p>
+          <p><strong>Market language:</strong><br>“I led a 3-year project under uncertainty with no predefined solution.”</p>
+        </div>
+        <div class="footer-tag">Translation</div>
+      </section>
+
+      <section>
+        <h2>What did you actually learn?</h2>
+        <div class="slide-box">
+          <ul>
+            <li>Working under uncertainty</li>
+            <li>Structuring complex problems</li>
+            <li>Managing long-term projects</li>
+            <li>Dealing with failure and doubt</li>
+          </ul>
+        </div>
+        <div class="footer-tag">Skills</div>
+      </section>
+
+      <section>
+        <h2>Now your turn</h2>
+        <div class="slide-box">
+          <p><strong>In 2 sentences:</strong></p>
+          <p>“I am useful for a company because…”</p>
+          <div class="bottom-box">
+            <p>No jargon. No thesis title.</p>
+            <p>Only value.</p>
+          </div>
+        </div>
+        <div class="footer-tag">Exercise</div>
+      </section>
+
+      <section>
+        <h2>Final question</h2>
+        <div class="slide-box">
+          <p>If you had to leave academia tomorrow:</p>
+          <div class="bottom-box">
+            <p><strong>What would you sell — and how?</strong></p>
+          </div>
+        </div>
+        <div class="footer-tag">Takeaway</div>
+      </section>
+
+      <section>
+        <h2>How employable do you feel?</h2>
+        <div class="slide-box">
+          <p><strong>Average score:</strong> 6.8 / 10</p>
+          <p><strong>“Yes, I am employable”:</strong> 72%</p>
+          <div class="bottom-box">
+            <p>Most of you feel relatively confident.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>For which job?</h2>
+        <div class="slide-box">
+          <ul>
+            <li>“Consulting”</li>
+            <li>“R&D”</li>
+            <li>“Data”</li>
+            <li>“Industry”</li>
+          </ul>
+          <div class="bottom-box">
+            <p><strong>Very few precise roles.</strong></p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>What do you actually sell?</h2>
+        <div class="slide-box">
+          <ul>
+            <li>“Rigor”</li>
+            <li>“Analysis”</li>
+            <li>“Expertise”</li>
+            <li>“Autonomy”</li>
+          </ul>
+          <div class="bottom-box">
+            <p><strong>These are not what companies buy.</strong></p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>How do you think recruiters see you?</h2>
+        <div class="slide-box">
+          <ul>
+            <li>“Too theoretical”</li>
+            <li>“Not adapted”</li>
+            <li>“Overqualified”</li>
+          </ul>
+          <div class="bottom-box">
+            <p>You expect a negative perception.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Reality is different</h2>
+        <div class="slide-box">
+          <p>Non-PhDs describe PhDs positively.</p>
+          <p>PhDs expect more negative perceptions.</p>
+          <div class="bottom-box">
+            <p><strong>You underestimate your value.</strong></p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>So what is the real problem?</h2>
+        <div class="slide-box">
+          <p>You feel employable.</p>
+          <p>You have strong skills.</p>
+          <p>But you cannot express them clearly.</p>
+          <div class="bottom-box">
+            <p><strong>The problem is not your value.</strong></p>
+            <p><strong>It is your ability to translate it.</strong></p>
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+    <div class="deck-signature" aria-hidden="true">Bastien Marguet</div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: "c/t",
+      center: true,
+      transition: "slide",
+      backgroundTransition: "fade"
+    });
+  </script>
+</body>
+</html>
