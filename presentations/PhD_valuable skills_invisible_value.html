@@ -3,447 +3,3198 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhD: Valuable Skills, Invisible Value</title>
+  <title>PhD: valuable skills, invisible value?</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 
   <style>
     :root {
-      --main-bg: #f7f8fa;
-      --main-text: #1f2937;
-      --accent: #1d4ed8;
-      --soft-border: #d1d5db;
-      --box-bg: rgba(255, 255, 255, 0.94);
-      --muted: #6b7280;
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --surface-soft: #fafbfd;
+      --text: #1f2f3f;
+      --text-soft: #5d6a78;
+      --line: #d8e0e8;
+      --accent: #49667b;
+      --accent-soft: rgba(73, 102, 123, 0.09);
+      --shadow: 0 14px 36px rgba(17, 31, 45, 0.06);
+      --radius: 24px;
+      --gap: 22px;
+      --safe-bottom: 88px;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
     }
 
     body {
-      background: var(--main-bg);
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
     }
 
     .reveal {
       font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      color: var(--main-text);
-      font-size: 30px;
-      position: relative;
+      color: var(--text);
+      font-size: 28px;
+      background: var(--bg);
     }
 
     .reveal .slides {
       text-align: left;
     }
 
+    .reveal .slides section {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
     .reveal h1,
-    .reveal h2 {
+    .reveal h2,
+    .reveal h3,
+    .reveal p,
+    .reveal li {
+      margin: 0;
+      letter-spacing: 0;
       text-transform: none;
-      letter-spacing: -0.02em;
-      color: #111827;
-      margin-bottom: 0.4em;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      color: var(--text);
+      line-height: 1.08;
+      font-weight: 700;
     }
 
     .reveal h1 {
-      font-size: 1.9em;
-      font-weight: 800;
-      text-align: center;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.15;
+      font-size: 2.08em;
+      letter-spacing: -0.035em;
     }
 
     .reveal h2 {
-      font-size: 1.35em;
-      font-weight: 750;
-      border-left: 8px solid var(--accent);
-      padding-left: 18px;
-      margin-bottom: 28px;
+      font-size: 1.34em;
+      letter-spacing: -0.028em;
+    }
+
+    .reveal h3 {
+      font-size: 0.88em;
+      letter-spacing: -0.02em;
     }
 
     .reveal p,
     .reveal li {
-      line-height: 1.38;
-      color: var(--main-text);
+      color: var(--text);
+      line-height: 1.36;
     }
 
-    .reveal ul {
-      margin: 0;
-      padding-left: 1.2em;
+    .reveal strong {
+      font-weight: 700;
     }
 
-    .reveal li {
-      margin: 0.75em 0;
+    .reveal img {
+      display: block;
+      max-width: 100%;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
     }
 
-    .reveal .title-slide {
+    .reveal .slide-number {
+      right: 24px !important;
+      bottom: 42px !important;
+      padding: 4px 10px !important;
+      font-size: 0.46em !important;
+      color: var(--text-soft) !important;
+      background: rgba(255, 255, 255, 0.82) !important;
+      border: 1px solid rgba(73, 102, 123, 0.12) !important;
+      border-radius: 999px !important;
+      backdrop-filter: blur(6px);
+      font-weight: 600;
+    }
+
+    .reveal .progress {
+      left: 42px !important;
+      right: 42px !important;
+      bottom: 18px !important;
+      width: auto !important;
+      height: 14px !important;
+      margin: 0 !important;
+      background: rgba(73, 102, 123, 0.12) !important;
+      border: 1px solid rgba(73, 102, 123, 0.16) !important;
+      border-radius: 999px !important;
+      overflow: hidden !important;
+      color: var(--accent) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .reveal .progress::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 100%);
+      pointer-events: none;
+    }
+
+    .reveal .progress span {
+      height: 100% !important;
+      border-radius: 999px !important;
+      background: var(--accent) !important;
+      box-shadow: 0 0 18px rgba(73, 102, 123, 0.28);
+    }
+
+    .slide-panel {
+      height: 100%;
+      padding: 30px 42px var(--safe-bottom);
+      box-sizing: border-box;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: var(--gap);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(245, 247, 250, 0.9) 100%);
+      overflow: hidden;
+    }
+
+    .slide-header {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      height: 100%;
+      gap: 10px;
     }
 
-    .reveal .title-card {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border: 1.5px solid var(--soft-border);
-      border-radius: 28px;
-      padding: 54px 60px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    .section-tag {
+      font-size: 0.5em;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .title-line {
+      width: 104px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .slide-main {
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-soft {
+      background: var(--surface-soft);
+    }
+
+    .punchline-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 84px;
+      padding: 18px 24px;
+      box-sizing: border-box;
+      background: var(--accent-soft);
+      border: 1px solid rgba(73, 102, 123, 0.2);
+      border-left: 6px solid var(--accent);
+      border-radius: 18px;
+      color: var(--text);
+      font-size: 0.77em;
+      font-weight: 650;
+      line-height: 1.34;
       text-align: center;
     }
 
-    .reveal .title-eyebrow {
-      display: inline-block;
-      margin-bottom: 20px;
+    .lead {
+      color: var(--text-soft);
+      font-size: 0.75em;
+      max-width: 820px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.82em;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.52em;
+      left: 0;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .split-layout {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .visual-card,
+    .text-card {
+      min-height: 0;
+      height: 100%;
+      padding: 22px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .text-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 22px;
+    }
+
+    .figure-label {
+      font-size: 0.46em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      font-weight: 700;
+    }
+
+    .image-frame {
+      height: calc(100% - 30px);
+      margin-top: 12px;
+      border-radius: 18px;
+      border: 1px solid #e4e9ef;
+      overflow: hidden;
+      background: #fbfcfd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .portrait-frame img {
+      object-fit: cover;
+      object-position: 62% center;
+    }
+
+    .survey-frame img {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .single-card {
+      height: 100%;
+      padding: 28px 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      overflow: hidden;
+    }
+
+    .centered-card {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .part-title-slide .slide-panel {
+      grid-template-rows: 1fr;
+      padding-bottom: 30px;
+    }
+
+    .part-title-slide .slide-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .part-title-heading {
+      max-width: 920px;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    .part-title-heading h1 {
+      margin: 0;
+      font-size: 1.82em;
+    }
+
+    .hero-question {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 54px 72px;
+    }
+
+    .hero-question .prompt {
+      max-width: 760px;
+      font-size: 1.22em;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-question .prompt small {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 0.36em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--accent);
+    }
+
+    .placeholder-figure {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      min-height: 0;
+    }
+
+    .placeholder-side,
+    .placeholder-center,
+    .placeholder-note {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fbfcfd;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .placeholder-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.78em;
+      font-weight: 650;
+      color: var(--text-soft);
+    }
+
+    .placeholder-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .placeholder-number {
+      font-size: 2.5em;
+      font-weight: 760;
+      letter-spacing: -0.06em;
+      color: var(--accent);
+      line-height: 0.95;
+    }
+
+    .placeholder-caption {
+      font-size: 0.74em;
+      color: var(--text-soft);
+      max-width: 220px;
+    }
+
+    .placeholder-note {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      background: var(--accent-soft);
+    }
+
+    .placeholder-note span {
+      font-size: 0.48em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .placeholder-note p {
+      font-size: 0.78em;
+    }
+
+    .mini-grid-3 {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .mini-block {
+      padding: 26px 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .mini-block h3 {
+      font-size: 0.9em;
+    }
+
+    .mini-block p {
+      font-size: 0.78em;
+      color: var(--text-soft);
+    }
+
+    .mini-block-image {
+      width: 100%;
+      max-height: 132px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 14px;
+      border: 1px solid #e4e9ef;
+      background: #fbfcfd;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .mini-block-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .mini-block-link:hover,
+    .mini-block-link:focus-visible {
+      text-decoration: underline;
+    }
+
+    .identity-grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .question-contrast {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      min-height: 0;
+    }
+
+    .contrast-card {
+      padding: 28px 26px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      min-height: 0;
+    }
+
+    .contrast-card .label {
       font-size: 0.5em;
-      font-weight: 750;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contrast-card .big-line {
+      font-size: 1.02em;
+      letter-spacing: -0.03em;
+      line-height: 1.16;
+    }
+
+    .statement-card {
+      margin-top: 0;
+      padding: 24px 28px;
+      text-align: center;
+    }
+
+    .statement-card p {
+      font-size: 1.02em;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .stat-layout {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .stat-card {
+      padding: 34px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      min-height: 0;
+      box-sizing: border-box;
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .stat-number {
+      font-size: 3.3em;
+      line-height: 0.88;
+      font-weight: 780;
+      letter-spacing: -0.08em;
+      color: var(--accent);
+    }
+
+    .stat-word {
+      font-size: 1.18em;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-support {
+      font-size: 0.82em;
+      color: var(--text-soft);
+      max-width: 460px;
+    }
+
+    .example-grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .example-card {
+      padding: 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .example-card span {
+      font-size: 0.48em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .example-card p {
+      font-size: 0.8em;
+      line-height: 1.34;
+    }
+
+    .model-layout {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .model-card {
+      position: relative;
+      padding: 22px;
+      box-sizing: border-box;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .model-figure {
+      position: relative;
+      height: calc(100% - 28px);
+      margin-top: 12px;
+      border: 1px solid #e4e9ef;
+      border-radius: 18px;
+      background: #fbfcfd;
+      overflow: hidden;
+    }
+
+    .model-figure svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .axis-note {
+      position: absolute;
+      max-width: 220px;
+      padding: 13px 14px;
+      border-radius: 15px;
+      border: 1px solid rgba(73, 102, 123, 0.18);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 10px 24px rgba(17, 31, 45, 0.05);
+    }
+
+    .axis-note h4 {
+      margin: 0 0 8px;
+      font-size: 0.46em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .axis-note p {
+      font-size: 0.68em;
+      line-height: 1.3;
+    }
+
+    .axis-note.competence {
+      top: 28px;
+      left: 30px;
+    }
+
+    .axis-note.warmth {
+      right: 24px;
+      bottom: 30px;
+    }
+
+    .judgment-layout {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.48fr) minmax(260px, 0.72fr);
+      gap: 32px;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .judgment-visual {
+      height: 100%;
+      min-height: 0;
+      padding: 28px 30px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .judgment-copy {
+      align-self: center;
+      padding: 6px 6px 6px 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .judgment-copy .bullet-list {
+      gap: 18px;
+    }
+
+    .judgment-copy .bullet-list li {
+      font-size: 0.76em;
+      line-height: 1.32;
+    }
+
+    .judgment-source {
+      margin: 0;
+      font-size: 0.44em;
+      line-height: 1.22;
+      color: #687583;
+      letter-spacing: 0.01em;
+    }
+
+    .judgment-source a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .judgment-source a:hover,
+    .judgment-source a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .judgment-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .judgment-bg {
+      fill: #ffffff;
+    }
+
+    .judgment-axis {
+      stroke: #1f2f3f;
+      stroke-width: 4;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .judgment-axis-label {
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-size: 31px;
+      font-weight: 700;
+      fill: #1f2f3f;
+    }
+
+    .judgment-origin {
+      fill: #49667b;
+    }
+
+    .judgment-slide .punchline-box {
+      min-height: 54px;
+      padding: 11px 20px;
+      font-size: 0.66em;
+      border-radius: 15px;
+    }
+
+    .comparison-grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      min-height: 0;
+    }
+
+    .comparison-card {
+      padding: 28px 26px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .comparison-card .bullet-list li {
+      font-size: 0.76em;
+    }
+
+    .paradox-layout {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 0.86fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+      min-height: 0;
+    }
+
+    .paradox-card {
+      padding: 24px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 0;
+    }
+
+    .paradox-card p {
+      font-size: 0.88em;
+      line-height: 1.25;
+    }
+
+    .paradox-card.center {
+      background: var(--accent-soft);
+      border-color: rgba(73, 102, 123, 0.22);
+    }
+
+    .rework-grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .rework-card {
+      padding: 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .rework-card .from {
+      font-size: 0.72em;
+      color: var(--text-soft);
+    }
+
+    .rework-card .arrow {
+      font-size: 0.66em;
+      color: var(--accent);
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .reveal .title-meta {
-      margin-top: 18px;
-      color: var(--muted);
+    .rework-card .to {
+      font-size: 0.86em;
+      line-height: 1.28;
+    }
+
+    .transform-grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .transform-card {
+      padding: 26px 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      min-height: 0;
+      text-align: center;
+    }
+
+    .transform-card .raw {
       font-size: 0.72em;
-      line-height: 1.45;
+      color: var(--text-soft);
     }
 
-    .reveal .title-meta a {
-      color: var(--accent);
-      text-decoration: none;
+    .transform-card .result {
+      font-size: 0.88em;
+      line-height: 1.26;
+      font-weight: 650;
+    }
+
+    .rule-card {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 70px 80px;
+    }
+
+    .rule-card .rule-text {
+      max-width: 760px;
+      font-size: 1.44em;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      text-align: center;
+    }
+
+    .closing-card {
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+      min-height: 0;
+      box-sizing: border-box;
+    }
+
+    .closing-line {
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(73, 102, 123, 0.18);
+      font-size: 1em;
+      line-height: 1.24;
+      letter-spacing: -0.025em;
+      font-weight: 680;
+      text-align: center;
+    }
+
+    .wc-slide .slide-panel {
+      position: relative;
+      grid-template-rows: auto 1fr;
+      padding-bottom: 64px;
+    }
+
+    .wc-card {
+      padding: 18px 20px 20px;
+      gap: 0;
+      align-items: stretch;
+      justify-content: stretch;
+    }
+
+    .wc-figure {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .wc-svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .wc-svg-bg {
+      fill: #ffffff;
+    }
+
+    .wc-axis {
+      stroke: #24313b;
+      stroke-width: 2.4;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .wc-diagonal {
+      stroke: #7a8691;
+      stroke-width: 1.6;
+      stroke-dasharray: 8 7;
+      vector-effect: non-scaling-stroke;
+      opacity: 0.95;
+    }
+
+    .wc-tick {
+      stroke: #5b6976;
+      stroke-width: 1.3;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .wc-tick-label,
+    .wc-axis-title,
+    .wc-point-label {
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .wc-tick-label {
+      font-size: 16px;
+      fill: #556270;
+    }
+
+    .wc-axis-title {
+      font-size: 20px;
       font-weight: 700;
+      fill: #1f2f3f;
     }
 
-    .reveal .title-meta a:hover,
-    .reveal .title-meta a:focus-visible {
+    .wc-point {
+      stroke: #ffffff;
+      stroke-width: 1.4;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .wc-point-major {
+      fill: #344b5e;
+    }
+
+    .wc-point-other {
+      fill: #8d98a4;
+    }
+
+    .wc-point-label {
+      font-size: 16px;
+      fill: #25313b;
+    }
+
+    .wc-point-label-major {
+      font-weight: 600;
+    }
+
+    .wc-point-label-other {
+      font-size: 14px;
+      fill: #36424c;
+    }
+
+    .wc-source {
+      position: absolute;
+      left: 44px;
+      bottom: 22px;
+      font-size: 0.43em;
+      line-height: 1.2;
+      color: #687583;
+      letter-spacing: 0.01em;
+    }
+
+    .wc-source a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wc-source a:hover,
+    .wc-source a:focus-visible {
       text-decoration: underline;
     }
 
-    .reveal .title-meta strong {
-      color: #111827;
+    .wc-interpret-slide .slide-panel {
+      grid-template-rows: auto 1fr auto;
+    }
+
+    .wc-interpret-layout {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.32fr) minmax(300px, 0.86fr);
+      gap: 30px;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .wc-interpret-visual {
+      height: 100%;
+      min-height: 0;
+      padding: 18px 20px 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .wc-interpret-copy {
+      align-self: center;
+      padding: 6px 4px 6px 0;
+    }
+
+    .wc-interpret-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .wc-interpret-list li {
+      padding: 18px 0;
+      border-top: 1px solid rgba(216, 224, 232, 0.9);
+      font-size: 0.8em;
+      line-height: 1.34;
+      color: var(--text);
+    }
+
+    .wc-interpret-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .wc-interpret-list strong {
+      color: #233748;
       font-weight: 700;
     }
 
-    .reveal .title-card .mini-line {
-      width: 110px;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--accent);
-      margin: 22px auto 0 auto;
+    .wc-focus-halo {
+      fill: rgba(73, 102, 123, 0.1);
+      stroke: rgba(73, 102, 123, 0.22);
+      stroke-width: 1.1;
+      vector-effect: non-scaling-stroke;
     }
 
-    .reveal .title-actions {
-      margin-top: 26px;
+    .insight-grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.9fr);
+      gap: 30px;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .insight-grid--portrait {
+      grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.9fr);
+    }
+
+    .insight-grid--wide-visual {
+      grid-template-columns: minmax(0, 1.46fr) minmax(300px, 0.94fr);
+    }
+
+    .insight-visual,
+    .insight-analysis {
+      height: 100%;
+      min-height: 0;
+      box-sizing: border-box;
+    }
+
+    .insight-visual {
+      padding: 22px 24px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      overflow: hidden;
     }
 
-    .reveal .cta-link {
-      display: inline-flex;
+    .insight-media {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.62em;
+      overflow: hidden;
+    }
+
+    .insight-media img,
+    .insight-media svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .insight-media--portrait img {
+      object-fit: cover;
+      object-position: 62% center;
+    }
+
+    .insight-media--cover-top img {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .insight-analysis {
+      padding: 28px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .insight-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .insight-list li {
+      padding: 18px 0;
+      border-top: 1px solid rgba(216, 224, 232, 0.92);
+      font-size: 0.8em;
+      line-height: 1.34;
+      color: var(--text);
+    }
+
+    .insight-list li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .insight-list strong {
+      color: #233748;
       font-weight: 700;
-      letter-spacing: 0.01em;
-      box-shadow: 0 12px 28px rgba(29, 78, 216, 0.18);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
-    .reveal .cta-link:hover,
-    .reveal .cta-link:focus-visible {
-      background: #1e40af;
-      transform: translateY(-1px);
-      box-shadow: 0 14px 32px rgba(29, 78, 216, 0.24);
+    .insight-takeaway,
+    .insight-slide .punchline-box {
+      min-height: 56px;
+      padding: 12px 20px;
+      border-radius: 16px;
+      font-size: 0.68em;
+      line-height: 1.28;
     }
 
-    .reveal .slide-box {
-      background: var(--box-bg);
-      border: 1.5px solid var(--soft-border);
-      border-radius: 18px;
-      padding: 28px 34px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    .context-stack {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
-    .reveal .small-note {
+    .context-item {
+      padding: 18px 0;
+      border-top: 1px solid rgba(216, 224, 232, 0.92);
+    }
+
+    .context-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .context-label {
       display: block;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.72em;
-      line-height: 1.35;
-    }
-
-    .reveal .bottom-box {
-      margin-top: 18px;
-      padding: 18px 22px;
-      background: #f9fafb;
-      border: 1.5px solid var(--soft-border);
-      border-radius: 14px;
-    }
-
-    .reveal .bottom-box p + p {
-      margin-top: 10px;
-    }
-
-    .reveal .footer-tag {
-      position: absolute;
-      bottom: 18px;
-      right: 28px;
-      font-size: 0.5em;
-      color: var(--muted);
-      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      font-size: 0.48em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
     }
 
-    .reveal .slide-number {
-      font-size: 0.5em !important;
-      color: var(--muted) !important;
+    .context-item p {
+      margin: 0;
+      font-size: 0.79em;
+      line-height: 1.34;
+      color: var(--text);
     }
 
-    .reveal .deck-signature {
-      position: absolute;
-      left: 28px;
-      bottom: 18px;
-      z-index: 30;
-      font-size: 0.46em;
-      color: rgba(107, 114, 128, 0.78);
-      letter-spacing: 0.02em;
-      font-weight: 500;
-      pointer-events: none;
-      user-select: none;
+    .context-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .context-link:hover,
+    .context-link:focus-visible {
+      text-decoration: underline;
+    }
+
+    .experiment-layout {
+      grid-template-columns: minmax(0, 1.42fr) minmax(260px, 0.8fr);
+    }
+
+    .experiment-copy {
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .experiment-question {
+      margin: 0;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(73, 102, 123, 0.18);
+      font-size: 0.9em;
+      line-height: 1.3;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .experiment-visual {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    .experiment-visual .insight-media {
+      flex: 0 0 auto;
+      min-height: 240px;
+      max-height: 300px;
+    }
+
+    .recruiter-protocol-slide .single-card {
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .recruiter-protocol-slide .stat-layout {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .recruiter-protocol-slide .stat-card {
+      padding: 28px 30px;
+    }
+
+    .recruiter-protocol-slide .mini-grid-3 {
+      grid-template-columns: 1.02fr 1fr 1.24fr;
+      gap: 20px;
+    }
+
+    .recruiter-protocol-slide .mini-block {
+      padding: 22px 22px;
+      gap: 12px;
+      justify-content: flex-start;
+    }
+
+    .recruiter-protocol-slide .mini-block h3 {
+      font-size: 0.72em;
+      line-height: 1.22;
+    }
+
+    .recruiter-protocol-slide .mini-block p {
+      font-size: 0.68em;
+      line-height: 1.34;
+    }
+
+    .recruiter-protocol-role {
+      margin: 0;
+      font-size: 0.9em;
+      line-height: 1.28;
+      color: var(--text);
+    }
+
+    .recruiter-protocol-role strong,
+    .recruiter-protocol-metrics strong {
+      color: #233748;
+      font-weight: 700;
+    }
+
+    .recruiter-protocol-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .recruiter-protocol-metrics p {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 1180px) {
+      .split-layout,
+      .identity-grid,
+      .stat-layout,
+      .model-layout,
+      .comparison-grid,
+      .judgment-layout,
+      .question-contrast,
+      .paradox-layout,
+      .mini-grid-3,
+      .example-grid,
+      .rework-grid,
+      .transform-grid,
+      .placeholder-figure,
+      .wc-interpret-layout,
+      .insight-grid,
+      .insight-grid--portrait {
+        grid-template-columns: 1fr;
+      }
+
+      .placeholder-figure {
+        grid-template-rows: auto auto auto;
+      }
+
+      .slide-panel {
+        padding-bottom: 96px;
+      }
+
+      .axis-note.competence {
+        left: 22px;
+      }
+
+      .axis-note.warmth {
+        right: 18px;
+      }
+
+      .judgment-copy {
+        padding-right: 0;
+      }
+
+      .wc-slide .slide-panel {
+        padding-bottom: 72px;
+      }
+
+      .wc-source {
+        left: 42px;
+        bottom: 18px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="reveal">
-
     <div class="slides">
+
+      <!-- ==================================================
+           I. INTRODUCTION
+           ================================================== -->
+
+      <!-- Slide I.1 -->
       <section>
-        <div class="title-slide">
-          <div class="title-card">
-            <div class="title-eyebrow">Workshop</div>
-            <h1>PhD: Valuable Skills, Invisible Value</h1>
-            <div class="title-meta">
-              <div><strong>Cargèse</strong></div>
-              <div>22/04/2026</div>
-              <div><a href="https://intcha26.sciencesconf.org/" target="_blank" rel="noopener noreferrer">INTCHA 2026</a></div>
+        <div class="slide-panel" style="grid-template-rows: 1fr; padding-bottom: 30px;">
+          <div class="slide-main" style="display: flex; align-items: center; justify-content: center;">
+            <div style="max-width: 980px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center;">
+              <div style="display: flex; flex-direction: column; gap: 18px; align-items: center;">
+                <h1 style="margin: 0; max-width: 900px;">PhD: valuable skills, invisible value?</h1>
+                <p style="margin: 0; font-size: 0.84em; line-height: 1.24; font-weight: 680; color: var(--text);">Bastien Marguet - Lyon 1 Universit&eacute;</p>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 42px;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <img src="../img/PhD/Lyon1_logo.png" alt="Lyon 1 Universite logo." style="display: block; width: 130px; max-height: 64px; object-fit: contain; object-position: center;">
+                  <p style="margin: 0; font-size: 0.68em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">
+                    <a class="context-link" href="https://www.univ-lyon1.fr/" target="_blank" rel="noopener noreferrer">Lyon 1 Universit&eacute;</a>
+                  </p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <img src="../img/PhD/Redoc_logo.png" alt="Redoc SPI logo." style="display: block; width: 130px; max-height: 64px; object-fit: contain; object-position: center;">
+                  <p style="margin: 0; font-size: 0.68em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">
+                    <a class="context-link" href="https://www.redoc-spi.org/" target="_blank" rel="noopener noreferrer">Redoc SPI (partnership)</a>
+                  </p>
+                </div>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 30px;">
+                <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">22/04/2026</p>
+                <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">
+                  <a class="context-link" href="https://intcha26.sciencesconf.org/" target="_blank" rel="noopener noreferrer">IntCha 2026</a>
+                </p>
+                <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">
+                  <a class="context-link" href="https://www.doctoratspi-entreprises.com/" target="_blank" rel="noopener noreferrer">Doctorat SPI Entreprises</a>
+                </p>
+              </div>
             </div>
-            <div class="mini-line"></div>
-            <div class="title-actions">
-              <a href="../phd-survey/" class="cta-link" target="_blank" rel="noopener noreferrer">Take the survey</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="part-title-slide">
+        <div class="slide-panel">
+          <div class="slide-main">
+            <div class="part-title-heading">
+              <h1>I. Introduction</h1>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Slide I.2 -->
       <section>
-        <h2>What do you think you are worth?</h2>
-        <div class="slide-box">
-          <p><strong>Before anything:</strong></p>
-          <ul>
-            <li>How employable are you outside academia?</li>
-            <li>What are your main skills?</li>
-          </ul>
-          <span class="small-note">Based on your answers to the survey.</span>
-        </div>
-        <div class="footer-tag">Starting point</div>
-      </section>
-
-      <section>
-        <h2>You underestimate yourself</h2>
-        <div class="slide-box">
-          <ul>
-            <li>Non-PhDs describe PhDs positively</li>
-            <li>PhDs expect more negative perceptions</li>
-          </ul>
-          <div class="bottom-box">
-            <p><strong>Gap:</strong> you think you are perceived worse than you actually are.</p>
-          </div>
-        </div>
-        <div class="footer-tag">Key result</div>
-      </section>
-
-      <section>
-        <h2>The problem is not competence</h2>
-        <div class="slide-box">
-          <ul>
-            <li><strong>Competence:</strong> clearly recognized</li>
-            <li><strong>Social perception:</strong> neutral or unclear</li>
-          </ul>
-          <div class="bottom-box">
-            <p><strong>Translation:</strong> you are seen as capable, but not always as adaptable.</p>
-          </div>
-        </div>
-        <div class="footer-tag">Insight</div>
-      </section>
-
-      <section>
-        <h2>A small but real gap</h2>
-        <div class="slide-box">
-          <ul>
-            <li>PhDs are considered employable</li>
-            <li>But engineers are slightly preferred</li>
-          </ul>
-          <div class="bottom-box">
-            <p><strong>≈ -6 points in employability</strong></p>
-            <p>Not a rejection — a perception issue.</p>
-          </div>
-        </div>
-        <div class="footer-tag">Data</div>
-      </section>
-
-      <section>
-        <h2>So what is the real issue?</h2>
-        <div class="slide-box">
-          <p>You are not lacking skills.</p>
-          <p>You are lacking <strong>translation</strong>.</p>
-          <div class="bottom-box">
-            <p><strong>Your value exists.</strong></p>
-            <p>But it is not clearly expressed.</p>
-          </div>
-        </div>
-        <div class="footer-tag">Turning point</div>
-      </section>
-
-      <section>
-        <h2>Example</h2>
-        <div class="slide-box">
-          <p><strong>PhD language:</strong><br>“I worked on a complex research problem.”</p>
-          <p><strong>Market language:</strong><br>“I led a 3-year project under uncertainty with no predefined solution.”</p>
-        </div>
-        <div class="footer-tag">Translation</div>
-      </section>
-
-      <section>
-        <h2>What did you actually learn?</h2>
-        <div class="slide-box">
-          <ul>
-            <li>Working under uncertainty</li>
-            <li>Structuring complex problems</li>
-            <li>Managing long-term projects</li>
-            <li>Dealing with failure and doubt</li>
-          </ul>
-        </div>
-        <div class="footer-tag">Skills</div>
-      </section>
-
-      <section>
-        <h2>Now your turn</h2>
-        <div class="slide-box">
-          <p><strong>In 2 sentences:</strong></p>
-          <p>“I am useful for a company because…”</p>
-          <div class="bottom-box">
-            <p>No jargon. No thesis title.</p>
-            <p>Only value.</p>
-          </div>
-        </div>
-        <div class="footer-tag">Exercise</div>
-      </section>
-
-      <section>
-        <h2>Final question</h2>
-        <div class="slide-box">
-          <p>If you had to leave academia tomorrow:</p>
-          <div class="bottom-box">
-            <p><strong>What would you sell — and how?</strong></p>
-          </div>
-        </div>
-        <div class="footer-tag">Takeaway</div>
-      </section>
-
-      <section>
-        <h2>How employable do you feel?</h2>
-        <div class="slide-box">
-          <p><strong>Average score:</strong> 6.8 / 10</p>
-          <p><strong>“Yes, I am employable”:</strong> 72%</p>
-          <div class="bottom-box">
-            <p>Most of you feel relatively confident.</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>For which job?</h2>
-        <div class="slide-box">
-          <ul>
-            <li>“Consulting”</li>
-            <li>“R&D”</li>
-            <li>“Data”</li>
-            <li>“Industry”</li>
-          </ul>
-          <div class="bottom-box">
-            <p><strong>Very few precise roles.</strong></p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>What do you actually sell?</h2>
-        <div class="slide-box">
-          <ul>
-            <li>“Rigor”</li>
-            <li>“Analysis”</li>
-            <li>“Expertise”</li>
-            <li>“Autonomy”</li>
-          </ul>
-          <div class="bottom-box">
-            <p><strong>These are not what companies buy.</strong></p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>How do you think recruiters see you?</h2>
-        <div class="slide-box">
-          <ul>
-            <li>“Too theoretical”</li>
-            <li>“Not adapted”</li>
-            <li>“Overqualified”</li>
-          </ul>
-          <div class="bottom-box">
-            <p>You expect a negative perception.</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Reality is different</h2>
-        <div class="slide-box">
-          <p>Non-PhDs describe PhDs positively.</p>
-          <p>PhDs expect more negative perceptions.</p>
-          <div class="bottom-box">
-            <p><strong>You underestimate your value.</strong></p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>So what is the real problem?</h2>
-        <div class="slide-box">
-          <p>You feel employable.</p>
-          <p>You have strong skills.</p>
-          <p>But you cannot express them clearly.</p>
-          <div class="bottom-box">
-            <p><strong>The problem is not your value.</strong></p>
-            <p><strong>It is your ability to translate it.</strong></p>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. Introduction</div>
+          </header>
+          <div class="slide-main" style="display: flex; align-items: center; justify-content: center;">
+            <div class="hero-question" style="padding: 0; max-width: 920px;">
+              <p class="prompt" style="max-width: none; text-align: center;">
+                Who here is already planning to leave academia in the next few years?
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Slide I.3 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. Introduction</div>
+            <h2>Not only an academic path - France at 3 years</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card" style="justify-content: center;">
+              <div class="figure-label">Share of PhDs employed by sector</div>
+              <div style="display: flex; gap: 10px; min-height: 144px;">
+                <div style="flex: 42; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; padding: 18px 18px 16px; box-sizing: border-box; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);">
+                  <div style="font-size: 0.44em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);">Sector</div>
+                  <h3 style="font-size: 0.8em; line-height: 1.14;">Public Research</h3>
+                  <div style="font-size: 1.9em; line-height: 0.9; font-weight: 780; letter-spacing: -0.06em; color: var(--accent);">~42%</div>
+                </div>
+                <div style="flex: 38; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; padding: 18px 18px 16px; box-sizing: border-box; border: 1px solid rgba(73, 102, 123, 0.18); border-radius: 22px; background: rgba(73, 102, 123, 0.1);">
+                  <div style="font-size: 0.44em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Sector</div>
+                  <h3 style="font-size: 0.8em; line-height: 1.14;">Private Research (R&amp;D)</h3>
+                  <div style="font-size: 1.9em; line-height: 0.9; font-weight: 780; letter-spacing: -0.06em; color: var(--accent);">~38%</div>
+                </div>
+                <div style="flex: 20; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; padding: 18px 16px 16px; box-sizing: border-box; border: 1px solid rgba(73, 102, 123, 0.22); border-radius: 22px; background: rgba(73, 102, 123, 0.16);">
+                  <div style="font-size: 0.44em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Sector</div>
+                  <h3 style="font-size: 0.74em; line-height: 1.14;">Outside Research</h3>
+                  <div style="font-size: 1.74em; line-height: 0.92; font-weight: 780; letter-spacing: -0.06em; color: var(--accent);">~20%</div>
+                </div>
+              </div>
+              <p class="lead" style="max-width: none;">Public research remains important, private R&amp;D is growing strongly, and a significant share of PhDs already work beyond research.</p>
+            </article>
+          </div>
+          <div class="punchline-box">In France, the PhD already leads beyond academia.</div>
+        </div>
+      </section>
 
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. Introduction</div>
+            <h2>Why does this look different across Europe?</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card">
+              <div class="figure-label">R&amp;D spending and PhD employment profile</div>
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; min-height: 0;">
+                <div style="display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 16px; box-sizing: border-box; border: 1px solid var(--line); border-radius: 22px; background: #fbfcfd;">
+                  <div style="font-size: 0.46em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);">Country group</div>
+                  <h3 style="font-size: 0.82em; line-height: 1.14;">Sweden / Germany</h3>
+                  <div>
+                    <div style="font-size: 0.44em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);">R&amp;D spending (% GDP)</div>
+                    <div style="margin-top: 6px; font-size: 1.5em; line-height: 0.94; font-weight: 780; letter-spacing: -0.06em; color: var(--accent);">~3.1% to 3.6%</div>
+                  </div>
+                  <div style="height: 10px; border-radius: 999px; background: rgba(73, 102, 123, 0.08); overflow: hidden;">
+                    <div style="width: 94%; height: 100%; border-radius: 999px; background: var(--accent);"></div>
+                  </div>
+                  <p style="font-size: 0.68em; line-height: 1.3; color: var(--text-soft);">Strong integration into deeptech and industry</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 16px; box-sizing: border-box; border: 1.5px solid rgba(73, 102, 123, 0.3); border-radius: 22px; background: linear-gradient(180deg, rgba(73, 102, 123, 0.12) 0%, rgba(73, 102, 123, 0.06) 100%);">
+                  <div style="align-self: flex-start; padding: 6px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.82); font-size: 0.42em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">Reference point</div>
+                  <h3 style="font-size: 0.82em; line-height: 1.14;">France</h3>
+                  <div>
+                    <div style="font-size: 0.44em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">R&amp;D spending (% GDP)</div>
+                    <div style="margin-top: 6px; font-size: 1.5em; line-height: 0.94; font-weight: 780; letter-spacing: -0.06em; color: var(--accent);">~2.2%</div>
+                  </div>
+                  <div style="height: 10px; border-radius: 999px; background: rgba(73, 102, 123, 0.08); overflow: hidden;">
+                    <div style="width: 61%; height: 100%; border-radius: 999px; background: var(--accent);"></div>
+                  </div>
+                  <p style="font-size: 0.68em; line-height: 1.3; color: var(--text-soft);">Hybrid model with strong public support via the Research Tax Credit</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 16px; box-sizing: border-box; border: 1px solid var(--line); border-radius: 22px; background: #fbfcfd;">
+                  <div style="font-size: 0.46em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);">Country group</div>
+                  <h3 style="font-size: 0.82em; line-height: 1.14;">Italy / Spain</h3>
+                  <div>
+                    <div style="font-size: 0.44em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);">R&amp;D spending (% GDP)</div>
+                    <div style="margin-top: 6px; font-size: 1.5em; line-height: 0.94; font-weight: 780; letter-spacing: -0.06em; color: var(--accent);">~1.4% to 1.5%</div>
+                  </div>
+                  <div style="height: 10px; border-radius: 999px; background: rgba(73, 102, 123, 0.08); overflow: hidden;">
+                    <div style="width: 42%; height: 100%; border-radius: 999px; background: var(--accent);"></div>
+                  </div>
+                  <p style="font-size: 0.68em; line-height: 1.3; color: var(--text-soft);">Stronger dependence on public funding, weaker private absorption</p>
+                </div>
+              </div>
+              <!-- <p class="lead" style="max-width: none;">European models are not identical: <br> industry absorption depends on R&amp;D intensity, <br> France sits in an intermediate position</p> -->
+            </article>
+          </div>
+          <div class="punchline-box">A PhD career is also shaped by national structures.</div>
+        </div>
+      </section>
+
+      <!-- Slide I.3 -->
+      <section class="insight-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. Introduction</div>
+            <h2>Why this role exists</h2>
+          </header>
+          <div class="slide-main">
+            <div class="split-layout" style="grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr); gap: 24px;">
+              <article class="text-card" style="padding: 6px 4px 6px 0; gap: 0;">
+                <div class="context-stack">
+                    <div class="context-item">
+                    <span class="context-label">National plan</span>
+                    <p>Launch of the <strong>&ldquo;National doctorate plan&rdquo;</strong>.</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Structuring action</span>
+                    <p>Unifying tools to better define what a PhD is.</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Ambassadors</span>
+                    <p>40 ambassadors across the country,<br>to relay information and improve visibility of the PhD.</p>
+                  </div>
+                </div>
+              </article>
+              <article class="visual-card" style="display: flex; flex-direction: column; gap: 14px; padding: 0;">
+                <div class="figure-label">National platform</div>
+                <div class="image-frame" style="height: auto; min-height: 260px; flex: 1 1 auto;">
+                  <img src="../img/PhD/plateforme_nat.png" alt="Screenshot of the national doctorate platform.">
+                </div>
+                <p style="margin: 0;"><a class="context-link" href="https://doctorat.gouv.fr/" target="_blank" rel="noopener noreferrer" style="font-size: 0.76em; font-weight: 650;">doctorat.gouv.fr</a></p>
+              </article>
+            </div>
+          </div>
+          <!-- <div class="punchline-box insight-takeaway">This role is part of a national effort to redefine and clarify the value of the PhD.</div> -->
+        </div>
+      </section>
+
+      <!-- Slide I.4 -->
+      <!-- <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. Introduction</div>
+            <h2>The mission</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card">
+              <ul class="bullet-list">
+                <li>Clarify what a PhD really develops</li>
+                <li>Reconnect doctoral training with society</li>
+                <li>Improve public and professional understanding</li>
+              </ul>
+            </article>
+          </div>
+          <div class="punchline-box">This is a mission of translation.</div>
+        </div>
+      </section> -->
+
+      <!-- Slide I.5 -->
+      <section class="insight-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. INTRODUCTION</div>
+            <h2>Who I am</h2>
+          </header>
+          <div class="slide-main">
+            <div class="split-layout" style="grid-template-columns: minmax(300px, 0.84fr) minmax(0, 1.16fr); gap: 24px;">
+              <article class="visual-card" style="padding: 0;">
+                <div class="figure-label">Profile</div>
+                <div class="image-frame">
+                  <img src="../img/PhD/MT180_bastien.jpg" alt="Bastien Marguet speaking on stage during MT180." style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                </div>
+              </article>
+              <article class="text-card" style="padding: 6px 4px 6px 0; gap: 0;">
+                <div class="context-stack">
+                  <div class="context-item">
+                    <span class="context-label">Background</span>
+                    <p><strong>PhD in Statistical Physics</strong><br>Langevin models applied to 2D materials</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Current position</span>
+                    <p><strong>Lecturer</strong> at the University of Lyon (Maths/Physics)</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Teaching / outreach</span>
+                    <p>Workshops on scientific communication<br>PhD Ambassador AURA</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Main directions</span>
+                    <p>Scientific communication from a linguistic perspective<br>Teaching initiatives, and how to deal with AI in education</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box insight-takeaway">Science, communication, education.</div>
+        </div>
+      </section>
+
+      <!-- Slide I.6 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">I. Introduction</div>
+            <h2>The main question</h2>
+          </header>
+          <div class="slide-main" style="display: flex; align-items: center; justify-content: center;">
+            <div class="hero-question" style="padding: 0; max-width: 920px;">
+              <p class="prompt" style="max-width: none; text-align: center;">
+                If you had to leave academia tomorrow, what would you be able to sell and how?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           II. YOUR RESPONSES - THE SURVEY
+           ================================================== -->
+
+      <section class="part-title-slide">
+        <div class="slide-panel">
+          <div class="slide-main">
+            <div class="part-title-heading">
+              <h1>II. Your Responses - The Survey</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide II.1 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">II. Your Responses - The Survey</div>
+            <h2>The survey</h2>
+          </header>
+          <div class="slide-main">
+            <div class="split-layout">
+              <article class="card visual-card">
+                <div class="figure-label">Workshop survey</div>
+                <div class="image-frame survey-frame">
+                  <img src="../img/PhD/Survey.png" alt="Screenshot of the workshop survey homepage.">
+                </div>
+                <p style="margin: 0; font-size: 0.62em; line-height: 1.28; color: var(--text-soft);">
+                  <a class="context-link" href="https://letudxbast.github.io/bastien.marguet/phd-survey/" target="_blank" rel="noopener noreferrer">Open the survey</a>
+                </p>
+              </article>
+              <article class="card text-card" style="justify-content: center; gap: 26px;">
+                <div>
+                  <div class="figure-label">Participants</div>
+                  <div class="stat-row" style="margin-top: 10px;">
+                    <div class="stat-number">39</div>
+                    <div class="stat-word">participants</div>
+                  </div>
+                </div>
+                <div class="context-stack">
+                  <div class="context-item">
+                    <p style="font-size: 0.98em; font-weight: 700;">PhD Student (15)</p>
+                  </div>
+                  <div class="context-item">
+                    <p style="font-size: 0.98em; font-weight: 700;">Postdoc (17)</p>
+                  </div>
+                  <div class="context-item">
+                    <p style="font-size: 0.98em; font-weight: 700;">Researcher / Lecturer (6)</p>
+                  </div>
+                  <div class="context-item">
+                    <p style="font-size: 0.98em; font-weight: 700;">Other (1)</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box">What do these answers reveal?</div>
+        </div>
+      </section>
+
+      <!-- Slide II.2 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">II. Your Responses - The Survey</div>
+            <h2>Self-perception: confidence vs employability</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card" style="justify-content: center; padding: 24px 26px;">
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; min-height: 0;">
+                <article class="card card-soft stat-card" style="padding: 28px 26px; gap: 18px; align-items: flex-start;">
+                  <p style="margin: 0; font-size: 0.78em; line-height: 1.24; font-weight: 700; color: var(--text);">How employable do you feel?</p>
+                  <div class="stat-row" style="gap: 12px;">
+                    <div class="stat-number" style="font-size: 3.45em;">6.3</div>
+                    <div class="stat-word">/ 10</div>
+                  </div>
+                  <p class="stat-support" style="max-width: none; font-size: 0.72em;">Moderate confidence, but no clear baseline</p>
+                </article>
+                <article class="card card-soft stat-card" style="padding: 28px 26px; gap: 18px; align-items: flex-start;">
+                  <p style="margin: 0; font-size: 0.78em; line-height: 1.24; font-weight: 700; color: var(--text);">Clearly employable today</p>
+                  <div class="stat-row" style="gap: 12px;">
+                    <div class="stat-number" style="font-size: 3.45em;">61%</div>
+                    <div class="stat-word">YES</div>
+                  </div>
+                  <p class="stat-support" style="max-width: none; font-size: 0.72em;">Group is split, strong uncertainty remains</p>
+                </article>
+                <article class="card card-soft stat-card" style="padding: 28px 26px; gap: 18px; align-items: flex-start;">
+                  <p style="margin: 0; font-size: 0.78em; line-height: 1.24; font-weight: 700; color: var(--text);">Confidence in skills</p>
+                  <div class="stat-row" style="gap: 12px;">
+                    <div class="stat-number" style="font-size: 3.45em;">7.9</div>
+                    <div class="stat-word">/ 10</div>
+                  </div>
+                  <p class="stat-support" style="max-width: none; font-size: 0.72em;">High internal confidence, consistent across participants</p>
+                </article>
+              </div>
+            </article>
+          </div>
+          <div class="punchline-box" style="font-weight: 700;">Strong confidence in skills but weaker and fragmented perception of employability</div>
+        </div>
+      </section>
+
+      <!-- Slide II.3 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">II. Your Responses - The Survey</div>
+            <h2>For which roles?</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-media" style="height: 100%;">
+              <img src="../img/PhD/target_jobs.png" alt="Overview of the target jobs named by participants.">
+            </div>
+          </div>
+          <div class="punchline-box">Possible roles emerge, positioning often remains broad.</div>
+        </div>
+      </section>
+
+      <!-- Slide II.4 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">II. Your Responses - The Survey</div>
+            <h2>What skills do you name?</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-media" style="height: 100%;">
+              <img src="../img/PhD/skills.png" alt="Overview of the skills named by participants.">
+            </div>
+          </div>
+          <div class="punchline-box">Skills are clearly present.</div>
+        </div>
+      </section>
+
+      <!-- Slide II.5 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">II. Your Responses - The Survey</div>
+            <h2>What value do you bring?</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-media" style="height: 100%;">
+              <img src="../img/PhD/wordcloud_value_company.png" alt="Overview of the value participants say they can bring to a company.">
+            </div>
+          </div>
+          <!-- <div class="punchline-box">Value is described more as traits than as impact.</div> -->
+        </div>
+      </section>
+
+      <!-- Slide II.6 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">II. Your Responses - The Survey</div>
+            <h2>How do you think recruiters see PhDs?</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-media" style="height: 100%;">
+              <img src="../img/PhD/wordcloud_recruiters.png" alt="Overview of how participants think recruiters see PhD holders.">
+            </div>
+            <!--
+            <div class="split-layout">
+              <article class="card visual-card">
+                <div class="figure-label">Imagined recruiter image</div>
+                <div class="comparison-grid" style="height:calc(100% - 28px);">
+                  <article class="card card-soft comparison-card">
+                    <h3>Competence / strength</h3>
+                    <p class="lead" style="max-width:none;">smart · intelligent · analytical · rigorous · problem solving · expertise · hard working · technical · scientist · methodical · critical thinking · resilient</p>
+                  </article>
+                  <article class="card card-soft comparison-card">
+                    <h3>Fit concern</h3>
+                    <p class="lead" style="max-width:none;">overqualified · too theoretical · expensive · specialized · niche knowledge · academic</p>
+                  </article>
+                </div>
+              </article>
+              <article class="card text-card">
+                <ul class="bullet-list">
+                  <li>Competence terms dominate</li>
+                  <li>Fit concerns remain</li>
+                  <li>The imagined image is mixed</li>
+                </ul>
+              </article>
+            </div>
+            -->
+          </div>
+          <div class="punchline-box">The imagined recruiter view mixes strong competence with doubts about fit.</div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           III. WHAT THE DATA SAYS
+           ================================================== -->
+
+      <section class="part-title-slide">
+        <div class="slide-panel">
+          <div class="slide-main">
+            <div class="part-title-heading">
+              <h1>III. What The Data Says</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide III.1 -->
+      <section class="judgment-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>How social judgment works</h2>
+          </header>
+          <div class="slide-main">
+            <div class="judgment-layout">
+              <article class="card judgment-visual" role="img" aria-label="Diagram showing social judgment through competence on the vertical axis and warmth on the horizontal axis.">
+                <svg class="judgment-svg" viewBox="0 0 760 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                  <defs>
+                    <marker id="judgment-axis-arrow" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+                      <path d="M0,0 L12,6 L0,12 z" fill="#1f2f3f"></path>
+                    </marker>
+                  </defs>
+                  <rect class="judgment-bg" x="0" y="0" width="760" height="520" rx="18"></rect>
+                  <line class="judgment-axis" x1="112" y1="414" x2="112" y2="92" marker-end="url(#judgment-axis-arrow)"></line>
+                  <line class="judgment-axis" x1="92" y1="394" x2="652" y2="394" marker-end="url(#judgment-axis-arrow)"></line>
+                  <circle class="judgment-origin" cx="112" cy="394" r="7.5"></circle>
+                  <text class="judgment-axis-label" x="130" y="84">Warmth</text>
+                  <text class="judgment-axis-label" x="468" y="366">Competence</text>
+                </svg>
+              </article>
+              <aside class="judgment-copy">
+                <ul class="bullet-list">
+                  <li>Social judgment combines competence and warmth</li>
+                  <li>Competence signals ability, intelligence, performance</li>
+                  <li>Warmth signals sociability, accessibility, trust</li>
+                </ul>
+                <p class="judgment-source">
+                  <a href="https://psycnet.apa.org/record/2002-02942-002" target="_blank" rel="noopener noreferrer">Source: Fiske et al., 2002 &mdash; Stereotype Content Model</a>
+                </p>
+              </aside>
+            </div>
+          </div>
+          <div class="punchline-box">You are not judged only on how smart you are.</div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 1/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph with axes only.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 2/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph showing Staff nurse and Assistant nurse.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 3/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph showing Staff nurse, Assistant nurse, and Preschool teacher.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 4/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph showing Staff nurse, Assistant nurse, Preschool teacher, and High school teacher.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="486" cy="279" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="502" y="283">High school teacher</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 5/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph adding Surgeon to the previous points.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="486" cy="279" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="502" y="283">High school teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="739" cy="371" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="724" y="364" text-anchor="end">Surgeon</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 6/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph adding Engineer to the previous points.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="486" cy="279" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="502" y="283">High school teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="739" cy="371" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="724" y="364" text-anchor="end">Surgeon</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="688" cy="406" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="703" y="410">Engineer</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 7/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph adding Researcher to the previous points.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="486" cy="279" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="502" y="283">High school teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="739" cy="371" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="724" y="364" text-anchor="end">Surgeon</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="688" cy="406" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="703" y="410">Engineer</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="739" cy="474" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="725" y="487" text-anchor="end">Researcher</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warmth-competence reconstruction 8/8 -->
+      <section class="wc-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Occupational stereotypes: warmth and competence</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card wc-card">
+              <div class="wc-figure">
+                <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Warmth and competence graph showing all occupational points.">
+                  <title>Occupational stereotypes: warmth and competence</title>
+                  <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                  <g>
+                    <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                    <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                    <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                    <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                    <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                    <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                    <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                    <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                    <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                    <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                    <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                    <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                    <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                    <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                    <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                    <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                    <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                    <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                    <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                    <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                    <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                    <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                    <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                    <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                    <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                    <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                    <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                    <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                    <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="382" cy="421" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="374" y="424" text-anchor="end">Salesperson</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="472" cy="369" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="487" y="372">Chef</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="431" cy="340" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="446" y="330">Store manager</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="149" cy="467" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="138" y="456" text-anchor="end">
+                      <tspan x="138" dy="0">Warehouse</tspan>
+                      <tspan x="138" dy="16">worker</tspan>
+                    </text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="359" cy="380" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="348" y="369" text-anchor="end">
+                      <tspan x="348" dy="0">Assistant</tspan>
+                      <tspan x="348" dy="16">accountant</tspan>
+                    </text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="155" cy="376" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="142" y="380" text-anchor="end">Cleaning staff</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="339" cy="459" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="329" y="462" text-anchor="end">Mechanic</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="552" cy="463" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="567" y="466">Accountant</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="437" cy="413" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="452" y="416">Carpenter</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="379" cy="463" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="396" y="451">
+                      <tspan x="396" dy="0">Heavy machinery</tspan>
+                      <tspan x="396" dy="16">operator</tspan>
+                    </text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="351" cy="307" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="367" y="295">
+                      <tspan x="367" dy="0">Office assistants and</tspan>
+                      <tspan x="367" dy="16">secretaries</tspan>
+                    </text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="221" cy="485" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="210" y="488" text-anchor="end">Truck driver</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="644" cy="480" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="631" y="468" text-anchor="end">
+                      <tspan x="631" dy="0">Systems and software</tspan>
+                      <tspan x="631" dy="16">developer</tspan>
+                    </text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="253" cy="283" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="241" y="272" text-anchor="end">Restaurant waiting staff</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-other" cx="302" cy="180" r="5.2"></circle>
+                    <text class="wc-point-label wc-point-label-other" x="290" y="169" text-anchor="end">Personal assistants</text>
+                  </g>
+
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="486" cy="279" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="502" y="283">High school teacher</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="739" cy="371" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="724" y="364" text-anchor="end">Surgeon</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="688" cy="406" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="703" y="410">Engineer</text>
+                  </g>
+                  <g>
+                    <circle class="wc-point wc-point-major" cx="739" cy="474" r="6.4"></circle>
+                    <text class="wc-point-label wc-point-label-major" x="725" y="487" text-anchor="end">Researcher</text>
+                  </g>
+                </svg>
+              </div>
+            </article>
+          </div>
+          <div class="wc-source">
+            <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide III.2 -->
+      <section class="wc-interpret-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Where PhDs tend to stand</h2>
+          </header>
+          <div class="slide-main">
+            <div class="wc-interpret-layout">
+              <article class="card wc-interpret-visual">
+                <div class="wc-figure">
+                  <svg class="wc-svg" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Full warmth and competence map showing occupational stereotypes.">
+                    <title>Occupational stereotypes: warmth and competence</title>
+                    <rect class="wc-svg-bg" x="0" y="0" width="920" height="620" rx="18"></rect>
+                    <g>
+                      <line class="wc-axis" x1="100" y1="520" x2="820" y2="520"></line>
+                      <line class="wc-axis" x1="100" y1="520" x2="100" y2="60"></line>
+                      <line class="wc-diagonal" x1="100" y1="520" x2="820" y2="60"></line>
+
+                      <line class="wc-tick" x1="100" y1="520" x2="100" y2="530"></line>
+                      <line class="wc-tick" x1="244" y1="520" x2="244" y2="530"></line>
+                      <line class="wc-tick" x1="388" y1="520" x2="388" y2="530"></line>
+                      <line class="wc-tick" x1="532" y1="520" x2="532" y2="530"></line>
+                      <line class="wc-tick" x1="676" y1="520" x2="676" y2="530"></line>
+                      <line class="wc-tick" x1="820" y1="520" x2="820" y2="530"></line>
+
+                      <line class="wc-tick" x1="90" y1="520" x2="100" y2="520"></line>
+                      <line class="wc-tick" x1="90" y1="428" x2="100" y2="428"></line>
+                      <line class="wc-tick" x1="90" y1="336" x2="100" y2="336"></line>
+                      <line class="wc-tick" x1="90" y1="244" x2="100" y2="244"></line>
+                      <line class="wc-tick" x1="90" y1="152" x2="100" y2="152"></line>
+                      <line class="wc-tick" x1="90" y1="60" x2="100" y2="60"></line>
+
+                      <text class="wc-tick-label" x="100" y="552" text-anchor="middle">2.3</text>
+                      <text class="wc-tick-label" x="244" y="552" text-anchor="middle">2.8</text>
+                      <text class="wc-tick-label" x="388" y="552" text-anchor="middle">3.3</text>
+                      <text class="wc-tick-label" x="532" y="552" text-anchor="middle">3.8</text>
+                      <text class="wc-tick-label" x="676" y="552" text-anchor="middle">4.3</text>
+                      <text class="wc-tick-label" x="820" y="552" text-anchor="middle">4.8</text>
+
+                      <text class="wc-tick-label" x="82" y="520" text-anchor="end" dominant-baseline="middle">2.3</text>
+                      <text class="wc-tick-label" x="82" y="428" text-anchor="end" dominant-baseline="middle">2.8</text>
+                      <text class="wc-tick-label" x="82" y="336" text-anchor="end" dominant-baseline="middle">3.3</text>
+                      <text class="wc-tick-label" x="82" y="244" text-anchor="end" dominant-baseline="middle">3.8</text>
+                      <text class="wc-tick-label" x="82" y="152" text-anchor="end" dominant-baseline="middle">4.3</text>
+                      <text class="wc-tick-label" x="82" y="60" text-anchor="end" dominant-baseline="middle">4.8</text>
+
+                      <text class="wc-axis-title" x="460" y="596" text-anchor="middle">Competence</text>
+                      <text class="wc-axis-title" x="30" y="290" text-anchor="middle" transform="rotate(-90 30 290)">Warmth</text>
+                    </g>
+
+                    <g>
+                      <ellipse cx="714" cy="421" rx="116" ry="92" transform="rotate(-12 714 421)" fill="rgba(181, 52, 47, 0.08)" stroke="#b5342f" stroke-width="3" vector-effect="non-scaling-stroke"></ellipse>
+                    </g>
+
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="382" cy="421" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="374" y="424" text-anchor="end">Salesperson</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="472" cy="369" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="487" y="372">Chef</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="431" cy="340" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="446" y="330">Store manager</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="149" cy="467" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="138" y="456" text-anchor="end">
+                        <tspan x="138" dy="0">Warehouse</tspan>
+                        <tspan x="138" dy="16">worker</tspan>
+                      </text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="359" cy="380" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="348" y="369" text-anchor="end">
+                        <tspan x="348" dy="0">Assistant</tspan>
+                        <tspan x="348" dy="16">accountant</tspan>
+                      </text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="155" cy="376" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="142" y="380" text-anchor="end">Cleaning staff</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="339" cy="459" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="329" y="462" text-anchor="end">Mechanic</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="552" cy="463" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="567" y="466">Accountant</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="437" cy="413" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="452" y="416">Carpenter</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="379" cy="463" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="396" y="451">
+                        <tspan x="396" dy="0">Heavy machinery</tspan>
+                        <tspan x="396" dy="16">operator</tspan>
+                      </text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="351" cy="307" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="367" y="295">
+                        <tspan x="367" dy="0">Office assistants and</tspan>
+                        <tspan x="367" dy="16">secretaries</tspan>
+                      </text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="221" cy="485" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="210" y="488" text-anchor="end">Truck driver</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="644" cy="480" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="631" y="468" text-anchor="end">
+                        <tspan x="631" dy="0">Systems and software</tspan>
+                        <tspan x="631" dy="16">developer</tspan>
+                      </text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="253" cy="283" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="241" y="272" text-anchor="end">Restaurant waiting staff</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-other" cx="302" cy="180" r="5.2"></circle>
+                      <text class="wc-point-label wc-point-label-other" x="290" y="169" text-anchor="end">Personal assistants</text>
+                    </g>
+
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="552" cy="154" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="566" y="158">Staff nurse</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="333" cy="194" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="348" y="199">Assistant nurse</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="431" cy="146" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="414" y="129">Preschool teacher</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="486" cy="279" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="502" y="283">High school teacher</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="739" cy="371" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="724" y="364" text-anchor="end">Surgeon</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="688" cy="406" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="703" y="410">Engineer</text>
+                    </g>
+                    <g>
+                      <circle class="wc-point wc-point-major" cx="739" cy="474" r="6.4"></circle>
+                      <text class="wc-point-label wc-point-label-major" x="725" y="487" text-anchor="end">Researcher</text>
+                    </g>
+                  </svg>
+                </div>
+              </article>
+              <aside class="wc-interpret-copy">
+                <ul class="wc-interpret-list">
+                  <li>PhDs would likely sit in a zone of <strong>very high competence</strong></li>
+                  <li>Probably <strong>lower in warmth</strong> than many other professions</li>
+                  <li>This is an <strong>intuition based on nearby technical profiles</strong>, not a direct measure</li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+          <div class="punchline-box">You are respected, but not always seen as easy to work with.</div>
+        </div>
+      </section>
+
+      <!-- Slide III.4 -->
+      <section class="insight-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. WHAT THE DATA SAYS</div>
+            <h2>LID</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-grid insight-grid--wide-visual">
+              <article class="card insight-visual">
+                <div class="figure-label">Interdisciplinary doctoral lab</div>
+                <div class="insight-media">
+                  <img src="../img/PhD/LID.png" alt="Visual identity of the LID interdisciplinary doctoral lab.">
+                </div>
+              </article>
+              <article class="insight-analysis" style="padding: 6px 4px 6px 0; align-items: stretch;">
+                <div class="context-stack" style="width: 100%;">
+                  <div class="context-item">
+                    <span class="context-label">Name</span>
+                    <p>Laboratory of Interdisciplinary studies on the Doctorate</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">About</span>
+                    <p>Founded by Adoc Talent Management in 2021.</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Link</span>
+                    <p><a class="context-link" href="https://lid-adoc-tm.com/" target="_blank" rel="noopener noreferrer">lid-adoc-tm.com</a></p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Research presented here</span>
+                    <p>Part of the PhD work of Nicolas Lopes.</p>
+                    <p style="margin-top: 6px; font-size: 0.66em; line-height: 1.24; color: var(--text-soft);">Nicolas Lopes<br>PhD candidate</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box insight-takeaway">LID: Laboratory of Interdisciplinary studies on the Doctorate - research presented here includes work by Nicolas Lopes.</div>
+        </div>
+      </section>
+
+      <!-- Slide III.5 -->
+      <section class="insight-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>The experiment</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-grid insight-grid--wide-visual experiment-layout">
+              <article class="insight-analysis experiment-copy" style="padding: 6px 4px 6px 0;">
+                <div class="context-stack">
+                  <div class="context-item">
+                    <span class="context-label">Question asked</span>
+                    <p class="experiment-question">"In your opinion, how do people in general perceive PhD holders?"</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Population</span>
+                    <p>267 participants</p>
+                  </div>
+                  <div class="context-item">
+                    <span class="context-label">Composition</span>
+                    <p>103 PhD<br>164 non-PhD</p>
+                  </div>
+                </div>
+              </article>
+              <article class="card insight-visual experiment-visual">
+                <div class="figure-label">Study material</div>
+                <div class="insight-media">
+                  <img src="../img/PhD/PhD_perceptions_words.jpg" alt="Visual used in the study about how PhD holders are perceived.">
+                </div>
+                <p style="margin: 0; font-size: 0.62em; line-height: 1.28; color: var(--text-soft);">
+                  Visualization of 669 responses provided by 164 participants.
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box insight-takeaway">What is the ratio of positive vs negative traits?</div>
+        </div>
+      </section>
+
+      <!-- Slide III.6 -->
+      <section class="insight-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>The perception gap</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-grid">
+              <article class="card insight-visual">
+                <div class="figure-label">Positive vs. negative traits</div>
+                <div class="insight-media">
+                  <img src="../img/PhD/image3.png" alt="Bar chart comparing positive and negative traits attributed to PhDs by non-PhDs and PhDs.">
+                </div>
+              </article>
+              <article class="insight-analysis" style="padding: 6px 4px 6px 0;">
+                <ul class="insight-list">
+                  <li>Non-PhDs evaluate PhDs more positively than PhDs do themselves</li>
+                  <li>PhDs anticipate more negative judgments than actually expressed</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box insight-takeaway">We underestimate how others see us.</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+          </header>
+          <div class="slide-main" style="display: flex; align-items: center; justify-content: center;">
+            <div class="hero-question" style="padding: 0; max-width: 920px;">
+              <p class="prompt" style="max-width: none; text-align: center;">
+                But what happens when the judgment comes from recruiters?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide III.4 -->
+      <section class="recruiter-protocol-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>Recruiter-side protocol</h2>
+          </header>
+          <div class="slide-main">
+            <div class="stat-layout" style="grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.56fr); grid-template-rows: minmax(0, 0.88fr) minmax(0, 1.12fr); align-items: stretch;">
+                <article class="card stat-card" style="grid-column: 1; grid-row: 1; padding: 24px 26px;">
+                  <p class="figure-label">Sample</p>
+                  <div class="stat-row">
+                    <div class="stat-number">189</div>
+                  </div>
+                  <p class="stat-support">Recruiters</p>
+                </article>
+                <article class="card stat-card" style="grid-column: 1; grid-row: 2; padding: 24px 26px;">
+                  <p class="figure-label">Candidate profiles</p>
+                  <p class="recruiter-protocol-role"><strong>Engineer</strong><br><strong>PhD holder</strong></p>
+                </article>
+                <article class="card stat-card" style="grid-column: 2; grid-row: 1 / span 2; padding: 28px 32px;">
+                  <p class="figure-label">Roles evaluated</p>
+                  <p class="recruiter-protocol-role"><strong>Technical Lead - execution & problem-solving (1)</strong><br><strong>Head of R&D - strategic and organizational leadership (2)</strong></p>
+                  <p class="figure-label" style="margin-top: 18px;">Fields</p>
+                  <p class="recruiter-protocol-role"><strong>Chemistry</strong><br><strong>Materials Science</strong></p>
+                </article>
+              </div>
+          </div>
+          <div class="punchline-box">Do recruiters prefer PhDs or engineers?</div>
+        </div>
+      </section>
+
+      <!-- Slide III.5 -->
+      <section class="insight-slide">
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">III. What The Data Says</div>
+            <h2>When perception affects employability</h2>
+          </header>
+          <div class="slide-main">
+            <div class="insight-grid">
+              <article class="card insight-visual">
+                <div class="figure-label">Hiring preference gap</div>
+                <div class="insight-media">
+                  <img src="../img/PhD/dr_vs_eng_split_-6.png" alt="Bar chart comparing how engineers and PhDs are rated in employability.">
+                </div>
+                <p class="stat-support" style="max-width:none;margin-top:12px;">
+                  Share of recruiters (%) willing to hire an engineer or a PhD, by role <br> (1) Technical lead <br> (2) Head of R&D
+                </p>
+              </article>
+              <article class="insight-analysis" style="padding: 6px 4px 6px 0;">
+                <ul class="insight-list">
+                  <li>In hiring situations, engineers are slightly preferred</li>
+                  <li>Not due to competence, but perceived fit</li>
+                  <li>There is an observable gap against PhDs</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box insight-takeaway">You do not lose on ability - you lose on perception.</div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           IV. THE GAP
+           ================================================== -->
+
+      <section class="part-title-slide">
+        <div class="slide-panel">
+          <div class="slide-main">
+            <div class="part-title-heading">
+              <h1>IV. The Gap</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide IV.2 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">IV. The Paradox</div>
+            <h2>The paradox</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card" style="justify-content: center; gap: 22px;">
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; min-height: 0;">
+                <article class="card card-soft" style="padding: 24px 22px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <p style="font-size: 0.8em; line-height: 1.26;"><strong>You feel confident about your skills</strong><br><span style="color: var(--text-soft);">But you doubt your employability</span></p>
+                </article>
+                <article class="card card-soft" style="padding: 24px 22px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <p style="font-size: 0.8em; line-height: 1.26;"><strong>Your competence is recognized</strong><br><span style="color: var(--text-soft);">But you expect negative judgments</span></p>
+                </article>
+                <article class="card card-soft" style="padding: 24px 22px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <p style="font-size: 0.8em; line-height: 1.26;"><strong>You are trained to solve complex problems</strong><br><span style="color: var(--text-soft);">But you struggle to explain your value</span></p>
+                </article>
+              </div>
+              <ul class="bullet-list" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 22px;">
+                <li style="font-size: 0.72em;">High competence, low perceived fit</li>
+                <li style="font-size: 0.72em;">Strong skills, weak translation</li>
+                <li style="font-size: 0.72em;">Confidence in ability, uncertainty in positioning</li>
+              </ul>
+            </article>
+          </div>
+          <div class="punchline-box">You don&rsquo;t lack value. You struggle to make it visible.</div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           V. RECONSTRUCTION
+           ================================================== -->
+
+      <section class="part-title-slide">
+        <div class="slide-panel">
+          <div class="slide-main">
+            <div class="part-title-heading">
+              <h1>V. Reconstruction</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide V.1 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">V. Reconstruction</div>
+            <h2>Let&rsquo;s rework the words</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card" style="padding: 20px 24px; gap: 0;">
+              <div style="display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; padding: 0 0 12px; align-items: end;">
+                <div class="figure-label">Keyword</div>
+                <div class="figure-label">What it can really mean</div>
+              </div>
+              <div style="display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0;">
+                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                  <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Communication</p>
+                  <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Solving difficult problems through scientific method. Communicating with diverse groups of individuals.&rdquo;</p>
+                </div>
+                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                  <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Problem solving</p>
+                  <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Ability to solve complex and interdisciplinary problems independently or in a team.&rdquo;</p>
+                </div>
+                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                  <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Scientific communication</p>
+                  <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Ability to translate complex science into narratives for both scientific and non-scientific audiences.&rdquo;</p>
+                </div>
+                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                  <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Project management</p>
+                  <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Ability to tear down a project in smaller pieces. Rational ability to choose next steps.&rdquo;</p>
+                </div>
+                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                  <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Persistence</p>
+                  <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;I have the ability to see projects through, from the beginning to an end.&rdquo;</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="punchline-box">A keyword is not enough. Value becomes visible when it is made concrete.</div>
+        </div>
+      </section>
+
+      <!-- Slide V.2 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">V. Reconstruction</div>
+            <h2>What a PhD really develops</h2>
+          </header>
+          <div class="slide-main">
+            <div class="transform-grid">
+              <article class="card transform-card">
+                <div class="raw">uncertainty</div>
+                <div class="result">Decision-making under uncertainty</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">thesis</div>
+                <div class="result">Long-term project management</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">research</div>
+                <div class="result">Solving open problems</div>
+              </article>
+            </div>
+          </div>
+          <div class="punchline-box">You already developed more than you usually say.</div>
+        </div>
+      </section>
+
+      <!-- Slide V.3 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">V. Reconstruction</div>
+            <h2>What do you still want to develop?</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card">
+              <ul class="bullet-list">
+                <li>Reflect now, not only when applying</li>
+                <li>Think about future skills during the PhD</li>
+                <li>Build intentional development</li>
+              </ul>
+            </article>
+          </div>
+          <div class="punchline-box">This reflection should start now, not at the moment of candidacy.</div>
+        </div>
+      </section>
+
+      <!-- Slide V.4 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">V. Reconstruction</div>
+            <h2>One rule</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card centered-card rule-card">
+              <p class="rule-text">&ldquo;If you cannot say it simply, you cannot sell it.&rdquo;</p>
+            </article>
+          </div>
+          <div class="punchline-box">Clarity is part of professional value.</div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           VI. CONCLUSION
+           ================================================== -->
+
+      <section class="part-title-slide">
+        <div class="slide-panel">
+          <div class="slide-main">
+            <div class="part-title-heading">
+              <h1>VI. Conclusion</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide VI.1 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">VI. Conclusion</div>
+            <h2>Academia, but not only</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card single-card">
+              <ul class="bullet-list">
+                <li>Academia is a valuable path</li>
+                <li>The PhD should not be mentally locked inside academia</li>
+                <li>Wherever you go, your PhD has value</li>
+              </ul>
+            </article>
+          </div>
+          <div class="punchline-box">The value of the PhD goes beyond the university.</div>
+        </div>
+      </section>
+
+      <!-- Slide VI.2 -->
+      <section>
+        <div class="slide-panel">
+          <header class="slide-header">
+            <div class="section-tag">VI. Conclusion</div>
+            <h2>What should remain</h2>
+          </header>
+          <div class="slide-main">
+            <article class="card closing-card">
+              <ul class="bullet-list">
+                <li>Learn to name it</li>
+                <li>Learn to claim it</li>
+                <li>Learn to express it</li>
+              </ul>
+              <div class="closing-line">Whatever path you choose, learn to name your value, and make it visible.</div>
+            </article>
+          </div>
+          <div class="punchline-box">Your value is real. Your task is to make it readable.</div>
+        </div>
+      </section>
 
     </div>
-    <div class="deck-signature" aria-hidden="true">Bastien Marguet</div>
   </div>
 
-  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
   <script>
     Reveal.initialize({
+      width: 1366,
+      height: 768,
+      margin: 0.02,
+      minScale: 0.2,
+      maxScale: 2.0,
       hash: true,
-      controls: true,
+      controls: false,
       progress: true,
-      slideNumber: "c/t",
-      center: true,
-      transition: "slide",
+      center: false,
+      slideNumber: "c / t",
+      transition: "fade",
       backgroundTransition: "fade"
     });
   </script>
