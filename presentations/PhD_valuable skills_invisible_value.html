@@ -862,31 +862,91 @@
     .transform-grid {
       height: 100%;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
       min-height: 0;
     }
 
     .transform-card {
-      padding: 26px 24px;
+      padding: 18px 16px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 14px;
+      gap: 10px;
       min-height: 0;
       text-align: center;
     }
 
     .transform-card .raw {
-      font-size: 0.72em;
+      font-size: 0.54em;
       color: var(--text-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .transform-card .result {
-      font-size: 0.88em;
-      line-height: 1.26;
+      font-size: 0.72em;
+      line-height: 1.24;
       font-weight: 650;
+    }
+
+    .development-layout {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      min-height: 0;
+    }
+
+    .development-intro {
+      max-width: 920px;
+    }
+
+    .development-question {
+      margin: 0;
+      font-size: 1.18em;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .development-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .development-card {
+      padding: 24px 24px 22px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .development-card span {
+      font-size: 0.5em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .development-card h3 {
+      font-size: 0.88em;
+      line-height: 1.18;
+    }
+
+    .development-card p {
+      font-size: 0.72em;
+      line-height: 1.32;
+      color: var(--text-soft);
     }
 
     .rule-card {
@@ -929,6 +989,10 @@
       position: relative;
       grid-template-rows: auto 1fr;
       padding-bottom: 64px;
+    }
+
+    .wc-slide--bridge .slide-panel {
+      padding-bottom: 126px;
     }
 
     .wc-card {
@@ -1022,7 +1086,7 @@
     .wc-source {
       position: absolute;
       left: 44px;
-      bottom: 22px;
+      bottom: 40px;
       font-size: 0.43em;
       line-height: 1.2;
       color: #687583;
@@ -1037,6 +1101,27 @@
     .wc-source a:hover,
     .wc-source a:focus-visible {
       text-decoration: underline;
+    }
+
+    .wc-next-step {
+      position: absolute;
+      left: 50%;
+      bottom: 74px;
+      transform: translateX(-50%);
+      min-width: 280px;
+      max-width: 420px;
+      padding: 12px 22px;
+      box-sizing: border-box;
+      border-radius: 16px;
+      border: 1px solid rgba(73, 102, 123, 0.2);
+      background: var(--accent-soft);
+      color: var(--text);
+      font-size: 0.66em;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(17, 31, 45, 0.05);
     }
 
     .wc-interpret-slide .slide-panel {
@@ -1353,7 +1438,8 @@
       .placeholder-figure,
       .wc-interpret-layout,
       .insight-grid,
-      .insight-grid--portrait {
+      .insight-grid--portrait,
+      .development-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1381,9 +1467,18 @@
         padding-bottom: 72px;
       }
 
+      .wc-slide--bridge .slide-panel {
+        padding-bottom: 136px;
+      }
+
       .wc-source {
         left: 42px;
-        bottom: 18px;
+        bottom: 36px;
+      }
+
+      .wc-next-step {
+        bottom: 76px;
+        max-width: calc(100% - 84px);
       }
     }
   </style>
@@ -1967,7 +2062,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 2/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2035,7 +2130,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 3/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2107,7 +2202,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 4/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2183,7 +2278,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 5/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2263,7 +2358,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 6/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2347,7 +2442,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 7/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2435,7 +2530,7 @@
       </section>
 
       <!-- Warmth-competence reconstruction 8/8 -->
-      <section class="wc-slide">
+      <section class="wc-slide" data-transition="none" data-background-transition="none">
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">III. What The Data Says</div>
@@ -2592,6 +2687,7 @@
               </div>
             </article>
           </div>
+          <!-- <div class="wc-next-step">Where do PhDs stand?</div> -->
           <div class="wc-source">
             <a href="https://www.sciencedirect.com/org/science/article/pii/S0048348621000765" target="_blank" rel="noopener noreferrer">Source: A. Strini&#263; et al., 2021</a>
           </div>
@@ -2769,7 +2865,7 @@
               </aside>
             </div>
           </div>
-          <div class="punchline-box">You are respected, but not always seen as easy to work with.</div>
+          <div class="punchline-box">PhDs likely fit this pattern, but we still need direct data.</div>
         </div>
       </section>
 
@@ -2805,7 +2901,10 @@
                   <div class="context-item">
                     <span class="context-label">Research presented here</span>
                     <p>Part of the PhD work of Nicolas Lopes.</p>
-                    <p style="margin-top: 6px; font-size: 0.66em; line-height: 1.24; color: var(--text-soft);">Nicolas Lopes<br>PhD candidate</p>
+                    <div style="display: flex; align-items: center; gap: 16px; margin-top: 12px;">
+                      <img src="../img/PhD/Nicolas_Lopes.png" alt="Portrait of Nicolas Lopes." style="width: 108px; height: 108px; border-radius: 18px; border: 1px solid var(--line); background: #fbfcfd; object-fit: cover; object-position: center top; flex: 0 0 auto;">
+                      <p style="font-size: 0.66em; line-height: 1.24; color: var(--text-soft);">Nicolas Lopes<br>PhD candidate</p>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -2872,8 +2971,9 @@
               </article>
               <article class="insight-analysis" style="padding: 6px 4px 6px 0;">
                 <ul class="insight-list">
-                  <li>Non-PhDs evaluate PhDs more positively than PhDs do themselves</li>
-                  <li>PhDs anticipate more negative judgments than actually expressed</li>
+                  <li>PhDs attribute about 20% more negative traits to PhD holders than non-PhDs do</li>
+                  <!-- <li>Non-PhDs evaluate PhDs more positively than PhDs do themselves</li> -->
+                  <!-- <li>PhDs anticipate more negative judgments than actually expressed</li> -->
                 </ul>
               </article>
             </div>
@@ -2956,19 +3056,19 @@
               </article>
             </div>
           </div>
-          <div class="punchline-box insight-takeaway">You do not lose on ability - you lose on perception.</div>
+          <div class="punchline-box insight-takeaway">You do not lose on ability, you lose on perception.</div>
         </div>
       </section>
 
       <!-- ==================================================
-           IV. THE GAP
+           IV. THE PARADOX
            ================================================== -->
 
       <section class="part-title-slide">
         <div class="slide-panel">
           <div class="slide-main">
             <div class="part-title-heading">
-              <h1>IV. The Gap</h1>
+              <h1>IV. The Paradox</h1>
             </div>
           </div>
         </div>
@@ -3001,7 +3101,7 @@
               </ul>
             </article>
           </div>
-          <div class="punchline-box">You don&rsquo;t lack value. You struggle to make it visible.</div>
+          <div class="punchline-box">You struggle to make your value visible.</div>
         </div>
       </section>
 
@@ -3033,10 +3133,10 @@
                 <div class="figure-label">What it can really mean</div>
               </div>
               <div style="display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0;">
-                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                <!-- <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
                   <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Communication</p>
                   <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Solving difficult problems through scientific method. Communicating with diverse groups of individuals.&rdquo;</p>
-                </div>
+                </div> -->
                 <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
                   <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Problem solving</p>
                   <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Ability to solve complex and interdisciplinary problems independently or in a team.&rdquo;</p>
@@ -3049,10 +3149,10 @@
                   <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Project management</p>
                   <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;Ability to tear down a project in smaller pieces. Rational ability to choose next steps.&rdquo;</p>
                 </div>
-                <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
+                <!-- <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
                   <p style="margin: 0; font-size: 0.66em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">Persistence</p>
                   <p style="margin: 0; font-size: 0.76em; line-height: 1.32; color: var(--text); font-weight: 600;">&ldquo;I have the ability to see projects through, from the beginning to an end.&rdquo;</p>
-                </div>
+                </div> -->
               </div>
             </article>
           </div>
@@ -3070,16 +3170,68 @@
           <div class="slide-main">
             <div class="transform-grid">
               <article class="card transform-card">
-                <div class="raw">uncertainty</div>
+                <div class="raw">Skill</div>
+                <div class="result">Critical thinking</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Problem framing</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Project management</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Autonomy</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Data analysis</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Literature review</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Experimental design</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Learning fast</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
                 <div class="result">Decision-making under uncertainty</div>
               </article>
               <article class="card transform-card">
-                <div class="raw">thesis</div>
-                <div class="result">Long-term project management</div>
+                <div class="raw">Skill</div>
+                <div class="result">Priority setting</div>
               </article>
               <article class="card transform-card">
-                <div class="raw">research</div>
-                <div class="result">Solving open problems</div>
+                <div class="raw">Skill</div>
+                <div class="result">Scientific writing</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Oral communication</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Teaching &amp; mentoring</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Collaboration</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Translating complexity</div>
+              </article>
+              <article class="card transform-card">
+                <div class="raw">Skill</div>
+                <div class="result">Resilience</div>
               </article>
             </div>
           </div>
@@ -3088,24 +3240,40 @@
       </section>
 
       <!-- Slide V.3 -->
-      <section>
+      <!-- <section>
         <div class="slide-panel">
           <header class="slide-header">
             <div class="section-tag">V. Reconstruction</div>
             <h2>What do you still want to develop?</h2>
           </header>
           <div class="slide-main">
-            <article class="card single-card">
-              <ul class="bullet-list">
-                <li>Reflect now, not only when applying</li>
-                <li>Think about future skills during the PhD</li>
-                <li>Build intentional development</li>
-              </ul>
-            </article>
+            <div class="development-layout">
+              <div class="development-intro">
+                <div class="figure-label">A question to ask during the PhD</div>
+                <p class="development-question">What do you want to strengthen before a transition forces you to name it?</p>
+              </div>
+              <div class="development-grid">
+                <article class="card development-card">
+                  <span>Reflect</span>
+                  <h3>Identify what already feels strong</h3>
+                  <p>Notice the skills you already use naturally in your research work.</p>
+                </article>
+                <article class="card development-card">
+                  <span>Choose</span>
+                  <h3>Decide what you still want to build</h3>
+                  <p>Pick a few abilities you want to strengthen on purpose before leaving.</p>
+                </article>
+                <article class="card development-card">
+                  <span>Practice</span>
+                  <h3>Turn development into concrete experience</h3>
+                  <p>Look for teaching, mentoring, project, or communication situations that make it visible.</p>
+                </article>
+              </div>
+            </div>
           </div>
           <div class="punchline-box">This reflection should start now, not at the moment of candidacy.</div>
         </div>
-      </section>
+      </section> -->
 
       <!-- Slide V.4 -->
       <section>
@@ -3115,11 +3283,11 @@
             <h2>One rule</h2>
           </header>
           <div class="slide-main">
-            <article class="card single-card centered-card rule-card">
-              <p class="rule-text">&ldquo;If you cannot say it simply, you cannot sell it.&rdquo;</p>
+            <article class="single-card centered-card rule-card">
+              <p class="rule-text">If you cannot say it simply, you cannot sell it.</p>
             </article>
           </div>
-          <div class="punchline-box">Clarity is part of professional value.</div>
+          <!-- <div class="punchline-box">Clarity is part of professional value.</div> -->
         </div>
       </section>
 
@@ -3137,26 +3305,6 @@
         </div>
       </section>
 
-      <!-- Slide VI.1 -->
-      <section>
-        <div class="slide-panel">
-          <header class="slide-header">
-            <div class="section-tag">VI. Conclusion</div>
-            <h2>Academia, but not only</h2>
-          </header>
-          <div class="slide-main">
-            <article class="card single-card">
-              <ul class="bullet-list">
-                <li>Academia is a valuable path</li>
-                <li>The PhD should not be mentally locked inside academia</li>
-                <li>Wherever you go, your PhD has value</li>
-              </ul>
-            </article>
-          </div>
-          <div class="punchline-box">The value of the PhD goes beyond the university.</div>
-        </div>
-      </section>
-
       <!-- Slide VI.2 -->
       <section>
         <div class="slide-panel">
@@ -3167,14 +3315,15 @@
           <div class="slide-main">
             <article class="card closing-card">
               <ul class="bullet-list">
-                <li>Learn to name it</li>
-                <li>Learn to claim it</li>
-                <li>Learn to express it</li>
+                <li>Start by rethinking your own perception of the PhD</li>
+                <li>Academia is a valuable path, but not the only one</li>
+                <li>Wherever you go, your PhD has value, learn how to name it</li>
+                <li>You must think about what skills you want to develop, to be able to develop them</li>
               </ul>
-              <div class="closing-line">Whatever path you choose, learn to name your value, and make it visible.</div>
+              <!-- <div class="closing-line">Your PhD has value beyond academia. The key is to recognize it, develop it, and learn how to express it.</div> -->
             </article>
           </div>
-          <div class="punchline-box">Your value is real. Your task is to make it readable.</div>
+          <!-- <div class="punchline-box">Your value is real. Your task is to make it readable.</div> -->
         </div>
       </section>
 
@@ -3194,7 +3343,7 @@
       progress: true,
       center: false,
       slideNumber: "c / t",
-      transition: "fade",
+      transition: "slide",
       backgroundTransition: "fade"
     });
   </script>
