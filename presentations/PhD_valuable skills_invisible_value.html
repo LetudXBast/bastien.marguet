@@ -149,6 +149,7 @@
     }
 
     .slide-panel {
+      position: relative;
       height: 100%;
       padding: 30px 42px var(--safe-bottom);
       box-sizing: border-box;
@@ -160,10 +161,53 @@
       overflow: hidden;
     }
 
+    .slide-panel::after {
+      content: "Bastien Marguet";
+      position: absolute;
+      left: 42px;
+      bottom: 42px;
+      font-size: 0.42em;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(93, 106, 120, 0.78);
+      pointer-events: none;
+    }
+
+    .slide-panel--branded {
+      position: relative;
+    }
+
     .slide-header {
       display: flex;
       flex-direction: column;
       gap: 10px;
+    }
+
+    .slide-header--branded {
+      min-height: 112px;
+      padding-left: 138px;
+    }
+
+    .lid-overview-slide .slide-header--branded,
+    .employability-slide .slide-header--branded {
+      min-height: 0;
+    }
+
+    .employability-slide .insight-grid {
+      grid-template-columns: minmax(0, 35fr) minmax(0, 65fr);
+    }
+
+    .lid-slide-logo {
+      position: absolute;
+      top: 4px;
+      left: -16px;
+      width: 157px;
+      height: 157px;
+      object-fit: contain;
+      object-position: left top;
+      opacity: 0.96;
+      z-index: 2;
     }
 
     .section-tag {
@@ -184,6 +228,25 @@
     .slide-main {
       min-height: 0;
       overflow: hidden;
+    }
+
+    .research-slide-main {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .research-slide-main > :first-child {
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+
+    .research-source-note {
+      margin: 0 4px;
+      font-size: 0.44em;
+      line-height: 1.24;
+      color: var(--text-soft);
+      letter-spacing: 0.01em;
     }
 
     .card {
@@ -1499,6 +1562,9 @@
               <div style="display: flex; flex-direction: column; gap: 18px; align-items: center;">
                 <h1 style="margin: 0; max-width: 900px;">PhD: valuable skills, invisible value?</h1>
                 <p style="margin: 0; font-size: 0.84em; line-height: 1.24; font-weight: 680; color: var(--text);">Bastien Marguet - Lyon 1 Universit&eacute;</p>
+                <p style="margin: 0; font-size: 0.64em; line-height: 1.24; color: var(--text-soft); font-weight: 650;">
+                  <a class="context-link" href="https://letudxbast.github.io/bastien.marguet/" target="_blank" rel="noopener noreferrer">My website</a>
+                </p>
               </div>
               <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 42px;">
                 <div style="display: flex; align-items: center; gap: 14px;">
@@ -2870,12 +2936,13 @@
       </section>
 
       <!-- Slide III.4 -->
-      <section class="insight-slide">
-        <div class="slide-panel">
-          <header class="slide-header">
+      <section class="insight-slide lid-overview-slide">
+        <div class="slide-panel slide-panel--branded">
+          <header class="slide-header slide-header--branded">
             <div class="section-tag">III. WHAT THE DATA SAYS</div>
             <h2>LID</h2>
           </header>
+          <img class="lid-slide-logo" src="../img/PhD/LID_logo.png" alt="LID logo.">
           <div class="slide-main">
             <div class="insight-grid insight-grid--wide-visual">
               <article class="card insight-visual">
@@ -2916,12 +2983,13 @@
 
       <!-- Slide III.5 -->
       <section class="insight-slide">
-        <div class="slide-panel">
-          <header class="slide-header">
+        <div class="slide-panel slide-panel--branded">
+          <header class="slide-header slide-header--branded">
             <div class="section-tag">III. What The Data Says</div>
             <h2>The experiment</h2>
           </header>
-          <div class="slide-main">
+          <img class="lid-slide-logo" src="../img/PhD/LID_logo.png" alt="LID logo.">
+          <div class="slide-main research-slide-main">
             <div class="insight-grid insight-grid--wide-visual experiment-layout">
               <article class="insight-analysis experiment-copy" style="padding: 6px 4px 6px 0;">
                 <div class="context-stack">
@@ -2949,6 +3017,7 @@
                 </p>
               </article>
             </div>
+            <p class="research-source-note">Source: Lopes &amp; Bran, 2026</p>
           </div>
           <div class="punchline-box insight-takeaway">What is the ratio of positive vs negative traits?</div>
         </div>
@@ -2956,12 +3025,13 @@
 
       <!-- Slide III.6 -->
       <section class="insight-slide">
-        <div class="slide-panel">
-          <header class="slide-header">
+        <div class="slide-panel slide-panel--branded">
+          <header class="slide-header slide-header--branded">
             <div class="section-tag">III. What The Data Says</div>
             <h2>The perception gap</h2>
           </header>
-          <div class="slide-main">
+          <img class="lid-slide-logo" src="../img/PhD/LID_logo.png" alt="LID logo.">
+          <div class="slide-main research-slide-main">
             <div class="insight-grid">
               <article class="card insight-visual">
                 <div class="figure-label">Positive vs. negative traits</div>
@@ -2977,6 +3047,7 @@
                 </ul>
               </article>
             </div>
+            <p class="research-source-note">Source: Lopes &amp; Bran, 2026</p>
           </div>
           <div class="punchline-box insight-takeaway">We underestimate how others see us.</div>
         </div>
@@ -2999,12 +3070,13 @@
 
       <!-- Slide III.4 -->
       <section class="recruiter-protocol-slide">
-        <div class="slide-panel">
-          <header class="slide-header">
+        <div class="slide-panel slide-panel--branded">
+          <header class="slide-header slide-header--branded">
             <div class="section-tag">III. What The Data Says</div>
             <h2>Recruiter-side protocol</h2>
           </header>
-          <div class="slide-main">
+          <img class="lid-slide-logo" src="../img/PhD/LID_logo.png" alt="LID logo.">
+          <div class="slide-main research-slide-main">
             <div class="stat-layout" style="grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.56fr); grid-template-rows: minmax(0, 0.88fr) minmax(0, 1.12fr); align-items: stretch;">
                 <article class="card stat-card" style="grid-column: 1; grid-row: 1; padding: 24px 26px;">
                   <p class="figure-label">Sample</p>
@@ -3024,20 +3096,29 @@
                   <p class="recruiter-protocol-role"><strong>Chemistry</strong><br><strong>Materials Science</strong></p>
                 </article>
               </div>
+            <p class="research-source-note">Source: Lopes &amp; Bran, 2026</p>
           </div>
           <div class="punchline-box">Do recruiters prefer PhDs or engineers?</div>
         </div>
       </section>
 
       <!-- Slide III.5 -->
-      <section class="insight-slide">
-        <div class="slide-panel">
-          <header class="slide-header">
+      <section class="insight-slide employability-slide">
+        <div class="slide-panel slide-panel--branded">
+          <header class="slide-header slide-header--branded">
             <div class="section-tag">III. What The Data Says</div>
             <h2>When perception affects employability</h2>
           </header>
-          <div class="slide-main">
+          <img class="lid-slide-logo" src="../img/PhD/LID_logo.png" alt="LID logo.">
+          <div class="slide-main research-slide-main">
             <div class="insight-grid">
+              <article class="insight-analysis" style="padding: 6px 4px 6px 0;">
+                <ul class="insight-list">
+                  <li>In hiring situations, engineers are slightly preferred</li>
+                  <li>Not due to competence, but perceived fit</li>
+                  <li>There is an observable gap against PhDs</li>
+                </ul>
+              </article>
               <article class="card insight-visual">
                 <div class="figure-label">Hiring preference gap</div>
                 <div class="insight-media">
@@ -3047,14 +3128,8 @@
                   Share of recruiters (%) willing to hire an engineer or a PhD, by role <br> (1) Technical lead <br> (2) Head of R&D
                 </p>
               </article>
-              <article class="insight-analysis" style="padding: 6px 4px 6px 0;">
-                <ul class="insight-list">
-                  <li>In hiring situations, engineers are slightly preferred</li>
-                  <li>Not due to competence, but perceived fit</li>
-                  <li>There is an observable gap against PhDs</li>
-                </ul>
-              </article>
             </div>
+            <p class="research-source-note">Source: Lopes &amp; Bran, 2026</p>
           </div>
           <div class="punchline-box insight-takeaway">You do not lose on ability, you lose on perception.</div>
         </div>
@@ -3130,7 +3205,7 @@
             <article class="card single-card" style="padding: 20px 24px; gap: 0;">
               <div style="display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; padding: 0 0 12px; align-items: end;">
                 <div class="figure-label">Keyword</div>
-                <div class="figure-label">What it can really mean</div>
+                <div class="figure-label">What survey respondents may have meant</div>
               </div>
               <div style="display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0;">
                 <!-- <div style="flex: 1 1 0; display: grid; grid-template-columns: minmax(170px, 0.54fr) minmax(0, 1.46fr); gap: 0 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(216, 224, 232, 0.92);">
@@ -3274,6 +3349,7 @@
           <div class="punchline-box">This reflection should start now, not at the moment of candidacy.</div>
         </div>
       </section> -->
+
 
       <!-- Slide V.4 -->
       <section>
