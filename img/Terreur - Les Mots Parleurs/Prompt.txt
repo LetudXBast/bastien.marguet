@@ -1,0 +1,15 @@
+Je veux ajouter une petite rubrique en plus dans Intervention de resources.html
+avec mes représentations théâtrales
+Tu vas ajouter un lien vers une nouvelle page dans laquelle il y aura une présentation rapide de notre spectacle en comprenant les photos du dossier img/Terreur - Les mots parleurs
+LEs crédits des photos sont Thomas Raisson
+Tu ajouteras le résumé long du spectacle
+Tu ajouteras un bouton réserver sa place (gratuit) : https://billetterie-astree.mapado.com/event/697479-les-arthemiades-2026?eventDate=2698338
+
+Tu conserveras le style de mon site web
+Tu présenteras le spectacle avec quelques petits mots en plus (tirés de résumé court).
+
+Tu indiqueras que c'est au thèâtre Astrée que ça se joue, à 20h30
+Lien vers le théatre
+https://theatre-astree.univ-lyon1.fr/
+Lien Maps
+https://maps.app.goo.gl/MRhPk72qev5ofpeS7
