@@ -1,0 +1,423 @@
+\documentclass[10pt,a4paper]{article}
+
+% Encodage robuste pour le français
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Mise en page
+\usepackage[
+top=1.8cm,
+bottom=1.35cm,
+left=1.25cm,
+right=1.25cm,
+headheight=14pt,
+headsep=8pt
+]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+% Couleurs sobres
+\definecolor{DeepBlue}{RGB}{28,74,120}
+\definecolor{SoftBlue}{RGB}{232,241,250}
+\definecolor{LineBlue}{RGB}{92,135,180}
+
+\definecolor{DeepGreen}{RGB}{45,105,85}
+\definecolor{SoftGreen}{RGB}{235,246,240}
+
+\definecolor{DeepRed}{RGB}{150,55,55}
+\definecolor{SoftRed}{RGB}{252,239,238}
+
+\definecolor{TextGray}{RGB}{45,45,45}
+\definecolor{LightGray}{RGB}{247,248,250}
+
+% En-tête sobre
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\textcolor{DeepBlue}{DS Mathématiques -- BUT1 GCGP}}
+\rhead{\footnotesize\textcolor{DeepBlue}{Durée : 1h45}}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{LineBlue}\leaders\hrule height \headrulewidth\hfill}}
+
+% Compactage
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+\setlist[itemize]{
+	topsep=1pt,
+	itemsep=1pt,
+	parsep=0pt,
+	leftmargin=1.2em
+}
+
+\setlist[enumerate]{
+	topsep=2pt,
+	itemsep=2pt,
+	parsep=0pt,
+	leftmargin=1.45em
+}
+
+% Styles tcolorbox
+\tcbset{
+	enhanced,
+	breakable,
+	sharp corners=south,
+	boxrule=0.45pt,
+	arc=1.5mm,
+	left=1.7mm,
+	right=1.7mm,
+	top=1.1mm,
+	bottom=1.1mm,
+	before skip=4pt,
+	after skip=4pt
+}
+
+\newtcolorbox{titlebox}{
+	colback=SoftBlue,
+	colframe=DeepBlue,
+	boxrule=0.7pt,
+	arc=2mm,
+	left=3mm,
+	right=3mm,
+	top=2mm,
+	bottom=2mm
+}
+
+\newtcolorbox{contextbox}{
+	colback=SoftGreen,
+	colframe=DeepGreen,
+	title=\textbf{Contexte industriel},
+	fonttitle=\bfseries,
+	coltitle=white,
+	colbacktitle=DeepGreen,
+	attach boxed title to top left={xshift=2mm,yshift=-1.9mm},
+	boxed title style={
+		colframe=DeepGreen,
+		colback=DeepGreen,
+		arc=1.5mm,
+		boxrule=0pt
+	},
+	top=4.2mm
+}
+
+\newtcolorbox{partbox}[1]{
+	colback=white,
+	colframe=LineBlue,
+	borderline west={1.3pt}{0pt}{DeepBlue},
+	title=\textbf{#1},
+	fonttitle=\bfseries,
+	coltitle=white,
+	colbacktitle=DeepBlue,
+	attach boxed title to top left={xshift=2mm,yshift=-2mm},
+	boxed title style={
+		colframe=DeepBlue,
+		colback=DeepBlue,
+		boxrule=0pt,
+		arc=1.4mm,
+		left=2mm,
+		right=2mm,
+		top=0.7mm,
+		bottom=0.7mm
+	},
+	top=4.5mm
+}
+
+\newtcolorbox{databox}{
+	colback=LightGray,
+	colframe=black!18,
+	boxrule=0.3pt,
+	arc=1mm,
+	left=1.8mm,
+	right=1.8mm,
+	top=1mm,
+	bottom=1mm
+}
+
+\newtcolorbox{alertbox}{
+	colback=SoftRed,
+	colframe=DeepRed,
+	boxrule=0.45pt,
+	arc=1.5mm,
+	left=2mm,
+	right=2mm,
+	top=1mm,
+	bottom=1mm
+}
+
+\begin{document}
+	
+	\thispagestyle{plain}
+	\pagestyle{fancy}
+	
+	\begin{titlebox}
+		\begin{center}
+			{\Large\bfseries\textcolor{DeepBlue}{DS blanc Mathématiques -- BUT1 GCGP (S2)}}\\[-0.1mm]
+			{\normalsize\bfseries Durée : 1h45}
+		\end{center}
+		
+		\vspace{-3mm}
+		
+		\begin{alertbox}
+			\centering
+			\textbf{Calculatrices interdites.} Les réponses doivent être justifiées. Les interprétations physiques doivent utiliser un vocabulaire adapté au génie chimique et aux procédés.
+		\end{alertbox}
+	\end{titlebox}
+	
+	\vspace{-1mm}
+	
+	\begin{contextbox}
+		Une unité pilote produit des cristaux à partir d'une solution aqueuse concentrée. Le procédé repose sur un refroidissement contrôlé : lorsque la température diminue, la solubilité du soluté baisse, ce qui favorise la formation de cristaux.
+		
+		L'objectif du service procédé est de contrôler les oscillations de température, maintenir la concentration dans une zone acceptable, estimer la masse produite, analyser les dépôts, réaliser un bilan matière et optimiser les paramètres opératoires.
+		
+		Les différentes parties sont liées au même procédé, mais peuvent être traitées de manière indépendante.
+	\end{contextbox}
+	
+	% ------------------------------------------------------------
+	\begin{partbox}{Partie A -- Modélisation sinusoïdale de la température de refroidissement}
+		
+		Pendant une journée de fonctionnement, la température du fluide de refroidissement entrant dans le cristalliseur est modélisée par :
+		\[
+		T(t)=28-6\sin\left(\frac{\pi t}{6}\right),
+		\]
+		où $T(t)$ est exprimée en degrés Celsius et $t$ en heures, avec $0\leq t\leq 24$.
+		
+		\begin{databox}
+			Pour favoriser la cristallisation, le service procédé considère que le refroidissement devient réellement efficace lorsque la température du fluide est inférieure ou égale à $28\,^\circ\mathrm{C}$.
+		\end{databox}
+		
+		\begin{enumerate}
+			\item Identifier la valeur moyenne, l'amplitude et la période de $T$. %Interpréter ces trois grandeurs dans le contexte du refroidissement du cristalliseur.
+			
+			\item Déterminer les températures minimale et maximale atteintes par le fluide de refroidissement au cours d'une journée.
+			
+			\item Résoudre l'inéquation $T(t)\leq 28$ sur l'intervalle $[0;24]$. En déduire les périodes de la journée pendant lesquelles le refroidissement est considéré comme efficace.
+			
+			\item Construire une allure qualitative de la courbe $T(t)$ sur l'intervalle $[0;24]$.
+		\end{enumerate}
+		
+	\end{partbox}
+	
+	% ------------------------------------------------------------
+	\begin{partbox}{Partie B -- Zone de cristallisation et signe d'un polynôme de degré 4}
+		
+		La concentration $C$ du soluté dans la solution est exprimée en g/L.
+		
+		Le service procédé utilise l'indicateur suivant :
+		\[
+		P(C)=-(C-120)(C-150)(C-180)(C-210).
+		\]
+		
+		Cet indicateur permet de repérer différentes zones de fonctionnement du cristalliseur selon la concentration de la solution.
+		
+		\begin{databox}
+			On rappelle que $C$ représente une concentration, mais l'étude mathématique sera menée sur $\mathbb{R}$ afin de construire le tableau de signes complet.
+		\end{databox}
+		
+		\begin{enumerate}
+			\item Construire le tableau de signes complet de $P(C)$ sur $\mathbb{R}$.
+			
+			\item Construire une allure qualitative cohérente de la courbe représentative de $P(C)$, en faisant apparaître :
+			\begin{itemize}
+				\item les racines ;
+				\item le signe de $P(C)$ sur chaque intervalle ;
+				\item le comportement de la courbe lorsque $C$ tend vers $-\infty$ et vers $+\infty$.
+			\end{itemize}
+		\end{enumerate}
+		
+	\end{partbox}
+	
+	% ------------------------------------------------------------
+	\begin{partbox}{Partie C -- Masse formée et dépôt au fond de la cuve}
+		
+		Lors d'une phase de refroidissement de 4 heures, la vitesse instantanée de formation des cristaux est modélisée par :
+		\[
+		r(t)=12t\exp\left(-\frac{t^2}{16}\right),
+		\]
+		où $r(t)$ est exprimée en kg/h et $t$ en heures, avec $0\leq t\leq 4$.
+		
+		\begin{databox}
+			La fonction $r(t)$ donne une production en kg/h. La masse totale produite pendant la phase est donc obtenue en cumulant cette production sur toute la durée du refroidissement.
+		\end{databox}
+		
+		\begin{enumerate}
+			\item Écrire l'expression mathématique permettant de calculer la masse totale $M$ de cristaux formée entre $t=0$ et $t=4$.
+			
+			\item Calculer cette masse $M$.
+		\end{enumerate}
+		
+		La densité de dépôt de cristaux au fond de la cuve est modélisée par :
+		\[
+		d(x,y)=0{,}04x^2+0{,}02xy+0{,}10,
+		\]
+		où $d(x,y)$ est exprimée en kg/m$^2$.
+		
+		Le fond de cuve est assimilé au rectangle :
+		\[
+		0\leq x\leq 4,
+		\qquad
+		0\leq y\leq 2.
+		\]
+		
+		\begin{databox}
+			La fonction $d(x,y)$ donne une masse déposée par unité de surface. Pour obtenir la masse totale déposée, on cumule cette densité sur toute la surface du fond de cuve.
+		\end{databox}
+		
+		\begin{enumerate}[resume]
+			\item Écrire l'expression mathématique permettant de calculer la masse totale $D$ déposée au fond de la cuve.
+			
+			\item Calculer cette masse $D$.
+		\end{enumerate}
+		
+	\end{partbox}
+	
+	% ------------------------------------------------------------
+	\begin{partbox}{Partie D -- Bilan matière après séparation}
+		
+		À la fin d'un cycle de cristallisation, on récupère 600 kg de suspension cristallisée.
+		
+		Cette suspension est séparée en trois flux :
+		\begin{itemize}
+			\item $L$ : masse de solution mère, en centaines de kg ;
+			\item $K$ : masse de cristaux secs, en centaines de kg ;
+			\item $P$ : masse de purge, en centaines de kg.
+		\end{itemize}
+		
+		Ainsi, $L=3$ signifie que la masse de solution mère vaut 300 kg.
+		
+		\begin{databox}
+			\textbf{Bilan de masse totale}
+			\begin{itemize}
+				\item la masse totale récupérée vaut 600 kg.
+			\end{itemize}
+			
+			\textbf{Bilan de soluté}
+			\begin{itemize}
+				\item la solution mère contient 50 \% de soluté ;
+				\item les cristaux secs sont considérés comme du soluté pur ;
+				\item la purge contient 25 \% de soluté ;
+				\item la masse totale de soluté récupérée vaut 300 kg.
+			\end{itemize}
+			
+			\textbf{Contrainte opératoire}
+			\begin{itemize}
+				\item pour stabiliser le procédé, la masse de solution mère doit dépasser la masse de purge de 100 kg.
+			\end{itemize}
+		\end{databox}
+		
+		\begin{enumerate}
+			\item Traduire ces données sous la forme d'un système linéaire portant sur $L$, $K$ et $P$.
+			
+			\item Résoudre ce système.
+			
+			\item En déduire les masses, en kg, de solution mère, de cristaux secs et de purge.
+		\end{enumerate}
+		
+	\end{partbox}
+	
+	% ------------------------------------------------------------
+	\begin{partbox}{Partie E -- Analyse d'une fonction de croissance cristalline}
+		
+		Le diamètre moyen des cristaux dépend du temps de séjour $\tau$ dans le cristalliseur. On modélise ce diamètre moyen par :
+		\[
+		D(\tau)=\frac{100\tau}{\tau^2+4},
+		\]
+		où $D(\tau)$ est exprimé en micromètres, $\tau$ en heures, avec $\tau>0$.
+		
+		\begin{enumerate}
+			\item Calculer les limites de $D$ lorsque $\tau$ tend vers $0^+$ et lorsque $\tau$ tend vers $+\infty$.
+			
+			\item Construire le tableau de variations complet de $D$ sur $]0;+\infty[$, en justifiant les calculs.
+			
+			\item Déterminer le temps de séjour qui maximise le diamètre moyen des cristaux, puis calculer ce diamètre maximal.
+			
+			\item Résoudre $D(\tau)=20$, puis indiquer quelle solution est préférable industriellement si l'objectif est seulement d'atteindre $20\,\mu\mathrm{m}$.
+		\end{enumerate}
+		
+	\end{partbox}
+	
+	% ------------------------------------------------------------
+	\begin{partbox}{Partie F -- Fractions rationnelles et primitives}
+		
+		Pour modéliser l'évolution d'un indice d'encrassement du cristalliseur, on considère la fonction :
+		\[
+		F(u)=\frac{u^4-u^2+3u+3}{u^3-3u+2},
+		\]
+		où $u$ est un temps réduit sans unité. On considère uniquement $u>1$.
+		
+		\begin{enumerate}
+			\item Décomposer $F(u)$ en éléments simples.
+			
+			\item Déterminer une primitive de $F$ sur $]1;+\infty[$.
+		\end{enumerate}
+		
+	\end{partbox}
+	
+% ------------------------------------------------------------
+\begin{partbox}{Partie G -- Optimisation d'un point de fonctionnement}
+	
+	La qualité finale du lot dépend principalement de la concentration initiale $C$, en g/L, et de l'intensité d'agitation $N$, en tr/s.
+	
+	\medskip
+	
+	\textbf{Fonction 1 -- Modèle quadratique}
+	
+	On définit une fonction de défaut qualité :
+	\[
+	J(C,N)=(C-160)^2+4(N-3)^2-2(C-160)(N-3)+500.
+	\]
+	
+	\begin{databox}
+		Plus $J(C,N)$ est faible, meilleure est la qualité du lot.
+	\end{databox}
+	
+	\begin{enumerate}
+		\item Déterminer le ou les points critiques de $J$.
+		
+		\item Construire la matrice Hessienne de $J$, puis utiliser le critère du Hessien pour déterminer la nature du point critique.
+		
+		\item Calculer la valeur minimale de $J$.
+		
+		\item Interpréter le point de fonctionnement obtenu dans le contexte du cristalliseur.
+	\end{enumerate}
+	
+	\medskip
+	
+	\textbf{Fonction 2 -- Modèle avec exponentielle}
+	
+	On introduit les variables réduites :
+	\[
+	c=\frac{C-160}{20}
+	\qquad\text{et}\qquad
+	n=N-3.
+	\]
+	
+	On définit une nouvelle fonction de défaut qualité :
+	\[
+	J(c,n)=500+10\left(e^c+e^{-c}-2\right)+5(n-c)^2.
+	\]
+	
+	\begin{databox}
+		Plus $J(c,n)$ est faible, meilleure est la qualité du lot. Les variables $c$ et $n$ mesurent respectivement l'écart réduit à la concentration cible et l'écart à l'agitation cible.
+	\end{databox}
+	
+	\begin{enumerate}
+		\item Déterminer le ou les points critiques de $J$.
+		
+		\item Construire la matrice Hessienne de $J$, puis utiliser le critère du Hessien pour déterminer la nature du point critique.
+		
+		\item Calculer la valeur minimale de $J$.
+		
+		\item Revenir aux variables physiques $C$ et $N$, puis interpréter le point de fonctionnement obtenu dans le contexte du cristalliseur.
+	\end{enumerate}
+	
+\end{partbox}
+	
+\end{document}

@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carte vivante d'une vision de l'éducation : une architecture de réflexions sur l'apprentissage, l'autonomie, l'IA et l'école.">
+  <title>Carte vivante d'une vision de l'éducation</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f0e8;
+      --surface: #fbf7ef;
+      --paper: rgba(255, 253, 248, 0.88);
+      --paper-strong: #fffdf8;
+      --ink: #172126;
+      --ink-soft: #5b676d;
+      --muted: #7b7469;
+      --line: rgba(23, 33, 38, 0.12);
+      --line-strong: rgba(23, 33, 38, 0.2);
+      --teal: #245b5d;
+      --teal-deep: #153f42;
+      --teal-soft: #dceae7;
+      --gold: #9a7a3e;
+      --gold-soft: #efe4cd;
+      --rose: #8d5a5a;
+      --rose-soft: #f0dddd;
+      --blue: #496783;
+      --blue-soft: #dfe8ef;
+      --sage: #657b57;
+      --sage-soft: #e4eadc;
+      --shadow: 0 28px 78px rgba(31, 38, 44, 0.13);
+      --shadow-soft: 0 16px 38px rgba(31, 38, 44, 0.08);
+      --shadow-lift: 0 24px 54px rgba(31, 38, 44, 0.13);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --width: min(1220px, calc(100vw - 32px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(115deg, rgba(36, 91, 93, 0.12), transparent 34%),
+        linear-gradient(245deg, rgba(154, 122, 62, 0.12), transparent 36%),
+        linear-gradient(180deg, #fcfaf5 0%, var(--bg) 54%, #eee8dc 100%);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(23, 33, 38, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 33, 38, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.6;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.54), transparent 82%);
+    }
+
+    ::selection {
+      background: rgba(36, 91, 93, 0.18);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    select:focus-visible {
+      outline: 3px solid rgba(36, 91, 93, 0.22);
+      outline-offset: 3px;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: var(--width);
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .back-link,
+    .small-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 26px rgba(31, 38, 44, 0.06);
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .back-link:hover,
+    .small-pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(36, 91, 93, 0.25);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(340px, 0.64fr);
+      gap: clamp(24px, 4vw, 54px);
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .kicker {
+      width: fit-content;
+      padding: 7px 11px;
+      border: 1px solid rgba(36, 91, 93, 0.18);
+      border-radius: 999px;
+      background: rgba(220, 234, 231, 0.82);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 6.8vw, 6.45rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      line-height: 1.72;
+    }
+
+    .central-vision {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(26px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(255, 253, 248, 0.94), rgba(231, 240, 237, 0.9)),
+        linear-gradient(35deg, rgba(154, 122, 62, 0.13), transparent 38%);
+      box-shadow: var(--shadow);
+    }
+
+    .central-vision::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 28px;
+      right: 28px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .central-vision::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(36, 91, 93, 0.14);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .central-vision span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .central-vision strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 2.7vw, 2.35rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .controls {
+      position: sticky;
+      top: 12px;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .filter-btn {
+      min-height: 38px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink-soft);
+      font-weight: 800;
+      font-size: 0.86rem;
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.is-active {
+      transform: translateY(-1px);
+      border-color: rgba(36, 91, 93, 0.36);
+      background: linear-gradient(145deg, var(--teal), var(--teal-deep));
+      color: #fffdf8;
+      box-shadow: 0 10px 24px rgba(36, 91, 93, 0.18);
+    }
+
+    .branch-select {
+      min-height: 40px;
+      max-width: 280px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      font-weight: 800;
+      padding: 0 36px 0 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .map-shell {
+      display: grid;
+      gap: 24px;
+    }
+
+    .map-intro {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.52fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .map-center {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 4vw, 36px);
+      border: 1px solid rgba(36, 91, 93, 0.22);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(150deg, rgba(36, 91, 93, 0.96), rgba(21, 63, 66, 0.98)),
+        linear-gradient(35deg, rgba(255, 255, 255, 0.08), transparent 48%);
+      color: #fffdf8;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .map-center::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255, 253, 248, 0.14);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .map-center p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      line-height: 1.32;
+    }
+
+    .map-note {
+      display: grid;
+      align-content: center;
+      gap: 10px;
+      padding: clamp(20px, 3vw, 28px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.9), rgba(250, 246, 239, 0.82));
+      color: var(--ink-soft);
+      box-shadow: 0 12px 30px rgba(31, 38, 44, 0.06);
+    }
+
+    .map-note strong {
+      color: var(--ink);
+      font-size: 1.03rem;
+    }
+
+    .branches {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .branch {
+      --branch-color: var(--teal);
+      --branch-soft: var(--teal-soft);
+      position: relative;
+      display: grid;
+      gap: 16px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.92), rgba(249, 245, 238, 0.82));
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      isolation: isolate;
+    }
+
+    .branch::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 22px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--branch-color), rgba(255, 255, 255, 0.18));
+      opacity: 0.9;
+    }
+
+    .branch::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--branch-color) 10%, transparent), transparent 42%);
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .branch:hover {
+      transform: translateY(-2px);
+      border-color: rgba(23, 33, 38, 0.18);
+      box-shadow: var(--shadow-lift);
+    }
+
+    .branch:nth-child(2) {
+      --branch-color: var(--gold);
+      --branch-soft: var(--gold-soft);
+    }
+
+    .branch:nth-child(3) {
+      --branch-color: var(--blue);
+      --branch-soft: var(--blue-soft);
+    }
+
+    .branch:nth-child(4) {
+      --branch-color: var(--sage);
+      --branch-soft: var(--sage-soft);
+    }
+
+    .branch:nth-child(5) {
+      --branch-color: var(--rose);
+      --branch-soft: var(--rose-soft);
+    }
+
+    .branch:nth-child(6) {
+      --branch-color: #6b5e90;
+      --branch-soft: #e6e1f0;
+    }
+
+    .branch:nth-child(7) {
+      --branch-color: #7a6043;
+      --branch-soft: #eadfce;
+    }
+
+    .branch-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding-bottom: 2px;
+    }
+
+    .branch-index {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--branch-soft);
+      color: var(--branch-color);
+      font-weight: 900;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+    }
+
+    .branch h2 {
+      margin: 0 0 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.22rem, 1.8vw, 1.48rem);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .branch-description {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.58;
+    }
+
+    .post-grid {
+      display: grid;
+      gap: 11px;
+    }
+
+    .post-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 10px;
+      width: 100%;
+      min-height: 172px;
+      padding: 16px 16px 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(255, 255, 255, 0.9));
+      color: inherit;
+      text-align: left;
+      box-shadow: 0 10px 24px rgba(31, 38, 44, 0.06);
+      transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    }
+
+    .post-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--branch-color);
+      opacity: 0.38;
+      transition: opacity 0.16s ease, width 0.16s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--branch-color) 38%, var(--line));
+      box-shadow: 0 18px 38px rgba(31, 38, 44, 0.1);
+      background: #fffefa;
+    }
+
+    .post-card:hover::before {
+      width: 6px;
+      opacity: 0.78;
+    }
+
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .order {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 28px;
+      padding: 0 9px;
+      border-radius: 999px;
+      background: var(--branch-soft);
+      color: var(--branch-color);
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 9px;
+      border-radius: 999px;
+      background: rgba(73, 103, 131, 0.12);
+      color: var(--blue);
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .status[data-status="publie"] {
+      background: rgba(36, 91, 93, 0.13);
+      color: var(--teal);
+    }
+
+    .status[data-status="a-ecrire"] {
+      background: rgba(154, 122, 62, 0.16);
+      color: #7d622d;
+    }
+
+    .status[data-status="a-retravailler"] {
+      background: rgba(141, 90, 90, 0.14);
+      color: var(--rose);
+    }
+
+    .post-card h3 {
+      margin: 0;
+      padding-left: 2px;
+      font-size: 1.03rem;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    .post-card p {
+      margin: 0;
+      padding-left: 2px;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .post-action {
+      width: fit-content;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      align-self: end;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--branch-color) 12%, white);
+      color: var(--branch-color);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .empty-state {
+      padding: 28px;
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--ink-soft);
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      background: rgba(20, 27, 31, 0.28);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+    }
+
+    .drawer-backdrop.is-open {
+      display: block;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 30;
+      width: min(520px, 100vw);
+      height: 100vh;
+      transform: translateX(100%);
+      transition: transform 0.24s ease;
+      border-left: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(247, 242, 233, 0.98));
+      box-shadow: -26px 0 70px rgba(23, 33, 38, 0.16);
+      overflow-y: auto;
+    }
+
+    .drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .drawer-inner {
+      display: grid;
+      gap: 18px;
+      min-height: 100%;
+      padding: 28px;
+    }
+
+    .drawer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .close-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--ink);
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .close-btn:hover {
+      transform: rotate(4deg) scale(1.03);
+      border-color: rgba(36, 91, 93, 0.28);
+      background: var(--teal-soft);
+    }
+
+    .drawer h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.75rem, 5vw, 2.35rem);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .detail-branch {
+      width: fit-content;
+      margin: -6px 0 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal);
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .detail-box {
+      display: grid;
+      gap: 8px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 253, 248, 0.72));
+      box-shadow: 0 10px 24px rgba(31, 38, 44, 0.05);
+    }
+
+    .detail-box span {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .detail-box p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.62;
+    }
+
+    .linkedin-link,
+    .disabled-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      width: fit-content;
+      padding: 0 17px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .linkedin-link {
+      background: linear-gradient(145deg, var(--teal), var(--teal-deep));
+      color: #fffdf8;
+      box-shadow: 0 14px 30px rgba(36, 91, 93, 0.2);
+    }
+
+    .linkedin-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(36, 91, 93, 0.25);
+    }
+
+    .disabled-link {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--ink-soft);
+    }
+
+    .footer {
+      margin-top: 38px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .page {
+        width: min(100% - 24px, 680px);
+        padding-top: 18px;
+        padding-bottom: 42px;
+      }
+
+      .topbar,
+      .hero,
+      .map-intro,
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+
+      .hero {
+        gap: 22px;
+        margin-bottom: 26px;
+      }
+
+      .controls {
+        position: static;
+        padding: 12px;
+      }
+
+      .branch-select {
+        width: 100%;
+        max-width: none;
+      }
+
+      .branches {
+        grid-template-columns: 1fr;
+      }
+
+      .post-card {
+        min-height: auto;
+      }
+
+      .drawer {
+        top: auto;
+        bottom: 0;
+        width: 100vw;
+        height: min(86vh, 760px);
+        transform: translateY(100%);
+        border-top: 1px solid var(--line);
+        border-left: 0;
+        border-radius: 24px 24px 0 0;
+      }
+
+      .drawer.is-open {
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        width: min(100% - 18px, 520px);
+      }
+
+      .topbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .back-link,
+      .small-pill {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 16vw, 3.5rem);
+      }
+
+      .central-vision,
+      .branch,
+      .map-center,
+      .map-note {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .branch-head {
+        grid-template-columns: 1fr;
+      }
+
+      .branch-index {
+        width: 38px;
+        height: 38px;
+      }
+
+      .filter-btn {
+        flex: 1 1 auto;
+        min-width: 42%;
+        padding-inline: 10px;
+      }
+
+      .post-meta {
+        align-items: flex-start;
+      }
+
+      .status {
+        max-width: 56%;
+        white-space: normal;
+        text-align: right;
+        justify-content: center;
+        line-height: 1.12;
+        padding-block: 6px;
+      }
+
+      .post-action,
+      .linkedin-link,
+      .disabled-link {
+        width: 100%;
+      }
+
+      .drawer-inner {
+        padding: 20px;
+      }
+    }
+
+    @supports not (background: color-mix(in srgb, red 10%, white)) {
+      .branch::after {
+        background: linear-gradient(145deg, rgba(36, 91, 93, 0.08), transparent 42%);
+      }
+
+      .post-card:hover {
+        border-color: rgba(36, 91, 93, 0.32);
+      }
+
+      .post-action {
+        background: rgba(36, 91, 93, 0.09);
+        color: var(--teal);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="back-link" href="resources.html#recherches">Retour aux ressources</a>
+      <span class="small-pill">Série LinkedIn en construction</span>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <span class="kicker">Éducation, apprentissage, autonomie</span>
+        <h1 id="page-title">Carte vivante d'une vision de l'éducation</h1>
+        <p class="intro">
+          Cette carte organise une série de réflexions publiées progressivement sur LinkedIn.
+          Elle permet de lire la vision comme une architecture globale, tout en gardant chaque
+          bloc de pensée modulaire, cliquable et révisable.
+        </p>
+      </div>
+
+      <aside class="central-vision" aria-label="Vision centrale">
+        <span>Vision centrale</span>
+        <strong id="centralVisionText"></strong>
+      </aside>
+    </section>
+
+    <section class="controls" aria-label="Filtres de navigation">
+      <div class="filter-group" id="statusFilters"></div>
+      <select class="branch-select" id="branchFilter" aria-label="Filtrer par branche"></select>
+    </section>
+
+    <section class="map-shell" aria-label="Carte interactive de la vision">
+      <div class="map-intro">
+        <div class="map-center">
+          <p id="mapCentralVision"></p>
+        </div>
+        <div class="map-note">
+          <strong>Une carte pour explorer sans perdre le fil.</strong>
+          <p>
+            Les grandes branches donnent la structure. Les cartes internes correspondent aux
+            futurs posts LinkedIn. Le mode parcours conseillé les ordonne comme une lecture progressive.
+          </p>
+        </div>
+      </div>
+
+      <div class="branches" id="branchesContainer"></div>
+      <div class="empty-state" id="emptyState" hidden>Aucun bloc ne correspond aux filtres actuels.</div>
+    </section>
+
+    <footer class="footer">
+      <p>Carte statique autonome, modifiable directement dans la constante JavaScript <strong>visionData</strong>.</p>
+    </footer>
+  </main>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" tabindex="-1" aria-hidden="true"></div>
+  <aside class="drawer" id="detailDrawer" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer-inner">
+      <div class="drawer-top">
+        <span class="kicker">Bloc de pensée</span>
+        <button class="close-btn" type="button" id="closeDrawer" aria-label="Fermer le panneau">×</button>
+      </div>
+      <h2 id="drawerTitle"></h2>
+      <p class="detail-branch" id="drawerBranch"></p>
+      <div class="detail-box">
+        <span>Idée centrale</span>
+        <p id="drawerCoreIdea"></p>
+      </div>
+      <div class="detail-box">
+        <span>Résumé</span>
+        <p id="drawerSummary"></p>
+      </div>
+      <div class="detail-box">
+        <span>Statut</span>
+        <p id="drawerStatus"></p>
+      </div>
+      <div class="detail-box">
+        <span>Parcours conseillé</span>
+        <p id="drawerOrder"></p>
+      </div>
+      <div id="drawerLink"></div>
+    </div>
+  </aside>
+
+  <script>
+    /*
+      Données principales de la carte.
+
+      Pour maintenir cette page, modifie uniquement l'objet visionData ci-dessous :
+      - Modifier une branche : dans branches, change son title, sa description ou la liste posts.
+      - Modifier un titre : change la propriété title de la branche ou du post concerné.
+      - Modifier un résumé : change la propriété summary du post concerné.
+      - Modifier un statut : change status avec l'une des valeurs prévues : "à écrire", "en rédaction", "publié", "à retravailler".
+      - Modifier l'ordre du parcours conseillé : change le nombre order du post. Les posts sont triés par ordre croissant.
+      - Ajouter le lien LinkedIn après publication : colle l'URL du post dans linkedinUrl. Si linkedinUrl reste vide, le site affiche "À venir".
+
+      Évite de modifier les fonctions JavaScript plus bas sauf si tu veux changer le comportement du site.
+    */
+    const visionData = {
+      centralVision: "Former des individus capables de penser, apprendre et agir de manière autonome dans un monde saturé d'informations, d'outils numériques et d'incertitudes.",
+      branches: [
+        {
+          id: "diagnostic",
+          title: "Ce qui ne fonctionne plus dans l'éducation actuelle",
+          description: "Identifier les tensions concrètes du terrain avant de proposer des solutions.",
+          posts: [
+            {
+              id: "diagnostic-information",
+              order: 1,
+              title: "Le probleme n'est pas le manque d'information",
+              coreIdea: "Les élèves ont accès à plus de contenus que jamais, mais manquent de repères pour les hiérarchiser.",
+              summary: "Ce bloc pose le diagnostic initial : l'école ne peut plus se penser comme simple lieu de transmission d'informations. L'enjeu devient la construction de critères, de méthodes et de capacités de discernement.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "diagnostic-attention",
+              order: 2,
+              title: "L'attention est devenue une ressource rare",
+              coreIdea: "En classe, la difficulté n'est pas seulement de comprendre, mais de rester disponible à la pensée.",
+              summary: "Ce post relie les pratiques numériques, la fatigue cognitive et les formes ordinaires de dispersion observées sur le terrain. Il invite à traiter l'attention comme une compétence à protéger et à entraîner.",
+              status: "en rédaction",
+              linkedinUrl: ""
+            },
+            {
+              id: "diagnostic-evaluation",
+              order: 3,
+              title: "Évaluer sans toujours faire apprendre",
+              coreIdea: "L'évaluation peut mesurer un résultat tout en ratant les processus qui permettraient de progresser.",
+              summary: "Ce bloc interroge la place de la note, des contrôles et du bachotage. Il ouvre vers des évaluations plus formatives, lisibles et utiles pour l'autonomie de l'apprenant.",
+              status: "à retravailler",
+              linkedinUrl: ""
+            }
+          ]
+        },
+        {
+          id: "apprendre",
+          title: "Ce que signifie vraiment apprendre",
+          description: "Revenir aux mécanismes cognitifs de l'apprentissage pour éviter les illusions pédagogiques.",
+          posts: [
+            {
+              id: "apprendre-recevoir",
+              order: 4,
+              title: "Apprendre, ce n'est pas recevoir",
+              coreIdea: "Un savoir ne devient utile que lorsqu'il est reconstruit, mobilisé et relié par l'apprenant.",
+              summary: "Ce post distingue exposition, compréhension apparente et appropriation réelle. Il montre pourquoi un cours clair ne suffit pas toujours à produire un apprentissage durable.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "apprendre-erreur",
+              order: 5,
+              title: "L'erreur comme instrument de pensée",
+              coreIdea: "L'erreur n'est pas seulement un échec : elle rend visible le modèle mental de l'élève.",
+              summary: "Ce bloc défend une pédagogie qui analyse les erreurs plutôt que de les effacer trop vite. Il explique comment l'erreur peut devenir un point d'appui pour comprendre, ajuster et progresser.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "apprendre-transfert",
+              order: 6,
+              title: "Le vrai test, c'est le transfert",
+              coreIdea: "Comprendre, c'est pouvoir reconnaître une idée sous une forme nouvelle.",
+              summary: "Ce post explore la différence entre réussir un exercice familier et mobiliser une notion dans une situation inédite. Il met le transfert au centre de l'apprentissage profond.",
+              status: "en rédaction",
+              linkedinUrl: ""
+            }
+          ]
+        },
+        {
+          id: "enseignant",
+          title: "Le role cognitif de l'enseignant",
+          description: "Penser l'enseignant comme concepteur d'environnements mentaux, pas seulement comme présentateur de contenus.",
+          posts: [
+            {
+              id: "enseignant-architecte",
+              order: 7,
+              title: "L'enseignant comme architecte cognitif",
+              coreIdea: "Le rôle central de l'enseignant est d'organiser les conditions dans lesquelles penser devient possible.",
+              summary: "Ce bloc déplace l'image de l'enseignant-transmetteur vers celle d'un architecte de parcours, d'obstacles, de feedbacks et de moments de clarification.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "enseignant-diagnostic",
+              order: 8,
+              title: "Diagnostiquer avant d'expliquer",
+              coreIdea: "Une explication efficace dépend de ce que l'élève croit déjà comprendre.",
+              summary: "Ce post montre l'importance du diagnostic fin : prérequis, représentations initiales, malentendus, stratégies d'évitement. Mieux expliquer suppose d'abord mieux observer.",
+              status: "à écrire",
+              linkedinUrl: ""
+            }
+          ]
+        },
+        {
+          id: "autonomie",
+          title: "L'autonomie comme objectif central",
+          description: "Faire de l'autonomie une compétence construite, explicite et accompagnée.",
+          posts: [
+            {
+              id: "autonomie-decrete",
+              order: 9,
+              title: "L'autonomie ne se décrète pas",
+              coreIdea: "Demander à un élève d'être autonome ne suffit pas à lui donner les outils pour le devenir.",
+              summary: "Ce bloc critique l'injonction vague à l'autonomie. Il propose de la décomposer en gestes observables : planifier, vérifier, demander de l'aide, corriger sa stratégie.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "autonomie-metacognition",
+              order: 10,
+              title: "Apprendre à piloter son apprentissage",
+              coreIdea: "L'autonomie cognitive repose sur la capacité à surveiller et ajuster sa propre compréhension.",
+              summary: "Ce post introduit la métacognition dans un langage accessible : savoir ce que l'on sait, repérer ce qui bloque, choisir une stratégie et évaluer son efficacité.",
+              status: "en rédaction",
+              linkedinUrl: ""
+            },
+            {
+              id: "autonomie-exigence",
+              order: 11,
+              title: "Autonomie et exigence vont ensemble",
+              coreIdea: "Rendre autonome ne signifie pas diminuer les attentes, mais rendre les exigences praticables.",
+              summary: "Ce bloc relie bienveillance et rigueur. Il montre qu'un cadre exigeant peut soutenir l'autonomie s'il rend visibles les critères de réussite et les chemins pour progresser.",
+              status: "à écrire",
+              linkedinUrl: ""
+            }
+          ]
+        },
+        {
+          id: "ia",
+          title: "L'IA comme levier et comme danger",
+          description: "Comprendre ce que l'IA change vraiment dans le rapport au savoir, au travail et à l'effort.",
+          posts: [
+            {
+              id: "ia-miroir",
+              order: 12,
+              title: "L'IA comme miroir des difficultés d'apprentissage",
+              coreIdea: "L'IA révèle nos faiblesses : consignes floues, pensée peu structurée, vérification insuffisante.",
+              summary: "Ce post présente l'IA non comme solution magique, mais comme miroir grossissant des compétences cognitives déjà présentes ou absentes chez l'apprenant.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "ia-delegation",
+              order: 13,
+              title: "Déléguer sans cesser de penser",
+              coreIdea: "Le risque n'est pas d'utiliser l'IA, mais de lui confier les operations qui nous construisent.",
+              summary: "Ce bloc distingue assistance, automatisation et substitution. Il propose des critères pour utiliser l'IA sans perdre les apprentissages essentiels.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "ia-litteratie",
+              order: 14,
+              title: "Une littératie de l'IA à enseigner",
+              coreIdea: "Comprendre l'IA devient une compétence civique, cognitive et professionnelle.",
+              summary: "Ce post esquisse les savoirs minimaux à construire : formuler une demande, évaluer une réponse, repérer les biais, citer les usages et garder la responsabilité intellectuelle.",
+              status: "publié",
+              linkedinUrl: "https://www.linkedin.com/"
+            }
+          ]
+        },
+        {
+          id: "dispositifs",
+          title: "Les nouveaux dispositifs pédagogiques à construire",
+          description: "Passer des principes aux formats concrets : parcours, ateliers, feedbacks et outils.",
+          posts: [
+            {
+              id: "dispositifs-parcours",
+              order: 15,
+              title: "Des parcours plutôt que des cours",
+              coreIdea: "Un dispositif efficace organise une progression, pas seulement une succession de contenus.",
+              summary: "Ce bloc imagine des parcours modulaires, avec objectifs visibles, activités variées, feedbacks fréquents et points de reprise pour apprendre à son rythme sans se perdre.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "dispositifs-feedback",
+              order: 16,
+              title: "Le feedback comme infrastructure",
+              coreIdea: "Sans retour régulier et exploitable, l'apprenant avance souvent à l'aveugle.",
+              summary: "Ce post place le feedback au coeur du design pédagogique : rapide, ciblé, actionnable, parfois automatisé, mais toujours relié à une intention d'apprentissage.",
+              status: "à écrire",
+              linkedinUrl: ""
+            }
+          ]
+        },
+        {
+          id: "systeme",
+          title: "Vers un nouveau système éducatif",
+          description: "Relier les pratiques de classe aux transformations institutionnelles nécessaires.",
+          posts: [
+            {
+              id: "systeme-autonomie",
+              order: 17,
+              title: "Vers une école de l'autonomie cognitive",
+              coreIdea: "Le système devrait former des personnes capables d'apprendre au-delà de l'école.",
+              summary: "Ce bloc formule l'horizon global : une école qui transmet des savoirs, mais qui apprend aussi à apprendre, à vérifier, à coopérer et à agir dans l'incertitude.",
+              status: "à écrire",
+              linkedinUrl: ""
+            },
+            {
+              id: "systeme-temps",
+              order: 18,
+              title: "Repenser le temps scolaire",
+              coreIdea: "Le temps d'apprendre ne se confond pas toujours avec le temps administratif du programme.",
+              summary: "Ce post interroge le rythme, la fragmentation disciplinaire et la place de la consolidation. Il ouvre la question des formats plus souples et plus cohérents.",
+              status: "à retravailler",
+              linkedinUrl: ""
+            },
+            {
+              id: "systeme-contrat",
+              order: 19,
+              title: "Un nouveau contrat de confiance",
+              coreIdea: "Transformer l'éducation suppose de clarifier ce que chacun peut attendre des autres.",
+              summary: "Ce bloc conclut provisoirement le parcours en reliant élèves, enseignants, familles, institutions et outils numériques autour d'un objectif partagé : former l'autonomie.",
+              status: "à écrire",
+              linkedinUrl: ""
+            }
+          ]
+        }
+      ]
+    };
+
+    const filters = [
+      { id: "all", label: "Tous les blocs" },
+      { id: "publié", label: "Publiés" },
+      { id: "à écrire", label: "À écrire" },
+      { id: "en rédaction", label: "En rédaction" },
+      { id: "recommended", label: "Parcours conseillé" }
+    ];
+
+    const state = {
+      status: "all",
+      branch: "all"
+    };
+
+    const centralVisionText = document.getElementById("centralVisionText");
+    const mapCentralVision = document.getElementById("mapCentralVision");
+    const statusFilters = document.getElementById("statusFilters");
+    const branchFilter = document.getElementById("branchFilter");
+    const branchesContainer = document.getElementById("branchesContainer");
+    const emptyState = document.getElementById("emptyState");
+    const drawer = document.getElementById("detailDrawer");
+    const drawerBackdrop = document.getElementById("drawerBackdrop");
+    const closeDrawerButton = document.getElementById("closeDrawer");
+
+    centralVisionText.textContent = visionData.centralVision;
+    mapCentralVision.textContent = visionData.centralVision;
+
+    function normalizeStatus(status) {
+      return status
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "-");
+    }
+
+    function allPosts() {
+      return visionData.branches.flatMap((branch) =>
+        branch.posts.map((post) => ({ ...post, branchId: branch.id, branchTitle: branch.title }))
+      );
+    }
+
+    function renderControls() {
+      statusFilters.innerHTML = filters.map((filter) => `
+        <button class="filter-btn ${state.status === filter.id ? "is-active" : ""}" type="button" data-filter="${filter.id}">
+          ${filter.label}
+        </button>
+      `).join("");
+
+      branchFilter.innerHTML = `
+        <option value="all">Toutes les branches</option>
+        ${visionData.branches.map((branch, index) => `
+          <option value="${branch.id}">Branche ${index + 1} - ${branch.title}</option>
+        `).join("")}
+      `;
+      branchFilter.value = state.branch;
+    }
+
+    function getVisiblePosts(branch) {
+      let posts = branch.posts;
+
+      if (state.status === "recommended") {
+        posts = [...posts].sort((a, b) => a.order - b.order);
+      } else if (state.status !== "all") {
+        posts = posts.filter((post) => post.status === state.status);
+      }
+
+      return posts;
+    }
+
+    function renderMap() {
+      const branches = visionData.branches
+        .filter((branch) => state.branch === "all" || branch.id === state.branch)
+        .map((branch, index) => ({
+          ...branch,
+          visiblePosts: getVisiblePosts(branch),
+          originalIndex: visionData.branches.findIndex((item) => item.id === branch.id) + 1 || index + 1
+        }))
+        .filter((branch) => branch.visiblePosts.length > 0);
+
+      if (state.status === "recommended") {
+        const orderedPosts = allPosts()
+          .filter((post) => state.branch === "all" || post.branchId === state.branch)
+          .sort((a, b) => a.order - b.order);
+
+        branchesContainer.innerHTML = `
+          <section class="branch" style="grid-column: 1 / -1;">
+            <div class="branch-head">
+              <span class="branch-index">#</span>
+              <div>
+                <h2>Parcours conseillé</h2>
+                <p class="branch-description">Lecture progressive de la vision, tous axes confondus.</p>
+              </div>
+            </div>
+            <div class="post-grid">
+              ${orderedPosts.map((post) => renderPostCard(post)).join("")}
+            </div>
+          </section>
+        `;
+        emptyState.hidden = orderedPosts.length > 0;
+        return;
+      }
+
+      branchesContainer.innerHTML = branches.map((branch) => `
+        <section class="branch">
+          <div class="branch-head">
+            <span class="branch-index">${branch.originalIndex}</span>
+            <div>
+              <h2>${branch.title}</h2>
+              <p class="branch-description">${branch.description}</p>
+            </div>
+          </div>
+          <div class="post-grid">
+            ${branch.visiblePosts.map((post) => renderPostCard({ ...post, branchTitle: branch.title })).join("")}
+          </div>
+        </section>
+      `).join("");
+
+      emptyState.hidden = branches.length > 0;
+    }
+
+    function renderPostCard(post) {
+      const linkLabel = post.linkedinUrl ? "Lire le post LinkedIn" : "À venir";
+      return `
+        <button class="post-card" type="button" data-post-id="${post.id}">
+          <span class="post-meta">
+            <span class="order">#${post.order}</span>
+            <span class="status" data-status="${normalizeStatus(post.status)}">${post.status}</span>
+          </span>
+          <h3>${post.title}</h3>
+          <p>${post.coreIdea}</p>
+          <span class="post-action">${linkLabel}</span>
+        </button>
+      `;
+    }
+
+    function findPost(postId) {
+      for (const branch of visionData.branches) {
+        const post = branch.posts.find((item) => item.id === postId);
+        if (post) {
+          return { ...post, branchTitle: branch.title };
+        }
+      }
+      return null;
+    }
+
+    function openDrawer(post) {
+      document.getElementById("drawerTitle").textContent = post.title;
+      document.getElementById("drawerBranch").textContent = post.branchTitle;
+      document.getElementById("drawerCoreIdea").textContent = post.coreIdea;
+      document.getElementById("drawerSummary").textContent = post.summary;
+      document.getElementById("drawerStatus").textContent = post.status;
+      document.getElementById("drawerOrder").textContent = `Ce post fait partie du parcours conseillé, en position ${post.order}.`;
+      document.getElementById("drawerLink").innerHTML = post.linkedinUrl
+        ? `<a class="linkedin-link" href="${post.linkedinUrl}" target="_blank" rel="noopener noreferrer">Lire le post LinkedIn</a>`
+        : `<span class="disabled-link">À venir</span>`;
+
+      drawer.classList.add("is-open");
+      drawerBackdrop.classList.add("is-open");
+      drawer.setAttribute("aria-hidden", "false");
+      drawerBackdrop.setAttribute("aria-hidden", "false");
+      closeDrawerButton.focus();
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove("is-open");
+      drawerBackdrop.classList.remove("is-open");
+      drawer.setAttribute("aria-hidden", "true");
+      drawerBackdrop.setAttribute("aria-hidden", "true");
+    }
+
+    statusFilters.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-filter]");
+      if (!button) return;
+      state.status = button.dataset.filter;
+      renderControls();
+      renderMap();
+    });
+
+    branchFilter.addEventListener("change", (event) => {
+      state.branch = event.target.value;
+      renderMap();
+    });
+
+    branchesContainer.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-post-id]");
+      if (!card) return;
+      const post = findPost(card.dataset.postId);
+      if (post) openDrawer(post);
+    });
+
+    closeDrawerButton.addEventListener("click", closeDrawer);
+    drawerBackdrop.addEventListener("click", closeDrawer);
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeDrawer();
+    });
+
+    renderControls();
+    renderMap();
+  </script>
+</body>
+</html>
