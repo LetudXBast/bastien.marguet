@@ -301,9 +301,9 @@ def legacy_section(sid):
     return value
 
 def about():
-    body=intro('À propos', 'Enseigner, chercher, transmettre', 'Mon parcours associe physique statistique, enseignement dans le supérieur et communication scientifique.')
+    body=intro('À propos', 'Sciences, cognition et pédagogie', 'Mon parcours associe physique statistique, enseignement dans le supérieur et intérêt pour les mécanismes cognitifs de l’apprentissage.')
     body+=local_nav([('biographie','Biographie courte'),('formation-neuroeducation','Formation en cours'),('responsabilites','Responsabilités'),('recherches','Recherche'),('cv','Parcours')])
-    body+='''<section id="biographie" class="prose"><h2>Quelques mots sur mon parcours</h2><p>Je suis docteur en physique statistique, agrégé de Physique-Chimie et PRAG à l’IUT Lyon 1. J’enseigne les mathématiques appliquées, les sciences et la communication scientifique. Mes activités portent également sur l’usage raisonné de l’IA générative, la médiation scientifique et la valorisation des compétences doctorales.</p></section>'''
+    body+='''<section id="biographie" class="prose"><h2>Quelques mots sur mon parcours</h2><p>Je suis docteur en physique statistique, agrégé de Physique-Chimie et PRAG à l’IUT Lyon 1. J’enseigne les mathématiques appliquées, les sciences et la communication scientifique.</p><p>Je m’intéresse aux mécanismes cognitifs de l’apprentissage : attention, mémoire, raisonnement et métacognition, c’est-à-dire la capacité à analyser et à réguler ses propres stratégies d’apprentissage. Cette réflexion nourrit mes pratiques pédagogiques et mon approche de l’IA générative, avec une attention à la compréhension et à l’autonomie intellectuelle des étudiants.</p><p>Mes activités comprennent également la médiation scientifique et la valorisation des compétences doctorales.</p></section>'''
     body+=fragment('neuroeducation')
     body+='<section class="section" id="responsabilites"><h2>Mes responsabilités</h2><div class="prose">'+legacy_section('responsabilites')+'</div></section>'
     body+='<section class="section" id="recherches"><h2>Mes expériences de recherche</h2><p class="prose">Physique statistique, dynamique d’interfaces et systèmes hors équilibre.</p>'+legacy_section('recherches')+'<p class="actions">'+link('publications.html','Articles et manuscrit de thèse →')+'</p></section>'
