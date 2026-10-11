@@ -16,12 +16,14 @@
       navList.classList.remove("open");
       document.body.classList.remove("menu-open");
       btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Ouvrir le menu");
     };
 
     const openMenu = () => {
       navList.classList.add("open");
       document.body.classList.add("menu-open");
       btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Fermer le menu");
     };
 
     btn.addEventListener("click", () => {
@@ -38,7 +40,10 @@
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape" && navList.classList.contains("open")) {
+        closeMenu();
+        btn.focus();
+      }
     });
 
     const handleViewportChange = (event) => {
@@ -74,7 +79,7 @@
 
       window.scrollTo({
         top: Math.max(0, top),
-        behavior
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : behavior
       });
     };
 
@@ -89,7 +94,7 @@
         return;
       }
 
-      if (!url.hash || normalizePathname(url.pathname) !== currentPath) return;
+        if (url.origin !== window.location.origin || !url.hash || normalizePathname(url.pathname) !== currentPath) return;
 
       link.addEventListener("click", (event) => {
         const target = resolveTarget(url.hash);
@@ -97,6 +102,7 @@
 
         event.preventDefault();
         scrollToTarget(target);
+        if (link.classList.contains("skip-link")) target.focus({ preventScroll: true });
         history.replaceState(null, "", url.hash);
       });
     });
@@ -166,6 +172,8 @@
     const setActive = (activeId) => {
       scrollSpyEntries.forEach(({ id, link }) => {
         link.classList.toggle("active", id === activeId);
+        if (id === activeId) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
       });
     };
 
@@ -218,6 +226,7 @@
       let nextEntry = null;
 
       entries.forEach((entry) => {
+        if (entry.section.hidden) return;
         const top = entry.section.getBoundingClientRect().top;
 
         if (top <= marker) {
@@ -326,12 +335,52 @@
     });
   }
 
+  function initResourceSearch() {
+    const input = document.getElementById("resource-search");
+    const status = document.getElementById("search-status");
+    if (!input || !status) return;
+    const sections = Array.from(document.querySelectorAll(".resource-section"));
+    const groups = Array.from(document.querySelectorAll("[data-teaching-group]"));
+    let savedOpen = null;
+    const normalize = (text) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr");
+    input.addEventListener("input", () => {
+      const words = normalize(input.value.trim()).split(/\s+/).filter(Boolean);
+      const matches = (text) => words.every((word) => normalize(text).includes(word));
+      if (words.length && !savedOpen) savedOpen = groups.map((group) => group.open);
+      let count = 0;
+      sections.forEach((section) => {
+        const headingMatch = matches(section.querySelector(".section-head")?.textContent || "");
+        section.querySelectorAll(".publication-item, .cv-item, .research-item, .media-card, .section-sub, .list-clean > li").forEach((item) => {
+          item.hidden = words.length > 0 && !headingMatch && !matches(item.textContent);
+        });
+        section.hidden = words.length > 0 && !matches(section.textContent);
+        if (!section.hidden) count++;
+        const link = document.querySelector(`.resource-sidebar a[href="#${section.id}"]`);
+        if (link) link.hidden = section.hidden;
+      });
+      groups.forEach((group, index) => {
+        const items = Array.from(group.querySelectorAll(".courses > .publication-item"));
+        const headingMatch = matches(group.querySelector("summary").textContent);
+        if (words.length && headingMatch) items.forEach((item) => { item.hidden = false; });
+        group.hidden = words.length > 0 && !headingMatch && items.every((item) => item.hidden);
+        if (words.length) group.open = !group.hidden;
+        else if (savedOpen) group.open = savedOpen[index];
+      });
+      if (!words.length) savedOpen = null;
+      status.textContent = !words.length ? "Toutes les ressources sont affichées." : count
+        ? `${count} rubrique${count > 1 ? "s" : ""} correspond${count > 1 ? "ent" : ""} à votre recherche.`
+        : "Aucun résultat. Essayez un autre mot ou effacez la recherche.";
+      window.dispatchEvent(new Event("scroll"));
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initMenuToggle();
     initTeachingAccordions();
     initSmoothScroll();
     initScrollSpy();
     initResourceTocSpy();
+    initResourceSearch();
     initFormValidation();
   });
 })();

@@ -1,856 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bibliothèque de ressources - Bastien Marguet</title>
+  <meta name="description" content="Recherche dans les titres et thèmes des cours, avec filtres par niveau, année et type de document.">
   <meta name="google-site-verification" content="uIl1gm6lEvPuF1crlqyiuN7xsGx7xSDzLGbgRj04NrQ">
-  <meta
-    name="description"
-    content="Ressources pédagogiques, publications, cours, supports et interventions de Bastien Marguet.">
-
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://letudxbast.github.io/bastien.marguet/resources.html">
-  <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-
-  <meta property="og:title" content="Bastien Marguet - Ressources">
-  <meta
-    property="og:description"
-    content="Supports pédagogiques, cours, publications, vulgarisation et médias.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Bibliothèque de ressources - Bastien Marguet">
+  <meta property="og:description" content="Recherche dans les titres et thèmes des cours, avec filtres par niveau, année et type de document.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://letudxbast.github.io/bastien.marguet/resources.html">
-  <meta property="og:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bastien Marguet - Ressources">
-  <meta
-    name="twitter:description"
-    content="Supports pédagogiques, cours, publications, vulgarisation et médias.">
-  <meta name="twitter:image" content="https://letudxbast.github.io/bastien.marguet/img/intro.jpeg">
-
-  <title>Bastien Marguet - Ressources</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260413-1">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/script.js" defer></script>
 </head>
-<body class="site-page page-resources">
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
-    <div class="site-width header-inner">
-      <a href="index.html#intro" class="brand" aria-label="Retour à l'accueil">
+    <div class="container header-inner">
+      <a class="site-brand" href="index.html" aria-label="Bastien Marguet - Retour à l’accueil">
         <span class="brand-mark" aria-hidden="true">BM</span>
-        <span class="brand-copy">
-          <strong>Bastien Marguet</strong>
-          <span>Sciences • pédagogie • IA</span>
-        </span>
+        <span class="brand-copy"><strong>Bastien Marguet</strong><span>Sciences · pédagogie · IA</span></span>
       </a>
-
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav-list">
-        Menu
-      </button>
-
-      <nav class="site-nav" aria-label="Navigation principale">
-        <ul id="site-nav-list">
-          <li><a href="index.html#intro">Accueil</a></li>
-          <li><a href="index.html#about">À propos</a></li>
-          <li><a href="index.html#ia">IA</a></li>
-          <li><a href="#top">Ressources</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <nav class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list"><li><a href="index.html">Accueil</a></li><li><a href="enseignements.html">Enseignements</a></li><li><a href="publications.html">Publications</a></li><li><a href="interventions.html">Interventions</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     </div>
   </header>
-
-  <main class="page-shell">
-    <div class="resource-layout">
-      <aside class="resource-sidebar" aria-label="Sommaire des ressources">
-        <div class="sidebar-card">
-          <p class="section-kicker">Sommaire</p>
-          <p>Navigation rapide entre les grandes sections du site.</p>
-          <div class="toc-chips">
-            <a class="chip" href="#enseignements">Enseignements</a>
-            <a class="chip" href="#interventions">Interventions</a>
-            <a class="chip" href="#publications">Publications</a>
-            <a class="chip" href="#recherches">Recherches</a>
-            <a class="chip" href="#vulgarisation">Vulgarisation</a>
-            <a class="chip" href="#cv">CV</a>
-            <a class="chip" href="#responsabilites">Responsabilités</a>
-            <a class="chip" href="#medias">Médias</a>
-          </div>
-        </div>
-      </aside>
-
-      <div class="resource-sections">
-        <section id="cv" class="resource-section">
-          <div class="section-head">
-            <h2>Mon CV</h2>
-            <p>Parcours académique.</p>
-          </div>
-
-          <ul class="cv-list">
-            <li class="cv-item">
-              <strong>2019 - 2022</strong> :
-              <em>Doctorat en physique statistique</em><br>
-              Intitulé : <em>Interfaces confinées hors-équilibre</em><br>
-              <a href="https://ilm.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Institut Lumière Matière</a> - <a href="https://www.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Université Claude Bernard Lyon 1</a>, Villeurbanne (69)
-            </li>
-
-            <li class="cv-item">
-              <strong>2018 - 2019</strong> :
-              <em>Master 2 recherche - Physique, concepts et applications</em><br>
-              <a href="https://www.ens-lyon.fr" target="_blank" rel="noopener noreferrer">École Normale Supérieure de Lyon</a>, Lyon (69)
-            </li>
-
-            <li class="cv-item">
-              <strong>2016 - 2017</strong> :
-              <em>Master 2 enseignement - Agrégation de Physique-Chimie</em><br>
-              <a href="https://www.ens-paris-saclay.fr" target="_blank" rel="noopener noreferrer">École Normale Supérieure de Paris-Saclay</a>, Cachan (94)
-            </li>
-
-            <li class="cv-item">
-              <strong>2014 - 2016</strong> :
-              <em>Licence 3 & Master 1 - Parcours PHYTEM</em><br>
-              <a href="https://www.ens-paris-saclay.fr" target="_blank" rel="noopener noreferrer">École Normale Supérieure de Paris-Saclay</a>, Cachan (94)
-            </li>
-
-            <li class="cv-item">
-              <strong>2012 - 2014</strong> :
-              <em>CPGE - Physique, Sciences Industrielles (PSI)</em><br>
-              <a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_Condorcet_(Belfort)" target="_blank" rel="noopener noreferrer">Lycée Condorcet</a>, Belfort (90)
-            </li>
-          </ul>
-        </section>
-
-        <section id="enseignements" class="resource-section">
-          <div class="section-head">
-            <h2>Enseignements</h2>
-            <p>Exemples de cours, polys, supports et sujets, structurés par niveau pour garder une consultation claire même lorsque le volume augmente.</p>
-          </div>
-
-          <div class="teaching-toolbar">
-            <div class="teaching-nav" aria-label="Niveaux de formation">
-              <a class="teaching-chip" href="#enseignements-but1">BUT1</a>
-              <a class="teaching-chip" href="#enseignements-but2">BUT2</a>
-              <a class="teaching-chip" href="#enseignements-but3">BUT3</a>
-              <a class="teaching-chip" href="#enseignements-lp-cesp">LP CESP</a>
-            </div>
-
-            <div class="teaching-actions" aria-label="Actions sur les catégories d'enseignement">
-              <button type="button" class="teaching-action" data-teaching-expand>Tout déplier</button>
-              <button type="button" class="teaching-action" data-teaching-collapse>Tout replier</button>
-            </div>
-          </div>
-
-          <details id="enseignements-but1" class="teaching-group" data-teaching-group>
-            <summary class="teaching-group-summary">
-              <span class="teaching-group-heading">
-                <span class="teaching-group-title">BUT1</span>
-                <span class="teaching-group-count" data-teaching-count></span>
-              </span>
-              <span class="teaching-group-note">Fondamentaux en mathématiques, outils scientifiques et premiers TP d'appui.</span>
-              <span class="teaching-group-caret" aria-hidden="true"></span>
-            </summary>
-
-            <div class="teaching-group-panel">
-              <div class="courses">
-              <article class="publication-item publication-item--module" id="ue-but1-maths1">
-                <div class="module-head">
-                  <h3>Outils mathématiques : niveau 1 (BUT1 GCGP)</h3>
-                  <a href="pdfs/Cours/PolyMathsBUT-S1.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-                  <p>Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d'erreur, trigonométrie. 14 × 2 h</p>
-                </div>
-
-                <details class="module-evals-toggle">
-                  <summary>Annales et sujets</summary>
-                  <div class="module-evals-content">
-                    <h4>Évaluations par année</h4>
-
-                    <details class="eval-year" open>
-                      <summary>2025-2026</summary>
-                      <div class="eval-grid">
-                        <div class="eval-type">
-                          <h5>Interros (30 min)</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
-                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
-                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
-                            <a href="pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-
-                    <details class="eval-year">
-                      <summary>2024-2025</summary>
-                      <div class="eval-grid">
-                        <div class="eval-type">
-                          <h5>Interros (30 min)</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 1</a>
-                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 2</a>
-                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 3</a>
-                            <a href="pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 4</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-                  </div>
-                </details>
-              </article>
-
-              <article class="publication-item publication-item--module" id="ue-but1-maths2">
-                <div class="module-head">
-                  <h3>Outils mathématiques : niveau 2 (BUT1 GCGP)</h3>
-                  <a href="pdfs/Cours/PolyMathsBUT-S2.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-                  <p>Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h</p>
-                </div>
-
-                <details class="module-evals-toggle">
-                  <summary>Annales et sujets</summary>
-                  <div class="module-evals-content">
-                    <h4>Évaluations par année</h4>
-
-                    <details class="eval-year" open>
-                      <summary>2025-2026</summary>
-                      <div class="eval-grid eval-grid--three">
-                        <div class="eval-type">
-                          <h5>Interros (30 min)</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
-                            <a href="pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Exam blanc</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM2/2025-2026/DS-blanc-S2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <span class="eval-link eval-link--placeholder">Sujet final</span>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-
-                    <details class="eval-year">
-                      <summary>2024-2025</summary>
-                      <div class="eval-grid">
-                        <div class="eval-type">
-                          <h5>Interros (30 min)</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 5</a>
-                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 6</a>
-                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 7</a>
-                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 8</a>
-                            <a href="pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Interro 9</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet final</a>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-                  </div>
-                </details>
-              </article>
-
-              <article class="publication-item">
-                <h3>TP Outils Informatiques et Scientifiques (BUT1 GCGP)</h3>
-                <p>Utilisation d'Excel. 5 × 4 h</p>
-                <a href="pdfs/Cours/OIS_Examen_2024.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-              </article>
-
-              <article class="publication-item">
-                <h3>Interventions sur d'autres TP (BUT1 GCGP)</h3>
-                <p>Transferts thermiques, électricité, mécanique des fluides. 5 × 4 h / groupe</p>
-              </article>
-              </div>
-            </div>
-          </details>
-
-          <details id="enseignements-but2" class="teaching-group" data-teaching-group>
-            <summary class="teaching-group-summary">
-              <span class="teaching-group-heading">
-                <span class="teaching-group-title">BUT2</span>
-                <span class="teaching-group-count" data-teaching-count></span>
-              </span>
-              <span class="teaching-group-note">Approfondissements, statistiques et modélisation pour les parcours CPIT et CPOP.</span>
-              <span class="teaching-group-caret" aria-hidden="true"></span>
-            </summary>
-
-            <div class="teaching-group-panel">
-              <div class="courses">
-              <article class="publication-item publication-item--module" id="ue-but2-maths3">
-                <div class="module-head">
-                  <h3>Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP)</h3>
-                  <a href="pdfs/Cours/Test_Poly_Maths-S3.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-                  <p>Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h</p>
-                </div>
-
-                <details class="module-evals-toggle">
-                  <summary>Annales et sujets</summary>
-                  <div class="module-evals-content">
-                    <h4>Évaluations par année</h4>
-
-                    <details class="eval-year" open>
-                      <summary>2025-2026</summary>
-                      <div class="eval-grid">
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Exam blanc</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
-                            <a href="pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-                  </div>
-                </details>
-              </article>
-
-              <article class="publication-item publication-item--module" id="ue-but2-statistiques">
-                <div class="module-head">
-                  <h3>Statistiques (BUT2 GCGP - Parcours CPIT)</h3>
-                  <p>Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h</p>
-                </div>
-
-                <details class="module-evals-toggle">
-                  <summary>Annales et sujets</summary>
-                  <div class="module-evals-content">
-                    <h4>Évaluations par année</h4>
-
-                    <details class="eval-year" open>
-                      <summary>2025-2026</summary>
-                      <div class="eval-grid">
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
-                          </div>
-                        </div>
-                        <div class="eval-type">
-                          <h5>Exam blanc</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/Statistiques/Examen blanc.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet</a>
-                            <a href="pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Corrigé</a>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-
-                    <details class="eval-year">
-                      <summary>2024-2025</summary>
-                      <div class="eval-grid">
-                        <div class="eval-type">
-                          <h5>Examen final</h5>
-                          <div class="eval-links">
-                            <a href="pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">Sujet réel</a>
-                          </div>
-                        </div>
-                      </div>
-                    </details>
-                  </div>
-                </details>
-              </article>
-
-              <article class="publication-item">
-                <h3>Mathématiques pour les systèmes complexes (BUT2 GCGP - Parcours CPOP)</h3>
-                <p>Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h</p>
-                <a href="pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-              </article>
-
-              <article class="publication-item publication-item--module" id="ue-but2-plans-experiences">
-                <div class="module-head">
-                  <h3>Plans d'expériences (BUT2 GCGP - Parcours CPIT)</h3>
-                  <a href="pdfs/Cours/Cours_plan_d_expériences.pdf" class="btn btn-secondary module-poly-link" target="_blank" rel="noopener noreferrer">Poly (PDF)</a>
-                  <p>Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h</p>
-                </div>
-
-                <details class="module-evals-toggle">
-                  <summary>Annales et sujets</summary>
-                  <div class="module-evals-content">
-                    <h4>DS final par année</h4>
-                    <div class="eval-links">
-                      <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2026</a>
-                      <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2025</a>
-                      <a href="pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf" class="eval-link" target="_blank" rel="noopener noreferrer">DS final 2024</a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              </div>
-            </div>
-          </details>
-
-          <details id="enseignements-but3" class="teaching-group" data-teaching-group>
-            <summary class="teaching-group-summary">
-              <span class="teaching-group-heading">
-                <span class="teaching-group-title">BUT3</span>
-                <span class="teaching-group-count" data-teaching-count></span>
-              </span>
-              <span class="teaching-group-note">Communication scientifique, anglais professionnel et projection vers l'insertion.</span>
-              <span class="teaching-group-caret" aria-hidden="true"></span>
-            </summary>
-
-            <div class="teaching-group-panel">
-              <div class="courses">
-              <article class="publication-item">
-                <h3>Anglais technique et professionnel (BUT3 GCGP - Parcours CPIT et CPOP)</h3>
-                <p>Certification TOEIC, soutenance de stage, synthèse d'article, présentation scientifique, vulgarisation. 8 × 2 h</p>
-                <div class="btn-group btn-group--english">
-                  <a href="presentations/describing-graphs-scientific-english.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Décrire un graphique</a>
-                  <a href="presentations/anglais-technique-professionnel.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Soutenance de stage</a>
-                  <a href="presentations/presenter-article-scientifique.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Présenter un article scientifique</a>
-                </div>
-              </article>
-
-              <article class="publication-item">
-                <h3>Projet Professionnel et Personnel (BUT3 GCGP - Parcours CPIT)</h3>
-                <p>Ateliers Fête de la science, préparation au concours d'éloquence. 10 × 2 h</p>
-                <div class="btn-group">
-                  <a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FdS</a>
-                  <a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Éloquence</a>
-                </div>
-              </article>
-              </div>
-            </div>
-          </details>
-
-          <details id="enseignements-lp-cesp" class="teaching-group" data-teaching-group>
-            <summary class="teaching-group-summary">
-              <span class="teaching-group-heading">
-                <span class="teaching-group-title">LP CESP</span>
-                <span class="teaching-group-count" data-teaching-count></span>
-              </span>
-              <span class="teaching-group-note">Blocs ciblés sur l'automatisme, la régulation et les capteurs.</span>
-              <span class="teaching-group-caret" aria-hidden="true"></span>
-            </summary>
-
-            <div class="teaching-group-panel">
-              <div class="courses">
-              <article class="publication-item">
-                <h3>Automatisme, systèmes asservis</h3>
-              </article>
-
-              <article class="publication-item">
-                <h3>Régulation</h3>
-              </article>
-
-              <article class="publication-item">
-                <h3>Caractéristiques des capteurs</h3>
-              </article>
-              </div>
-            </div>
-          </details>
-        </section>
-
-        <section id="responsabilites" class="resource-section">
-          <div class="section-head">
-            <h2>Responsabilités</h2>
-            <p>Coordination, pilotage de formations et missions nationales.</p>
-          </div>
-
-          <ul class="list-clean">
-            <li>
-              <strong><a class="link-accent" href="https://doctorat.gouv.fr/apr%C3%A8s-le-doctorat/portraits-t%C3%A9moignages/bastien-marguet/" target="_blank" rel="noopener noreferrer">Ambassadeur du doctorat - Région AURA</a></strong><br>
-              <a class="link-accent" href="https://www.enseignementsup-recherche.gouv.fr/fr" target="_blank" rel="noopener noreferrer">
-                Ministère de l'Enseignement Supérieur, de la Recherche et de l'Espace (MESRE)
-              </a><br>
-              2025 - présent
-            </li>
-
-            <li>
-              <strong>Responsable Licence Professionnelle CESP</strong>
-              (Chargé de projet Électro-Hydro-Mécanique pour systèmes de pompage)<br>
-              <a class="link-accent" href="http://iut.univ-lyon1.fr/lpcesp" target="_blank" rel="noopener noreferrer">IUT GCGP, Villeurbanne</a>
-              •
-              <a class="link-accent" href="https://vienne.educagri.fr/licence-pro-cesp/" target="_blank" rel="noopener noreferrer">Lycée Agrotech, Vienne</a>
-              •
-              <a
-                class="link-accent"
-                href="https://galilee.ent.auvergnerhonealpes.fr/formations-a-galilee/apres-le-bac/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp-/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp--650.htm"
-                target="_blank"
-                rel="noopener noreferrer">
-                Lycée Galilée, Vienne
-              </a><br>
-              2023 - présent
-            </li>
-          </ul>
-        </section>
-
-        <section id="recherches" class="resource-section">
-          <div class="section-head">
-            <h2>Recherches</h2>
-            <p>Travaux en physique statistique, systèmes hors-équilibre et dynamique d'interfaces.</p>
-          </div>
-
-          <ul class="research-list modern-research">
-            <li class="research-item">
-              <span class="highlight">2019 - 2022 (3 ans)</span>
-              <div>
-                <em>Doctorat - <a href="https://ilm.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Institut Lumière Matière (ILM)</a>, <a href="https://www.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">Université Claude Bernard Lyon 1</a></em><br>
-                <strong>Interfaces confinées hors équilibre : modélisation, dynamique et phénomènes collectifs</strong>.<br>
-                Superviseur : <a class="link-accent" href="https://ilm-perso.univ-lyon1.fr/~opl/" target="_blank" rel="noopener noreferrer">Olivier Pierre-Louis</a>
-              </div>
-            </li>
-
-            <li class="research-item">
-              <span class="highlight">2019 (4 mois)</span>
-              <div>
-                <em>Stage M2 - <a href="https://lpmmc.cnrs.fr" target="_blank" rel="noopener noreferrer">LPMMC</a> &amp; <a href="https://liphy.univ-grenoble-alpes.fr" target="_blank" rel="noopener noreferrer">LiPhy</a>, <a href="https://www.univ-grenoble-alpes.fr" target="_blank" rel="noopener noreferrer">Université Grenoble Alpes</a></em><br>
-                <strong>Étude des (super)symétries dans la dynamique d'interfaces stochastiques</strong>.<br>
-                Superviseurs : <a class="link-accent" href="https://lpmmc.cnrs.fr/homepage-leonie-canet/" target="_blank" rel="noopener noreferrer">Léonie Canet</a>, <a class="link-accent" href="https://liphy-annuaire.univ-grenoble-alpes.fr/pages_personnelles/vivien_lecomte/" target="_blank" rel="noopener noreferrer">Vivien Lecomte</a>
-              </div>
-            </li>
-
-            <li class="research-item">
-              <span class="highlight">2017 - 2018 (10 mois)</span>
-              <div>
-                <em>Assistant de recherche - <a href="https://www.ims.ac.jp/en/" target="_blank" rel="noopener noreferrer">Institute for Molecular Science (IMS)</a>, Okazaki, Japon</em><br>
-                <strong>Transport électronique dans un cristal de Rydberg ultrafroid corrélé</strong>.<br>
-                Team : Pr Kenji Ohmori - <a class="link-accent" href="https://ohmori.ims.ac.jp/en/" target="_blank" rel="noopener noreferrer">Ohmori Group</a>
-              </div>
-            </li>
-
-            <li class="research-item">
-              <span class="highlight">2016 (4 mois)</span>
-              <div>
-                <em>Stage M1 - <a href="https://www.cornell.edu" target="_blank" rel="noopener noreferrer">Cornell University</a>, Ithaca (NY, USA)</em><br>
-                <strong>Dynamique d'imbibition dans des milieux nanoporeux</strong>.<br>
-                Superviseur : <a class="link-accent" href="https://ilm-perso.univ-lyon1.fr/~ovincent/" target="_blank" rel="noopener noreferrer">Olivier Vincent</a> - <a class="link-accent" href="https://stroockgroup.net/people" target="_blank" rel="noopener noreferrer">Stroock Group</a>
-              </div>
-            </li>
-          </ul>
-
-          <article class="publication-item">
-            <h3>Ma vision de l'éducation dans le cadre scolaire</h3>
-            <p>Une carte vivante pour naviguer entre les grands axes d'une réflexion sur l'apprentissage, l'autonomie, l'IA et les dispositifs pédagogiques à construire.</p>
-            <span class="btn btn-secondary btn-disabled" aria-disabled="true">Explorer la carte</span>
-          </article>
-        </section>
-
-        <section id="publications" class="resource-section">
-          <div class="section-head">
-            <h2>Publications</h2>
-            <p>Articles, manuscrit et communications.</p>
-          </div>
-
-          <article class="publication-item">
-            <h3>Collisions et confinement des interfaces en croissance cristalline</h3>
-            <p>B. Marguet, <em>Manuscrit de thèse</em>, 2022</p>
-            <a href="pdfs/Thesis_Marguet_Bastien.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-          </article>
-
-          <article class="publication-item">
-            <h3>Interface collisions with diffusive mass transport</h3>
-            <p>B. Marguet, FDAA Reis, O. Pierre-Louis - <em>Physical Review E</em>, 2022</p>
-            <a href="pdfs/interface_collisions.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-          </article>
-
-          <article class="publication-item">
-            <h3>Formation of smoother grain boundaries in 2D materials...</h3>
-            <p>FDAA Reis, B. Marguet, O. Pierre-Louis - <em>2D Materials</em>, 2022</p>
-            <a href="pdfs/grain_boundaries.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-          </article>
-
-          <article class="publication-item">
-            <h3>Supersymmetries in nonequilibrium Langevin dynamics</h3>
-            <p>B. Marguet, E. Agoritsas, L. Canet, V. Lecomte - <em>Physical Review E</em>, 2021</p>
-            <a href="pdfs/supersymmetries.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-          </article>
-
-          <article class="publication-item">
-            <h3>Imbibition triggered by capillary condensation in nanopores</h3>
-            <p>O. Vincent, B. Marguet, A.D. Stroock - <em>Langmuir</em>, 2017</p>
-            <a href="pdfs/imbibition.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Lire (PDF)</a>
-          </article>
-        </section>
-
-        <section id="interventions" class="resource-section">
-          <div class="section-head">
-            <h2>Interventions</h2>
-            <p>Ateliers, conférences et séminaires.</p>
-          </div>
-
-          <ul class="list-clean">
-            <li>
-              <strong>Atelier « Apprendre à prompter efficacement afin de créer des contenus pédagogiques pertinents »</strong>
-              - <a href="https://iut.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">IUT Lyon 1</a>, 13/05/2025
-            </li>
-            <li>
-              <strong>Atelier « Méthodologie de l'apprentissage : utiliser l'IA pour s'autoévaluer »</strong>
-              - <a href="https://iut.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">IUT Lyon 1</a>, 16-17/10/2025
-            </li>
-            <li>
-              <span class="intervention-head">
-                <strong>Atelier « IA, cognition et apprentissage »</strong>
-                <span>- <a href="https://iut.univ-lyon1.fr" target="_blank" rel="noopener noreferrer">IUT Lyon 1</a>, 04/11/2025</span>
-                <a href="presentations/your-brain-on-chatgpt.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-              </span>
-            </li>
-            <li>
-              <span class="intervention-head">
-                <strong>Workshop « Scientific Communication: Principles and Practice »</strong>
-                <span>- <a href="https://www.uminho.pt/EN/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Universidade do Minho</a>, 11/04/2026</span>
-                <a href="presentations/Scientific_Communication_Workshop_UMinho.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-                <a href="https://www.instagram.com/p/DW7d-zciP72/" class="intervention-link is-secondary" target="_blank" rel="noopener noreferrer">annonce</a>
-              </span>
-            </li>
-            <li>
-              <span class="intervention-head">
-                <strong>Workshop « Professional Passport: CV, Interviews and Global Networking »</strong>
-                <span>- <a href="https://www.uminho.pt/EN/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Universidade do Minho</a>, 14/04/2026</span>
-                <a href="presentations/Professional_Passport_Workshop.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-              </span>
-            </li>
-            <li>
-              <span class="intervention-head">
-                <strong>Workshop « PhD: Valuable Skills, Invisible Value »</strong>
-                <span>- Workshop présenté dans le cadre de <a href="https://intcha26.sciencesconf.org/" target="_blank" rel="noopener noreferrer">INTCHA 2026</a>, à Cargèse, le 22/04/2026</span>
-                <a href="presentations/PhD_valuable skills_invisible_value.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-                <a href="phd-survey/" class="intervention-link is-secondary" target="_blank" rel="noopener noreferrer">sondage</a>
-              </span>
-            </li>
-            <li>
-              <span class="intervention-head">
-                <strong>Représentation théâtrale « Terreur - Les Mots Parleurs »</strong>
-                <span>- <a href="https://theatre-astree.univ-lyon1.fr/" target="_blank" rel="noopener noreferrer">Théâtre Astrée</a>, mardi 12 mai 2026 à 20h30</span>
-                <a href="terreur-les-mots-parleurs.html" class="intervention-link" target="_blank" rel="noopener noreferrer">présentation</a>
-              </span>
-            </li>
-            <li>
-              <span class="intervention-head">
-                <strong>Intervention « Doctorat : employabilité et compétences doctorales »</strong>
-                <span>- <a href="https://www.institutlyfe.com/" target="_blank" rel="noopener noreferrer">Institut Lyfe</a>, lundi 29 juin 2026</span>
-                <a href="presentations/doctorat-institut-lyfe.html" class="intervention-link" target="_blank" rel="noopener noreferrer">support</a>
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        <section id="vulgarisation" class="resource-section">
-          <div class="section-head">
-            <h2>Vulgarisation</h2>
-            <p>Vidéos, outils interactifs et simulateurs.</p>
-          </div>
-
-          <div id="vulgarisation-videos" class="section-sub">
-            <h3>Vidéos pédagogiques</h3>
-            <p>Deux exemples de vidéos créées pour mes enseignements :</p>
-
-            <div class="video-row">
-              <figure class="video-container has-video">
-                <video controls>
-                  <source src="video/TaylorExpSeries.mp4" type="video/mp4">
-                  Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-                <figcaption>Développement limité de la fonction exponentielle</figcaption>
-              </figure>
-
-              <figure class="video-container has-video">
-                <video controls>
-                  <source src="video/DerivativeScene.mp4" type="video/mp4">
-                  Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-                <figcaption>Notion de dérivée</figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div id="vulgarisation-jeu" class="section-sub">
-            <h3>Jeu pédagogique interactif</h3>
-            <p>Deviner une fonction cachée à partir de ses valeurs.</p>
-            <div class="center-row">
-              <a href="https://fonction-cachee-bmarguet.streamlit.app/" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
-                Jouer à « Fonction cachée »
-              </a>
-            </div>
-          </div>
-
-          <div id="vulgarisation-simulateurs" class="section-sub">
-            <h3>Simulateurs numériques</h3>
-            <p>
-              Simulations interactives déployées sur
-              <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit</a>
-              pour l'enseignement de l'automatisme-régulation.
-            </p>
-
-            <div class="center-row">
-              <a href="https://pid-demo-letudx.streamlit.app/" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
-                Simulateur P
-              </a>
-              <a href="https://pid-demo-bmarguet.streamlit.app/" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
-                Simulateur PID
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section id="medias" class="resource-section">
-          <div class="section-head">
-            <h2>Médias</h2>
-            <p>Vidéos, podcasts et interventions.</p>
-          </div>
-
-          <div class="media-grid">
-            <figure class="media-card">
-              <div class="media-frame media-frame--16x9">
-                <iframe
-                  src="https://myvideo.univ-lyon1.fr/permalink/v126d2cf7351fdzrv6zl/iframe/"
-                  title="Présentation ambassadeur du doctorat"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <figcaption>
-                <strong>Présentation ambassadeur du doctorat</strong>
-                <a class="link-accent" href="https://www.univ-lyon1.fr/actualites/bastien-marguet-ambassadeur-du-doctorat" target="_blank" rel="noopener noreferrer">(lire)</a>
-                <span>Université Lyon 1</span>
-              </figcaption>
-            </figure>
-
-            <figure class="media-card">
-              <div class="media-frame media-frame--16x9">
-                <iframe
-                  src="https://www.youtube.com/embed/O1M7t2Dg2Mg?rel=0"
-                  title="Interview Université de Lyon"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <figcaption>
-                <strong>Interview Université de Lyon</strong>
-                <span>Portrait et parcours scientifique</span>
-              </figcaption>
-            </figure>
-
-            <figure class="media-card">
-              <a
-                class="media-card-link"
-                href="https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ouvrir la vidéo BFM Lyon (nouvel onglet)">
-                <div class="media-frame media-frame--16x9 media-frame--visual">
-                  <img src="img/Plateau_TV_BFMLyon.png" alt="Plateau TV - BFM Lyon" loading="lazy">
-                  <span class="media-badge">Télévision</span>
-                  <span class="media-source">BFM Lyon</span>
-                  <span class="media-play media-play--label" aria-hidden="true">Voir l'intervention</span>
-                </div>
-              </a>
-              <figcaption>
-                <a
-                  class="media-card-caption-link"
-                  href="https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <strong>Intervention plateau TV - BFM Lyon</strong>
-                  <span>Finale Ma thèse en 180 secondes</span>
-                </a>
-              </figcaption>
-            </figure>
-
-            <figure class="media-card">
-              <div class="media-frame media-frame--16x9">
-                <iframe
-                  src="https://www.youtube.com/embed/qdO9y2ETTI4?rel=0"
-                  title="Concours Ma thèse en 180 secondes"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <figcaption>
-                <strong>Concours Ma thèse en 180 secondes</strong>
-                <span>Finale Lyon - Saint-Étienne 2022</span>
-              </figcaption>
-            </figure>
-
-            <figure class="media-card">
-              <a
-                class="media-card-link"
-                href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ouvrir le podcast Dis, pourquoi ? (nouvel onglet)">
-                <div class="media-frame media-frame--player media-frame--visual media-frame--podcast-bg">
-                  <img src="img/Dis, pourquoi.png" alt="Visuel du podcast Dis, pourquoi ?" loading="lazy">
-                  <span class="media-badge">Podcast</span>
-                  <span class="media-source">RCF Lyon</span>
-                  <span class="media-play media-play--label" aria-hidden="true">Écouter</span>
-                </div>
-              </a>
-              <figcaption>
-                <a
-                  class="media-card-caption-link"
-                  href="https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <strong>Podcast « Dis, pourquoi ? »</strong>
-                  <span>RCF Lyon</span>
-                </a>
-              </figcaption>
-            </figure>
-
-            <figure class="media-card">
-              <a
-                class="media-card-link"
-                href="https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ouvrir le podcast Sciences en récits (nouvel onglet)">
-                <div class="media-frame media-frame--player media-frame--visual media-frame--podcast-bg">
-                  <img src="img/Podcast_sciences-en-recit.jpg" alt="Visuel du podcast Sciences en récits" loading="lazy">
-                  <span class="media-badge">Podcast</span>
-                  <span class="media-source">Sciences en récits</span>
-                  <span class="media-play media-play--label" aria-hidden="true">Écouter</span>
-                </div>
-              </a>
-              <figcaption>
-                <a
-                  class="media-card-caption-link"
-                  href="https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <strong>Podcast « Sciences en récits »</strong>
-                  <span>Retour sur MT180</span>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-        </section>
-      </div>
-    </div>
-  </main>
-
+  <main id="contenu" class="container" tabindex="-1"><header class="page-intro"><p class="page-kicker">Bibliothèque</p><h1>Trouver un document</h1><p class="lead">Un catalogue commun aux pages de cours : polycopiés, sujets, corrigés et présentations.</p></header><form class="search-form" role="search" data-catalogue-filter hidden>
+      <div class="filter-controls"><div><label for="recherche">Titre ou thème du cours</label><input id="recherche" name="q" type="search" placeholder="Statistiques, interro 2…" autocomplete="off" aria-describedby="recherche-aide"></div>
+      <div><label for="niveau">Formation / niveau</label><select id="niveau" name="niveau"><option value="">Tous les niveaux</option><option value="BUT1">BUT 1</option><option value="BUT2">BUT 2</option><option value="BUT3">BUT 3</option></select></div>
+      <div><label for="annee">Année du document</label><select id="annee" name="annee"><option value="">Toutes les années</option><option value="2026-2027">2026-2027</option><option value="2025-2026">2025-2026</option><option value="2024-2025">2024-2025</option><option value="2023-2024">2023-2024</option><option value="non-date">Édition non datée</option></select></div>
+      <div><label for="type">Type de document</label><select id="type" name="type"><option value="">Tous les types</option><option value="cours">Cours</option><option value="annale">Sujet</option><option value="corrige">Corrigé</option><option value="support">Support</option></select></div></div>
+      <div class="filter-footer"><p class="meta" id="recherche-aide">Recherche dans les titres et les thèmes des cours, hors texte des PDF.</p><button class="text-button" type="reset">Effacer les filtres</button></div>
+    </form><noscript><p class="notice">Toutes les ressources sont affichées. Retrouvez aussi les documents <a href="enseignements.html">classés par cours</a>.</p></noscript><div class="results-header filter-status"><p role="status" aria-live="polite" aria-atomic="true" data-result-count>47 ressources</p><p class="meta" data-active-filters>Toutes les ressources</p></div><div class="empty-state" data-empty-results hidden><h2>Aucune ressource correspondante</h2><p>Essayez un autre mot, une autre année ou effacez les filtres.</p></div><ul class="resource-list"><li class="resource-item" id="ue-but1-maths1-r1" data-resource data-level="BUT1" data-year="non-date" data-category="cours" data-search="Polycopié de cours Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Cours Édition non datée PDF 13,8 Mo ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/OM1/PolyMathsBUT-S1.pdf">Polycopié de cours</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Cours · Édition non datée · PDF · 13,8 Mo</p>
+    </li><li class="resource-item" id="ue-but1-maths1-td1" data-resource data-level="BUT1" data-year="non-date" data-category="support" data-search="Fiche TD 1 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Support Travaux dirigés Édition non datée PDF 176 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/OM1/Fiches%20TD/TD1.pdf">Fiche TD 1</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Support · Travaux dirigés · Édition non datée · PDF · 176 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-td2" data-resource data-level="BUT1" data-year="non-date" data-category="support" data-search="Fiche TD 2 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Support Travaux dirigés Édition non datée PDF 208 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/OM1/Fiches%20TD/TD2.pdf">Fiche TD 2</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Support · Travaux dirigés · Édition non datée · PDF · 208 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r2" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 1 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 150 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf">Interro 1</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 150 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r3" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 2 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 105 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf">Interro 2</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 105 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r4" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 3 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 104 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf">Interro 3</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 104 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r5" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 4 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 85 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf">Interro 4</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 85 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r6" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Sujet - examen final Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Examen final Année 2025-2026 PDF 142 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Examen final · Année 2025-2026 · PDF · 142 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r7" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 1 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 113 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf">Interro 1</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 113 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r8" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 2 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 133 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet%20A.pdf">Interro 2</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 133 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r9" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 3 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 99 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf">Interro 3</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 99 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r10" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 4 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 140 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf">Interro 4</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 140 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-r11" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Sujet - examen final Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Examen final Année 2024-2025 PDF 185 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Examen final · Année 2024-2025 · PDF · 185 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths1-exam1-2026-2027" data-resource data-level="BUT1" data-year="2026-2027" data-category="annale" data-search="Interro 1 Outils mathématiques : niveau 1 (BUT1 GCGP) Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d&#x27;erreur, trigonométrie. 14 × 2 h Sujet Interros (30 min) Année 2026-2027 PDF 155 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM1/2026-2027/Exam1.pdf">Interro 1</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2026-2027 · PDF · 155 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r1" data-resource data-level="BUT1" data-year="non-date" data-category="cours" data-search="Polycopié de cours Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Cours Édition non datée PDF 678 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/PolyMathsBUT-S2.pdf">Polycopié de cours</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Cours · Édition non datée · PDF · 678 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r2" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 5 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 103 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf">Interro 5</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 103 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r3" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 6 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 137 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf">Interro 6</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 137 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r4" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Sujet - examen blanc Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Examen blanc Année 2025-2026 PDF 197 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2025-2026/DS-blanc-S2.pdf">Sujet - examen blanc</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Examen blanc · Année 2025-2026 · PDF · 197 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r5" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 5 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 70 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf">Interro 5</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 70 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r6" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 6 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 85 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf">Interro 6</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 85 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r7" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 7 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 97 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf">Interro 7</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 97 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r8" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 8 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 144 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf">Interro 8</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 144 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r9" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Interro 9 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2024-2025 PDF 139 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf">Interro 9</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2024-2025 · PDF · 139 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-r10" data-resource data-level="BUT1" data-year="2024-2025" data-category="annale" data-search="Sujet - examen final Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Examen final Année 2024-2025 PDF 173 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Examen final · Année 2024-2025 · PDF · 173 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-exam7-2025-2026" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 7 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 97 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2025-2026/Exam7.pdf">Interro 7</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 97 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-exam8-2025-2026" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Interro 8 Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet Interros (30 min) Année 2025-2026 PDF 85 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2025-2026/Exam8.pdf">Interro 8</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · Interros (30 min) · Année 2025-2026 · PDF · 85 ko</p>
+    </li><li class="resource-item" id="ue-but1-maths2-ds-final-2025-2026" data-resource data-level="BUT1" data-year="2025-2026" data-category="annale" data-search="Sujet - examen final Outils mathématiques : niveau 2 (BUT1 GCGP) Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h Sujet DS final Année 2025-2026 PDF 245 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM2/2025-2026/DS-final.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2</a> · BUT1</p><p class="resource-meta">Sujet · DS final · Année 2025-2026 · PDF · 245 ko</p>
+    </li><li class="resource-item" id="ue-but1-tp-outils-informatiques-et-scientifiques-r1" data-resource data-level="BUT1" data-year="non-date" data-category="annale" data-search="Sujet d’évaluation TP Outils Informatiques et Scientifiques (BUT1 GCGP) Utilisation d&#x27;Excel. 5 × 4 h Sujet Édition non datée PDF 152 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/OIS_Examen_2024.pdf">Sujet d’évaluation</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but1-tp-outils-informatiques-et-scientifiques.html">TP Outils Informatiques et Scientifiques</a> · BUT1</p><p class="resource-meta">Sujet · Édition non datée · PDF · 152 ko</p>
+    </li><li class="resource-item" id="ue-but2-maths3-r1" data-resource data-level="BUT2" data-year="non-date" data-category="cours" data-search="Polycopié de cours Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP) Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h Cours Édition non datée PDF 502 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Test_Poly_Maths-S3.pdf">Polycopié de cours</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-maths3.html">Outils mathématiques : niveau 3</a> · BUT2</p><p class="resource-meta">Cours · Édition non datée · PDF · 502 ko</p>
+    </li><li class="resource-item" id="ue-but2-maths3-r2" data-resource data-level="BUT2" data-year="2025-2026" data-category="annale" data-search="Sujet - examen final Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP) Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h Sujet Examen final Année 2025-2026 PDF 207 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-maths3.html">Outils mathématiques : niveau 3</a> · BUT2</p><p class="resource-meta">Sujet · Examen final · Année 2025-2026 · PDF · 207 ko</p>
+    </li><li class="resource-item" id="ue-but2-maths3-r3" data-resource data-level="BUT2" data-year="2025-2026" data-category="annale" data-search="Sujet - examen blanc Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP) Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h Sujet Examen blanc Année 2025-2026 PDF 199 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf">Sujet - examen blanc</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-maths3.html">Outils mathématiques : niveau 3</a> · BUT2</p><p class="resource-meta">Sujet · Examen blanc · Année 2025-2026 · PDF · 199 ko</p>
+    </li><li class="resource-item" id="ue-but2-maths3-r4" data-resource data-level="BUT2" data-year="2025-2026" data-category="corrige" data-search="Corrigé - examen blanc Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP) Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h Corrigé Examen blanc Année 2025-2026 PDF 209 ko corrigé">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/OM3/2025-2026/Corrig%C3%A9-exam-blanc.pdf">Corrigé - examen blanc</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-maths3.html">Outils mathématiques : niveau 3</a> · BUT2</p><p class="resource-meta">Corrigé · Examen blanc · Année 2025-2026 · PDF · 209 ko</p>
+    </li><li class="resource-item" id="ue-but2-statistiques-cours-complet-statistiques-but2" data-resource data-level="BUT2" data-year="non-date" data-category="cours" data-search="Cours complet de statistiques Statistiques (BUT2 GCGP - Parcours CPIT) Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h Cours Édition non datée PDF 2,8 Mo ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Cours_complet_Statistiques_BUT2.pdf">Cours complet de statistiques</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-statistiques.html">Statistiques</a> · BUT2</p><p class="resource-meta">Cours · Édition non datée · PDF · 2,8 Mo</p>
+    </li><li class="resource-item" id="ue-but2-statistiques-r1" data-resource data-level="BUT2" data-year="2025-2026" data-category="annale" data-search="Sujet - examen final Statistiques (BUT2 GCGP - Parcours CPIT) Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h Sujet Examen final Année 2025-2026 PDF 125 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-statistiques.html">Statistiques</a> · BUT2</p><p class="resource-meta">Sujet · Examen final · Année 2025-2026 · PDF · 125 ko</p>
+    </li><li class="resource-item" id="ue-but2-statistiques-r2" data-resource data-level="BUT2" data-year="2025-2026" data-category="annale" data-search="Sujet - examen blanc Statistiques (BUT2 GCGP - Parcours CPIT) Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h Sujet Examen blanc Année 2025-2026 PDF 144 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Statistiques/Examen%20blanc.pdf">Sujet - examen blanc</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-statistiques.html">Statistiques</a> · BUT2</p><p class="resource-meta">Sujet · Examen blanc · Année 2025-2026 · PDF · 144 ko</p>
+    </li><li class="resource-item" id="ue-but2-statistiques-r3" data-resource data-level="BUT2" data-year="2025-2026" data-category="corrige" data-search="Corrigé - examen blanc Statistiques (BUT2 GCGP - Parcours CPIT) Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h Corrigé Examen blanc Année 2025-2026 PDF 160 ko corrigé">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Statistiques/Examen-blanc-corrig%C3%A9.pdf">Corrigé - examen blanc</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-statistiques.html">Statistiques</a> · BUT2</p><p class="resource-meta">Corrigé · Examen blanc · Année 2025-2026 · PDF · 160 ko</p>
+    </li><li class="resource-item" id="ue-but2-statistiques-r4" data-resource data-level="BUT2" data-year="2024-2025" data-category="annale" data-search="Sujet - examen final Statistiques (BUT2 GCGP - Parcours CPIT) Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h Sujet Examen final Année 2024-2025 PDF 178 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf">Sujet - examen final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-statistiques.html">Statistiques</a> · BUT2</p><p class="resource-meta">Sujet · Examen final · Année 2024-2025 · PDF · 178 ko</p>
+    </li><li class="resource-item" id="ue-but2-mathematiques-pour-les-systemes-complexes-r1" data-resource data-level="BUT2" data-year="non-date" data-category="annale" data-search="Sujet d’évaluation Mathématiques pour les systèmes complexes (BUT2 GCGP - Parcours CPOP) Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h Sujet Édition non datée PDF 133 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf">Sujet d’évaluation</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-mathematiques-pour-les-systemes-complexes.html">Mathématiques pour les systèmes complexes</a> · BUT2</p><p class="resource-meta">Sujet · Édition non datée · PDF · 133 ko</p>
+    </li><li class="resource-item" id="ue-but2-plans-experiences-r1" data-resource data-level="BUT2" data-year="non-date" data-category="cours" data-search="Polycopié de cours Plans d&#x27;expériences (BUT2 GCGP - Parcours CPIT) Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h Cours Édition non datée PDF 704 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Cours_plan_d_exp%C3%A9riences.pdf">Polycopié de cours</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-plans-experiences.html">Plans d&#x27;expériences</a> · BUT2</p><p class="resource-meta">Cours · Édition non datée · PDF · 704 ko</p>
+    </li><li class="resource-item" id="ue-but2-plans-experiences-r2" data-resource data-level="BUT2" data-year="2025-2026" data-category="annale" data-search="DS final Plans d&#x27;expériences (BUT2 GCGP - Parcours CPIT) Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h Sujet Année 2025-2026 PDF 216 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf">DS final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-plans-experiences.html">Plans d&#x27;expériences</a> · BUT2</p><p class="resource-meta">Sujet · Année 2025-2026 · PDF · 216 ko</p>
+    </li><li class="resource-item" id="ue-but2-plans-experiences-r3" data-resource data-level="BUT2" data-year="2024-2025" data-category="annale" data-search="DS final Plans d&#x27;expériences (BUT2 GCGP - Parcours CPIT) Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h Sujet Année 2024-2025 PDF 198 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf">DS final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-plans-experiences.html">Plans d&#x27;expériences</a> · BUT2</p><p class="resource-meta">Sujet · Année 2024-2025 · PDF · 198 ko</p>
+    </li><li class="resource-item" id="ue-but2-plans-experiences-r4" data-resource data-level="BUT2" data-year="2023-2024" data-category="annale" data-search="DS final Plans d&#x27;expériences (BUT2 GCGP - Parcours CPIT) Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h Sujet Année 2023-2024 PDF 208 ko ">
+      <div class="resource-heading"><h2><a href="pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf">DS final</a></h2><span class="resource-label">PDF</span></div>
+      <p class="resource-context meta"><a href="enseignements/but2-plans-experiences.html">Plans d&#x27;expériences</a> · BUT2</p><p class="resource-meta">Sujet · Année 2023-2024 · PDF · 208 ko</p>
+    </li><li class="resource-item" id="ue-but3-anglais-technique-et-professionnel-r1" data-resource data-level="BUT3" data-year="non-date" data-category="support" data-search="Décrire un graphique Anglais technique et professionnel (BUT3 GCGP - Parcours CPIT et CPOP) Certification TOEIC, soutenance de stage, synthèse d&#x27;article, présentation scientifique, vulgarisation. 8 × 2 h Support Édition non datée HTML 24 ko ">
+      <div class="resource-heading"><h2><a href="presentations/describing-graphs-scientific-english.html">Décrire un graphique</a></h2><span class="resource-label">HTML</span></div>
+      <p class="resource-context meta"><a href="enseignements/but3-anglais-technique-et-professionnel.html">Anglais technique et professionnel</a> · BUT3</p><p class="resource-meta">Support · Édition non datée · HTML · 24 ko</p>
+    </li><li class="resource-item" id="ue-but3-anglais-technique-et-professionnel-r2" data-resource data-level="BUT3" data-year="non-date" data-category="support" data-search="Soutenance de stage Anglais technique et professionnel (BUT3 GCGP - Parcours CPIT et CPOP) Certification TOEIC, soutenance de stage, synthèse d&#x27;article, présentation scientifique, vulgarisation. 8 × 2 h Support Édition non datée HTML 7 ko ">
+      <div class="resource-heading"><h2><a href="presentations/anglais-technique-professionnel.html">Soutenance de stage</a></h2><span class="resource-label">HTML</span></div>
+      <p class="resource-context meta"><a href="enseignements/but3-anglais-technique-et-professionnel.html">Anglais technique et professionnel</a> · BUT3</p><p class="resource-meta">Support · Édition non datée · HTML · 7 ko</p>
+    </li><li class="resource-item" id="ue-but3-anglais-technique-et-professionnel-r3" data-resource data-level="BUT3" data-year="non-date" data-category="support" data-search="Présenter un article scientifique Anglais technique et professionnel (BUT3 GCGP - Parcours CPIT et CPOP) Certification TOEIC, soutenance de stage, synthèse d&#x27;article, présentation scientifique, vulgarisation. 8 × 2 h Support Édition non datée HTML 19 ko ">
+      <div class="resource-heading"><h2><a href="presentations/presenter-article-scientifique.html">Présenter un article scientifique</a></h2><span class="resource-label">HTML</span></div>
+      <p class="resource-context meta"><a href="enseignements/but3-anglais-technique-et-professionnel.html">Anglais technique et professionnel</a> · BUT3</p><p class="resource-meta">Support · Édition non datée · HTML · 19 ko</p>
+    </li><li class="resource-item" id="ue-but3-projet-professionnel-et-personnel-r1" data-resource data-level="BUT3" data-year="non-date" data-category="support" data-search="Fête de la science 2025 Projet Professionnel et Personnel (BUT3 GCGP - Parcours CPIT) Ateliers Fête de la science, préparation au concours d&#x27;éloquence. 10 × 2 h Support Édition non datée Web ">
+      <div class="resource-heading"><h2><a href="https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025" target="_blank" rel="noopener noreferrer">Fête de la science 2025</a></h2><span class="resource-label">Web</span></div>
+      <p class="resource-context meta"><a href="enseignements/but3-projet-professionnel-et-personnel.html">Projet Professionnel et Personnel</a> · BUT3</p><p class="resource-meta">Support · Édition non datée · Web</p>
+    </li><li class="resource-item" id="ue-but3-projet-professionnel-et-personnel-r2" data-resource data-level="BUT3" data-year="non-date" data-category="support" data-search="Concours d’éloquence 2025 Projet Professionnel et Personnel (BUT3 GCGP - Parcours CPIT) Ateliers Fête de la science, préparation au concours d&#x27;éloquence. 10 × 2 h Support Édition non datée Web ">
+      <div class="resource-heading"><h2><a href="https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025" target="_blank" rel="noopener noreferrer">Concours d’éloquence 2025</a></h2><span class="resource-label">Web</span></div>
+      <p class="resource-context meta"><a href="enseignements/but3-projet-professionnel-et-personnel.html">Projet Professionnel et Personnel</a> · BUT3</p><p class="resource-meta">Support · Édition non datée · Web</p>
+    </li></ul><p class="rights-note">Une ressource non datée ne vaut pas confirmation de l’édition en cours. Les conditions de réutilisation figurant dans les fichiers s’appliquent.</p><section class="section" id="enseignements"><h2>Retrouver les autres rubriques</h2><p>La bibliothèque rassemble les documents pédagogiques. Les autres contenus disposent de pages dédiées.</p><p id="interventions"><a href="interventions.html">Interventions →</a></p><p id="publications"><a href="publications.html">Publications →</a></p><p id="recherches"><a href="a-propos.html#recherches">Recherche →</a></p><p id="vulgarisation"><a href="outils.html">Vulgarisation et outils →</a></p><p id="vulgarisation-videos"><a href="outils.html#videos">Vidéos pédagogiques →</a></p><p id="vulgarisation-jeu"><a href="outils.html#fonction-cachee">Jeu Fonction cachée →</a></p><p id="vulgarisation-simulateurs"><a href="outils.html#simulateurs">Simulateurs →</a></p><p id="cv"><a href="a-propos.html#cv">Parcours / CV →</a></p><p id="responsabilites"><a href="a-propos.html#responsabilites">Responsabilités →</a></p><p id="medias"><a href="interventions.html#medias">Médias →</a></p><p id="ue-but1-maths1"><a href="enseignements/but1-maths1.html">Outils mathématiques : niveau 1 →</a></p><p id="ue-but1-maths2"><a href="enseignements/but1-maths2.html">Outils mathématiques : niveau 2 →</a></p><p id="ue-but1-tp-outils-informatiques-et-scientifiques"><a href="enseignements/but1-tp-outils-informatiques-et-scientifiques.html">TP Outils Informatiques et Scientifiques →</a></p><p id="ue-but1-interventions-sur-d-autres-tp"><a href="enseignements/but1-interventions-sur-d-autres-tp.html">Interventions sur d&#x27;autres TP →</a></p><p id="ue-but2-maths3"><a href="enseignements/but2-maths3.html">Outils mathématiques : niveau 3 →</a></p><p id="ue-but2-statistiques"><a href="enseignements/but2-statistiques.html">Statistiques →</a></p><p id="ue-but2-mathematiques-pour-les-systemes-complexes"><a href="enseignements/but2-mathematiques-pour-les-systemes-complexes.html">Mathématiques pour les systèmes complexes →</a></p><p id="ue-but2-plans-experiences"><a href="enseignements/but2-plans-experiences.html">Plans d&#x27;expériences →</a></p><p id="ue-but3-anglais-technique-et-professionnel"><a href="enseignements/but3-anglais-technique-et-professionnel.html">Anglais technique et professionnel →</a></p><p id="ue-but3-projet-professionnel-et-personnel"><a href="enseignements/but3-projet-professionnel-et-personnel.html">Projet Professionnel et Personnel →</a></p><p id="ue-lp-cesp-automatisme-systemes-asservis"><a href="enseignements/lp-cesp-automatisme-systemes-asservis.html">Automatisme, systèmes asservis →</a></p><p id="ue-lp-cesp-regulation"><a href="enseignements/lp-cesp-regulation.html">Régulation →</a></p><p id="ue-lp-cesp-caracteristiques-des-capteurs"><a href="enseignements/lp-cesp-caracteristiques-des-capteurs.html">Caractéristiques des capteurs →</a></p><p id="enseignements-but1"><a href="enseignements.html#enseignements-but1">BUT1 →</a></p><p id="enseignements-but2"><a href="enseignements.html#enseignements-but2">BUT2 →</a></p><p id="enseignements-but3"><a href="enseignements.html#enseignements-but3">BUT3 →</a></p><p id="enseignements-lp-cesp"><a href="enseignements.html#enseignements-lp-cesp">LP CESP →</a></p></section></main>
   <footer class="site-footer">
-    <p>&copy; 2026 Bastien Marguet</p>
-    <div class="social-links">
-      <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <div class="container footer-inner">
+      <p>© 2026 Bastien Marguet</p>
+      <nav class="footer-links" aria-label="Liens complémentaires">
+        <a href="resources.html">Bibliothèque</a>
+        <a href="outils.html">Outils pédagogiques</a>
+        <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="informations.html">Informations du site</a>
+      </nav>
     </div>
   </footer>
-
-  <script src="js/script.js" defer></script>
 </body>
 </html>

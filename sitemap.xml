@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Page d'accueil canonique -->
-  <url>
-    <loc>https://letudxbast.github.io/bastien.marguet/</loc>
-  </url>
-
-  <!-- Page Ressources -->
-  <url>
-    <loc>https://letudxbast.github.io/bastien.marguet/resources.html</loc>
-  </url>
-
-  <!-- Page Spectacle -->
-  <url>
-    <loc>https://letudxbast.github.io/bastien.marguet/terreur-les-mots-parleurs.html</loc>
-  </url>
-
-</urlset>
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://letudxbast.github.io/bastien.marguet/index.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but1-maths1.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but1-maths2.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but1-tp-outils-informatiques-et-scientifiques.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but1-interventions-sur-d-autres-tp.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but2-maths3.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but2-statistiques.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but2-mathematiques-pour-les-systemes-complexes.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but2-plans-experiences.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but3-anglais-technique-et-professionnel.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/but3-projet-professionnel-et-personnel.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/lp-cesp-automatisme-systemes-asservis.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/lp-cesp-regulation.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/enseignements/lp-cesp-caracteristiques-des-capteurs.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/resources.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/publications.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/interventions.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/a-propos.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/contact.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/outils.html</loc></url><url><loc>https://letudxbast.github.io/bastien.marguet/informations.html</loc></url></urlset>

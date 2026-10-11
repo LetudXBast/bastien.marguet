@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Carte vivante d'une vision de l'éducation : une architecture de réflexions sur l'apprentissage, l'autonomie, l'IA et l'école.">
   <title>Carte vivante d'une vision de l'éducation</title>
@@ -901,8 +902,9 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="css/companion.css?v=20261011">
 </head>
-<body>
+<body class="editorial-companion education-map">
   <main class="page">
     <header class="topbar">
       <a class="back-link" href="resources.html#recherches">Retour aux ressources</a>
@@ -1374,7 +1376,7 @@
       document.getElementById("drawerStatus").textContent = post.status;
       document.getElementById("drawerOrder").textContent = `Ce post fait partie du parcours conseillé, en position ${post.order}.`;
       document.getElementById("drawerLink").innerHTML = post.linkedinUrl
-        ? `<a class="linkedin-link" href="${post.linkedinUrl}" target="_blank" rel="noopener noreferrer">Lire le post LinkedIn</a>`
+        ? `<a class="linkedin-link" href="${post.linkedinUrl}" rel="noopener noreferrer">Lire le post LinkedIn</a>`
         : `<span class="disabled-link">À venir</span>`;
 
       drawer.classList.add("is-open");

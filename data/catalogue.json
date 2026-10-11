@@ -1,0 +1,1224 @@
+{
+  "source_origin": "https://letudxbast.github.io/bastien.marguet/",
+  "courses": [
+    {
+      "id": "ue-but1-maths1",
+      "slug": "but1-maths1",
+      "title": "Outils mathématiques : niveau 1 (BUT1 GCGP)",
+      "level": "BUT1",
+      "description": "Calculs élémentaires, équations, fonctions usuelles, dérivées, intégrales, polynômes, calculs d'erreur, trigonométrie. 14 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but1-maths1-r1",
+          "title": "Polycopié de cours",
+          "category": "cours",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/OM1/PolyMathsBUT-S1.pdf",
+          "source_path": "pdfs/Cours/OM1/PolyMathsBUT-S1.pdf",
+          "size_bytes": 13793657,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/OM1/PolyMathsBUT-S1.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-td1",
+          "title": "Fiche TD 1",
+          "category": "support",
+          "session": "Travaux dirigés",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/OM1/Fiches TD/TD1.pdf",
+          "local_path": "pdfs/Cours/OM1/Fiches TD/TD1.pdf",
+          "size_bytes": 175647
+        },
+        {
+          "id": "ue-but1-maths1-td2",
+          "title": "Fiche TD 2",
+          "category": "support",
+          "session": "Travaux dirigés",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/OM1/Fiches TD/TD2.pdf",
+          "local_path": "pdfs/Cours/OM1/Fiches TD/TD2.pdf",
+          "size_bytes": 208183
+        },
+        {
+          "id": "ue-but1-maths1-r2",
+          "title": "Interro 1",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf",
+          "size_bytes": 149974,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam1.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r3",
+          "title": "Interro 2",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf",
+          "size_bytes": 105260,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam2.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r4",
+          "title": "Interro 3",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf",
+          "size_bytes": 103634,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam3.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r5",
+          "title": "Interro 4",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf",
+          "size_bytes": 85316,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2025-2026/Exam4.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r6",
+          "title": "Sujet final",
+          "category": "annale",
+          "session": "Examen final",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf",
+          "size_bytes": 142223,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2025-2026/DS_final.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r7",
+          "title": "Interro 1",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf",
+          "size_bytes": 112707,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro1.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r8",
+          "title": "Interro 2",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf",
+          "size_bytes": 132856,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro2-Sujet A.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r9",
+          "title": "Interro 3",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf",
+          "size_bytes": 99105,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro3.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r10",
+          "title": "Interro 4",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf",
+          "size_bytes": 139804,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2024-2025/Interro4-1er_groupe.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-r11",
+          "title": "Sujet final",
+          "category": "annale",
+          "session": "Examen final",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf",
+          "source_path": "pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf",
+          "size_bytes": 185414,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM1/2024-2025/DSfinal_S1_2024-2025.pdf"
+        },
+        {
+          "id": "ue-but1-maths1-exam1-2026-2027",
+          "title": "Interro 1",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2026-2027",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM1/2026-2027/Exam1.pdf",
+          "local_path": "pdfs/Cours/Exams/OM1/2026-2027/Exam1.pdf",
+          "size_bytes": 154547
+        }
+      ]
+    },
+    {
+      "id": "ue-but1-maths2",
+      "slug": "but1-maths2",
+      "title": "Outils mathématiques : niveau 2 (BUT1 GCGP)",
+      "level": "BUT1",
+      "description": "Fonctions de plusieurs variables, intégrales, équations différentielles, fractions rationnelles. 14 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but1-maths2-r1",
+          "title": "Polycopié de cours",
+          "category": "cours",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/PolyMathsBUT-S2.pdf",
+          "source_path": "pdfs/Cours/PolyMathsBUT-S2.pdf",
+          "size_bytes": 677515,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/PolyMathsBUT-S2.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r2",
+          "title": "Interro 5",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf",
+          "size_bytes": 103378,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2025-2026/Exam5.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r3",
+          "title": "Interro 6",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf",
+          "size_bytes": 137143,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2025-2026/Exam6.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r4",
+          "title": "Sujet",
+          "category": "annale",
+          "session": "Exam blanc",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2025-2026/DS-blanc-S2.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2025-2026/DS-blanc-S2.pdf",
+          "size_bytes": 196992,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2025-2026/DS-blanc-S2.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r5",
+          "title": "Interro 5",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf",
+          "size_bytes": 70277,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro5.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r6",
+          "title": "Interro 6",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf",
+          "size_bytes": 84816,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro6.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r7",
+          "title": "Interro 7",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf",
+          "size_bytes": 96739,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro7.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r8",
+          "title": "Interro 8",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf",
+          "size_bytes": 143618,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro8.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r9",
+          "title": "Interro 9",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf",
+          "size_bytes": 139301,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2024-2025/Interro9.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-r10",
+          "title": "Sujet final",
+          "category": "annale",
+          "session": "Examen final",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf",
+          "source_path": "pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf",
+          "size_bytes": 172963,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM2/2024-2025/DS_final_S2.pdf"
+        },
+        {
+          "id": "ue-but1-maths2-exam7-2025-2026",
+          "title": "Interro 7",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2025-2026/Exam7.pdf",
+          "local_path": "pdfs/Cours/Exams/OM2/2025-2026/Exam7.pdf",
+          "size_bytes": 96625
+        },
+        {
+          "id": "ue-but1-maths2-exam8-2025-2026",
+          "title": "Interro 8",
+          "category": "annale",
+          "session": "Interros (30 min)",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2025-2026/Exam8.pdf",
+          "local_path": "pdfs/Cours/Exams/OM2/2025-2026/Exam8.pdf",
+          "size_bytes": 84543
+        },
+        {
+          "id": "ue-but1-maths2-ds-final-2025-2026",
+          "title": "Sujet final",
+          "category": "annale",
+          "session": "DS final",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM2/2025-2026/DS-final.pdf",
+          "local_path": "pdfs/Cours/Exams/OM2/2025-2026/DS-final.pdf",
+          "size_bytes": 245072
+        }
+      ]
+    },
+    {
+      "id": "ue-but1-tp-outils-informatiques-et-scientifiques",
+      "slug": "but1-tp-outils-informatiques-et-scientifiques",
+      "title": "TP Outils Informatiques et Scientifiques (BUT1 GCGP)",
+      "level": "BUT1",
+      "description": "Utilisation d'Excel. 5 × 4 h",
+      "resources": [
+        {
+          "id": "ue-but1-tp-outils-informatiques-et-scientifiques-r1",
+          "title": "Sujet d’évaluation",
+          "category": "annale",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/OIS_Examen_2024.pdf",
+          "source_path": "pdfs/Cours/OIS_Examen_2024.pdf",
+          "size_bytes": 152215,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/OIS_Examen_2024.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ue-but1-interventions-sur-d-autres-tp",
+      "slug": "but1-interventions-sur-d-autres-tp",
+      "title": "Interventions sur d'autres TP (BUT1 GCGP)",
+      "level": "BUT1",
+      "description": "Transferts thermiques, électricité, mécanique des fluides. 5 × 4 h / groupe",
+      "resources": []
+    },
+    {
+      "id": "ue-but2-maths3",
+      "slug": "but2-maths3",
+      "title": "Outils mathématiques : niveau 3 (BUT2 GCGP - Parcours CPIT et CPOP)",
+      "level": "BUT2",
+      "description": "Analyse, dérivées, intégrales, calcul matriciel, fonctions de plusieurs variables, optimisation numérique, algorithmique. 7 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but2-maths3-r1",
+          "title": "Polycopié de cours",
+          "category": "cours",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Test_Poly_Maths-S3.pdf",
+          "source_path": "pdfs/Cours/Test_Poly_Maths-S3.pdf",
+          "size_bytes": 501929,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Test_Poly_Maths-S3.pdf"
+        },
+        {
+          "id": "ue-but2-maths3-r2",
+          "title": "Sujet réel",
+          "category": "annale",
+          "session": "Examen final",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf",
+          "source_path": "pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf",
+          "size_bytes": 206836,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM3/2025-2026/Exam2025.pdf"
+        },
+        {
+          "id": "ue-but2-maths3-r3",
+          "title": "Sujet",
+          "category": "annale",
+          "session": "Exam blanc",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf",
+          "source_path": "pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf",
+          "size_bytes": 199315,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM3/2025-2026/Exam_blanc.pdf"
+        },
+        {
+          "id": "ue-but2-maths3-r4",
+          "title": "Corrigé",
+          "category": "corrige",
+          "session": "Exam blanc",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf",
+          "source_path": "pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf",
+          "size_bytes": 209303,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/OM3/2025-2026/Corrigé-exam-blanc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ue-but2-statistiques",
+      "slug": "but2-statistiques",
+      "title": "Statistiques (BUT2 GCGP - Parcours CPIT)",
+      "level": "BUT2",
+      "description": "Probabilités, loi de répartition, statistiques, fiabilité, échantillonnage. 5 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but2-statistiques-cours-complet-statistiques-but2",
+          "title": "Cours complet de statistiques",
+          "category": "cours",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Cours_complet_Statistiques_BUT2.pdf",
+          "local_path": "pdfs/Cours/Cours_complet_Statistiques_BUT2.pdf",
+          "size_bytes": 2817010
+        },
+        {
+          "id": "ue-but2-statistiques-r1",
+          "title": "Sujet réel",
+          "category": "annale",
+          "session": "Examen final",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf",
+          "source_path": "pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf",
+          "size_bytes": 125076,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Statistiques/DS-2025_2026.pdf"
+        },
+        {
+          "id": "ue-but2-statistiques-r2",
+          "title": "Sujet",
+          "category": "annale",
+          "session": "Exam blanc",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Statistiques/Examen blanc.pdf",
+          "source_path": "pdfs/Cours/Exams/Statistiques/Examen blanc.pdf",
+          "size_bytes": 143630,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Statistiques/Examen blanc.pdf"
+        },
+        {
+          "id": "ue-but2-statistiques-r3",
+          "title": "Corrigé",
+          "category": "corrige",
+          "session": "Exam blanc",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf",
+          "source_path": "pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf",
+          "size_bytes": 159978,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Statistiques/Examen-blanc-corrigé.pdf"
+        },
+        {
+          "id": "ue-but2-statistiques-r4",
+          "title": "Sujet réel",
+          "category": "annale",
+          "session": "Examen final",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf",
+          "source_path": "pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf",
+          "size_bytes": 177699,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Statistiques/DS-2024_2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ue-but2-mathematiques-pour-les-systemes-complexes",
+      "slug": "but2-mathematiques-pour-les-systemes-complexes",
+      "title": "Mathématiques pour les systèmes complexes (BUT2 GCGP - Parcours CPOP)",
+      "level": "BUT2",
+      "description": "Équations différentielles, nombres complexes, transformée de Laplace, diagrammes de Bode, applications à la modélisation. 8 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but2-mathematiques-pour-les-systemes-complexes-r1",
+          "title": "Sujet d’évaluation",
+          "category": "annale",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf",
+          "source_path": "pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf",
+          "size_bytes": 133150,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/DS-Maths-Systemes-Cplxes.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ue-but2-plans-experiences",
+      "slug": "but2-plans-experiences",
+      "title": "Plans d'expériences (BUT2 GCGP - Parcours CPIT)",
+      "level": "BUT2",
+      "description": "Plan de criblage PB, plan factoriel complet, plan composite centré, optimisation par surface de réponse. 7 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but2-plans-experiences-r1",
+          "title": "Polycopié de cours",
+          "category": "cours",
+          "session": "",
+          "year": null,
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Cours_plan_d_expériences.pdf",
+          "source_path": "pdfs/Cours/Cours_plan_d_expériences.pdf",
+          "size_bytes": 704240,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Cours_plan_d_expériences.pdf"
+        },
+        {
+          "id": "ue-but2-plans-experiences-r2",
+          "title": "DS final",
+          "category": "annale",
+          "session": "",
+          "year": "2025-2026",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf",
+          "source_path": "pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf",
+          "size_bytes": 215517,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Plans_d-exp/DS-2026.pdf"
+        },
+        {
+          "id": "ue-but2-plans-experiences-r3",
+          "title": "DS final",
+          "category": "annale",
+          "session": "",
+          "year": "2024-2025",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf",
+          "source_path": "pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf",
+          "size_bytes": 198277,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Plans_d-exp/DS-2025.pdf"
+        },
+        {
+          "id": "ue-but2-plans-experiences-r4",
+          "title": "DS final",
+          "category": "annale",
+          "session": "",
+          "year": "2023-2024",
+          "format": "PDF",
+          "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf",
+          "source_path": "pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf",
+          "size_bytes": 207700,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "availability": "downloaded",
+          "local_path": "pdfs/Cours/Exams/Plans_d-exp/DS-2024.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ue-but3-anglais-technique-et-professionnel",
+      "slug": "but3-anglais-technique-et-professionnel",
+      "title": "Anglais technique et professionnel (BUT3 GCGP - Parcours CPIT et CPOP)",
+      "level": "BUT3",
+      "description": "Certification TOEIC, soutenance de stage, synthèse d'article, présentation scientifique, vulgarisation. 8 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but3-anglais-technique-et-professionnel-r1",
+          "title": "Décrire un graphique",
+          "category": "support",
+          "session": "",
+          "year": null,
+          "format": "HTML",
+          "url": "https://letudxbast.github.io/bastien.marguet/presentations/describing-graphs-scientific-english.html",
+          "source_path": "presentations/describing-graphs-scientific-english.html",
+          "size_bytes": 23772,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "local_path": "presentations/describing-graphs-scientific-english.html"
+        },
+        {
+          "id": "ue-but3-anglais-technique-et-professionnel-r2",
+          "title": "Soutenance de stage",
+          "category": "support",
+          "session": "",
+          "year": null,
+          "format": "HTML",
+          "url": "https://letudxbast.github.io/bastien.marguet/presentations/anglais-technique-professionnel.html",
+          "source_path": "presentations/anglais-technique-professionnel.html",
+          "size_bytes": 7430,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "local_path": "presentations/anglais-technique-professionnel.html"
+        },
+        {
+          "id": "ue-but3-anglais-technique-et-professionnel-r3",
+          "title": "Présenter un article scientifique",
+          "category": "support",
+          "session": "",
+          "year": null,
+          "format": "HTML",
+          "url": "https://letudxbast.github.io/bastien.marguet/presentations/presenter-article-scientifique.html",
+          "source_path": "presentations/presenter-article-scientifique.html",
+          "size_bytes": 18568,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null,
+          "local_path": "presentations/presenter-article-scientifique.html"
+        }
+      ]
+    },
+    {
+      "id": "ue-but3-projet-professionnel-et-personnel",
+      "slug": "but3-projet-professionnel-et-personnel",
+      "title": "Projet Professionnel et Personnel (BUT3 GCGP - Parcours CPIT)",
+      "level": "BUT3",
+      "description": "Ateliers Fête de la science, préparation au concours d'éloquence. 10 × 2 h",
+      "resources": [
+        {
+          "id": "ue-but3-projet-professionnel-et-personnel-r1",
+          "title": "Fête de la science 2025",
+          "category": "support",
+          "session": "",
+          "year": null,
+          "format": "Web",
+          "url": "https://iut.univ-lyon1.fr/vie-etudiante/culture/fds-2025",
+          "source_path": null,
+          "size_bytes": null,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null
+        },
+        {
+          "id": "ue-but3-projet-professionnel-et-personnel-r2",
+          "title": "Concours d’éloquence 2025",
+          "category": "support",
+          "session": "",
+          "year": null,
+          "format": "Web",
+          "url": "https://iut.univ-lyon1.fr/international/venir-etudier/etudiants-internationaux-concours-eloquence-2025",
+          "source_path": null,
+          "size_bytes": null,
+          "language": null,
+          "edition": null,
+          "updated": null,
+          "rights": null
+        }
+      ]
+    },
+    {
+      "id": "ue-lp-cesp-automatisme-systemes-asservis",
+      "slug": "lp-cesp-automatisme-systemes-asservis",
+      "title": "Automatisme, systèmes asservis",
+      "level": "LP CESP",
+      "description": "",
+      "resources": []
+    },
+    {
+      "id": "ue-lp-cesp-regulation",
+      "slug": "lp-cesp-regulation",
+      "title": "Régulation",
+      "level": "LP CESP",
+      "description": "",
+      "resources": []
+    },
+    {
+      "id": "ue-lp-cesp-caracteristiques-des-capteurs",
+      "slug": "lp-cesp-caracteristiques-des-capteurs",
+      "title": "Caractéristiques des capteurs",
+      "level": "LP CESP",
+      "description": "",
+      "resources": []
+    }
+  ],
+  "publications": [
+    {
+      "id": "publication-1",
+      "title": "Collisions et confinement des interfaces en croissance cristalline",
+      "reference": "B. Marguet, Manuscrit de thèse, 2022",
+      "url": "https://letudxbast.github.io/bastien.marguet/pdfs/Thesis_Marguet_Bastien.pdf",
+      "source_path": "pdfs/Thesis_Marguet_Bastien.pdf",
+      "doi": null,
+      "availability": "downloaded",
+      "size_bytes": 20012403,
+      "local_path": "pdfs/Thesis_Marguet_Bastien.pdf",
+      "type": "these",
+      "year": 2022,
+      "record_url": "https://phd-physics.universite-lyon.fr/ecoles-doctorales/ed-52-phast/site-francais/navigation/soutenances/bastien-marguet-collisions-et-confinement-des-interfaces-en-croissance-cristalline--280589.kjsp?RH=1028111875495381",
+      "language": "fr"
+    },
+    {
+      "id": "publication-2",
+      "title": "Interface collisions with diffusive mass transport",
+      "reference": "B. Marguet, FDAA Reis, O. Pierre-Louis - Physical Review E, 2022",
+      "url": "https://letudxbast.github.io/bastien.marguet/pdfs/interface_collisions.pdf",
+      "source_path": "pdfs/interface_collisions.pdf",
+      "doi": "10.1103/PhysRevE.106.014802",
+      "availability": "downloaded",
+      "size_bytes": 1787308,
+      "local_path": "pdfs/interface_collisions.pdf",
+      "type": "article",
+      "authors": "Bastien Marguet, F. D. A. Aarão Reis et Olivier Pierre-Louis",
+      "venue": "Physical Review E",
+      "details": "106, 014802",
+      "year": 2022,
+      "language": "en"
+    },
+    {
+      "id": "publication-3",
+      "title": "Formation of smoother grain boundaries in 2D materials using high deposition rates during the last stages of growth",
+      "reference": "FDAA Reis, B. Marguet, O. Pierre-Louis - 2D Materials, 2022",
+      "url": "https://letudxbast.github.io/bastien.marguet/pdfs/grain_boundaries.pdf",
+      "source_path": "pdfs/grain_boundaries.pdf",
+      "doi": "10.1088/2053-1583/ac8e18",
+      "availability": "downloaded",
+      "size_bytes": 3407909,
+      "local_path": "pdfs/grain_boundaries.pdf",
+      "type": "article",
+      "authors": "Fabio D. A. Aarão Reis, Bastien Marguet et Olivier Pierre-Louis",
+      "venue": "2D Materials",
+      "details": "9, 045025",
+      "year": 2022,
+      "language": "en"
+    },
+    {
+      "id": "publication-4",
+      "title": "Supersymmetries in nonequilibrium Langevin dynamics",
+      "reference": "B. Marguet, E. Agoritsas, L. Canet, V. Lecomte - Physical Review E, 2021",
+      "url": "https://letudxbast.github.io/bastien.marguet/pdfs/supersymmetries.pdf",
+      "source_path": "pdfs/supersymmetries.pdf",
+      "doi": "10.1103/PhysRevE.104.044120",
+      "availability": "downloaded",
+      "size_bytes": 493365,
+      "local_path": "pdfs/supersymmetries.pdf",
+      "type": "article",
+      "authors": "Bastien Marguet, Elisabeth Agoritsas, Léonie Canet et Vivien Lecomte",
+      "venue": "Physical Review E",
+      "details": "104, 044120",
+      "year": 2021,
+      "language": "en"
+    },
+    {
+      "id": "publication-5",
+      "title": "Imbibition Triggered by Capillary Condensation in Nanopores",
+      "reference": "O. Vincent, B. Marguet, A.D. Stroock - Langmuir, 2017",
+      "url": "https://letudxbast.github.io/bastien.marguet/pdfs/imbibition.pdf",
+      "source_path": "pdfs/imbibition.pdf",
+      "doi": "10.1021/acs.langmuir.6b04534",
+      "availability": "downloaded",
+      "size_bytes": 981910,
+      "local_path": "pdfs/imbibition.pdf",
+      "type": "article",
+      "authors": "Olivier Vincent, Bastien Marguet et Abraham D. Stroock",
+      "venue": "Langmuir",
+      "details": "33 (7), 1655-1661",
+      "year": 2017,
+      "language": "en"
+    }
+  ],
+  "interventions": [
+    {
+      "id": "intervention-1",
+      "title": "Atelier « Apprendre à prompter efficacement afin de créer des contenus pédagogiques pertinents »",
+      "description": "Atelier « Apprendre à prompter efficacement afin de créer des contenus pédagogiques pertinents » - IUT Lyon 1, 13/05/2025",
+      "links": [
+        {
+          "title": "IUT Lyon 1",
+          "url": "https://iut.univ-lyon1.fr",
+          "source_path": null
+        }
+      ],
+      "date": "2025-05-13",
+      "display_date": "13 mai 2025",
+      "organisation": "IUT Lyon 1",
+      "place": null
+    },
+    {
+      "id": "intervention-2",
+      "title": "Atelier « Méthodologie de l'apprentissage : utiliser l'IA pour s'autoévaluer »",
+      "description": "Atelier « Méthodologie de l'apprentissage : utiliser l'IA pour s'autoévaluer » - IUT Lyon 1, 16-17/10/2025",
+      "links": [
+        {
+          "title": "IUT Lyon 1",
+          "url": "https://iut.univ-lyon1.fr",
+          "source_path": null
+        }
+      ],
+      "date": "2025-10-16",
+      "display_date": "16-17 octobre 2025",
+      "organisation": "IUT Lyon 1",
+      "place": null
+    },
+    {
+      "id": "intervention-3",
+      "title": "Atelier « IA, cognition et apprentissage »",
+      "description": "Atelier « IA, cognition et apprentissage » - IUT Lyon 1, 04/11/2025 support",
+      "links": [
+        {
+          "title": "IUT Lyon 1",
+          "url": "https://iut.univ-lyon1.fr",
+          "source_path": null
+        },
+        {
+          "title": "support",
+          "url": "presentations/your-brain-on-chatgpt.html",
+          "source_path": "presentations/your-brain-on-chatgpt.html",
+          "format": "HTML"
+        }
+      ],
+      "date": "2025-11-04",
+      "display_date": "4 novembre 2025",
+      "organisation": "IUT Lyon 1",
+      "place": null
+    },
+    {
+      "id": "intervention-4",
+      "title": "Workshop « Scientific Communication: Principles and Practice »",
+      "description": "Workshop « Scientific Communication: Principles and Practice » - Universidade do Minho, 11/04/2026 support annonce",
+      "links": [
+        {
+          "title": "Universidade do Minho",
+          "url": "https://www.uminho.pt/EN/Pages/default.aspx",
+          "source_path": null
+        },
+        {
+          "title": "support",
+          "url": "presentations/Scientific_Communication_Workshop_UMinho.html",
+          "source_path": "presentations/Scientific_Communication_Workshop_UMinho.html",
+          "format": "HTML"
+        },
+        {
+          "title": "annonce",
+          "url": "https://www.instagram.com/p/DW7d-zciP72/",
+          "source_path": null
+        }
+      ],
+      "date": "2026-04-11",
+      "display_date": "11 avril 2026",
+      "organisation": "Universidade do Minho",
+      "place": null
+    },
+    {
+      "id": "intervention-5",
+      "title": "Workshop « Professional Passport: CV, Interviews and Global Networking »",
+      "description": "Workshop « Professional Passport: CV, Interviews and Global Networking » - Universidade do Minho, 14/04/2026 support",
+      "links": [
+        {
+          "title": "Universidade do Minho",
+          "url": "https://www.uminho.pt/EN/Pages/default.aspx",
+          "source_path": null
+        },
+        {
+          "title": "support",
+          "url": "presentations/Professional_Passport_Workshop.html",
+          "source_path": "presentations/Professional_Passport_Workshop.html",
+          "format": "HTML"
+        }
+      ],
+      "date": "2026-04-14",
+      "display_date": "14 avril 2026",
+      "organisation": "Universidade do Minho",
+      "place": null
+    },
+    {
+      "id": "intervention-6",
+      "title": "Workshop « PhD: Valuable Skills, Invisible Value »",
+      "description": "Workshop « PhD: Valuable Skills, Invisible Value » - Workshop présenté dans le cadre de INTCHA 2026, à Cargèse, le 22/04/2026 support sondage",
+      "links": [
+        {
+          "title": "INTCHA 2026",
+          "url": "https://intcha26.sciencesconf.org/",
+          "source_path": null
+        },
+        {
+          "title": "support",
+          "url": "presentations/PhD_valuable skills_invisible_value.html",
+          "source_path": "presentations/PhD_valuable skills_invisible_value.html",
+          "format": "HTML"
+        },
+        {
+          "title": "sondage",
+          "url": "phd-survey/index.html",
+          "source_path": "phd-survey/"
+        }
+      ],
+      "date": "2026-04-22",
+      "display_date": "22 avril 2026",
+      "organisation": "INTCHA 2026",
+      "place": "Cargèse"
+    },
+    {
+      "id": "intervention-7",
+      "title": "Représentation théâtrale « Terreur - Les Mots Parleurs »",
+      "description": "Représentation théâtrale « Terreur - Les Mots Parleurs » - Théâtre Astrée, mardi 12 mai 2026 à 20h30 présentation",
+      "links": [
+        {
+          "title": "Théâtre Astrée",
+          "url": "https://theatre-astree.univ-lyon1.fr/",
+          "source_path": null
+        },
+        {
+          "title": "présentation",
+          "url": "terreur-les-mots-parleurs.html",
+          "source_path": "terreur-les-mots-parleurs.html"
+        }
+      ],
+      "date": "2026-05-12",
+      "display_date": "12 mai 2026",
+      "organisation": "Théâtre Astrée",
+      "place": "20 h 30"
+    },
+    {
+      "id": "intervention-8",
+      "title": "Intervention « Doctorat : employabilité et compétences doctorales »",
+      "description": "Intervention « Doctorat : employabilité et compétences doctorales » - Institut Lyfe, lundi 29 juin 2026 support",
+      "links": [
+        {
+          "title": "Institut Lyfe",
+          "url": "https://www.institutlyfe.com/",
+          "source_path": null
+        },
+        {
+          "title": "support",
+          "url": "presentations/doctorat-institut-lyfe.html",
+          "source_path": "presentations/doctorat-institut-lyfe.html",
+          "format": "HTML"
+        }
+      ],
+      "date": "2026-06-29",
+      "display_date": "29 juin 2026",
+      "organisation": "Institut Lyfe",
+      "place": null
+    }
+  ],
+  "legacy_sections": {
+    "cv": "<ul class=\"cv-list\">\n            <li class=\"cv-item\">\n              <strong>2019 - 2022</strong> :\n              <em>Doctorat en physique statistique</em><br>\n              Intitulé : <em>Interfaces confinées hors-équilibre</em><br>\n              <a href=\"https://ilm.univ-lyon1.fr\" target=\"_blank\" rel=\"noopener noreferrer\">Institut Lumière Matière</a> - <a href=\"https://www.univ-lyon1.fr\" target=\"_blank\" rel=\"noopener noreferrer\">Université Claude Bernard Lyon 1</a>, Villeurbanne (69)\n            </li>\n\n            <li class=\"cv-item\">\n              <strong>2018 - 2019</strong> :\n              <em>Master 2 recherche - Physique, concepts et applications</em><br>\n              <a href=\"https://www.ens-lyon.fr\" target=\"_blank\" rel=\"noopener noreferrer\">École Normale Supérieure de Lyon</a>, Lyon (69)\n            </li>\n\n            <li class=\"cv-item\">\n              <strong>2016 - 2017</strong> :\n              <em>Master 2 enseignement - Agrégation de Physique-Chimie</em><br>\n              <a href=\"https://www.ens-paris-saclay.fr\" target=\"_blank\" rel=\"noopener noreferrer\">École Normale Supérieure de Paris-Saclay</a>, Cachan (94)\n            </li>\n\n            <li class=\"cv-item\">\n              <strong>2014 - 2016</strong> :\n              <em>Licence 3 &amp; Master 1 - Parcours PHYTEM</em><br>\n              <a href=\"https://www.ens-paris-saclay.fr\" target=\"_blank\" rel=\"noopener noreferrer\">École Normale Supérieure de Paris-Saclay</a>, Cachan (94)\n            </li>\n\n            <li class=\"cv-item\">\n              <strong>2012 - 2014</strong> :\n              <em>CPGE - Physique, Sciences Industrielles (PSI)</em><br>\n              <a href=\"https://fr.wikipedia.org/wiki/Lyc%C3%A9e_Condorcet_(Belfort)\" target=\"_blank\" rel=\"noopener noreferrer\">Lycée Condorcet</a>, Belfort (90)\n            </li>\n          </ul>\n        ",
+    "responsabilites": "<ul class=\"list-clean\">\n            <li>\n              <strong><a class=\"link-accent\" href=\"https://doctorat.gouv.fr/apr%C3%A8s-le-doctorat/portraits-t%C3%A9moignages/bastien-marguet/\" target=\"_blank\" rel=\"noopener noreferrer\">Ambassadeur du doctorat - Région AURA</a></strong><br>\n              <a class=\"link-accent\" href=\"https://www.enseignementsup-recherche.gouv.fr/fr\" target=\"_blank\" rel=\"noopener noreferrer\">\n                Ministère de l'Enseignement Supérieur, de la Recherche et de l'Espace (MESRE)\n              </a><br>\n              2025 - présent\n            </li>\n\n            <li>\n              <strong>Responsable Licence Professionnelle CESP</strong>\n              (Chargé de projet Électro-Hydro-Mécanique pour systèmes de pompage)<br>\n              <a class=\"link-accent\" href=\"http://iut.univ-lyon1.fr/lpcesp\" target=\"_blank\" rel=\"noopener noreferrer\">IUT GCGP, Villeurbanne</a>\n              •\n              <a class=\"link-accent\" href=\"https://vienne.educagri.fr/licence-pro-cesp/\" target=\"_blank\" rel=\"noopener noreferrer\">Lycée Agrotech, Vienne</a>\n              •\n              <a class=\"link-accent\" href=\"https://galilee.ent.auvergnerhonealpes.fr/formations-a-galilee/apres-le-bac/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp-/licence-professionnelle-charge-de-projet-electro-hydro-mecanique-pour-systeme-de-pompage-ex-gmsp--650.htm\" target=\"_blank\" rel=\"noopener noreferrer\">\n                Lycée Galilée, Vienne\n              </a><br>\n              2023 - présent\n            </li>\n          </ul>\n        ",
+    "recherches": "<ul class=\"research-list modern-research\">\n            <li class=\"research-item\">\n              <span class=\"highlight\">2019 - 2022 (3 ans)</span>\n              <div>\n                <em>Doctorat - <a href=\"https://ilm.univ-lyon1.fr\" target=\"_blank\" rel=\"noopener noreferrer\">Institut Lumière Matière (ILM)</a>, <a href=\"https://www.univ-lyon1.fr\" target=\"_blank\" rel=\"noopener noreferrer\">Université Claude Bernard Lyon 1</a></em><br>\n                <strong>Interfaces confinées hors équilibre : modélisation, dynamique et phénomènes collectifs</strong>.<br>\n                Superviseur : <a class=\"link-accent\" href=\"https://ilm-perso.univ-lyon1.fr/~opl/\" target=\"_blank\" rel=\"noopener noreferrer\">Olivier Pierre-Louis</a>\n              </div>\n            </li>\n\n            <li class=\"research-item\">\n              <span class=\"highlight\">2019 (4 mois)</span>\n              <div>\n                <em>Stage M2 - <a href=\"https://lpmmc.cnrs.fr\" target=\"_blank\" rel=\"noopener noreferrer\">LPMMC</a> &amp; <a href=\"https://liphy.univ-grenoble-alpes.fr\" target=\"_blank\" rel=\"noopener noreferrer\">LiPhy</a>, <a href=\"https://www.univ-grenoble-alpes.fr\" target=\"_blank\" rel=\"noopener noreferrer\">Université Grenoble Alpes</a></em><br>\n                <strong>Étude des (super)symétries dans la dynamique d'interfaces stochastiques</strong>.<br>\n                Superviseurs : <a class=\"link-accent\" href=\"https://lpmmc.cnrs.fr/homepage-leonie-canet/\" target=\"_blank\" rel=\"noopener noreferrer\">Léonie Canet</a>, <a class=\"link-accent\" href=\"https://liphy-annuaire.univ-grenoble-alpes.fr/pages_personnelles/vivien_lecomte/\" target=\"_blank\" rel=\"noopener noreferrer\">Vivien Lecomte</a>\n              </div>\n            </li>\n\n            <li class=\"research-item\">\n              <span class=\"highlight\">2017 - 2018 (10 mois)</span>\n              <div>\n                <em>Assistant de recherche - <a href=\"https://www.ims.ac.jp/en/\" target=\"_blank\" rel=\"noopener noreferrer\">Institute for Molecular Science (IMS)</a>, Okazaki, Japon</em><br>\n                <strong>Transport électronique dans un cristal de Rydberg ultrafroid corrélé</strong>.<br>\n                Team : Pr Kenji Ohmori - <a class=\"link-accent\" href=\"https://ohmori.ims.ac.jp/en/\" target=\"_blank\" rel=\"noopener noreferrer\">Ohmori Group</a>\n              </div>\n            </li>\n\n            <li class=\"research-item\">\n              <span class=\"highlight\">2016 (4 mois)</span>\n              <div>\n                <em>Stage M1 - <a href=\"https://www.cornell.edu\" target=\"_blank\" rel=\"noopener noreferrer\">Cornell University</a>, Ithaca (NY, USA)</em><br>\n                <strong>Dynamique d'imbibition dans des milieux nanoporeux</strong>.<br>\n                Superviseur : <a class=\"link-accent\" href=\"https://ilm-perso.univ-lyon1.fr/~ovincent/\" target=\"_blank\" rel=\"noopener noreferrer\">Olivier Vincent</a> - <a class=\"link-accent\" href=\"https://stroockgroup.net/people\" target=\"_blank\" rel=\"noopener noreferrer\">Stroock Group</a>\n              </div>\n            </li>\n          </ul>\n\n          "
+  },
+  "media": [
+    {
+      "title": "Présentation ambassadeur du doctorat",
+      "description": "Présentation ambassadeur du doctorat (lire) Université Lyon 1",
+      "urls": [
+        "https://www.univ-lyon1.fr/actualites/bastien-marguet-ambassadeur-du-doctorat",
+        "https://myvideo.univ-lyon1.fr/permalink/v126d2cf7351fdzrv6zl/iframe/"
+      ],
+      "subtitle": "Université Lyon 1",
+      "links": [
+        {
+          "title": "Voir la vidéo",
+          "url": "https://myvideo.univ-lyon1.fr/permalink/v126d2cf7351fdzrv6zl/"
+        },
+        {
+          "title": "Lire le portrait",
+          "url": "https://www.univ-lyon1.fr/actualites/bastien-marguet-ambassadeur-du-doctorat"
+        }
+      ]
+    },
+    {
+      "title": "Interview Université de Lyon",
+      "description": "Interview Université de Lyon Portrait et parcours scientifique",
+      "urls": [
+        "https://www.youtube.com/embed/O1M7t2Dg2Mg?rel=0"
+      ],
+      "subtitle": "Portrait et parcours scientifique",
+      "links": [
+        {
+          "title": "Voir sur YouTube",
+          "url": "https://www.youtube.com/watch?v=O1M7t2Dg2Mg"
+        }
+      ]
+    },
+    {
+      "title": "Intervention plateau TV - BFM Lyon",
+      "description": "Intervention plateau TV - BFM Lyon Finale Ma thèse en 180 secondes",
+      "urls": [
+        "https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
+      ],
+      "subtitle": "BFM Lyon · Finale Ma thèse en 180 secondes",
+      "links": [
+        {
+          "title": "Voir sur BFM Lyon",
+          "url": "https://www.bfmtv.com/lyon/replay-emissions/bonjour-lyon/ca-ressemble-a-un-one-man-show-bastien-marguet-doctorant-a-l-universite-lyon-1-est-candidat-au-concours-ma-these-en-180-secondes_VN-202205300180.html"
+        }
+      ]
+    },
+    {
+      "title": "Concours Ma thèse en 180 secondes",
+      "description": "Concours Ma thèse en 180 secondes Finale Lyon - Saint-Étienne 2022",
+      "urls": [
+        "https://www.youtube.com/embed/qdO9y2ETTI4?rel=0"
+      ],
+      "subtitle": "Finale Lyon - Saint-Étienne · 2022",
+      "links": [
+        {
+          "title": "Voir sur YouTube",
+          "url": "https://www.youtube.com/watch?v=qdO9y2ETTI4"
+        }
+      ]
+    },
+    {
+      "title": "Podcast « Dis, pourquoi ? »",
+      "description": "Podcast « Dis, pourquoi ? » RCF Lyon",
+      "urls": [
+        "https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
+      ],
+      "subtitle": "RCF Lyon",
+      "links": [
+        {
+          "title": "Écouter sur RCF",
+          "url": "https://www.rcf.fr/economie-et-societe/dis-pourquoi-rcf-lyon?episode=234736"
+        }
+      ]
+    },
+    {
+      "title": "Podcast « Sciences en récits »",
+      "description": "Podcast « Sciences en récits » Retour sur MT180",
+      "urls": [
+        "https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
+      ],
+      "subtitle": "Retour sur Ma thèse en 180 secondes",
+      "links": [
+        {
+          "title": "Écouter Sciences en récits",
+          "url": "https://smartlink.ausha.co/sciences-en-recits/mt-180-j-etais-en-finale"
+        }
+      ]
+    }
+  ]
+}
