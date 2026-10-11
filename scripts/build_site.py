@@ -165,10 +165,10 @@ def home():
     body = f'''<section class="intro" id="intro" aria-labelledby="titre-accueil">
       <div><p class="page-kicker">Enseignant · IUT Lyon 1</p><h1 id="titre-accueil">Bastien Marguet</h1>
       <p class="lead">Docteur en physique statistique, agrégé de Physique-Chimie et professeur agrégé affecté dans l’enseignement supérieur (PRAG).</p>
-      <p class="prose">J’enseigne les mathématiques appliquées, les sciences et la communication scientifique. Je m’intéresse aussi à la cognition - attention, mémoire, raisonnement - et à l’usage de l’IA pour soutenir l’apprentissage et l’autonomie.</p>
+      <p class="prose">J’enseigne les <strong>mathématiques appliquées</strong>, les sciences et la <strong>communication scientifique</strong>. Je m’intéresse aussi à la <strong>cognition</strong> - attention, mémoire, raisonnement - et à l’usage de l’<strong>IA</strong> pour soutenir l’apprentissage et l’autonomie.</p>
       <p class="prose">En 2026-2027, je me forme au {link('a-propos.html#formation-neuroeducation', 'DU Neuroéducation, adossé au LaPsyDÉ')}.</p>
       <div class="actions">{link('enseignements.html', 'Trouver un cours <span aria-hidden="true">→</span>', class_='button')}{link('resources.html','Chercher un document')}{link('a-propos.html','Mon parcours')}</div></div>
-      <figure class="intro-photo"><img src="img/intro.jpeg" width="2000" height="1329" alt="Mon portrait lors d’un échange"><figcaption>Sciences, transmission et dialogue.</figcaption></figure>
+      <figure class="intro-photo"><img src="img/intro.jpeg" width="2000" height="1329" alt="Mon portrait lors d’un échange"><figcaption>Mathématiques, cognition, apprentissage.</figcaption></figure>
     </section>
     <section class="section" id="enseignements" aria-labelledby="titre-cours"><span id="resources-preview" aria-hidden="true"></span><div class="section-heading"><h2 id="titre-cours">Accès aux enseignements</h2>{link('resources.html','Toute la bibliothèque')}</div>
       <div class="overview"><div><p>Retrouvez les polycopiés, les supports et les annales par formation et par cours.</p><ul class="quick-links">{quick}</ul></div>
