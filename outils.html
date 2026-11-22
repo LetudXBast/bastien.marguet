@@ -14,8 +14,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://letudxbast.github.io/bastien.marguet/outils.html">
-  <link rel="stylesheet" href="assets/style.css">
-
+  <link rel="stylesheet" href="assets/style.css?v=20261013">
+  <script src="assets/script.js?v=20261013" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -25,36 +25,38 @@
         <span class="brand-mark" aria-hidden="true">BM</span>
         <span class="brand-copy"><strong>Bastien Marguet</strong><span>Sciences · pédagogie · IA</span></span>
       </a>
-      <nav class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list"><li><a href="index.html">Accueil</a></li><li><a href="enseignements.html">Enseignements</a></li><li><a href="publications.html">Publications</a></li><li><a href="interventions.html">Interventions</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list"><li><a href="index.html">Accueil</a></li><li><a href="enseignements.html">Enseignements</a></li><li><a href="publications.html">Publications</a></li><li><a href="interventions.html">Interventions</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     </div>
   </header>
   <main id="contenu" class="container" tabindex="-1"><header class="page-intro"><p class="page-kicker">Outils pédagogiques</p><h1>Explorer et expérimenter</h1><p class="lead">Vidéos de mathématiques, jeu de découverte de fonctions et simulateurs d’automatisme et de régulation.</p></header><nav class="local-nav" aria-label="Sur cette page"><a href="#videos">Vidéos</a><a href="#fonction-cachee">Fonction cachée</a><a href="#simulateurs">Simulateurs</a></nav><section id="videos"><h2>Vidéos pédagogiques</h2><p>Deux exemples créés pour mes enseignements.</p><div class="video-row">
               <figure class="video-container has-video">
-                <video controls>
+                <video controls preload="none" playsinline>
                   <source src="video/TaylorExpSeries.mp4" type="video/mp4">
                   Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
-                <figcaption>Développement limité de la fonction exponentielle</figcaption>
+                <figcaption>Développement limité de la fonction exponentielle <a href="video/TaylorExpSeries.mp4">Ouvrir la vidéo (MP4)</a></figcaption>
               </figure>
 
               <figure class="video-container has-video">
-                <video controls>
+                <video controls preload="none" playsinline>
                   <source src="video/DerivativeScene.mp4" type="video/mp4">
                   Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
-                <figcaption>Notion de dérivée</figcaption>
+                <figcaption>Notion de dérivée <a href="video/DerivativeScene.mp4">Ouvrir la vidéo (MP4)</a></figcaption>
               </figure>
-            </div></section><section class="section" id="fonction-cachee"><h2>Fonction cachée</h2><p class="prose">Deviner une fonction à partir de ses valeurs : un jeu pédagogique interactif.</p><a href="https://fonction-cachee-bmarguet.streamlit.app/" target="_blank" rel="noopener noreferrer">Ouvrir le jeu sur Streamlit →</a></section><section class="section" id="simulateurs"><h2>Automatisme et régulation</h2><p class="prose">Simulations interactives pour explorer le comportement de systèmes régulés.</p><div class="tool-grid"><article><h3>Simulateur P</h3><p>Régulation proportionnelle.</p><a href="https://pid-demo-letudx.streamlit.app/" target="_blank" rel="noopener noreferrer">Ouvrir le simulateur P →</a></article><article><h3>Simulateur PID</h3><p>Régulation proportionnelle, intégrale et dérivée.</p><a href="https://pid-demo-bmarguet.streamlit.app/" target="_blank" rel="noopener noreferrer">Ouvrir le simulateur PID →</a></article></div></section><p class="rights-note">Les outils s’ouvrent sur les services qui les hébergent. Ils ne sont chargés qu’après activation de leur lien.</p></main>
+            </div></section><section class="section" id="fonction-cachee"><h2>Fonction cachée</h2><p class="prose">Deviner une fonction à partir de ses valeurs : un jeu pédagogique interactif.</p><a href="https://fonction-cachee-bmarguet.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">Ouvrir le jeu sur Streamlit →</a></section><section class="section" id="simulateurs"><h2>Automatisme et régulation</h2><p class="prose">Simulations interactives pour explorer le comportement de systèmes régulés.</p><div class="tool-grid"><article><h3>Simulateur P</h3><p>Régulation proportionnelle.</p><a href="https://pid-demo-letudx.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">Ouvrir le simulateur P →</a></article><article><h3>Simulateur PID</h3><p>Régulation proportionnelle, intégrale et dérivée.</p><a href="https://pid-demo-bmarguet.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">Ouvrir le simulateur PID →</a></article></div></section><p class="rights-note">Les outils s’ouvrent sur les services qui les hébergent. Ils ne sont chargés qu’après activation de leur lien.</p></main>
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 Bastien Marguet</p>
       <nav class="footer-links" aria-label="Liens complémentaires">
         <a href="resources.html">Bibliothèque</a>
         <a href="outils.html">Outils pédagogiques</a>
-        <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">GitHub</a>
+        <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">LinkedIn</a>
         <a href="informations.html">Informations du site</a>
       </nav>
+      <p id="external-link-note" class="meta">Les liens suivis de ↗ ouvrent un nouvel onglet.</p>
     </div>
   </footer>
 </body>

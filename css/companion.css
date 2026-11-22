@@ -23,7 +23,20 @@ body.education-map { background: #faf9f6; }
 .education-map .filter-btn, .education-map .back-link, .education-map .small-pill { border-radius: 4px; }
 .education-map .map-note { background: none; border-radius: 0; }
 .education-map :focus-visible { outline: 3px solid #285746; outline-offset: 4px; }
-body.theatre-page { --shadow: none; --shadow-soft: none; }
+body.theatre-page {
+  --bg: #090807;
+  --bg-soft: #151210;
+  --paper: #f2eadf;
+  --paper-muted: rgba(242, 234, 223, 0.72);
+  --paper-faint: rgba(242, 234, 223, 0.14);
+  --line: rgba(242, 234, 223, 0.18);
+  --line-strong: rgba(242, 234, 223, 0.34);
+  --gold: #c8a96b;
+  --gold-soft: rgba(200, 169, 107, 0.16);
+  --red: #8e251c;
+  --shadow: none;
+  --shadow-soft: none;
+}
 .theatre-page .panel, .theatre-page .info-card, .theatre-page .story-card { box-shadow: none; border-radius: 6px; }
 .theatre-page .hero { box-shadow: none; }
 body.workshop-survey {

@@ -1,0 +1,19 @@
+Si ton dossier est déjà relié à GitHub :
+
+git status
+git remote -v
+git add .
+git diff --cached --stat
+git commit -m "Mise à jour du projet"
+git push
+
+
+Si c’est le premier envoi : crée un dépôt vide sur GitHub, sans README ni .gitignore, puis exécute :
+git init
+git branch -M main
+git add .
+git diff --cached --stat
+git commit -m "Version initiale du projet"
+
+git remote add origin https://github.com/TON_COMPTE/TON_DEPOT.git
+git push -u origin main

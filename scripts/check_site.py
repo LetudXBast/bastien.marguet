@@ -20,6 +20,9 @@ class Document(HTMLParser):
         self.form_actions = []
         self.nav = []
         self.in_nav = False
+        self.descriptions = []
+        self.blank_links = []
+        self.menu_buttons = 0
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -37,6 +40,14 @@ class Document(HTMLParser):
             self.in_nav = a.get('aria-label') == 'Navigation principale'
         if tag == 'a' and self.in_nav:
             self.nav.append(a.get('href'))
+        if a.get('aria-describedby'):
+            self.descriptions.extend(a['aria-describedby'].split())
+        if tag == 'a' and a.get('target') == '_blank':
+            self.blank_links.append(a)
+        if tag == 'button' and a.get('aria-controls') == 'site-navigation':
+            self.menu_buttons += 1
+        if tag == 'img' and a.get('srcset'):
+            self.references.extend(item.strip().split()[0] for item in a['srcset'].split(','))
         for key in ['href', 'src']:
             if key in a:
                 self.references.append(a[key])
@@ -69,6 +80,15 @@ def main():
             errors.append(f'{path.name}: navigation differs from reference')
         if any('vision-education.html' in ref for ref in doc.references):
             errors.append(f'{path.name}: draft education map exposed')
+        if doc.menu_buttons != 1:
+            errors.append(f'{path.name}: missing mobile menu control')
+        if set(doc.descriptions) - set(doc.ids):
+            errors.append(f'{path.name}: missing accessible descriptions')
+        for link in doc.blank_links:
+            if 'external-link-note' not in link.get('aria-describedby', '').split():
+                errors.append(f'{path.name}: unannounced new tab')
+            if not {'noopener', 'noreferrer'}.issubset(link.get('rel', '').split()):
+                errors.append(f'{path.name}: missing external link protections')
     for path, doc in list(parsed.items()):
         for ref in doc.references:
             parts = urlsplit(ref)

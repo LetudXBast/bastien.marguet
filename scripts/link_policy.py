@@ -4,7 +4,7 @@ from html import escape, unescape
 from urllib.parse import urlsplit
 
 
-def external_links(document, base_url):
+def external_links(document, base_url, announce=False):
     base = urlsplit(base_url)
 
     def update(match):
@@ -26,6 +26,12 @@ def external_links(document, base_url):
             tokens = list(dict.fromkeys(tokens + ['noopener', 'noreferrer']))
             tag = re.sub(r'\s+rel\s*=\s*([\'"]).*?\1', '', tag, flags=re.I | re.S)
             tag = tag[:-1] + ' target="_blank" rel="' + escape(' '.join(tokens), quote=True) + '">'
+            if announce:
+                described = re.search(r'\s+aria-describedby\s*=\s*([\'"])(.*?)\1', tag, re.I | re.S)
+                tokens = unescape(described.group(2)).split() if described else []
+                tokens = list(dict.fromkeys(tokens + ['external-link-note']))
+                tag = re.sub(r'\s+aria-describedby\s*=\s*([\'"]).*?\1', '', tag, flags=re.I | re.S)
+                tag = tag[:-1] + ' aria-describedby="' + escape(' '.join(tokens), quote=True) + '">'
         return tag
 
     return re.sub(r'<a\b[^>]*>', update, document, flags=re.I)

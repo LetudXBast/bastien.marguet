@@ -16,6 +16,11 @@ OUT = ROOT
 DATA = json.loads((ROOT / 'data/catalogue.json').read_text(encoding='utf-8'))
 CONFIG = json.loads((ROOT / 'data/site.json').read_text(encoding='utf-8'))
 PAGES = []
+FILE_ALIASES = {
+    'pdfs/Cours/PolyMathsBUT-S1.pdf': 'pdfs/Cours/OM1/PolyMathsBUT-S1.pdf',
+    'pdfs/Cours/Exams/OM1/2026-2027/Fiches TD/TD1.pdf': 'pdfs/Cours/OM1/Fiches TD/TD1.pdf',
+    'pdfs/Cours/Exams/OM1/2026-2027/Fiches TD/TD2.pdf': 'pdfs/Cours/OM1/Fiches TD/TD2.pdf',
+}
 E = lambda value: escape(str(value), quote=True)
 CATEGORIES = {'cours': 'Cours', 'annale': 'Sujet', 'corrige': 'Corrigé', 'support': 'Support'}
 LEVELS = {'BUT1': ('BUT · 1re année', 'Fondamentaux, mathématiques et outils scientifiques'),
@@ -93,7 +98,7 @@ def nav(prefix, current):
 
 def page(path, title, description, content, current=None, prefix='', script=False):
     canonical = urljoin(CONFIG['base_url'], path)
-    scripts = f'<script src="{prefix}assets/script.js" defer></script>' if script else ''
+    scripts = f'<script src="{prefix}assets/script.js?v=20261013" defer></script>'
     home_current = ' aria-current="page"' if path == 'index.html' else ''
     document = f'''<!doctype html>
 <html lang="fr">
@@ -111,7 +116,7 @@ def page(path, title, description, content, current=None, prefix='', script=Fals
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="{E(canonical)}">
-  <link rel="stylesheet" href="{prefix}assets/style.css">
+  <link rel="stylesheet" href="{prefix}assets/style.css?v=20261013">
   {scripts}
 </head>
 <body>
@@ -122,7 +127,8 @@ def page(path, title, description, content, current=None, prefix='', script=Fals
         <span class="brand-mark" aria-hidden="true">BM</span>
         <span class="brand-copy"><strong>Bastien Marguet</strong><span>Sciences · pédagogie · IA</span></span>
       </a>
-      <nav class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list">{nav(prefix, current or path)}</ul></nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list">{nav(prefix, current or path)}</ul></nav>
     </div>
   </header>
   <main id="contenu" class="container" tabindex="-1">{content}</main>
@@ -136,13 +142,14 @@ def page(path, title, description, content, current=None, prefix='', script=Fals
         {link('https://fr.linkedin.com/in/bastien-marguet-23a074200', 'LinkedIn')}
         {link(prefix+'informations.html', 'Informations du site')}
       </nav>
+      <p id="external-link-note" class="meta">Les liens suivis de ↗ ouvrent un nouvel onglet.</p>
     </div>
   </footer>
 </body>
 </html>'''
     destination = OUT / path
     destination.parent.mkdir(parents=True, exist_ok=True)
-    document = external_links(document, CONFIG['base_url'])
+    document = external_links(document, CONFIG['base_url'], announce=True)
     destination.write_text('\n'.join(line.rstrip() for line in document.splitlines()) + '\n', encoding='utf-8')
     PAGES.append(path)
 
@@ -167,17 +174,19 @@ def home():
       <p class="lead">Docteur en physique statistique, agrégé de Physique-Chimie et professeur agrégé affecté dans l’enseignement supérieur (PRAG).</p>
       <p class="prose">J’enseigne les <strong>mathématiques appliquées</strong>, les sciences et la <strong>communication scientifique</strong>. Je m’intéresse aussi à la <strong>cognition</strong> - attention, mémoire, raisonnement - et à l’usage de l’<strong>IA</strong> pour soutenir l’apprentissage et l’autonomie.</p>
       <p class="prose">En 2026-2027, je me forme au {link('a-propos.html#formation-neuroeducation', 'DU Neuroéducation, adossé au LaPsyDÉ')}.</p>
-      <div class="actions">{link('enseignements.html', 'Trouver un cours <span aria-hidden="true">→</span>', class_='button')}{link('resources.html','Chercher un document')}{link('a-propos.html','Mon parcours')}</div></div>
-      <figure class="intro-photo"><img src="img/intro.jpeg" width="2000" height="1329" alt="Mon portrait lors d’un échange"><figcaption>Mathématiques, cognition, apprentissage.</figcaption></figure>
+      <p class="prose">Depuis septembre 2026, avec <a href="https://sites.google.com/view/gaston-nieuviarts" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">Gaston Nieuviarts</a>, nous avons rejoint le programme d’incubation deeptech de <a href="https://www.pulsalys.fr/" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">PULSALYS</a>, avec l’ambition de repenser l’apprentissage des mathématiques à la lumière des transformations induites par l’intelligence artificielle.</p>
+      <div class="actions">{link('resources.html','Trouver une ressource <span aria-hidden="true">→</span>', class_='button')}{link('enseignements.html', 'Mes enseignements')}{link('a-propos.html','Mon parcours')}</div></div>
+      <figure class="intro-photo"><img src="img/intro-640.jpeg" srcset="img/intro-320.jpeg 320w, img/intro-640.jpeg 640w, img/intro-960.jpeg 960w" sizes="(max-width: 36rem) 11rem, (max-width: 52rem) 15rem, 20rem" width="2000" height="1329" decoding="async" alt="Mon portrait lors d’un échange"><figcaption>Mathématiques, cognition, apprentissage.</figcaption></figure>
     </section>
     <section class="section" id="enseignements" aria-labelledby="titre-cours"><span id="resources-preview" aria-hidden="true"></span><div class="section-heading"><h2 id="titre-cours">Accès aux enseignements</h2>{link('resources.html','Toute la bibliothèque')}</div>
       <div class="overview"><div><p>Retrouvez les polycopiés, les supports et les annales par formation et par cours.</p><ul class="quick-links">{quick}</ul></div>
       <aside><h3>Choisir le bon document</h3><p>Les sujets et les corrigés sont identifiés séparément. Chaque annale conserve l’année indiquée dans la ressource d’origine.</p><p class="meta">Retrouvez les annales de 2024-2025 et 2025-2026, ainsi que les premiers sujets de 2026-2027. Certains supports ne portent pas de date.</p><p>{link('outils.html','Vidéos et simulateurs pédagogiques →')}</p></aside></div>
     </section>
     <section class="section" id="about" aria-labelledby="titre-activites"><h2 id="titre-activites">Travaux et transmission</h2>
-      <div class="overview"><article><p class="page-kicker">Physique statistique</p><h3>Interfaces et systèmes hors équilibre</h3><p class="prose">Mes travaux de recherche ont porté sur la dynamique d’interfaces, leur confinement et les phénomènes collectifs en croissance cristalline.</p>{link('publications.html','Articles et manuscrit de thèse →')}</article>
-      <article><p class="page-kicker">Interventions</p><h3>IA, apprentissage et communication</h3><p class="prose">Ateliers et formations autour de l’usage raisonné de l’IA, de la prise de parole scientifique et de la valorisation des compétences doctorales.</p>{link('interventions.html','Interventions et supports →')}</article></div>
-      {fragment('ambassadeur-doctorat')}
+      <div class="overview">
+        {fragment('ambassadeur-doctorat')}
+        <article><p class="page-kicker">Physique statistique</p><h3>Interfaces et systèmes hors équilibre</h3><p class="prose">Mes travaux de recherche ont porté sur la dynamique d’interfaces, leur confinement et les phénomènes collectifs en croissance cristalline.</p>{link('publications.html','Articles et manuscrit de thèse →')}</article>
+      </div>
     </section>
     <section class="section" id="ia" aria-labelledby="titre-ia"><h2 id="titre-ia">IA et autonomie intellectuelle</h2><p class="prose">Je m’intéresse aux effets de l’IA générative sur les méthodes de travail et les processus cognitifs. Mon approche consiste à l’intégrer dans une démarche explicite : questionner, vérifier les réponses et conserver une réflexion personnelle.</p>{link('interventions.html#approche-ia','Approche et formats d’intervention →')}</section>
     <section class="contact-band" id="contact"><h2>Prendre contact</h2><p>Une question sur un cours, un atelier ou une collaboration ?</p><p>{link('contact.html','Me contacter',class_='button')}</p></section>'''
@@ -186,12 +195,12 @@ def home():
 def teaching():
     ids={'BUT1':'enseignements-but1','BUT2':'enseignements-but2','BUT3':'enseignements-but3','LP CESP':'enseignements-lp-cesp'}
     body=intro('Enseignements', 'Cours et ressources pédagogiques', 'Mathématiques, sciences et communication scientifique : choisissez votre formation, puis votre enseignement.')
-    body += '<p class="prose">Bachelor universitaire de technologie (BUT) en Génie chimique - Génie des procédés, et licence professionnelle CESP à l’IUT Lyon 1.</p>'
+    body += '<p class="prose teaching-context">Les cours publiés ici correspondent au Bachelor universitaire de technologie (BUT) en Génie chimique - Génie des procédés, et à la licence professionnelle CESP à l’IUT Lyon 1.<br>Je suis également intervenu dans les parcours BUT GIM, GEII, Chimie, Génie biologique, ainsi qu’en licence 2 de Sciences cognitives. Les supports associés ne sont pas publiés sur cette page.</p>'
     body += '<aside class="notice"><p><strong>Années disponibles.</strong> Annales 2024-2025 et 2025-2026, premiers sujets 2026-2027. Les fiches de TD sont accessibles avec les supports de cours.</p></aside>'
     body += local_nav([(ids[level],level.replace('BUT','BUT ')) for level in LEVELS])
     body += '<p>'+link('resources.html','Rechercher par titre, thème, année ou type de document →')+'</p>'
     for level,(label,desc) in LEVELS.items():
-        body += f'<section class="section" id="{ids[level]}"><h2>{E(label)}</h2><p class="muted">{E(desc)}</p><ul class="course-list">'
+        body += f'<section class="section" id="{ids[level]}"><h2 class="level-heading">{E(label)}</h2><p class="muted">{E(desc)}</p><ul class="course-list">'
         for course in DATA['courses']:
             if course['level'] != level: continue
             count=len(course['resources'])
@@ -239,21 +248,24 @@ def course_page(course):
     page('enseignements/'+course['slug']+'.html',course_title(course),course['description'] or course_context(course),body,current='enseignements.html',prefix=prefix)
 
 def catalogue():
-    resources=[(r,c) for c in DATA['courses'] for r in c['resources']]
+    resources=[(r,c) for c in DATA['courses'] for r in c['resources'] if r.get('year') != '2023-2024']
     body=intro('Bibliothèque', 'Trouver un document', 'Un catalogue commun aux pages de cours : polycopiés, sujets, corrigés et présentations.')
     years=sorted({r['year'] for r,c in resources if r.get('year')},reverse=True)
     options=lambda values: ''.join('<option value="'+E(value)+'">'+E(label)+'</option>' for value,label in values)
     form=f'''<form class="search-form" role="search" data-catalogue-filter hidden>
-      <div class="filter-controls"><div><label for="recherche">Titre ou thème du cours</label><input id="recherche" name="q" type="search" placeholder="Statistiques, interro 2…" autocomplete="off" aria-describedby="recherche-aide"></div>
+      <div class="catalogue-search"><label for="recherche">Rechercher dans les ressources</label><input id="recherche" name="q" type="search" placeholder="Statistiques, interro 2…" autocomplete="off" aria-describedby="recherche-aide"></div>
+      <details class="filter-details" data-filter-panel open><summary>Filtres et tri <span class="meta" data-filter-count></span></summary><div class="filter-controls">
       <div><label for="niveau">Formation / niveau</label><select id="niveau" name="niveau"><option value="">Tous les niveaux</option>{options([(level,level.replace('BUT','BUT ')) for level in LEVELS if any(c['resources'] for c in DATA['courses'] if c['level']==level)])}</select></div>
-      <div><label for="annee">Année du document</label><select id="annee" name="annee"><option value="">Toutes les années</option>{options([(y,y) for y in years])}<option value="non-date">Édition non datée</option></select></div>
+      <div><label for="annee">Année scolaire</label><select id="annee" name="annee"><option value="">Toutes les années</option>{options([(y,y) for y in years])}<option value="non-date">Édition non datée</option></select></div>
       <div><label for="type">Type de document</label><select id="type" name="type"><option value="">Tous les types</option>{options(list(CATEGORIES.items()))}</select></div></div>
-      <div class="filter-footer"><p class="meta" id="recherche-aide">Recherche dans les titres et les thèmes des cours, hors texte des PDF.</p><button class="text-button" type="reset">Effacer les filtres</button></div>
+      <div class="catalogue-sort"><label for="tri">Trier les ressources</label><select id="tri" name="tri"><option value="pedagogique">Par cours, dans l’ordre pédagogique</option><option value="annee">Année scolaire, de la plus récente à la plus ancienne</option><option value="titre">Titre, de A à Z</option></select></div>
+      </details><div class="filter-footer"><p class="meta" id="recherche-aide">Recherche dans les titres et les thèmes des cours, hors texte des PDF.</p><button class="text-button" type="reset">Effacer les filtres</button></div>
     </form>'''
     body+=form+'<noscript><p class="notice">Toutes les ressources sont affichées. Retrouvez aussi les documents '+link('enseignements.html','classés par cours')+'.</p></noscript>'
     body+=f'<div class="results-header filter-status"><p role="status" aria-live="polite" aria-atomic="true" data-result-count>{len(resources)} ressources</p><p class="meta" data-active-filters>Toutes les ressources</p></div>'
-    body+='<div class="empty-state" data-empty-results hidden><h2>Aucune ressource correspondante</h2><p>Essayez un autre mot, une autre année ou effacez les filtres.</p></div>'
-    body+='<ul class="resource-list">'+''.join(resource_row(r,c,in_catalogue=True,heading='h2') for r,c in resources)+'</ul>'
+    body+='<div class="empty-state" data-empty-results hidden><h2>Aucune ressource correspondante</h2><p>Essayez un autre mot ou une autre année.</p><button type="button" class="button button--secondary" data-clear-results>Effacer les filtres</button></div>'
+    body+='<ul id="catalogue-results" class="resource-list">'+''.join(resource_row(r,c,in_catalogue=True,heading='h2') for r,c in resources)+'</ul>'
+    body+='<nav class="pagination" aria-label="Pages de ressources" data-pagination hidden><button type="button" class="button button--secondary" data-page-previous>Précédente</button><span data-page-status></span><button type="button" class="button button--secondary" data-page-next>Suivante</button></nav>'
     body+='<p class="rights-note">Une ressource non datée ne vaut pas confirmation de l’édition en cours. Les conditions de réutilisation figurant dans les fichiers s’appliquent.</p>'
     body+='<section class="section" id="enseignements"><h2>Retrouver les autres rubriques</h2><p>La bibliothèque rassemble les documents pédagogiques. Les autres contenus disposent de pages dédiées.</p>'
     redirects={'interventions':('interventions.html','Interventions'),'publications':('publications.html','Publications'),'recherches':('a-propos.html#recherches','Recherche'),'vulgarisation':('outils.html','Vulgarisation et outils'),'vulgarisation-videos':('outils.html#videos','Vidéos pédagogiques'),'vulgarisation-jeu':('outils.html#fonction-cachee','Jeu Fonction cachée'),'vulgarisation-simulateurs':('outils.html#simulateurs','Simulateurs'),'cv':('a-propos.html#cv','Parcours / CV'),'responsabilites':('a-propos.html#responsabilites','Responsabilités'),'medias':('interventions.html#medias','Médias')}
@@ -330,14 +342,14 @@ def tools():
 
 def information():
     body=intro('Informations du site','Édition, documents et confidentialité','Je rassemble ici mes enseignements et mes activités scientifiques et pédagogiques.')
-    body+='<div class="prose"><section><h2>Édition et contact</h2><p>Je suis Bastien Marguet, responsable des contenus de ce site.</p><p>Contact : '+link('contact.html','Formulaire de contact')+'</p></section><section class="subsection" id="documents"><h2>Documents et réutilisation</h2><p>Les documents conservent les indications de leur édition d’origine. Les dates de session ne sont pas des dates de mise à jour des fichiers.</p><p>Les conditions et les droits propres à chaque support, publication et contenu tiers s’appliquent. La présence d’un fichier téléchargeable ne vaut pas autorisation de modification ou de redistribution. Pour une réutilisation, contactez l’auteur du support concerné.</p></section><section class="subsection" id="confidentialite"><h2>Confidentialité</h2><p>Les pages ne chargent ni outil de mesure d’audience, ni police distante. La recherche dans la bibliothèque est effectuée dans votre navigateur.</p><p>Les lecteurs de vidéos intégrés proviennent de YouTube et de l’Université Lyon 1. Leur chargement peut transmettre des données techniques à ces diffuseurs. Les podcasts et les outils externes s’ouvrent sur leurs services respectifs.</p><p>Le formulaire de contact transmet votre nom, votre adresse de courriel et votre message via FormSubmit, pour permettre de répondre à votre demande. L’hébergeur peut traiter des données techniques nécessaires à l’accès et au fonctionnement du site.</p></section><section class="subsection" id="accessibilite"><h2>Accès aux contenus</h2><p>Les ressources essentielles sont disponibles sans JavaScript. Les pages disposent d’un lien d’accès au contenu, d’une navigation au clavier, de repères de titres et d’une mise en page adaptée aux petits écrans et à l’impression.</p><p>Les PDF conservent leur format d’origine ; leur accessibilité n’a pas été auditée. Pour signaler une difficulté d’accès, indiquez la page ou le document concerné.</p></section></div>'
+    body+='<div class="prose"><section><h2>Édition et contact</h2><p>Je suis Bastien Marguet, responsable des contenus de ce site.</p><p>Contact : '+link('contact.html','Formulaire de contact')+'</p></section><section class="subsection" id="documents"><h2>Documents et réutilisation</h2><p>Les documents conservent les indications de leur édition d’origine. Les dates de session ne sont pas des dates de mise à jour des fichiers.</p><p>Les conditions et les droits propres à chaque support, publication et contenu tiers s’appliquent. La présence d’un fichier téléchargeable ne vaut pas autorisation de modification ou de redistribution. Pour une réutilisation, contactez l’auteur du support concerné.</p></section><section class="subsection" id="confidentialite"><h2>Confidentialité</h2><p>Les pages ne chargent ni outil de mesure d’audience, ni police distante. La recherche dans la bibliothèque est effectuée dans votre navigateur.</p><p>Les lecteurs de vidéos intégrés proviennent de YouTube et de l’Université Lyon 1. Leur chargement peut transmettre des données techniques à ces diffuseurs. Les podcasts et les outils externes s’ouvrent sur leurs services respectifs.</p><p>Le formulaire de contact transmet votre nom, votre adresse de courriel et votre message via FormSubmit, pour permettre de répondre à votre demande. L’hébergeur peut traiter des données techniques nécessaires à l’accès et au fonctionnement du site.</p></section><section class="subsection" id="accessibilite"><h2>Accès aux contenus</h2><p>Les ressources essentielles sont disponibles sans JavaScript. Les pages disposent d’un lien d’accès au contenu, d’une navigation au clavier, de repères de titres et d’une mise en page adaptée aux petits écrans et à l’impression.</p><p>Les PDF conservent leur format d’origine ; leur accessibilité n’a pas été auditée. Les sous-titres et les alternatives des lecteurs externes dépendent de leurs diffuseurs. Pour signaler une difficulté d’accès ou demander une alternative, contactez-moi via le formulaire en précisant la page, le document ou la vidéo.</p></section></div>'
     page('informations.html','Informations du site','Édition, conditions de réutilisation des documents, confidentialité et accès aux contenus.',body)
     body404=intro('Erreur 404','Page introuvable','Cette adresse ne correspond pas à une page disponible. Retrouvez les ressources à partir des enseignements ou de la bibliothèque.')
     body404+='<div class="actions">'+link('enseignements.html','Voir les enseignements',class_='button')+link('resources.html','Chercher un document')+link('index.html','Revenir à l’accueil')+'</div><p class="rights-note">Un lien ne fonctionne plus ? '+link('contact.html','Signalez-le en indiquant son adresse')+'.</p>'
     page('404.html','Page introuvable','Retrouvez mes enseignements et mes ressources.',body404)
-    bodymerci=intro('Contact','Merci pour votre message.','Vous pouvez poursuivre votre visite ou revenir aux ressources pédagogiques.')
+    bodymerci=intro('Contact','Après votre prise de contact','La confirmation du traitement est fournie par le service du formulaire. Vous pouvez poursuivre votre visite ou revenir aux ressources pédagogiques.')
     bodymerci+='<p>'+link('contact.html','Formulaire de contact')+'</p><p>'+link('contact.html','Voir la page Contact →')+'</p>'
-    page('merci.html','Merci pour votre message','Retour après le formulaire de contact.',bodymerci,current='contact.html')
+    page('merci.html','Après votre prise de contact','Retour après le formulaire de contact.',bodymerci,current='contact.html')
 
 def validate_data():
     ids=[]
@@ -365,6 +377,12 @@ def main():
     if args.base_url: CONFIG['base_url']=args.base_url.rstrip('/')+'/'
     OUT.mkdir(exist_ok=True)
     validate_data()
+    # Static hosting cannot redirect a PDF path. Refresh compatibility copies
+    # from the canonical files so older links remain usable without drift.
+    for old_path, source_path in FILE_ALIASES.items():
+        destination = OUT / old_path
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / source_path, destination)
     home(); teaching(); catalogue(); publications(); interventions(); about(); contact(); tools(); information()
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
     ns='{http://www.sitemaps.org/schemas/sitemap/0.9}'

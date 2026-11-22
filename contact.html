@@ -14,8 +14,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://letudxbast.github.io/bastien.marguet/contact.html">
-  <link rel="stylesheet" href="assets/style.css">
-
+  <link rel="stylesheet" href="assets/style.css?v=20261013">
+  <script src="assets/script.js?v=20261013" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -25,7 +25,8 @@
         <span class="brand-mark" aria-hidden="true">BM</span>
         <span class="brand-copy"><strong>Bastien Marguet</strong><span>Sciences · pédagogie · IA</span></span>
       </a>
-      <nav class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list"><li><a href="index.html">Accueil</a></li><li><a href="enseignements.html">Enseignements</a></li><li><a href="publications.html">Publications</a></li><li><a href="interventions.html">Interventions</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale"><ul id="site-nav-list"><li><a href="index.html">Accueil</a></li><li><a href="enseignements.html">Enseignements</a></li><li><a href="publications.html">Publications</a></li><li><a href="interventions.html">Interventions</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav>
     </div>
   </header>
   <main id="contenu" class="container" tabindex="-1"><header class="page-intro"><p class="page-kicker">Contact</p><h1>Échanger autour d’un cours ou d’un projet</h1><p class="lead">Pour une intervention, une formation, une question sur un cours ou une collaboration scientifique et pédagogique.</p></header><div class="page-layout"><section aria-labelledby="titre-message"><h2 id="titre-message">Votre message</h2><form class="form-card" action="https://formsubmit.co/%62%61%73%74%2E%6D%61%72%67%75%65%74%40%67%6D%61%69%6C%2E%63%6F%6D" method="POST">
@@ -33,27 +34,33 @@
           <input type="hidden" name="_next" value="https://letudxbast.github.io/bastien.marguet/merci.html">
           <input type="hidden" name="_captcha" value="false">
 
-          <label for="contact-name">Nom
-            <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Votre nom" required>
+          <p class="meta">L’adresse e-mail et le message sont obligatoires. Le nom est facultatif.</p>
+          <p id="contact-errors" class="form-error-summary" role="alert" hidden></p>
+          <label for="contact-name">Nom (facultatif)
+            <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Votre nom">
           </label>
-          <label for="contact-email">Email
-            <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="Votre email" required>
+          <label for="contact-email">Adresse e-mail (obligatoire)
+            <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="Votre adresse e-mail" aria-describedby="contact-email-error" required>
           </label>
-          <label for="contact-message">Message
-            <textarea id="contact-message" name="message" rows="6" placeholder="Votre projet, votre public et vos besoins…" required></textarea>
+          <p id="contact-email-error" class="field-error" hidden></p>
+          <label for="contact-message">Message (obligatoire)
+            <textarea id="contact-message" name="message" rows="6" placeholder="Votre projet, votre public et vos besoins…" aria-describedby="contact-message-error" required></textarea>
           </label>
+          <p id="contact-message-error" class="field-error" hidden></p>
           <button type="submit" class="button">Envoyer le message</button>
-        </form><p class="meta">Le formulaire envoie votre message via FormSubmit.</p></section><aside class="toc"><h2>Sujets d’échange</h2><ul><li>Enseignements et ressources</li><li>IA et apprentissage</li><li>Communication scientifique</li><li>Doctorat et compétences</li><li>Médiation et collaborations</li></ul><p><a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a></p></aside></div></main>
+        </form>
+<p class="meta">Le formulaire envoie votre message via FormSubmit.</p></section><aside class="toc"><h2>Sujets d’échange</h2><ul><li>Enseignements et ressources</li><li>IA et apprentissage</li><li>Communication scientifique</li><li>Doctorat et compétences</li><li>Médiation et collaborations</li></ul><p><a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">LinkedIn</a> · <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">GitHub</a></p></aside></div></main>
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 Bastien Marguet</p>
       <nav class="footer-links" aria-label="Liens complémentaires">
         <a href="resources.html">Bibliothèque</a>
         <a href="outils.html">Outils pédagogiques</a>
-        <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/LetudXBast" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">GitHub</a>
+        <a href="https://fr.linkedin.com/in/bastien-marguet-23a074200" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">LinkedIn</a>
         <a href="informations.html">Informations du site</a>
       </nav>
+      <p id="external-link-note" class="meta">Les liens suivis de ↗ ouvrent un nouvel onglet.</p>
     </div>
   </footer>
 </body>

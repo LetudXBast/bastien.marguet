@@ -18,7 +18,7 @@ Les présentations, le questionnaire doctoral, les PDF, les vidéos et la page d
 
 ## Modifier et reconstruire
 
-Les contenus des cours, documents, publications et interventions sont dans `data/catalogue.json`. Les coordonnées et l’URL canonique sont dans `data/site.json`. Les lecteurs multimédias et le formulaire sont conservés dans `data/fragments/`.
+Les contenus des cours, documents, publications et interventions sont dans `data/catalogue.json`. L’URL canonique et le point d’envoi du formulaire sont dans `data/site.json`. Les lecteurs multimédias et le formulaire sont conservés dans `data/fragments/`.
 
 Les gabarits sont dans `scripts/build_site.py`, les styles dans `assets/style.css` et les filtres dans `assets/script.js`. Les pages HTML principales et les pages de cours sont générées : modifier leurs sources pour que les changements soient conservés à la prochaine reconstruction.
 
@@ -31,6 +31,10 @@ node --check assets/script.js
 La génération écrit les pages directement à la racine du site. Elle ne supprime aucun fichier ni document. Aucun téléchargement ni installation de dépendance n’est nécessaire.
 
 Le contrôle vérifie les liens locaux, les ancres, la navigation commune, les titres principaux, les libellés des champs et les signatures des PDF référencés. Il ne soumet pas le formulaire de contact.
+
+La bibliothèque affiche 20 ressources par page avec JavaScript et toutes les ressources sans JavaScript. Les filtres, le tri et la page courante sont conservés dans l’URL. Sur mobile, la recherche reste visible et les filtres secondaires peuvent être dépliés. Le menu mobile est une amélioration facultative : sans JavaScript, les liens de navigation restent visibles.
+
+Les anciennes adresses du poly et des TD d’OM1 sont maintenues grâce à des copies de compatibilité, régénérées depuis leurs fichiers canoniques à chaque construction. Le catalogue référence uniquement les fichiers canoniques. Les décisions et le périmètre des vérifications sont décrits dans `docs/application-referentiel-ux.md`.
 
 ## Aperçu local
 
